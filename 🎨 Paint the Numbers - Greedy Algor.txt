@@ -1,0 +1,40 @@
+🎨 Paint the Numbers - Greedy Algorithm Triumph! 🎨
+Just solved "Paint the Numbers" from Codeforces Round 584 - Dasha Code Championship - Elimination Round (Div. 1 + Div. 2) - Accepted! ✅
+🔗Problem Link: https://lnkd.in/g4vZwWyW
+
+🎯 Problem Overview: A sophisticated number theory problem requiring optimal grouping strategy based on divisibility relationships.
+
+💡 The Approach: 
+🔍 Core Strategy: Greedy selection with divisibility marking
+
+📝 Solution Breakdown: 
+1️⃣ Input Processing: Read count n and sort array a 
+2️⃣ Tracking Array: Initialize used = [False]*n for marking 
+3️⃣ Counter Initialization: Set ans = 0 for groups 
+4️⃣ Outer Loop: Iterate through each number 
+5️⃣ Skip Used: If used[i], continue to next 
+6️⃣ New Group: Increment ans, extract x = a[i] 
+7️⃣ Inner Loop: Mark all multiples of x as used 
+8️⃣ Divisibility Check: if not used[j] and a[j] % x == 0 
+9️⃣ Result Output: Print minimum groups needed
+
+🧮 Key Algorithmic Insights:
+Sorting Advantage: Process smallest numbers first for optimal grouping
+Greedy Strategy: Start each group with smallest unused number
+Divisibility Marking: Mark all multiples of current number
+Boolean Tracking: used array prevents reprocessing
+Nested Loop Optimization: Skip already-used numbers
+O(n²) Worst Case: Each number potentially checks all others
+Mathematical Property: Smallest element captures most multiples
+
+⚡ Performance Metrics:
+Test 1: 62ms, 0KB ⚡
+Test 2: 62ms, 0KB
+Consistent performance with zero memory! 🚀
+
+🎓 Number Theory Meets Greedy: This problem beautifully combines divisibility properties with greedy optimization. By processing sorted numbers and marking multiples, we find the minimum grouping! 🔢
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
+
+#CompetitiveProgramming #Codeforces #NumberTheory #GreedyAlgorithms #DivisibilityRules #Python #DashaCodeChampionship #SortingOptimization #ProblemSolving #AcceptedVerdict #Div1Div2 #AlgorithmicThinking
