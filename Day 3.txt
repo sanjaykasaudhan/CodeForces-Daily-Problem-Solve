@@ -1,0 +1,38 @@
+⚖️ Dungeon Equilibrium - Counter Logic Mastery! ⚖️
+Just solved "Dungeon Equilibrium" from Codeforces Round 1066 (Div. 1 + Div. 2) - Accepted! ✅
+🔗Problem Link: https://lnkd.in/ghatA3cA
+
+🎯 Problem Overview: A sophisticated frequency counting problem requiring balancing logic with conditional accumulation based on count thresholds.
+
+💡 The Approach: 
+🔍 Core Strategy: Counter-based frequency analysis with conditional logic
+
+📝 Solution Breakdown: 
+1️⃣ Test Case Loop: Process t test cases 
+2️⃣ Input Parsing: Read n and array a with list(map(int, input().split())) 
+3️⃣ Counter Initialization: Create frequency map cnt = {} (empty dict) 
+4️⃣ Frequency Building: For each value v, use cnt[v] = cnt.get(v,0) + 1 
+5️⃣ Answer Initialization: Set ans = 0 
+6️⃣ Conditional Logic: For each (x, c) in counter items:
+If c < x: Add ans += c
+Else: Add ans += c - x 
+7️⃣ Result Output: Print total answer
+
+🧮 Key Algorithmic Insights:
+Counter Pattern: Dictionary with .get(v,0) for safe increment
+Frequency Analysis: Map each value to its occurrence count
+Threshold Logic: Compare count c against value x
+Two-Case Handling: Different formulas for c < x vs c >= x
+Dictionary Iteration: .items() provides key-value pairs
+O(n) Time Complexity: Single pass for counting + iteration
+
+⚡ Performance Metrics:
+Test 1: 62ms, 0KB ⚡
+Efficient frequency counting with minimal memory! 🚀
+
+🎓 Dictionary Mastery: This problem showcases Python's dictionary power for frequency analysis. The .get(v,0) pattern elegantly handles missing keys while building the counter! 📊
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
+
+#CompetitiveProgramming #Codeforces #FrequencyAnalysis #CounterLogic #DictionaryOperations #Python #ConditionalAccumulation #DataStructures #ProblemSolving #AcceptedVerdict #Div1Div2 #HashMaps
