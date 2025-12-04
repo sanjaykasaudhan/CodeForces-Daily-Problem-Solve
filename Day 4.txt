@@ -1,0 +1,38 @@
+🧠 Memory and Crow - Prefix Sum Elegance! 🧠
+Just solved "Memory and Crow" from Codeforces Round 370 (Div. 2) - Accepted! ✅
+🔗Problem Link: https://lnkd.in/g5DUKVCq
+
+🎯 Problem Overview: An elegant array transformation problem requiring reconstruction of an original array from its cumulative sum representation.
+
+💡 The Approach: 
+🔍 Core Strategy: Reverse prefix sum with boundary handling
+
+📝 Solution Breakdown: 
+1️⃣ Input Parsing: Read length n and array a 
+2️⃣ Array Initialization: Create result array b = [0]*n 
+3️⃣ Backward Iteration: Loop from i in range(n-1):
+Formula: b[i] = a[i] + a[i+1] 
+4️⃣ Last Element: Set b[-1] = a[-1] 
+5️⃣ Output Formatting: Print with "*b" (unpacking with spaces)
+
+🧮 Key Algorithmic Insights:
+Reverse Engineering: Invert prefix sum operation
+Pairwise Addition: Each element combines current and next
+Boundary Handling: Last element handled separately
+Index Arithmetic: Use i+1 for lookahead access
+Negative Indexing: b[-1] for elegant last element access
+Unpacking Operator: "*b" prints space-separated values
+O(n) Time Complexity: Single backward pass
+
+⚡ Performance Metrics:
+Test 1: 0ms, 0KB ⚡ (Perfect timing!)
+Test 2: 15ms, 0KB
+Test 3: 15ms, 0KB
+Ultra-fast with zero memory overhead! 🚀
+
+🎓 Array Transformation Mastery: This problem showcases the beauty of inverse operations! Understanding how to reverse prefix sums by combining adjacent elements—mathematical elegance in action. 📊
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
+
+#CompetitiveProgramming #Codeforces #PrefixSums #ArrayTransformation #InverseOperations #Python #MathematicalAlgorithms #ReverseEngineering #ProblemSolving #AcceptedVerdict #Div2 #CleanCode
