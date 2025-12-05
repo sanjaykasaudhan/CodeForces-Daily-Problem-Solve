@@ -1,0 +1,40 @@
+📈 Stock Arbitraging - Profit Maximization! 📈
+
+Just solved "Stock Arbitraging" from Codeforces Round 556 (Div. 2) - Accepted! ✅
+
+🔗Problem Link: https://lnkd.in/gs7GvGdC
+
+🎯 Problem Overview: A classic buy-low-sell-high problem requiring optimal trading strategy to maximize returns on stock transactions.
+
+💡 The Approach: 
+🔍 Core Strategy: Greedy selection with min/max tracking
+
+📝 Solution Breakdown: 1️⃣ Input Parsing: Read n, m, r and buy prices s, sell prices b 
+2️⃣ Minimum Buy Price: Find buy = min(s) (cheapest purchase option) 
+3️⃣ Maximum Sell Price: Find sell = max(b) (best selling opportunity) 
+4️⃣ Profitability Check: If sell <= buy, no profitable trade exists → print(r) 
+5️⃣ Optimal Strategy:
+Calculate max shares: shares = r // buy
+Compute remainder: rem = r % buy
+Final amount: rem + shares * sell 
+6️⃣ Result Output: Print maximum achievable money
+
+🧮 Key Algorithmic Insights:
+Greedy Selection: Always buy at minimum and sell at maximum
+Division for Shares: Integer division // determines affordable shares
+Modulo for Remainder: % captures leftover money
+Profitability Gate: Early exit if no profit possible
+Mathematical Formula: remainder + shares × sell_price
+O(n + m) Complexity: Linear scan to find min/max
+
+⚡ Performance Metrics:
+Test 1: 31ms, 4KB
+Test 2: 31ms, 0KB
+Efficient with minimal memory! 🚀
+
+🎓 Trading Strategy Wisdom: This problem mirrors real stock trading! Buy at lowest, sell at highest, invest all available capital. The mathematics of profit optimization in action! 💰
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
+
+CompetitiveProgramming #Codeforces #GreedyAlgorithms #StockTrading #ProfitMaximization #Python #OptimizationProblems #FinancialAlgorithms #ProblemSolving #AcceptedVerdict #Div2 #MathematicalThinking
