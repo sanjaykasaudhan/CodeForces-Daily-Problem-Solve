@@ -1,0 +1,44 @@
+🎭 Vladik and Courtesy - Game Theory Victory! 🎭
+
+Just solved "Vladik and Courtesy" from Codeforces Round 416 (Div. 2) - Accepted! ✅
+
+🔗Problem Link:https://lnkd.in/gyZRFbUn
+
+🎯 Problem Overview: A clever game theory problem requiring simulation of alternating moves with parity-based winning condition.
+
+💡 The Approach: 
+🔍 Core Strategy: Turn-based simulation with accumulation tracking
+
+📝 Solution Breakdown: 
+1️⃣ Input Parsing: Read values a, b with map(int, input().split()) 
+2️⃣ Variable Initialization:
+turn = 1 (starting player)
+odd = 0 (odd moves counter)
+even = 0 (even moves counter) 
+3️⃣ Simulation Loop: while True with turn alternation 
+4️⃣ Turn 1 Logic:
+Increment odd += turn
+Check if odd > a: print "Vladik" and break 
+5️⃣ Turn 2 Logic:
+Increment even += turn
+Check if even > b: print "Valera" and break 
+6️⃣ Turn Increment: turn += 1 for next round
+
+🧮 Key Algorithmic Insights:
+Alternating Turns: Use modulo 2 logic with turn%2==1
+Accumulation Pattern: Each player's sum grows by turn number
+Win Condition: First player to exceed their limit loses
+State Tracking: Separate counters for odd/even turns
+Infinite Loop: Continue until break condition met
+Early Termination: Exit immediately when threshold exceeded
+
+⚡ Performance Metrics:
+Test 1: 31ms, 0KB ⚡
+Test 2: 31ms, 0KB
+Perfect consistency with zero memory! 🚀
+
+🎓 Game Theory Application: This problem demonstrates elegant turn-based simulation. Tracking accumulations separately and checking thresholds captures the complete game state! 🎮
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
