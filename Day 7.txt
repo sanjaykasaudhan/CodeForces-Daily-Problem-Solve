@@ -1,0 +1,41 @@
+🛒 Game Shopping - Greedy Strategy Success! 🛒
+
+Just solved "Game Shopping" from Educational Codeforces Round 47 (Rated for Div. 2) - Accepted! ✅
+
+🔗Problem Link: https://codeforces.com/problemset/problem/1009/A
+
+🎯 Problem Overview: A clever shopping simulation problem requiring optimal matching strategy between customer money and game prices.
+
+💡 The Approach: 
+🔍 Core Strategy: Two-pointer greedy matching with sequential processing
+
+📝 Solution Breakdown: 
+1️⃣ Input Parsing: Read n, m and arrays c (customer money), a (game prices) 
+2️⃣ Pointer Initialization: Set i = j = 0 for dual traversal, ans = 0 for count 
+3️⃣ While Loop: Continue while i < n and j < m 
+4️⃣ Matching Logic: If a[j] <= c[i]:
+Increment ans += 1 (successful purchase)
+Move both pointers: j += 1, i += 1 
+5️⃣ Skip Logic: Else, increment i += 1 (insufficient money) 
+6️⃣ Result Output: Print total games purchased
+
+🧮 Key Algorithmic Insights:
+Two-Pointer Technique: Simultaneous traversal of both arrays
+Greedy Selection: Match first affordable game in sequence
+Sequential Processing: Maintain order of customers and games
+Conditional Advancement: Smart pointer movement based on affordability
+Early Termination: Loop ends when either array exhausted
+O(n + m) Complexity: Linear time with single pass
+
+⚡ Performance Metrics:
+Test 1: 62ms, 0KB ⚡
+Test 2: 46ms, 0KB
+Blazing fast with zero memory overhead! 🚀
+
+🎓 Algorithm Pattern Recognition: This problem beautifully demonstrates the two-pointer pattern for matching/pairing problems. The greedy approach ensures optimal matching in sequential scenarios! 🎯
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
+
+#CompetitiveProgramming #Codeforces #TwoPointerTechnique #GreedyAlgorithms #SequentialMatching #Python #EducationalRound #OptimalStrategy #ProblemSolving #AcceptedVerdict #Div2 #AlgorithmicPatterns
