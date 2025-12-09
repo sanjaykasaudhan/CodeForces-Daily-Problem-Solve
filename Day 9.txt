@@ -1,0 +1,42 @@
+✍️ Word Correction - String Processing Triumph! ✍️
+
+Just solved "Word Correction" from Educational Codeforces Round 38 (Rated for Div. 2) - Accepted! ✅
+
+🔗Problem Link: https://lnkd.in/gGjBSGQd
+
+🎯 Problem Overview: A clever string manipulation problem requiring vowel reduction following specific linguistic rules.
+
+💡 The Approach: 
+🔍 Core Strategy: Sequential filtering with conditional accumulation
+
+📝 Solution Breakdown: 
+1️⃣ Input Processing: Read length n and string s 
+2️⃣ Vowel Set: Define v = set('aeiouy') for O(1) lookup 
+3️⃣ Result Initialization: res = '' for building output 
+4️⃣ Character Iteration: Loop through each c in string s 
+5️⃣ Conditional Logic:
+If NOT (res exists OR NOT (c in v AND res[-1] in v)): append character
+Translation: Add char if result empty OR current isn't vowel OR previous wasn't vowel 
+6️⃣ String Accumulation: res += c builds result incrementally 
+7️⃣ Output: Print corrected string
+
+🧮 Key Algorithmic Insights:
+Set Membership: O(1) vowel checking with 'aeiouy' set
+Negative Indexing: res[-1] accesses last character safely
+Boolean Logic: Complex condition with not, or, and operators
+Sequential Processing: Single left-to-right pass
+String Concatenation: Build result character by character
+De Morgan's Laws: Apply logical negation strategically
+O(n) Time Complexity: Linear scan through input
+
+⚡ Performance Metrics:
+Test 1: 46ms, 20KB
+Test 2: 0ms, 0KB (Perfect!)
+Test 3: 15ms, 0KB
+Excellent efficiency! 🚀
+
+🎓 String Algorithm Elegance: This problem demonstrates sophisticated conditional logic for string filtering. The key insight: prevent consecutive vowels by checking both current and previous characters! 📝
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
