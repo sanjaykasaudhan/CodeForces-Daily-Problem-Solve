@@ -1,0 +1,39 @@
+🍬 Candies for Nephews - Modulo Magic! 🍬
+
+Just solved "Candies for Nephews" from Educational Codeforces Round 183 (Rated for Div. 2) - Accepted! ✅
+
+🔗Problem Link: https://lnkd.in/gE4FGFrn
+
+🎯 Problem Overview: A mathematical problem requiring distribution analysis based on modulo-3 arithmetic patterns.
+
+💡 The Approach: 
+🔍 Core Strategy: Direct modular arithmetic classification
+
+📝 Solution Breakdown: 
+1️⃣ Test Case Loop: Process t test cases 
+2️⃣ Input Reading: Get value n 
+3️⃣ Modulo Calculation: Compute r = n % 3 
+4️⃣ Three-Way Classification:
+If r == 0: print 0
+Elif r == 1: print 2
+Else: print 1
+
+🧮 Key Mathematical Insights:
+Modulo-3 Pattern: Three possible remainders (0, 1, 2)
+Direct Mapping: Each remainder maps to specific output
+Zero Remainder: Perfect division → output 0
+Remainder 1: Requires 2 adjustments
+Remainder 2: Requires 1 adjustment
+O(1) Per Query: Constant time calculation
+Pattern Recognition: Mathematical relationship between input and output
+
+⚡ Performance Metrics:
+Test 1: 62ms, 0KB ⚡
+Test 2: 31ms, 0KB
+Blazing fast with zero memory! 🚀
+
+🎓 Number Theory Elegance: This problem showcases the beauty of modular arithmetic! A complex distribution problem reduces to simple mod-3 classification with pattern-based output. 🔢
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
