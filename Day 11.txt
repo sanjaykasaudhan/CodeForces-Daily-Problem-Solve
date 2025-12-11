@@ -1,0 +1,40 @@
+✉️ Letter - Grid Boundary Mastery! ✉️
+
+Just solved "Letter" from Codeforces Beta Round 14 (Div. 2) - Accepted! ✅
+
+🔗Problem Link: https://lnkd.in/gSHYhq73
+
+🎯 Problem Overview: A sophisticated 2D grid problem requiring detection of bounding box coordinates for special characters in a character grid.
+
+💡 The Approach: 
+🔍 Core Strategy: Boundary tracking with min/max coordinate detection
+
+📝 Solution Breakdown: 
+1️⃣ Input Parsing: Read dimensions n, m and grid with list comprehension 
+2️⃣ Initialization:
+min_r = n, max_r = 0 (row boundaries)
+min_c = m, max_c = 0 (column boundaries) 
+3️⃣ Grid Scanning: Double nested loop through rows and columns 
+4️⃣ Character Detection: If grid[i][j] == '*', update boundaries:
+min_r = min(min_r, i), max_r = max(max_r, i)
+min_c = min(min_c, j), max_c = max(max_c, j) 
+5️⃣ Output Generation: Print subgrid grid[i][min_c:max_c + 1] for rows in range 
+6️⃣ Slice Extraction: Use Python slicing for efficient column extraction
+
+🧮 Key Algorithmic Insights:
+Bounding Box Algorithm: Track min/max coordinates of target characters
+Min/Max Tracking: Continuously update boundaries during scan
+Double Loop Pattern: Nested iteration for 2D grid traversal
+List Comprehension: Clean input parsing with [input() for _ in range(n)]
+String Slicing: [min_c:max_c + 1] extracts column range
+O(n×m) Complexity: Complete grid scan required
+
+⚡ Performance Metrics:
+Test 1: 62ms, 0KB ⚡
+Efficient grid processing! 🚀
+
+🎓 2D Array Mastery: This problem demonstrates classic bounding box detection on grids. Tracking extrema coordinates while scanning enables efficient subgrid extraction! 📦
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
