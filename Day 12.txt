@@ -1,0 +1,40 @@
+📊 Local Extrema - Array Pattern Detection! 📊
+
+Just solved "Local Extrema" from Educational Codeforces Round 32 - Accepted! ✅
+
+🔗Problem Link: https://lnkd.in/gNhjnxsP
+
+🎯 Problem Overview: An elegant array analysis problem requiring detection of local maximum and minimum points based on neighbor comparisons.
+
+💡 The Approach: 
+🔍 Core Strategy: Sequential neighbor comparison with counter accumulation
+
+📝 Solution Breakdown: 
+1️⃣ Input Parsing: Read length n and array a 
+2️⃣ Counter Initialization: Set c = 0 for extrema count 
+3️⃣ Boundary Loop: Iterate for i in range(1, n-1) (excluding edges) 
+4️⃣ Local Maximum Check:
+if (a[i] > a[i-1] and a[i] > a[i+1]): increment counter 
+5️⃣ Local Minimum Check:
+or (a[i] < a[i-1] and a[i] < a[i+1]): increment counter 
+6️⃣ Result Output: Print total extrema count
+
+🧮 Key Algorithmic Insights:
+Three-Element Window: Compare element with both neighbors
+Boundary Exclusion: range(1, n-1) avoids edge cases
+Dual Condition: OR operator captures both maxima and minima
+Strict Comparison: Use > and < for local extrema (not plateaus)
+Single Pass: O(n) linear scan through array
+Boolean Logic: Combined conditions with and and or
+
+⚡ Performance Metrics:
+Test 1: 62ms, 0KB ⚡
+Test 2: 46ms, 12KB
+Test 3: 0ms, 0KB (Perfect!)
+Ultra-efficient pattern detection! 🚀
+
+🎓 Array Analysis Mastery: This problem showcases classic peak/valley detection in sequences. The key insight: a point is an extremum if it's strictly greater OR strictly less than both neighbors! 📈📉
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
