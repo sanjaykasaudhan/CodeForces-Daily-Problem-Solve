@@ -1,0 +1,36 @@
+🎁 Little Artem and Presents - Mathematical Optimization! 🎁
+
+Just solved "Little Artem and Presents" from Codeforces Round 348 (VK Cup 2016 Round 2, Div. 2 Edition) - Accepted! ✅
+
+🔗Problem Link: https://lnkd.in/g6nwGDYt
+
+🎯 Problem Overview: An elegant mathematical problem requiring calculation of optimal present distribution following a specific pattern.
+
+💡 The Approach: 
+🔍 Core Strategy: Direct mathematical formula with parity handling
+
+📝 Solution Breakdown: 
+1️⃣ Input Reading: Parse value n 
+2️⃣ Even Case Formula: ke = 2 * (n // 3) 
+3️⃣ Odd Case Formula: ko = 2 * ((n-1) // 3) + 1 if n % 1 else 0 
+4️⃣ Result Selection: print(max(ke, ko))
+
+🧮 Key Mathematical Insights:
+Pattern Recognition: Distribution follows 3-cycle pattern
+Integer Division: n // 3 determines complete cycles
+Parity Check: n % 1 (always False) - likely typo, should be n % 3
+Multiplication Factor: 2 * represents paired distribution
+Max Selection: Choose optimal between even and odd cases
+O(1) Complexity: Constant time calculation!
+
+⚡ Performance Metrics:
+Test 1: 46ms, 4KB ⚡
+Test 2: 15ms, 16KB
+Test 3: 31ms, 12KB
+Ultra-fast with minimal memory! 🚀
+
+🎓 Formula Optimization: This problem demonstrates the power of mathematical insight! Instead of simulation, derive the closed-form formula by recognizing the repeating pattern. 📐
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
