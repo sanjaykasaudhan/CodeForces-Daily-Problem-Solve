@@ -1,0 +1,36 @@
+🪨 Piles With Stones - Sum Comparison Magic! 🪨
+
+Just solved "Piles With Stones" from Codeforces Round 500 (Div. 2) [based on EJOI] - Accepted! ✅
+
+🔗Problem Link: https://lnkd.in/gTJri77J
+
+🎯 Problem Overview: An elegant mathematical comparison problem requiring sum validation between two arrays.
+
+💡 The Approach: 
+🔍 Core Strategy: Direct sum comparison with ternary operator
+
+📝 Solution Breakdown: 
+1️⃣ Input Parsing: Read count n and two arrays x, y 
+2️⃣ Array Processing: Convert inputs to lists with map(int, input().split()) 
+3️⃣ Sum Comparison: Use ternary: "Yes" if sum(x) >= sum(y) else "No" 
+4️⃣ Single-Line Output: Print result directly
+
+🧮 Key Algorithmic Insights:
+Built-in Sum: Python's sum() function for O(n) aggregation
+Ternary Operator: Compact conditional with if-else expression
+Comparison Logic: >= checks if first sum at least equals second
+Direct Output: No intermediate variables needed
+O(n) Time Complexity: Two linear sum operations
+O(1) Extra Space: Only storing final boolean result
+
+⚡ Performance Metrics:
+Test 1: 46ms, 36KB
+Test 2: 15ms, 0KB ⚡
+Test 3: 15ms, 0KB
+Blazing fast with minimal memory! 🚀
+
+🎓 Pythonic Elegance: This problem showcases Python's expressive power—a complete solution in one elegant line using sum() and ternary operator! 💡
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
