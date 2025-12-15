@@ -1,0 +1,41 @@
+⬛ Find Square - Grid Pattern Detection! ⬛
+
+Just solved "Find Square" from AIM Tech Round 5 (rated, Div. 1 + Div. 2) - Accepted! ✅
+
+🔗Problem Link: https://lnkd.in/gK5EyFDW
+
+🎯 Problem Overview: A sophisticated 2D grid problem requiring detection of square boundaries marked by special characters.
+
+💡 The Approach: 
+🔍 Core Strategy: Row and column frequency tracking with min/max calculation
+
+📝 Solution Breakdown: 
+1️⃣ Input Processing: Read dimensions n, m and grid rows 
+2️⃣ List Initialization: Create rows = [] and cols = [] for coordinate tracking 
+3️⃣ Grid Scanning: Double nested loop to find 'B' characters 
+4️⃣ Coordinate Collection:
+Append row index i to rows when 'B' found
+Append column index j to cols when 'B' found 
+5️⃣ Boundary Calculation:
+r = (min(rows) + max(rows)) // 2 + 1 (row center)
+c = (min(cols) + max(cols)) // 2 + 1 (column center) 
+6️⃣ Output: Print 1-indexed coordinates
+
+🧮 Key Algorithmic Insights:
+Separate Tracking: Maintain row and column indices independently
+Min/Max Strategy: Find bounding box extrema
+Center Calculation: Average of min and max gives center
+1-Indexed Output: Add 1 for display format
+List Comprehension Alternative: Grid parsing with [input().strip() for _ in range(n)]
+O(n×m) Complexity: Complete grid scan required
+
+⚡ Performance Metrics:
+Test 1: 15ms, 0KB ⚡
+Test 2: 46ms, 0KB
+Ultra-efficient pattern detection! 🚀
+
+🎓 Grid Algorithm Mastery: This problem demonstrates elegant coordinate aggregation! By tracking extrema separately for rows and columns, we find the square center efficiently. 📐
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
