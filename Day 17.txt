@@ -1,0 +1,39 @@
+🗳️ Elections - Winning Strategy Algorithm! 🗳️
+
+Just solved "Elections" from Codeforces Round 519 by Botan Investments - Accepted! ✅
+
+🔗Problem Link: https://lnkd.in/g5d-DUh6
+
+🎯 Problem Overview: A strategic voting problem requiring calculation of minimum additional votes needed to achieve victory.
+
+💡 The Approach: 
+🔍 Core Strategy: Iterative majority simulation with exponential growth
+
+📝 Solution Breakdown: 
+1️⃣ Input Processing: Read count n and votes array a 
+2️⃣ Sum Calculation: Compute s = sum(a) for total votes 
+3️⃣ Maximum Detection: Find mx = max(a) (current leader) 
+4️⃣ Counter Initialization: Set k = mx (starting candidate votes) 
+5️⃣ While Loop: Continue while n*k <= 2*s:
+Increment counter: k += 1 
+6️⃣ Result Output: Print minimum votes needed
+
+🧮 Key Algorithmic Insights:
+Majority Condition: Need more than half of total votes: n*k > 2*s
+Starting Point: Begin from current maximum to minimize iterations
+Linear Increment: Simple k += 1 ensures finding minimum
+Mathematical Inequality: Rearrange to avoid division: n*k <= 2*s
+Early Termination: Stop as soon as condition violated
+O(mx - answer) Complexity: Worst case iterates from max to solution
+
+⚡ Performance Metrics:
+Test 1: 46ms, 24KB
+Test 2: 31ms, 0KB ⚡
+Test 3: 31ms, 0KB
+Efficient vote calculation! 🚀
+
+🎓 Electoral Mathematics: This problem demonstrates majority calculation through iterative simulation. The key insight: find the minimum vote count that satisfies the strict majority condition! 📊
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
