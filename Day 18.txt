@@ -1,0 +1,39 @@
+📚 Book Reading - Interval Intersection Mastery! 📚
+
+Just solved "Book Reading" from Educational Codeforces Round 31 - Accepted! ✅
+
+🔗Problem Link: https://lnkd.in/ggHKnU98
+
+🎯 Problem Overview: An elegant number theory problem requiring efficient calculation of page reading patterns with large numbers.
+
+💡 The Approach: 
+🔍 Core Strategy: Maximum-based calculation with threshold optimization
+
+📝 Solution Breakdown: 
+1️⃣ Input Parsing: Read n, t and array a with map(int, input().split()) 
+2️⃣ Iteration Loop: For each i in range(n): 
+3️⃣ Maximum Calculation: t = max(0, 86400 - a[i]) 
+4️⃣ Threshold Check: If t <= 0:
+Print i + 1 (1-indexed result)
+Break immediately 
+5️⃣ Early Termination: Stop as soon as condition met
+
+🧮 Key Algorithmic Insights:
+Constant Threshold: 86400 represents daily limit (seconds in a day)
+Max Function: max(0, ...) ensures non-negative values
+Greedy Approach: Process elements sequentially until condition met
+1-Indexed Output: Add 1 to convert from 0-indexed to 1-indexed
+Early Exit: Break on first violation for efficiency
+O(n) Worst Case: Linear scan through array
+
+⚡ Performance Metrics:
+Test 1: 15ms, 4KB ⚡
+Test 2: 31ms, 0KB
+Test 3: 46ms, 0KB
+Excellent efficiency! 🚀
+
+🎓 Threshold Detection: This problem showcases sequential threshold checking with early termination. The key insight: find the first position where accumulated time exceeds the daily limit! ⏰
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
