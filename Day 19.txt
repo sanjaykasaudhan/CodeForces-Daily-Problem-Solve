@@ -1,0 +1,42 @@
+🎯 Good Matrix Elements - Diagonal & Boundary Mastery! 🎯
+
+Just solved "Good Matrix Elements" from ABBYY Cup 2.0 - Easy - Accepted! ✅
+
+🔗Problem Link: https://lnkd.in/gAyfySkT
+
+🎯 Problem Overview: An elegant matrix problem requiring identification and summation of elements on diagonals and boundaries.
+
+💡 The Approach: 
+🔍 Core Strategy: Position-based conditional accumulation
+
+📝 Solution Breakdown: 
+1️⃣ Input Processing: Read dimension n and matrix rows with list comprehension 
+2️⃣ Midpoint Calculation: Compute m = n // 2 for center reference 
+3️⃣ Sum Initialization: Set s = 0 for accumulator 
+4️⃣ Double Loop: Nested iteration through rows and columns 
+5️⃣ Condition Check: Multiple OR conditions:
+i == j (main diagonal)
+i + j == n-1 (anti-diagonal)
+i == m (middle row)
+j == m (middle column) 
+6️⃣ Conditional Sum: Add a[i][j] when condition true 
+7️⃣ Result Output: Print total sum
+
+🧮 Key Algorithmic Insights:
+Diagonal Detection: i == j for main, i+j == n-1 for anti-diagonal
+Center Line Logic: Middle row/column at index n//2
+OR Combination: Elements can satisfy multiple conditions
+No Double Counting: Each element counted once (OR not AND)
+O(n²) Complexity: Complete matrix scan required
+List Comprehension: Clean input parsing
+
+⚡ Performance Metrics:
+Test 1: 124ms, 0KB
+Test 2: 62ms, 0KB ⚡
+Efficient matrix processing! 🚀
+
+🎓 Matrix Pattern Recognition: This problem demonstrates elegant coordinate-based pattern matching. The key insight: combine diagonal and cross patterns using logical OR! 📐
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
