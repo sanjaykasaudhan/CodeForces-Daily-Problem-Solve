@@ -1,0 +1,36 @@
+💾 Save Luke - Mathematical Efficiency Mastery! 💾
+
+Just solved "Save Luke" from AIM Tech Round (Div. 2) - Accepted! ✅
+
+🔗Problem Link: https://lnkd.in/gNXYcmNr
+
+🎯 Problem Overview: An elegant mathematical problem requiring calculation of optimal resource distribution using division operations.
+
+💡 The Approach: 
+🔍 Core Strategy: Direct mathematical formula with integer division
+
+📝 Solution Breakdown: 
+1️⃣ Input Parsing: Read four values with map(int, input().split()) 
+2️⃣ Variable Assignment: Destructure into d, L, v1, v2 
+3️⃣ Formula Application: print((L - d) / (v1 + v2)) 
+4️⃣ Single-Line Solution: Compute result directly without intermediate variables
+
+🧮 Key Mathematical Insights:
+Distance Calculation: L - d represents remaining distance
+Relative Velocity: v1 + v2 represents combined approach speed
+Time Formula: Distance divided by relative velocity gives time
+Float Division: Use / for decimal precision
+Direct Output: No need for additional processing
+O(1) Complexity: Constant time calculation!
+
+⚡ Performance Metrics:
+Test 1: 15ms, 0KB ⚡
+Test 2: 31ms, 8KB
+Test 3: 15ms, 4KB
+Ultra-efficient with minimal resources! 🚀
+
+🎓 Physics Meets Programming: This problem beautifully demonstrates how real-world physics problems (relative motion) translate into elegant mathematical formulas. Sometimes the simplest solution is the best! 🎯
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
