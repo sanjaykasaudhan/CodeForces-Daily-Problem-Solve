@@ -1,0 +1,43 @@
+👥 Splitting in Teams - Greedy Optimization Victory! 👥
+
+Just solved "Splitting in Teams" from Codeforces Round 452 (Div. 2) - Accepted! ✅
+
+🔗Problem Link: https://lnkd.in/gqMf-FDG
+
+🎯 Problem Overview: An elegant combinatorial problem requiring optimal team formation based on group size preferences with frequency constraints.
+
+💡 The Approach:
+Core Strategy: Greedy pairing with remainder calculation
+
+📝 Solution Breakdown: 
+1️⃣ Input Processing: Read count n and array a 
+2️⃣ Frequency Counting:
+ones = a.count(1) (groups of size 1)
+twos = a.count(2) (groups of size 2) 
+3️⃣ Team Initialization: teams = 0 
+4️⃣ Greedy Pairing: use = min(twos, ones) (pair 1s with 2s) 
+5️⃣ State Update:
+teams += use
+ones -= use
+twos -= use 
+6️⃣ Remainder Handling: teams += ones // 3 (group remaining 1s in threes) 
+7️⃣ Result Output: Print total teams
+
+🧮 Key Algorithmic Insights:
+Priority Pairing: Match 1s with 2s first (creates teams of 3)
+Min Function: min(twos, ones) ensures no over-pairing
+Integer Division: ones // 3 groups remaining individuals
+Frequency Approach: Count-based solution instead of sorting
+O(n) Count Phase: Linear time for frequency counting
+Greedy Optimality: Always pair before grouping ensures maximum teams
+
+⚡ Performance Metrics:
+Test 1: 62ms, 24KB
+Test 2: 31ms, 0KB ⚡
+Efficient frequency-based solution! 🚀
+
+🎓 Combinatorial Optimization: This problem demonstrates the power of greedy algorithms in resource allocation. By prioritizing optimal pairings, we maximize team formation! 🎯
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
