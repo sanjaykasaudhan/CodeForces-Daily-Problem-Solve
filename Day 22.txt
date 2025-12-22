@@ -1,0 +1,39 @@
+🚶 Diagonal Walking - Direction Counting Mastery! 🚶
+
+Just solved "Diagonal Walking" from Educational Codeforces Round 40 (Rated for Div. 2) - Accepted! ✅
+
+🔗Problem Link: https://lnkd.in/gk7vQPHk
+
+🎯 Problem Overview: A clever string analysis problem requiring counting directional moves with specific pattern constraints.
+
+💡 The Approach: 
+🔍 Core Strategy: Sequential character tracking with conditional increment logic
+
+📝 Solution Breakdown: 
+1️⃣ Input Processing: Read length n and direction string s 
+2️⃣ Counter Initialization: Set l = 0 (left counter), i = 0 (index pointer) 
+3️⃣ While Loop: Continue while i < n 
+4️⃣ Diagonal Detection: Check if i+1 < n and s[i] != s[i+1]:
+Increment both counters: l += 1, i += 2 (skip pair) 
+5️⃣ Single Direction: Else case handles non-diagonal moves:
+l += 1, i += 1 (process single character) 
+6️⃣ Result Output: Print total moves
+
+🧮 Key Algorithmic Insights:
+Lookahead Pattern: Check s[i] != s[i+1] for diagonal detection
+Pair Processing: Diagonal moves consume two characters
+Index Manipulation: Variable increment (i+=1 vs i+=2)
+Boundary Check: i+1 < n prevents index out of bounds
+Sequential Processing: Single-pass left-to-right scan
+O(n) Time Complexity: Linear traversal with early breaks
+
+⚡ Performance Metrics:
+Test 1: 31ms, 8KB
+Test 2: 31ms, 20KB
+Efficient string processing! 🚀
+
+🎓 Direction Encoding: This problem demonstrates clever pattern recognition in directional sequences. By detecting adjacent different characters, we identify diagonal moves efficiently! 🧭
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
