@@ -1,0 +1,38 @@
+📐 Display Size - Mathematical Iteration Solved! 📐
+
+Just solved "Display Size" from Codeforces Round 387 (Div. 2) - Accepted! ✅
+
+🔗Problem Link: https://lnkd.in/gGnY4w8k
+
+🎯 Problem Overview: An elegant number theory problem requiring finding optimal dimensions that satisfy a specific area constraint with exponential growth.
+
+💡 The Approach: 🔍 Core Strategy: Iterative search with conditional reset
+
+📝 Solution Breakdown: 
+1️⃣ Input Reading: Parse value n 
+2️⃣ Initialization: Set a = 1 (starting dimension) 
+3️⃣ Iteration Range: Loop for i in range(1, int(n**0.5)+1) 
+4️⃣ Modulo Check: If n % i == 0:
+Reset dimension: a = i 
+5️⃣ Division Calculation: Compute b = n // a 
+6️⃣ Output Result: Print pair (a, b)
+
+🧮 Key Algorithmic Insights:
+Square Root Bound: Iterate up to √n for efficiency
+Divisibility Check: n % i == 0 identifies factors
+Last Update Strategy: a = i keeps updating to largest valid factor ≤ √n
+Complementary Pair: b = n // a gives the paired dimension
+Minimizing Difference: This approach finds the pair closest to square root
+O(√n) Complexity: Optimal iteration range
+
+⚡ Performance Metrics:
+Test 1: 31ms, 0KB ⚡
+Test 2: 15ms, 0KB
+Test 3: 46ms, 0KB
+Ultra-fast with zero memory! 🚀
+
+🎓 Number Theory Elegance: This problem showcases efficient factor finding! By iterating to √n and keeping the last valid factor, we find dimensions with minimal difference—beautiful mathematics! 📊
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
