@@ -1,0 +1,35 @@
+🔤 Palindromic Supersequence - String Manipulation Excellence! 🔤
+
+Just solved "Palindromic Supersequence" from ICM Technex 2018 and Codeforces Round 463 (Div. 1 + Div. 2, combined) - Accepted! ✅
+
+🔗Problem Link: https://lnkd.in/gg9jv5RU
+
+🎯 Problem Overview: An elegant string construction problem requiring creation of the shortest palindromic string that contains a given string as a subsequence.
+
+💡 The Approach: 
+🔍 Core Strategy: String reversal with simple concatenation
+
+📝 Solution Breakdown: 
+1️⃣ Input Processing: Read string s with .strip() 
+2️⃣ Concatenation: Build s + s[::-1] 
+3️⃣ Output Result: Print the palindromic supersequence
+
+🧮 Key Algorithmic Insights:
+Reversal Operator: [::-1] creates reversed copy efficiently
+Palindrome Construction: Original + reverse guarantees palindrome
+Subsequence Property: Original string is trivially contained
+Optimal Length: 2n where n is original length
+No Iteration Needed: Direct O(n) string operations
+Memory Efficient: Single concatenation operation
+
+⚡ Performance Metrics:
+Test 1: 46ms, 0KB ⚡
+Test 2: 46ms, 0KB
+Test 3: 0ms, 0KB (Perfect!)
+Blazing fast with minimal memory! 🚀
+
+🎓 String Algorithm Beauty: This problem showcases elegant string manipulation! By appending the reverse, we create a palindrome that trivially contains the original as a subsequence. Sometimes the simplest solution is the most beautiful! 🎯
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
