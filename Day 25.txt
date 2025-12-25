@@ -1,0 +1,37 @@
+🎨 ASCII Art Contest - Sorting Logic Mastery! 🎨
+
+Just solved "ASCII Art Contest" from 2025 ICPC Asia Taichung Regional Contest (Unrated, Online Mirror, ICPC Rules, Preferably Teams) - Accepted! ✅
+
+🔗Problem Link: https://lnkd.in/gP5h4ybK
+
+🎯 Problem Overview: An intriguing sorting validation problem requiring analysis of ASCII value ordering to determine final outcomes.
+
+💡 The Approach: 
+🔍 Core Strategy: Sort and compare with index-based threshold checking
+
+📝 Solution Breakdown: 
+1️⃣ Input Parsing: Read g, c, l with map(int, input().split()) 
+2️⃣ Array Creation: Convert to list and sort: a = sorted([g, c, l]) 
+3️⃣ Threshold Check: If a[2] - a[0] >= 10:
+Print "check again" 
+4️⃣ Winner Determination: Else, print "final" with winner index: a[1]
+
+🧮 Key Algorithmic Insights:
+Sorting Strategy: Use sorted() for ascending order
+Range Calculation: a[2] - a[0] gives max spread
+Threshold Logic: >= 10 determines if range too wide
+Middle Element: a[1] is median after sorting
+Index-Based Access: Direct array indexing for efficiency
+O(1) Sorting: Only 3 elements to sort
+
+⚡ Performance Metrics:
+Test 1: 15ms, 0KB ⚡
+Test 2: 31ms, 0KB
+Test 3: 31ms, 0KB
+Ultra-fast with zero memory! 🚀
+
+🎓 Decision Logic: This problem showcases elegant threshold-based decision making. By sorting first, we simplify the range check and winner determination! 🏆
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
