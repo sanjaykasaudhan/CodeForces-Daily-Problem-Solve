@@ -1,0 +1,40 @@
+🐻 Bear and Game - Sequential Pattern Optimization! 🐻
+
+Just solved "Bear and Game" from Codeforces Round 351 (VK Cup 2016 Round 3, Div. 2 Edition) - Happy New Year! ✅
+
+🔗Problem Link: https://lnkd.in/gEDNMjVK
+
+🎯 Problem Overview: A clever sequential analysis problem requiring tracking of time intervals and threshold detection with early termination.
+
+💡 The Approach: 
+🔍 Core Strategy: Sequential scanning with gap detection and accumulation
+
+📝 Solution Breakdown: 
+1️⃣ Input Processing: Read count n and timing array t 
+2️⃣ Initialization: Set prev = 0, ans = 90 (default answer) 
+3️⃣ Sequential Loop: For each x in array t: 
+4️⃣ Gap Check: If x - prev > 15:
+Update answer: ans = prev + 15
+Break early 
+5️⃣ State Update: Set prev = x for next iteration 
+6️⃣ Fallback Logic: Else block handles final case: if 90 - prev > 15: ans = prev + 15 
+7️⃣ Output Result: Print final answer
+
+🧮 Key Algorithmic Insights:
+Gap Detection: x - prev > 15 identifies significant intervals
+Early Termination: Break as soon as threshold exceeded
+State Tracking: prev maintains last processed timestamp
+Boundary Handling: Final check against 90 for edge case
+Greedy Approach: First violation determines answer
+O(n) Time Complexity: Single pass through array
+
+⚡ Performance Metrics:
+Test 1: 46ms, 12KB
+Test 2: 31ms, 0KB ⚡
+Efficient sequential processing! 🚀
+
+🎓 Pattern Recognition: This problem demonstrates elegant gap detection in sequential data. By tracking intervals and breaking early, we find the optimal stopping point! ⏱️
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
