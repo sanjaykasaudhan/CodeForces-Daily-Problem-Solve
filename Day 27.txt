@@ -1,0 +1,36 @@
+🌊 Arpa and Research in Mexican Wave - Formula Mastery! 🌊
+
+Just solved "Arpa and a research in Mexican wave" from Codeforces Round 432 (Div. 2, based on IndiaHacks Final Round 2017) - Happy New Year! ✅
+
+🔗Problem Link: https://lnkd.in/gSrKibDs
+
+🎯 Problem Overview: An elegant mathematical problem requiring position calculation in a wave pattern with formula optimization.
+
+💡 The Approach: 
+🔍 Core Strategy: Direct mathematical formula with min function
+
+📝 Solution Breakdown: 
+1️⃣ Input Parsing: Read three values with map(int, input().split()) 
+2️⃣ Variable Assignment: Destructure into n, k, t 
+3️⃣ Formula Application: print(min(min(t, k), n + k - t)) 
+4️⃣ Single-Line Solution: Compute result with nested min functions
+
+🧮 Key Mathematical Insights:
+Three-Way Comparison: Need minimum of three expressions
+Rising Phase: t represents time/position
+Peak Constraint: k is the maximum height
+Falling Phase: n + k - t represents descent calculation
+Nested Min: min(min(a, b), c) finds three-way minimum
+O(1) Complexity: Constant time calculation!
+
+⚡ Performance Metrics:
+Test 1: 15ms, 0KB ⚡
+Test 2: 62ms, 0KB
+Test 3: 31ms, 0KB
+Ultra-fast with zero memory! 🚀
+
+🎓 Mathematical Elegance: This problem showcases beautiful formula derivation! Understanding the wave pattern's rise-peak-fall structure leads to a single elegant expression. 📐
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
