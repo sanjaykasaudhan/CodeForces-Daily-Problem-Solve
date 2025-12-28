@@ -1,0 +1,40 @@
+🎯 DZY Loves Hash - Collision Detection Mastery! 🎯
+
+Just solved "DZY Loves Hash" from Codeforces Round hashtag#FF (Div. 2) - Happy New Year! ✅
+
+🔗Problem Link: https://lnkd.in/gP4fVzqi
+
+🎯 Problem Overview: A classic hash table collision detection problem requiring set-based tracking and modulo operations.
+
+💡 The Approach: 
+🔍 Core Strategy: Hash collision detection with set membership testing
+
+📝 Solution Breakdown: 
+1️⃣ Input Parsing: Read p, n with map(int, input().split()) 
+2️⃣ Set Initialization: Create empty set used = set() 
+3️⃣ Iteration Loop: Process n+1 numbers 
+4️⃣ Hash Calculation: Compute h = x % p (modulo operation) 
+5️⃣ Collision Check: If h in used:
+Print position i (1-indexed)
+Break immediately 
+6️⃣ Set Update: Add h to used set: used.add(h) 
+7️⃣ No Collision: Else block prints -1
+
+🧮 Key Algorithmic Insights:
+Modulo Operation: x % p computes hash bucket
+Set Membership: O(1) average collision detection
+Early Termination: Break on first collision
+1-Indexed Output: Report position starting from 1
+Space Efficiency: Set stores only hash values, not original numbers
+O(n) Time Complexity: Single pass with constant-time operations
+
+⚡ Performance Metrics:
+Test 1: 15ms, 0KB ⚡
+Test 2: 46ms, 0KB
+Ultra-fast collision detection! 🚀
+
+🎓 Hash Table Fundamentals: This problem demonstrates core hash table concepts—collision detection through bucket tracking. Understanding modulo arithmetic and set operations is key! 🔑
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
