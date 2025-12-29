@@ -1,0 +1,35 @@
+✂️ Splits - Integer Division Mastery! ✂️
+
+Just solved "Splits" from Tinkoff Internship Warmup Round 2018 and Codeforces Round 475 (Div. 2) - Happy New Year! ✅
+
+🔗Problem Link: https://lnkd.in/g8GQVMtG
+
+🎯 Problem Overview: An elegant mathematical problem requiring calculation of splitting patterns using floor division.
+
+💡 The Approach: 
+🔍 Core Strategy: Direct mathematical formula with floor division
+
+📝 Solution Breakdown: 
+1️⃣ Input Reading: Parse value n with int(input()) 
+2️⃣ Formula Application: print(n // 2 + 1) 
+3️⃣ Single-Line Solution: Complete problem solved in one expression!
+
+🧮 Key Mathematical Insights:
+Floor Division: // operator for integer division
+Pattern Recognition: Result is half of input plus one
+Even/Odd Handling: Floor division naturally handles both cases
+Addition Operator: + 1 adjusts the formula
+O(1) Complexity: Constant time calculation!
+No Conditionals: Direct formula works for all inputs
+
+⚡ Performance Metrics:
+Test 1: 31ms, 0KB ⚡
+Test 2: 46ms, 4KB
+Test 3: 31ms, 0KB
+Ultra-fast with minimal memory! 🚀
+
+🎓 Mathematical Beauty: This problem showcases the elegance of mathematical insight! By recognizing the pattern, we transform a potentially complex problem into a single formula. Pure mathematical thinking! 🎯
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
