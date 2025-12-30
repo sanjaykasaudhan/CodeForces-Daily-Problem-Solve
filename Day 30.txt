@@ -1,0 +1,37 @@
+✈️ Paper Airplanes - Ceiling Division Excellence! ✈️
+
+Just solved "Paper Airplanes" from Codeforces Round 476 (Div. 2) [Thanks, Telegram!] - Happy New Year! ✅
+
+🔗Problem Link: https://lnkd.in/gz7S_aWn
+
+🎯 Problem Overview: A practical division problem requiring calculation of resources needed with ceiling division logic and multiplication.
+
+💡 The Approach: 
+🔍 Core Strategy: Ceiling division using math.ceil for resource allocation
+
+📝 Solution Breakdown: 
+1️⃣ Input Parsing: Read k, n, s, p with map(int, input().split()) 
+2️⃣ Math Import: Use import math for ceiling function 
+3️⃣ Per-Person Calculation: sheets_per_person = math.ceil(n / s) 
+4️⃣ Total Sheets: total_sheets = sheets_per_person * k 
+5️⃣ Final Division: print(math.ceil(total_sheets / p))
+
+🧮 Key Algorithmic Insights:
+Ceiling Function: math.ceil() rounds up to ensure sufficient resources
+Two-Stage Calculation: First per-person, then per-packet
+Resource Allocation: Always round up to avoid shortages
+Multiplication: Scale individual needs by group size
+Nested Division: Handle both distributions with ceiling
+O(1) Complexity: Direct mathematical computation
+
+⚡ Performance Metrics:
+Test 1: 31ms, 0KB ⚡
+Test 2: 31ms, 28KB
+Test 3: 31ms, 0KB
+Consistent performance! 🚀
+
+🎓 Real-World Math: This problem demonstrates practical resource planning! Ceiling division ensures we never underestimate needs—crucial for inventory management and logistics. 📦
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
