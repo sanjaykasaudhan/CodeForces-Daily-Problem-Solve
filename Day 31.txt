@@ -1,0 +1,37 @@
+🎯 Accumulation of Dominoes - Mathematical Pattern Recognition! 🎯
+
+Just solved "Accumulation of Dominoes" from COMPFEST 14 - Preliminary Online Mirror (Unrated, ICPC Rules, Teams Preferred) - Happy New Year! ✅
+
+🔗Problem Link: https://lnkd.in/gau2M3_Z
+
+🎯 Problem Overview: An elegant combinatorial problem requiring identification of accumulation patterns with mathematical formula derivation.
+
+💡 The Approach: 
+🔍 Core Strategy: Direct formula application with conditional adjustment
+
+📝 Solution Breakdown: 
+1️⃣ Input Parsing: Read N, M with map(int, input().split()) 
+2️⃣ Formula Calculation: ans = N * (M - 1) 
+3️⃣ Edge Case Check: If M == 1:
+Adjust: ans += N - 1 
+4️⃣ Output Result: Print final answer
+
+🧮 Key Mathematical Insights:
+Base Formula: N * (M - 1) captures primary pattern
+Special Case: When M == 1, add correction term N - 1
+Multiplication: Combines dimensions efficiently
+Conditional Logic: Single if-statement for edge case
+No Iteration: Direct O(1) calculation
+Pattern Recognition: Formula derived from combinatorial analysis
+
+⚡ Performance Metrics:
+Test 1: 31ms, 8KB
+Test 2: 31ms, 8KB
+Test 3: 46ms, 20KB
+Consistent O(1) performance! 🚀
+
+🎓 Combinatorial Thinking: This problem showcases beautiful pattern recognition! By understanding the accumulation structure, we derive a closed-form solution that handles all cases elegantly. 📐
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
