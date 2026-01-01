@@ -1,0 +1,38 @@
+📝 Text Volume - String Processing Excellence! 📝
+
+Just solved "Text Volume" from Educational Codeforces Round 26 - Happy New Year! ✅
+
+🔗Problem Link: https://lnkd.in/gnngsi8Q
+
+🎯 Problem Overview: An elegant string analysis problem requiring counting of uppercase letters across multiple words with generator expression optimization.
+
+💡 The Approach: 
+🔍 Core Strategy: Nested generator expression with conditional counting
+
+📝 Solution Breakdown: 
+1️⃣ Input Processing: Read count n and split text: s = input().split() 
+2️⃣ Nested Comprehension: print(max(sum(1 for c in w if c.isupper()) for w in s)) 
+3️⃣ Character Filtering: Use .isupper() to identify uppercase letters 
+4️⃣ Word Iteration: Process each word independently 
+5️⃣ Maximum Selection: Find word with most uppercase letters
+
+🧮 Key Algorithmic Insights:
+Generator Expression: Memory-efficient with for c in w if c.isupper()
+Conditional Counting: sum(1 for ...) counts matching characters
+Nested Iteration: Inner loop for characters, outer for words
+Max Function: Find maximum across all word counts
+Split Method: Automatically handles whitespace-separated words
+O(total_characters) 
+Complexity: Single pass through all text
+
+⚡ Performance Metrics:
+Test 1: 46ms, 12KB
+Test 2: 31ms, 44KB
+Test 3: 15ms, 20KB
+Excellent efficiency! 🚀
+
+🎓 Pythonic Elegance: This problem showcases Python's expressive power—complex nested logic compressed into a single elegant line using generator expressions! 💡
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
