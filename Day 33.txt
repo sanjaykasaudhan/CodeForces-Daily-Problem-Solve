@@ -1,0 +1,36 @@
+☕ Sereja and Mugs - Greedy Sum Optimization! ☕
+
+Just solved "Sereja and Mugs" from Codeforces Round 243 (Div. 2) - Happy New Year! ✅
+
+🔗Problem Link: https://lnkd.in/gHN-h4mc
+
+🎯 Problem Overview: An elegant optimization problem requiring decision-making based on sum comparison and capacity constraints.
+
+💡 The Approach: 
+🔍 Core Strategy: Sum-to-max comparison with ternary operator
+
+📝 Solution Breakdown: 
+1️⃣ Input Parsing: Read n, s and array a 
+2️⃣ Sum Calculation: Compute sum(a) for total 
+3️⃣ Maximum Detection: Find max(a) for largest element 
+4️⃣ Comparison Logic: print("YES" if sum(a) - max(a) <= s else "NO")
+
+🧮 Key Algorithmic Insights:
+Greedy Strategy: Remove maximum and check remaining sum
+Capacity Test: Compare sum - max against threshold s
+Ternary Operator: Compact if-else using conditional expression
+Built-in Functions: Leverage sum() and max() for efficiency
+O(n) Time Complexity: Two linear scans (sum and max)
+Single-Line Output: Direct boolean to string conversion
+
+⚡ Performance Metrics:
+Test 1: 46ms, 0KB ⚡
+Test 2: 15ms, 0KB
+Test 3: 46ms, 0KB
+Ultra-fast with zero memory! 🚀
+
+🎓 Optimization Insight: This problem demonstrates greedy thinking—by removing the largest element, we maximize our chances of fitting the rest! Beautiful mathematical reasoning. 🎯
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
