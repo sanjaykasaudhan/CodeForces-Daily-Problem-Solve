@@ -1,0 +1,38 @@
+⌨️ Broken Keyboard - Pattern Validation Excellence! ⌨️
+
+Just solved "Broken Keyboard" from 2022-2023 ICPC, NERC, Southern and Volga Russian Regional Contest (Online Mirror, ICPC Rules, Preferably Teams) - Happy New Year! ✅
+
+🔗Problem Link: https://lnkd.in/ggpRQXkQ
+
+🎯 Problem Overview: A sophisticated string analysis problem requiring detection of typing patterns with state machine logic and boundary checking.
+
+💡 The Approach: 
+🔍 Core Strategy: Sequential scanning with press count tracking and validation
+
+📝 Solution Breakdown: 
+1️⃣ Test Case Loop: Process t test cases 
+2️⃣ Input Processing: Read length n and string s 
+3️⃣ State Initialization: Set i=0, press=1, ok=True 
+4️⃣ While Loop: Scan while i<n with press tracking 
+5️⃣ Pair Detection: If press%2==1, increment i 
+6️⃣ Validation Check: Test boundary and character matching 
+7️⃣ State Updates: Adjust counters based on conditions 
+8️⃣ Output Logic: Print "YES" or "NO" based on validation
+
+🧮 Key Algorithmic Insights:
+State Machine: Track position and press count simultaneously
+Modulo Logic: press%2==1 determines valid pairs
+Boundary Check: i+1>=n prevents index errors
+Character Comparison: s[i]!=s[i+1] validates pairing
+Early Termination: Break on first invalid pattern
+O(n) Time Complexity: Single pass through string
+
+⚡ Performance Metrics:
+Test 1: 31ms, 0KB ⚡
+Efficient pattern detection! 🚀
+
+🎓 String Pattern Recognition: This problem demonstrates elegant state tracking in sequential validation. The combination of position tracking and press counting enables robust pattern detection! 🎯
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
