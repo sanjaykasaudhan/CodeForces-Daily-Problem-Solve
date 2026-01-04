@@ -1,0 +1,43 @@
+🔢 Four Segments - Geometric Optimization! 🔢
+
+Just solved "Four Segments" from 2020-2021 ICPC, NERC, Southern and Volga Russian Regional Contest (Online Mirror, ICPC Rules) - Happy New Year! ✅
+
+🔗Problem Link: https://lnkd.in/gCQAxuXE
+
+🎯 Problem Overview: A sophisticated geometric problem requiring optimal segment selection and area maximization through coordinate manipulation.
+
+💡 The Approach: 
+🔍 Core Strategy: Sorting with min-max coordinate extraction
+
+📝 Solution Breakdown: 
+1️⃣ Test Case Loop: Process t test cases 
+2️⃣ Array Input: Read and sort 4 coordinates 
+3️⃣ X-Axis Optimization:
+x1 = min(a[0], a[1])
+y1 = min(a[2], a[3]) 
+4️⃣ Y-Axis Optimization:
+x2 = min(a[0], a[2])
+y2 = min(a[1], a[3]) 
+5️⃣ Alternative Pairing:
+x3 = min(a[0], a[3])
+y3 = min(a[1], a[2]) 
+6️⃣ Maximum Area: print(max(x1*y1, x2*y2, x3*y3))
+
+🧮 Key Algorithmic Insights:
+Sorting Strategy: Ordered coordinates simplify pairing
+Three Configurations: Try all valid pairings
+Min Function: Ensures non-negative dimensions
+Area Calculation: Product of two dimensions
+Max Selection: Choose optimal configuration
+O(1) After Sort: Constant time operations post-sorting
+
+⚡ Performance Metrics:
+Test 1: 46ms, 4KB
+Test 2: 140ms, 0KB
+Efficient geometric optimization! 🚀
+
+🎓 Geometric Reasoning: This problem demonstrates exhaustive configuration testing! By trying all valid pairings and choosing maximum, we find optimal area. Beautiful combinatorial geometry! 📐
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
