@@ -1,0 +1,45 @@
+🎯 Problem Solved on Codeforces – “Ball Game” (AC ✅) ⚽💻
+
+Happy to share that I successfully solved Problem A – Ball Game from
+ Codeforces Beta Round 43 (ACM-ICPC Rules) 🏆
+
+🔗Problem Link: https://lnkd.in/gZs_DegG
+
+🧠 Problem Understanding
+In this game:
+There are n children standing in a circle
+Child 1 starts with the ball
+The ball is passed by skipping increasing steps:
+First pass → skip 1 child
+Second pass → skip 2 children
+… and so on
+We need to print the order of children who receive the ball, without repetition.
+
+🔍 Approach & Logic
+✔️ The problem is solved using modular arithmetic to simulate circular movement.
+Step-by-step approach:
+Start from position cur = 1
+For each step i from 1 to n-1:
+Move forward by i positions using (cur + i) % n
+If the result becomes 0, treat it as n (since children are numbered from 1 to n)
+Store each visited position in a list
+Print the final sequence
+This approach ensures:
+✅ No extra space usage
+✅ Efficient simulation of circular traversal
+✅ Time complexity O(n)
+
+🧪 Sample Result
+For n = 10
+
+ ➡️ Output: 2 4 7 1 6 2 9 7 6
+ (All validations passed ✔️)
+
+💡 Key Takeaway:
+ Simple math + modulo logic can efficiently solve circular traversal problems. These concepts are very common in competitive programming and interview questions.
+
+🚀 Consistently practicing problems like this sharpens problem-solving and logical thinking.
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
