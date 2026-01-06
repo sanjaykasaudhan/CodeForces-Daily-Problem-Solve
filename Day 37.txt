@@ -1,0 +1,47 @@
+🚀 Codeforces Problem Solved – “Elevator or Stairs?” (AC ✅) 🏢🪜
+
+Glad to share another Accepted solution on Codeforces 🎉
+ This time, it’s Problem A – Elevator or Stairs? from
+ Mail.Ru Cup 2018 Round 1 🏆
+
+🔗Problem Link: https://lnkd.in/gxvNUHWM
+
+🧠 Problem Insight
+Given:
+Starting floor x
+Destination floor y
+Elevator starting floor z
+Time to move 1 floor by stairs t1
+Elevator moving time per floor t2
+Elevator door open/close time t3
+👉 The task is to decide whether using the elevator is faster than taking the stairs.
+
+🔍 Solution Approach
+We simply calculate total time for both options and compare:
+🪜 Stair Time
+Time required =
+ |x − y| × t1
+
+🏢 Elevator Time
+Elevator first comes from z to x
+Then goes from x to y
+Includes door open & close time
+Time required =
+ |z − x| × t2 + |x − y| × t2 + 3 × t3
+✅ Decision Logic
+If Elevator Time ≤ Stair Time → print "YES"
+Else → print "NO"
+
+This direct comparison ensures:
+⚡ Constant time complexity O(1)
+🎯 Accurate decision-making
+🧠 Clean and readable logic
+
+💡 Key Learning
+Sometimes, problem-solving is about modeling real-life scenarios mathematically rather than complex algorithms. Small problems like these sharpen logical thinking and speed 💪
+
+📈 Staying consistent with Codeforces practice to strengthen fundamentals and competitive programming skills.
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
