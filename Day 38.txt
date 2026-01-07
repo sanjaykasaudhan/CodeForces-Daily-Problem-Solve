@@ -1,0 +1,44 @@
+🚀 Accepted on Codeforces – Problem “Ashmal” (Global Round 31) ✅
+
+Happy to share another AC solution from
+ Codeforces Global Round 31 (Div. 1 + Div. 2) 🏆
+
+🔗Problem Link: https://lnkd.in/gqtdYt9v
+
+🧠 Problem Summary
+We are given a list of strings and an initially empty string s.
+ For each string:
+We can add it either to the left or to the right of s
+Our goal is to build the lexicographically smallest possible string
+
+🔍 Approach & Logic
+This problem is solved using a greedy comparison strategy:
+Step-by-step:
+Start with an empty string s
+Iterate through each string x:
+If s is empty → assign s = x
+Otherwise:
+Compare two possibilities:
+x + s (adding to the front)
+s + x (adding to the end)
+Choose the lexicographically smaller of the two
+This works because:
+At every step, we make the locally optimal choice
+Lexicographical comparison ensures the global minimum result
+No backtracking is required
+
+⚙️ Complexity
+Time Complexity: O(n · k), where k is average string length
+Space Complexity: O(k) for the resulting string
+
+💡 Key Learning
+This problem is a great example of how:
+Greedy decisions + string comparison can lead to optimal solutions
+Thinking about both directions (left & right insertion) is crucial
+Clean logic often beats complex data structures ✨
+
+📈 Staying consistent with Codeforces is helping me strengthen my problem-solving mindset and algorithmic thinking.
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
