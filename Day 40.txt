@@ -1,0 +1,31 @@
+🎅 Santa Claus and Classroom Seating - A Fun New Year Coding Challenge! 🎄
+
+Just solved an interesting problem from Technocup 2017 - Elimination Round 3 on CodeForces!
+
+🔗Problem Link: https://lnkd.in/g8fStdan
+
+🎯 The Problem: Arrange students in a classroom with n rows, m columns, where some seats are already occupied. Determine if Santa (remainder student) sits on the Left or Right side of the desk!
+
+💭 My Approach:
+1️⃣ Calculate Layout 📐
+Total lanes: (k-1) ÷ (2*m) + 1
+Remainder students: (k-1) % (2*m)
+Desk position: rem ÷ 2 + 1
+2️⃣ Determine Side 🪑
+Used modulo arithmetic to check if rem % 2 == 0
+If zero → 'L' (Left side)
+If non-zero → 'R' (Right side)
+3️⃣ Output Results ✅Lane number, Desk number, and Side
+
+🔑 Key Insight: The trick was understanding the seating pattern - desks fill left-to-right, and using integer division with modulo operations elegantly maps any student position to their exact seat! 🧮
+
+⚡ Performance: 
+✅ All test cases passed 
+🚀 Ultra-fast: 15-31 ms execution 
+💾 Memory efficient: 0-4 KB
+
+Sometimes the most elegant solutions come from understanding the pattern rather than brute force! 💡
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
