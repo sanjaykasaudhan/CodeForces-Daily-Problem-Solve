@@ -1,0 +1,33 @@
+✨ Finding Beauty in Numbers - A Simple Yet Elegant Solution! 🎯
+
+Just cracked the "Beautiful Average" problem from Codeforces Round 1059 (Div. 3) - proof that sometimes the simplest approach is the most beautiful!
+
+🔗Problem Link: https://lnkd.in/gmni8-6m
+
+🎨 The Challenge: Given multiple arrays of numbers, find the maximum value from each array - a test of clean code and efficient thinking!
+
+💡 My Approach:
+Simple & Elegant 🌟
+1️⃣ Read number of test cases (t)
+2️⃣ For each test case:
+ - Read array size (n)
+ - Read the array elements
+ - Print the maximum value
+
+🔑 Key Insight: Sometimes competitive programming isn't about complex algorithms - it's about recognizing patterns and implementing clean, efficient solutions. Using Python's built-in max() function made this a breeze! 🍃
+Why I Love This Problem:
+Tests fundamental understanding ✅
+Emphasizes code clarity 📝
+Proves that optimization matters 🚀
+
+⚡ Performance Metrics: 
+✅ All test cases passed 
+🏃 Lightning fast: 15-93 ms 
+💾 Memory efficient: 0-36 KB 
+🎯 Clean, readable code
+
+The "Beautiful Average" in coding is finding the sweet spot between simplicity and efficiency! 💯
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
