@@ -1,0 +1,36 @@
+💻 System Administrator: LIVE or DEAD? 🖥️
+
+Just solved an interesting problem from CROC-MBTU 2012, Elimination Round (ACM-ICPC) - a creative take on system monitoring!
+
+🔗Problem Link: https://lnkd.in/gdmXhtDk
+
+🎯 The Problem: Monitor multiple servers and determine if they're "LIVE" or "DEAD" based on activity thresholds within a specific time window.
+
+💡 My Solution Approach:
+1️⃣ Initialize Counters 📊
+Set sa, sb, ta, tb = 0
+Track both server states independently
+2️⃣ Process Each Time Event ⏰
+Read time t and server activity x, y
+Check if t == 1 (first event)
+3️⃣ Smart State Management 🔄
+For Server A: sa += x, ta = 10
+For Server B: sb += x, tb = 10
+Accumulate activity over time windows
+4️⃣ Apply Threshold Logic ✅
+If sa >= ta → "LIVE", else → "DEAD"
+If sb >= tb → "LIVE", else → "DEAD"
+
+🔑 Key Insight: The solution hinges on maintaining running totals and comparing against threshold values. It simulates real-world server monitoring where we track activity patterns to determine system health! 🏥
+
+⚡ Performance: 
+✅ All test cases passed 
+🚀 Execution: 62-156 ms 
+💾 Memory: 0-32 KB 
+🎯 Clean conditional logic
+
+This problem beautifully demonstrates how coding skills translate to real IT infrastructure management! 💼
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
