@@ -1,0 +1,38 @@
+♟️The King's Race: A Chess-Inspired Coding Challenge! 👑
+
+Just solved "The King's Race" from Lyft Level 5 Challenge 2018 - Final Round! A beautiful problem that combines chess strategy with mathematical thinking. ♟️
+
+🔗Problem Link: https://lnkd.in/gX4iK4ti
+
+🎯 The Problem: Two kings race diagonally across a chessboard to reach position (n, n). Determine which king (White or Black) reaches the destination first based on their starting positions!
+
+💡 My Strategic Approach:
+1️⃣ Input & Parsing 📥
+Read board size n and positions x, y
+2️⃣ Calculate Distances 📏
+White King's distance: dw = max(x-1, y-1)
+Black King's distance: db = max(n-x, n-y)
+3️⃣ Distance Comparison Logic 🎲
+Used max() to find diagonal distance
+Diagonal movement is optimal in chess!
+4️⃣ Winner Determination 🏆
+
+python
+if dw < db:
+ print("White")
+else:
+ print("Black")
+
+🔑 Key Insight: The solution leverages the chess principle that diagonal movement is the fastest path! By calculating the maximum of horizontal and vertical distances, we determine how many moves each king needs. The beauty lies in recognizing that max(dx, dy) gives us the exact number of diagonal moves required! 🎯
+
+⚡ Performance: 
+✅ All test cases passed 
+⚡ Lightning fast: 31-46 ms 
+💾 Super efficient: 0-32 KB 
+♟️ Elegant chess logic
+
+Sometimes the best solutions come from understanding the domain - in this case, how chess pieces actually move! 🧠
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
