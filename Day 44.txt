@@ -1,0 +1,47 @@
+🔬 Okabe and Future Gadget Laboratory - A Matrix Pattern Challenge! 🧪
+
+Just solved an intriguing problem from Codeforces Round 420 (Div. 2) that tests pattern recognition and nested loop mastery!
+
+🔗Problem Link: https://lnkd.in/g_KbbKfA
+
+🎯 The Problem: Given an n×n matrix, determine if every element can be expressed as the sum of two or more other elements from its row and column. A true test of computational thinking! 🧮
+
+💡 My Solution Strategy:
+1️⃣ Matrix Input & Initialization 📊
+python
+n = int(input())
+a = [list(map(int, input().split())) for _ in range(n)]
+2️⃣ Triple Nested Loop Validation 🔄
+Outer loop: iterate through rows (i)
+Middle loop: iterate through columns (j)
+Check if a[i][j] == 1 → special case!
+3️⃣ Pattern Matching Logic 🎯
+python
+for s in range(n):
+ if s != j:
+ for t in range(n):
+ if t != i and a[i][s] + a[t][j] == a[i][j]:
+ ok = True
+ break
+4️⃣ Early Exit Optimization ⚡
+Use break statements to exit early when pattern found
+If no valid pattern exists → print "No" and exit
+All elements valid → print "Yes"
+
+🔑 Key Insights:
+Element value of 1 is impossible to form (can't be sum of positives)
+For each cell, we check ALL possible row+column combinations
+The nested loop structure efficiently explores the solution space
+Early termination saves computation time! 🚀
+
+⚡ Performance: 
+✅ All test cases passed 
+🏃 Execution: 31 ms 
+💾 Memory: 4-24 KB 
+🎯 Optimized with break statements
+
+This problem beautifully demonstrates how algorithmic thinking translates to real-world pattern validation scenarios! 💼
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
