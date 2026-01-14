@@ -1,0 +1,42 @@
+🎉 Accepted on Codeforces – “Slime Combining” (AC ✅)
+
+Happy to share another successful submission on Codeforces 🚀
+ Solved Problem A – Slime Combining from
+ Wunder Fund Round 2016 (Div. 1 + Div. 2 combined) 🏆
+
+🔗Problem Link: https://lnkd.in/gU7FDajn
+
+🧠 Problem Intuition
+Slimes behave in a way similar to binary carry operations:
+Each new slime starts with value 1
+If the top of the stack has the same value, they combine
+The combined slime increases its value by 1
+This process continues until no two adjacent slimes are equal
+
+🔍 Solution Approach
+We use a stack to efficiently simulate the combining process:
+Steps:
+Initialize an empty stack
+For each slime:
+Start with value v = 1
+While the stack is not empty and the top equals v:
+Pop the top
+Increment v
+Push the updated value back into the stack
+Print the final stack configuration
+
+⚙️ Complexity Analysis
+Time Complexity: O(n) (each slime is pushed and popped at most once)
+Space Complexity: O(n) for the stack
+
+💡 Key Learning
+This problem highlights how:
+Stacks are powerful for handling repeated merging scenarios
+Many problems can be mapped to binary-like merging logic
+Simple data structures can solve problems efficiently ✨
+
+📈 Staying consistent with Codeforces to sharpen my algorithmic thinking and problem-solving skills.
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
