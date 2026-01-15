@@ -1,0 +1,39 @@
+🎨 Accepted on Codeforces – “Little Fairy’s Painting” (AC ✅)
+
+Happy to share another successful submission on Codeforces 🚀
+ Solved Problem A – Little Fairy’s Painting from
+ Codeforces Round 1069 (Div. 2) 🏆
+
+🔗Problem Link: https://lnkd.in/gDttZzQe
+
+🧠 Problem Insight
+Given a list of colors (numbers), the task is to determine the minimum number of colors required such that:
+All existing colors are included
+Any missing color starting from 0 is filled sequentially
+In simpler terms, we need to find the MEX (Minimum Excluded Number) of the array.
+
+🔍 Solution Approach
+The idea is straightforward and efficient:
+Convert the list into a set to remove duplicates
+Start checking from d = size of the set
+While d exists in the set:
+Add it to the set
+Increment d
+The first value of d not found in the set is the answer
+This guarantees we find the smallest missing non-negative integer.
+
+⚙️ Complexity Analysis
+Time Complexity: O(n)
+Space Complexity: O(n)
+
+💡 Key Learning
+This problem reinforces how:
+Sets enable fast lookups
+Knowing common concepts like MEX helps solve problems quickly
+Simple logic can lead to elegant solutions ✨
+
+📈 Consistently practicing on Codeforces to strengthen DSA fundamentals and problem-solving skills.
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
