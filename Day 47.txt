@@ -1,0 +1,48 @@
+🏗️ Accepted on Codeforces – “Zoning Restrictions Again” (AC ✅)
+Happy to share another Accepted solution on Codeforces 🚀
+
+ Solved Problem A – Zoning Restrictions Again from
+ Codeforces Round 557 (Div. 2)
+ (based on Forethought Future Cup – Final Round) 🏆
+
+🔗Problem Link: https://lnkd.in/gVuptBA7
+
+🧠 Problem Understanding
+We are given:
+n zones with an initial height limit h
+m restrictions of the form (l, r, x)
+Meaning: zones from l to r must have height ≤ x
+
+🎯 Goal:
+ Apply all restrictions and compute the sum of squares of the final height limits.
+
+🔍 Approach & Logic
+The solution uses a greedy and direct simulation:
+Initialize an array limits of size n with all values set to h
+For each restriction (l, r, x):
+Iterate from l-1 to r-1
+Update:
+ limits[i] = min(limits[i], x)
+After applying all constraints:
+Compute the answer as
+∑limits[i]2\sum limits[i]^2∑limits[i]2
+This works because:
+Each restriction only tightens the height limit
+Applying the minimum constraint greedily ensures correctness
+
+⚙️ Complexity
+Time Complexity: O(n × m)
+Space Complexity: O(n)
+(Constraints are small enough for direct iteration to pass efficiently)
+
+💡 Key Takeaway
+This problem reinforces:
+How range constraints can be handled with simple loops
+The importance of reading constraints carefully
+Sometimes the simplest approach is the best ✨
+
+📈 Continuing my journey of consistent practice on Codeforces to strengthen DSA fundamentals and problem-solving skills.
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
