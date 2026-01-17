@@ -1,0 +1,40 @@
+📅 Accepted on Codeforces – “Petr and a Calendar” (AC ✅)
+
+Happy to share another Accepted submission on Codeforces 🚀
+ Solved Problem A – Petr and a Calendar from
+ Codeforces Round 393 (Div. 2)
+ (8VC Venture Cup 2017 – Final Round Div. 2 Edition) 🏆
+
+🔗Problem Link: https://lnkd.in/gXwWWbrc
+
+🧠 Problem Understanding
+Given:
+A month m
+A day d (starting weekday offset)
+We need to determine how many weeks are required to display that month on a calendar.
+
+🔍 Solution Approach
+The idea is to compute how many days are occupied in the calendar grid:
+Store the number of days in each month
+Compute total occupied cells as:
+total=days[m−1]+(d−1)\text{total} = \text{days}[m-1] + (d - 1)total=days[m−1]+(d−1)
+Since a week has 7 days, compute:
+weeks=⌈total7⌉\text{weeks} = \left\lceil \frac{\text{total}}{7} \right\rceilweeks=⌈7total​⌉
+In code, ceiling division is achieved using:
+ (total + 6) // 7
+
+⚙️ Complexity
+Time Complexity: O(1)
+Space Complexity: O(1)
+
+💡 Key Takeaway
+This problem shows how:
+Careful interpretation of the calendar layout matters
+Mathematical tricks like ceiling division simplify solutions
+Even simple problems reinforce important fundamentals ✨
+
+📈 Continuing consistent practice on Codeforces to sharpen logical thinking and problem-solving skills.
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
