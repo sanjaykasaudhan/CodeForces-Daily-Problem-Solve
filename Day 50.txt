@@ -1,0 +1,43 @@
+🎉 Codeforces AC | Good Matrix Elements (A2) ✅
+Another problem successfully solved on Codeforces 🚀
+ Contest: ABBYY Cup 2.0 – Easy
+ Problem: A2 – Good Matrix Elements
+ Verdict: Accepted ✅
+
+🔗Problem Link: https://lnkd.in/gR2Mu76F
+
+🧠 Problem Insight
+We are given an n × n matrix and need to calculate the sum of “good” elements.
+👉 An element is considered good if it lies on:
+Main diagonal
+Secondary diagonal
+Middle row
+Middle column
+(Only valid for odd n)
+
+💡 Approach
+Read the matrix input
+Compute mid = n // 2
+Traverse each cell (i, j)
+Add a[i][j] if any one of the following holds:
+i == j (main diagonal)
+i + j == n - 1 (secondary diagonal)
+i == mid (middle row)
+j == mid (middle column)
+✔️ This ensures each valid element is counted once
+
+⚙️ Complexity
+Time Complexity: O(n²)
+Space Complexity: O(1) (excluding input storage)
+
+📌 Key Takeaway
+This problem strengthens:
+Matrix traversal logic
+Index-based condition checking
+Clean implementation using basic control structures
+Consistency is the key 🔥
+ Onward with daily problem solving and improving fundamentals 💻📈
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
