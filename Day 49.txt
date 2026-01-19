@@ -1,0 +1,42 @@
+🧩 Accepted on Codeforces – “Forgotten Episode” (AC ✅)
+
+Happy to share another Accepted submission on Codeforces 🚀
+ Solved Problem A – Forgotten Episode from
+ Testing Round 10 🏆
+
+🔗Problem Link: https://lnkd.in/gzNx6GRm
+
+🧠 Problem Understanding
+We are given:
+A number n
+A list containing n-1 distinct integers from 1 to n
+
+🎯 Goal:
+ Find the missing number from the sequence.
+
+🔍 Solution Approach
+This problem is solved using a simple mathematical formula:
+The sum of first n natural numbers is:
+n(n+1)2\frac{n(n+1)}{2}2n(n+1)​
+Subtract the sum of the given array from this value
+The result is the missing episode number
+This approach is:
+⚡ Efficient
+🧠 Elegant
+🎯 Error-free
+
+⚙️ Complexity
+Time Complexity: O(n)
+Space Complexity: O(1)
+
+💡 Key Takeaway
+This problem highlights:
+The power of basic mathematics in problem-solving
+Why knowing formulas can simplify logic drastically
+How to avoid unnecessary loops or extra memory ✨
+
+📈 Staying consistent with Codeforces to strengthen fundamentals and problem-solving confidence.
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
