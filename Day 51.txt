@@ -1,0 +1,43 @@
+✅ Codeforces AC | Game Outcome (Problem A)
+Another Accepted solution on Codeforces 🚀
+
+ Contest: Codeforces Round 110 (Div. 2)
+ Problem: A – Game Outcome
+ Verdict: Accepted ✅
+ Language: Python
+
+🔗Problem Link: https://lnkd.in/gJnYTvnx
+
+🧠 Problem Summary
+Given an n × n matrix, we compare:
+Row sums
+Column sums
+
+🎯 Task:
+ Count how many pairs (i, j) satisfy:
+column_sum[j] > row_sum[i]
+
+💡 Approach
+Read the matrix
+Precompute:
+row[i] → sum of each row
+col[j] → sum of each column
+Use two nested loops to compare all (row, column) pairs
+Increment count whenever col[j] > row[i]
+✔️ Straightforward logic with clean implementation
+
+⚙️ Complexity
+Time Complexity: O(n²)
+Space Complexity: O(n)
+
+📌 Key Learning
+Precomputing values avoids redundant calculations
+Matrix problems often reduce to row vs column analysis
+Simple brute force works well when constraints are small
+
+Consistent practice is paying off 💪
+ On to the next problem 🔥
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
