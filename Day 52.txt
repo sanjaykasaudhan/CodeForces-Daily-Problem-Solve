@@ -1,0 +1,39 @@
+✅ Codeforces AC | Declined Finalists (Problem A)
+
+Another problem Accepted on Codeforces 🚀
+ Contest: MemSQL Start[c]UP 3.0 – Round 1
+ Problem: A – Declined Finalists
+ Verdict: Accepted ✅
+ Language: Python
+
+🔗Problem Link: https://lnkd.in/g6qMukPx
+
+🧠 Problem Insight
+Top 25 finalists are invited
+Given a list representing ranks of declined contestants
+Find how many invitations must be re-issued so that 25 finalists remain
+
+💡 Key Observation
+Only contestants with rank ≤ 25 affect the final count.
+So the answer is simply:
+max(0, highest_declined_rank − 25)
+✔️ Elegant logic
+ ✔️ One-pass solution
+ ✔️ Clean Python implementation
+
+⚙️ Complexity
+Time: O(n)
+Space: O(1)
+
+📌 Takeaway
+Many Codeforces Problem A questions test:
+Observation skills
+Edge cases
+Translating statements into minimal logic
+
+Consistency > Difficulty 💪
+ One more step forward in my daily problem-solving journey 🚀
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
