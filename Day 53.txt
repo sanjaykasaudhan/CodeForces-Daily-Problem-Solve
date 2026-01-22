@@ -1,0 +1,37 @@
+✅ Codeforces Accepted | LOL Lovers (Problem L)
+
+Solved another interesting string problem on Codeforces 🚀
+
+Contest: ICPC 2023–2024 NERC (Online Mirror)
+ Problem: L – LOL Lovers
+ Verdict: Accepted ✅
+ Language: Python
+
+🔗Problem Link: https://lnkd.in/g6QK5Hgi
+
+🧠 Problem Idea
+Given a string consisting of ‘L’ and ‘O’, we need to find the earliest split point such that:
+Number of L in prefix ≠ number of L in suffix
+Number of O in prefix ≠ number of O in suffix
+If no such split exists, return -1.
+
+💡 Approach
+Count total L and O
+Traverse the string while maintaining prefix counts
+Derive suffix counts using totals
+Stop at the first valid split
+✔️ One-pass logic
+ ✔️ Efficient prefix–suffix counting
+
+⚙️ Complexity
+Time: O(n)
+Space: O(1)
+📌 Takeaway
+ICPC problems often test logical clarity over heavy implementation.
+ This one was a great exercise in prefix–suffix reasoning 🔍
+
+Staying consistent with daily problem-solving 💪
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
