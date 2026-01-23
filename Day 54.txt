@@ -1,0 +1,37 @@
+✅ Codeforces Accepted | Data Center (Problem F)
+
+Happy to share another Accepted solution on Codeforces 🚀
+
+Contest: ICPC 2019–2020 NERC (Southern & Volga Regional, Online Mirror)
+ Problem: F – Data Center
+ Verdict: Accepted ✅
+ Language: Python
+
+🔗Problem Link: https://lnkd.in/g8x_tM3c
+
+🧠 Problem Insight
+Given an integer n, represent it as a rectangle with sides a × b = n.
+ The goal is to minimize the perimeter of the rectangle:
+Perimeter=2(a+b)\text{Perimeter} = 2(a + b)Perimeter=2(a+b)
+
+💡 Approach
+Iterate through all divisors i ≤ √n
+For each valid factor pair (i, n/i)
+Compute the perimeter and keep the minimum
+✔️ Efficient divisor traversal
+ ✔️ Mathematical optimization
+ ✔️ Clean brute-force within constraints
+
+⚙️ Complexity
+Time: O(√n)
+Space: O(1)
+
+📌 Takeaway
+Sometimes the simplest-looking problems hide a neat math + optimization trick.
+
+ ICPC-style questions really strengthen fundamental reasoning 🧩
+Staying consistent with daily practice 💪
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
