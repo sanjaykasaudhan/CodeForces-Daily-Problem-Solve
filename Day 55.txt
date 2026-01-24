@@ -1,0 +1,31 @@
+✅ Codeforces Accepted | Password Check (Problem A)
+
+Another problem successfully solved on Codeforces 🚀
+
+Contest: Coder-Strike 2014 – Qualification Round
+ Problem: A – Password Check
+ Verdict: Accepted ✅
+ Language: Python
+
+🔗Problem Link: https://lnkd.in/giYk52p5
+
+🔐 Problem Summary
+Validate a password based on simple security rules:
+Minimum length ≥ 5
+Contains uppercase, lowercase, and digit
+
+💡 Key Learnings
+Effective use of Python built-in string methods
+Writing clean and readable validation logic
+Importance of handling multiple constraints efficiently
+
+⚙️ Complexity
+Time: O(n)
+Space: O(1)
+
+Consistency beats motivation 💪
+ One problem at a time, improving logic and confidence in competitive programming.
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
