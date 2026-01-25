@@ -1,0 +1,28 @@
+🍬 Codeforces Accepted | Candies (Problem A)
+
+Continuing my daily problem-solving streak on Codeforces 🚀
+
+Contest: Testing Round 6
+ Problem: A – Candies
+ Verdict: Accepted ✅
+ Language: Python
+
+🔗Problem Link: https://lnkd.in/gGATtx5j
+
+🧠 Problem Insight
+The task focuses on fair distribution using:
+Integer division
+Remainder handling
+Constructing the result efficiently based on constraints
+A nice problem to reinforce basic math + logic implementation in competitive programming.
+
+⚙️ Complexity
+Time Complexity: O(1)
+Space Complexity: O(1)
+
+Small problems, strong foundations 💪
+ Staying consistent and sharpening problem-solving skills one day at a time.
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
