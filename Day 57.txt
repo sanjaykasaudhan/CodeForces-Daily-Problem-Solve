@@ -1,0 +1,27 @@
+🧹 Codeforces Accepted | Chores (Problem A)
+
+Another small win on Codeforces as I continue practicing consistently 🚀
+
+Contest: VK Cup 2012 – Round 2 (Unofficial Div. 2)
+ Problem: A – Chores
+ Verdict: Accepted ✅
+ Language: Python
+
+🔗Problem Link: https://lnkd.in/gMBniPjd
+
+🧠 What this problem focused on
+Sorting and understanding distribution logic
+Handling edge cases carefully
+Translating a simple real-life scenario into clean code
+Problems like these remind me that clarity in logic matters more than complexity.
+
+⚙️ Complexity
+Time: O(n log n) (due to sorting)
+Space: O(1)
+
+Consistency > Speed 💪
+ Solving one problem at a time and strengthening fundamentals in competitive programming.
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
