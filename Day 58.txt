@@ -1,0 +1,27 @@
+📰 Codeforces Accepted | Fake News (Easy)
+
+Another problem checked off on Codeforces as part of my daily practice 🔥
+
+Contest: Helvetic Coding Contest 2017 (Online Mirror)
+ Problem: G – Fake News (easy)
+ Verdict: Accepted ✅
+ Language: Python
+
+🔗Problem Link: https://lnkd.in/g7C3T3FH
+
+🧠 What this problem was about
+Checking whether a given string contains “heidi” as a subsequence
+Practicing two-pointer / greedy string traversal
+Reinforcing the idea that order matters, not continuity
+Simple logic, but very effective for sharpening string-handling skills.
+
+⚙️ Complexity
+Time Complexity: O(n)
+Space Complexity: O(1)
+
+Consistency is building confidence 💪
+ Showing up daily, solving problems, and learning something new every time.
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
