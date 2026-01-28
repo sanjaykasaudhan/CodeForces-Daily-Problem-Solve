@@ -1,0 +1,28 @@
+🏦 Codeforces Accepted | Bank Robbery (Problem A)
+
+Another problem successfully solved on Codeforces as part of my regular practice 💻🔥
+
+Contest: Tinkoff Challenge – Final Round (Codeforces Round 414)
+ Problem: A – Bank Robbery
+ Verdict: Accepted ✅
+ Language: Python
+
+🔗Problem Link: https://lnkd.in/gCzpSKqr
+
+🧠 Key takeaway
+This problem was a good exercise in:
+Careful input handling
+Applying simple conditional logic
+Focusing on correctness over complexity
+Sometimes the easiest-looking problems still test your attention to detail.
+
+⚙️ Complexity
+Time Complexity: O(n)
+Space Complexity: O(1)
+
+Slow progress is still progress 🚀
+ Showing up daily, solving problems, and improving step by step.
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
