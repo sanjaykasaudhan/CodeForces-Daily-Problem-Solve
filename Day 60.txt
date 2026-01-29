@@ -1,0 +1,28 @@
+🎯 Codeforces Accepted | Second-Price Auction (Problem A)
+
+Continuing my Codeforces problem-solving journey with another Accepted solution ✅
+
+Contest: Testing Round 9
+ Problem: A – Second-Price Auction
+ Verdict: Accepted
+ Language: Python 🐍
+
+🔗Problem Link: https://lnkd.in/gJJaMg7z
+
+🧠 What this problem reinforced
+Understanding the auction logic clearly before coding
+Finding the maximum bid and correctly determining the second highest price
+Writing clean and efficient logic for small constraints
+Even simple problems teach you how important clarity and precision are.
+
+⚙️ Solution highlights
+Used Python’s built-in functions for readability
+Straightforward approach with optimal performance
+Passed all test cases successfully 💯
+
+Consistency > Motivation 🚀
+ One problem at a time, getting better every day.
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
