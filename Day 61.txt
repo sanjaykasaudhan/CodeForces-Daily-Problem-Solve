@@ -1,0 +1,26 @@
+🚀 Codeforces Accepted | Bear and Reverse Radewoosh
+
+Another problem successfully solved on Codeforces ✅
+
+Contest: VK Cup 2016 – Round 1 (Div. 2 Edition)
+ Problem: A – Bear and Reverse Radewoosh
+ Verdict: Accepted
+ Language: Python 🐍
+
+🔗Problem Link: https://lnkd.in/gW3Bpi-H
+
+💡 Key learning from this problem
+Understanding how problem order impacts total score
+Simulating two different strategies and comparing results
+Translating a real-world contest scenario into clear logic
+This problem was a great reminder that sometimes the trick isn’t complex algorithms, but thinking from multiple perspectives.
+
+🧠 Takeaway
+Small problems build strong foundations.
+ Consistency in problem-solving is what truly compounds over time.
+
+On to the next challenge 💪
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
