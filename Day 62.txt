@@ -1,0 +1,25 @@
+✨ Codeforces Accepted | Help Far Away Kingdom
+
+Another milestone unlocked on my Codeforces journey ✅
+
+Contest: Codeforces Beta Round 78 (Div. 2 Only)
+ Problem: A – Help Far Away Kingdom
+ Verdict: Accepted
+ Language: Python 🐍
+
+🔗Problem Link: https://lnkd.in/gZC7xzN2
+
+🧠 What this problem taught me
+Handling string-based numbers instead of direct floating-point operations
+Implementing rounding logic carefully to avoid precision issues
+Paying close attention to edge cases (especially when digits hit ‘9’)
+Sometimes the smallest problems hide the most interesting corner cases.
+
+🚀 Takeaway
+Competitive programming isn’t just about speed — it’s about thinking clearly and coding precisely.
+
+One more problem done, many more to go 💪
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
