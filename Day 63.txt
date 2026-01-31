@@ -1,0 +1,24 @@
+📞 Codeforces Accepted | Phone Code
+
+Another problem successfully accepted on Codeforces ✅
+
+Contest: Croc Champ 2012 – Qualification Round
+ Problem: A – Phone Code
+ Verdict: Accepted
+ Language: Python 🐍
+
+🔗Problem Link: https://lnkd.in/g_jHZZgi
+
+🧠 What I learned
+Comparing multiple strings column-wise to find common prefixes
+Identifying the maximum valid prefix length shared by all inputs
+Writing clean nested loops with early break conditions for efficiency
+This problem was a good reminder that clarity in logic often matters more than complex algorithms.
+
+🚀 Takeaway
+Every solved problem strengthens fundamentals.
+ Small wins like these keep the momentum going 💪
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
