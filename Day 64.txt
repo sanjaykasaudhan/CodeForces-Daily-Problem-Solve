@@ -1,0 +1,24 @@
+🚋 Codeforces Accepted | Determine Line
+
+Happy to share another Accepted solution on Codeforces ✅
+
+Contest: Mail.Ru Cup 2018 – Round 3
+ Problem: A – Determine Line
+ Verdict: Accepted
+ Language: Python 🐍
+
+🔗Problem Link: https://lnkd.in/g9u6K2yH
+
+🧠 Key Learnings
+Used set intersection to efficiently track common tram lines
+Learned how simplifying data structures can drastically reduce logic complexity
+Reinforced the idea that smart use of sets > brute force loops
+This was a nice example of how choosing the right data structure makes the solution both elegant and efficient.
+
+🚀 Moving Forward
+Consistency is the real superpower in competitive programming.
+ One problem at a time, one acceptance at a time 💪
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
