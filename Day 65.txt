@@ -1,0 +1,20 @@
+🎓 Codeforces Accepted | Year of University Entrance ✅
+
+Another problem solved and accepted on Codeforces 🚀
+
+Contest: VK Cup 2017 – Qualification 1
+ Problem: A – Year of University Entrance
+ Verdict: Accepted
+ Language: Python 🐍
+
+🔗Problem Link: https://lnkd.in/gVxShR2S
+
+🧠 What this problem taught me
+Sometimes problems look tricky but boil down to simple logic
+Sorting + median concept can solve real-world style problems cleanly
+Writing minimal and readable code matters as much as correctness
+This one was a good reminder that clarity beats complexity in competitive programming.
+
+📈 Journey Continues
+Every accepted solution adds a bit more confidence and discipline.
+ Staying consistent, learning daily, and enjoying the process 💪
