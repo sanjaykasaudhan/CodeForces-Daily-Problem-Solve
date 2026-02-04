@@ -1,0 +1,20 @@
+🔢 Codeforces Accepted | Even Odds ✅
+
+Solved another classic problem on Codeforces today 🚀
+
+Contest: Codeforces Round 188 (Div. 2)
+ Problem: A – Even Odds
+ Verdict: Accepted
+ Language: Python 🐍
+
+🔗Problem Link: https://lnkd.in/gRAcryZG
+
+🧠 Key Insight
+The sequence rearranges numbers by placing all odds first, then evens
+Instead of building the sequence, a mathematical observation gives the answer in O(1)
+Learned again: thinking > coding more lines
+Simple logic, clean math, and efficient execution.
+
+📈 Progress Mindset
+Each accepted problem strengthens problem-solving intuition.
+ Consistency and fundamentals always pay off 💪
