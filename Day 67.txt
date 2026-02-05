@@ -1,0 +1,21 @@
+⚛️ Codeforces Accepted | Quantum Computing Problem ✅
+
+Excited to share an Accepted solution from a Quantum Programming contest on Codeforces 🚀
+
+Contest: Microsoft Q# Coding Contest – Summer 2018
+ Problem: A1 – Generate superposition of all basis states
+ Verdict: Accepted
+ Language: Q# (Quantum Programming)
+
+🔗Problem Link: https://lnkd.in/gkvM8eWz
+
+🧠 What made this special
+Worked directly with qubits instead of classical variables
+Used the Hadamard (H) gate to generate superposition
+Learned how a simple loop can scale quantum states exponentially
+Great hands-on exposure to quantum primitives & canonical gates
+This problem beautifully demonstrated how quantum logic differs from classical thinking.
+
+🌱 Learning Takeaway
+Exploring quantum problems alongside classical DSA keeps the learning curve exciting.
+ Step by step, moving toward future-ready computing paradigms 💡
