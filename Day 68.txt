@@ -1,0 +1,26 @@
+✅ Codeforces Accepted | Square? (Problem A)
+
+Solved another problem on Codeforces today 🚀
+
+Contest: Codeforces Round 1062 (Div. 4)
+ Problem: A – Square?
+ Verdict: Accepted
+ Language: Python 🐍
+
+🔗Problem Link: https://lnkd.in/g3hSpYcA
+
+🧠 Key Idea
+A square requires all four sides to be equal
+If all stick lengths are identical → YES
+Otherwise → NO
+Used a set-based check for a simple and efficient solution
+Sometimes, the simplest logic is the most powerful 💡
+
+📌 Takeaway
+Competitive programming keeps reinforcing one thing:
+ 👉 Understand the problem well, then code minimally.
+On to the next challenge 💪
+
+📧 sanjaykasaudhan09@gmail.com
+📱 +91-9170580657
+📋 Connect with me: https://lnkd.in/g_dRWtri
