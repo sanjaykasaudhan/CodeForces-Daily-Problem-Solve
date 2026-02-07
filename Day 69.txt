@@ -1,0 +1,19 @@
+✅ Codeforces Accepted | Your Name (Problem B)
+
+Solved Problem B – Your Name from Codeforces Round 1062 (Div. 4) 🚀
+
+Verdict: Accepted
+ Language: Python 🐍
+
+🔗Problem Link: https://lnkd.in/g7vpVYkk
+
+🧠 Approach
+The task boils down to checking whether two strings are anagrams
+If sorting both strings gives the same result → YES
+Otherwise → NO
+Clean and efficient use of Python’s sorted() makes the solution simple and readable
+
+📌 Learning
+This problem reinforced an important CP lesson:
+ 👉 When order doesn’t matter, think frequency or sorting.
+Consistency beats complexity. On to the next one 💪
