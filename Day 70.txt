@@ -1,0 +1,19 @@
+✅ Codeforces Accepted | HQ9+ (Problem A)
+
+Solved Problem A – HQ9+ from Codeforces Beta Round 96 (Div. 2) 🎯
+
+Status: Accepted
+ Language: Python 🐍
+
+🔗Problem Link: https://lnkd.in/gCKEZHN4
+
+🧠 Key Insight
+This was a fun logic-based problem 👇
+Check if the input string contains any of the characters: H, Q, or 9
+If yes → output YES
+Otherwise → NO
+A great reminder that reading the problem carefully often leads to very elegant solutions.
+
+📈 Progress Mindset
+Even simple problems strengthen fundamentals and speed.
+ Consistency > difficulty. On to the next one 💪
