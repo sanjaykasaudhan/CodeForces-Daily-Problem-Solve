@@ -1,0 +1,19 @@
+✅ Codeforces Accepted | Gravity Flip (Problem A)
+
+Solved “Gravity Flip” from Codeforces Round 238 (Div. 2) 🎯
+
+ Status: Accepted
+ Language: Python 🐍
+
+🔗Problem Link: https://lnkd.in/gn_4Ffxz
+
+🧠 What this problem taught me
+Sometimes, the simplest idea is the correct one.
+👉 The task boils down to sorting the column heights after gravity does its job.
+ No tricks. No overthinking. Just clean logic and clarity.
+
+📌 Takeaway
+Competitive programming is not always about complex algorithms —
+ it’s about recognizing patterns and choosing the most efficient approach.
+Slowly but steadily building consistency 💪
+ On to the next problem 🚀
