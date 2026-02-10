@@ -1,0 +1,21 @@
+🎧 Codeforces Accepted | Dubstep (Problem A)
+
+Just solved “Dubstep” from Codeforces Round 130 (Div. 2) ✅
+
+ Status: Accepted
+ Language: Python 🐍
+
+🔗Problem Link: https://lnkd.in/g-pjGV75
+
+🧠 Key Idea
+The problem looks musical 🎶, but it’s really about string processing.
+👉 Replace the repeated "WUB" patterns
+ 👉 Extract only meaningful words
+ 👉 Join them back with proper spacing
+A nice reminder that simple string manipulation + clean logic can solve many problems efficiently.
+
+🚀 Learning
+Not every problem needs heavy algorithms —
+ sometimes clarity, pattern recognition, and edge-case handling do the job perfectly.
+Consistency > Speed.
+ Onward to the next problem 💪
