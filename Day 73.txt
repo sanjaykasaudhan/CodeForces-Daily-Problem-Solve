@@ -1,0 +1,20 @@
+🧩 Codeforces Accepted | Puzzles (Problem A)
+
+Solved “Puzzles” from Codeforces Round 196 (Div. 2) ✅
+
+ Status: Accepted
+ Language: Python 🐍
+
+🔗Problem Link: https://lnkd.in/gAwfEbwc
+
+🧠 Core Logic
+This problem is a great example of how sorting + sliding window can simplify things.
+✔ Sort the puzzle sizes
+ ✔ Pick n consecutive puzzles
+ ✔ Minimize the difference between max and min
+A neat reminder that greedy thinking with clean implementation often leads to optimal solutions.
+
+🚀 Takeaway
+Competitive programming isn’t always about complex algorithms —
+ sometimes it’s about choosing the right perspective.
+Step by step, problem by problem 📈
