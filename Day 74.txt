@@ -1,0 +1,21 @@
+🟢 Codeforces Accepted | Odd Divisor (Problem A)
+
+Solved “Odd Divisor” from Codeforces Round 697 (Div. 3) ✅
+ Language: Python 🐍
+
+🔗Problem Link: https://lnkd.in/g4Vk-sei
+
+💡 Key Insight
+A number has an odd divisor greater than 1 if and only if
+ ➡️ it is not a power of 2.
+So the approach is simple:
+Keep dividing n by 2
+If something greater than 1 remains → YES
+Otherwise → NO
+Elegant logic, zero overthinking.
+
+📌 What this reinforces
+Mathematical observations can drastically simplify problems
+Clean loops > complex checks
+Competitive programming trains clarity of thought
+Onward with consistent practice 🚀
