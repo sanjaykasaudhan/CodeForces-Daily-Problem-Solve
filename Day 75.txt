@@ -1,0 +1,21 @@
+🟢 Codeforces Accepted | Game With Sticks (Problem A)
+
+Successfully solved “Game With Sticks” from Codeforces Round 258 (Div. 2) ✅
+ Language: Python 🐍
+
+🔗Problem Link: https://codeforces.com/problemset/problem/451/A
+
+🧠 Core Idea
+The game outcome depends on a simple parity observation:
+Players remove one stick alternately
+The player who cannot make a move loses
+The result depends on min(n, m) being odd or even
+👉 If min(n, m) is odd → Akshat wins
+ 👉 If min(n, m) is even → Malvika wins
+A perfect example of how game theory + math intuition simplifies the solution.
+
+🚀 Takeaway
+Many “game” problems boil down to parity checks
+Thinking in terms of invariants saves time
+Competitive programming sharpens logical reasoning
+Consistency > complexity 💪
