@@ -1,0 +1,19 @@
+🟢 Codeforces Accepted | Sublime Sequence (Problem A)
+
+Solved “Sublime Sequence” from Codeforces Round 1050 (Div. 4) ✅
+ Language: Python 🐍
+
+🔗Problem Link: https://lnkd.in/ewaG2rXJ
+
+🧩 Problem Insight
+The sequence alternates between x and −x.
+ So the total sum depends only on whether n is odd or even:
+n odd → one extra x remains → sum = x
+n even → all pairs cancel out → sum = 0
+A classic case where observing the pattern eliminates the need for simulation.
+
+🎯 Key Takeaways
+Pattern recognition > brute force
+Simple parity checks can solve seemingly tricky problems
+Div. 4 problems are great for building speed + confidence
+One more step forward in consistent DSA practice 🚀
