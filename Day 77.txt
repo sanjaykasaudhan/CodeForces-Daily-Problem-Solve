@@ -1,0 +1,26 @@
+🟢 Codeforces Accepted | Multiply by 2, Divide by 6 (Problem B)
+
+Solved “Multiply by 2, Divide by 6” from Codeforces Round 653 (Div. 3) ✅
+ Language: Python 🐍
+
+🔗Problem Link: https://lnkd.in/gEmm9TMv
+
+🧠 Core Idea
+The goal is to reach 1 using minimum operations:
+multiply by 2
+divide by 6 (only if divisible)
+Instead of simulating operations, I analyzed the prime factors of n.
+Count how many times n is divisible by 2 → cnt2
+Count how many times n is divisible by 3 → cnt3
+
+✅ Conditions
+If after removing all 2s and 3s, n ≠ 1 → Impossible
+If cnt2 > cnt3 → Impossible
+Else → Minimum moves = (cnt3 − cnt2) + cnt3
+This converts the problem into a pure math + counting solution.
+
+🎯 Takeaways
+Prime factorization simplifies many number problems
+Greedy simulation is not always needed
+Div. 3 problems sharpen mathematical thinking
+Consistent practice, one problem at a time 🚀
