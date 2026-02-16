@@ -1,0 +1,22 @@
+🟢 Codeforces Accepted | Sale (Problem B)
+
+Solved “Sale” from Codeforces Beta Round 34 (Div. 2) ✅
+ Language: Python 🐍
+
+🔗Problem Link: https://lnkd.in/g2QhkRUT
+
+🧠 Problem Insight
+The task is to maximize profit by selecting at most m items with negative prices (losses), so that selling them gives maximum gain.
+
+💡 Approach
+Filter only negative prices
+Sort them in ascending order (most negative first)
+Pick up to m values
+Output the absolute sum of selected values
+This greedy strategy ensures we always choose the items that give the maximum benefit.
+
+✅ Key Learnings
+Greedy + sorting solves many optimization problems
+Always reduce the problem to what actually matters
+Simple logic beats overcomplicated simulations
+Another problem done, consistency continues 🚀
