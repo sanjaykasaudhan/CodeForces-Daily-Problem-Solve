@@ -1,0 +1,24 @@
+🟢 Codeforces Accepted | Ilya and Bank Account (Problem A)
+
+Solved “Ilya and Bank Account” from Codeforces Round 186 (Div. 2) ✅
+ Language: Python 🐍
+
+🔗Problem Link: https://lnkd.in/gW-vbQpR
+
+🧠 Problem Summary
+Given a bank account balance (which can be negative), the goal is to maximize the final value by optionally removing one digit from the number (except the minus sign).
+
+💡 Approach
+If the number is positive, print it directly
+If the number is negative, compare:
+The original number
+Number after removing the last digit
+Number after removing the second last digit
+Print the maximum possible value
+This works because only two valid digit-removal choices exist for a negative number.
+
+✅ Key Takeaways
+Edge cases matter more than complex logic
+String manipulation can simplify numeric problems
+Always check all valid transformations
+Consistency over motivation—one more problem done 🚀
