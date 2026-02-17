@@ -1,0 +1,23 @@
+🟢 Codeforces Accepted | Balanced Round (Problem D)
+
+Happy to share that I solved Problem D – Balanced Round in Codeforces Round 886 (Div. 4) ✅
+ Language: Python 🐍
+
+🔗Problem Link: https://lnkd.in/gMC3_bTv
+
+🧠 Problem Insight
+The task was to determine the minimum number of elements to remove so that the remaining array becomes balanced, meaning the difference between consecutive elements is at most k.
+
+💡 My Approach
+Sort the array first
+Traverse and track the longest valid contiguous segment where
+ a[i] - a[i-1] ≤ k
+Final answer =
+ Total elements − Length of longest valid segment
+This converts the problem into a sliding window / greedy traversal after sorting.
+
+✅ Key Learnings
+Sorting often simplifies constraint-based problems
+Tracking longest valid segments is more efficient than brute force
+Div-4 D problems really test clarity of logic, not complexity
+One more step forward in my daily DSA & Competitive Programming journey 🚀
