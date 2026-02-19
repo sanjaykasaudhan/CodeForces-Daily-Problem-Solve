@@ -1,0 +1,19 @@
+🟢 Codeforces Accepted | New Year’s Number (Problem B)
+
+Solved Problem B – New Year’s Number from Codeforces Round 697 (Div. 3) ✅
+ Language: Python 🐍
+
+🔗Problem Link: https://lnkd.in/gHSTQbYa
+
+🧠 Problem Idea
+Given a number n, check whether it can be represented as a sum of 2020 and 2021 any number of times.
+
+💡 Key Observation
+If n % 2020 ≤ n // 2020, then the number can be formed
+Otherwise, it’s not possible
+This simple mathematical insight avoids brute force completely.
+✅ What I Practiced
+Mathematical reasoning in competitive problems
+Writing clean and minimal logic
+Identifying patterns instead of overcomplicating
+Another step forward in my consistent Codeforces & DSA practice 💪
