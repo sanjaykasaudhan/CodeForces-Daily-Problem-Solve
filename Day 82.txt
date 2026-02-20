@@ -1,0 +1,23 @@
+🧪 Codeforces Accepted | Chemistry (Problem B) ✅
+
+Solved Problem B – Chemistry from Codeforces Round 905 (Div. 3) using Python 🐍
+
+🔗Problem Link: https://lnkd.in/grhrZqSh
+
+🧠 Problem Insight
+We are given a string and allowed to remove exactly k characters.
+ The task is to check whether the remaining characters can be rearranged into a palindrome.
+
+💡 Key Logic Used
+Count frequency of each character
+Track how many characters have odd frequency
+After removing k characters, the remaining string length decides:
+Even length → 0 odd frequencies allowed
+Odd length → 1 odd frequency allowed
+A simple parity check makes the solution efficient and elegant.
+
+✅ What This Reinforced
+Strong understanding of palindrome properties
+Efficient use of hashing (Counter)
+Turning constraints into clean logical conditions
+Consistent practice, small wins, steady growth 🚀
