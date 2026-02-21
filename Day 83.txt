@@ -1,0 +1,19 @@
+✅ Codeforces Accepted | Problem C – Vasilije in Cacak
+
+Solved Problem C – Vasilije in Cacak from Codeforces Round 900 (Div. 3) using Python 🐍 on Codeforces.
+
+🔗Problem Link: https://lnkd.in/g2CRbPnq
+
+🧠 Key Idea
+The task boils down to math + range checking:
+Compute the minimum possible sum of choosing k distinct numbers
+Compute the maximum possible sum
+Check if the given value x lies within this range
+This transforms a seemingly tricky problem into an O(1) decision using arithmetic series formulas.
+
+💡 What I Learned
+Turning constraints into tight mathematical bounds
+Using formulas to eliminate brute force
+Writing concise, efficient logic under contest pressure
+Consistency compounds 🚀
+ On to the next problem!
