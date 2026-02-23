@@ -1,0 +1,23 @@
+⌨️ Codeforces Accepted | Keyboard (Problem A)
+
+Solved “Keyboard” from Codeforces Round 271 (Div. 2) on Codeforces ✅ using Python.
+
+🔗Problem Link: https://lnkd.in/gBd22Kmc
+
+🧩 Problem Overview
+A string was typed on a keyboard, but the hands were shifted left or right.
+ The task was to reconstruct the original string by mapping each character back to its correct neighbor on the keyboard layout.
+
+💡 Approach
+Store the keyboard layout as a string
+For each typed character:
+Find its index
+Shift left or right based on the given direction
+Build the corrected string efficiently
+
+📚 Key Takeaways
+Smart use of string indexing simplifies mapping problems
+Clear handling of constraints avoids edge-case errors
+Even simple problems sharpen attention to detail
+Consistency is paying off 🚀
+ On to the next challenge!
