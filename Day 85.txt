@@ -1,0 +1,25 @@
+🎲 Codeforces Accepted | Playing with Dice (Problem A)
+
+Solved “Playing with Dice” from Codeforces Round 222 (Div. 2) on Codeforces ✅ using Python.
+
+🔗Problem Link: https://lnkd.in/gZDvNiBB
+
+🧠 Problem Insight
+Two players choose numbers between 1 and 6.
+ A dice is rolled, and the winner is decided based on whose number is closer to the dice value.
+
+⚙️ Solution Strategy
+Iterate through all dice values from 1 to 6
+Compute absolute differences for both players
+Count:
+Wins for Player 1
+Draws
+Wins for Player 2
+Simple logic, but a great exercise in brute-force reasoning and condition handling.
+
+🚀 What I Learned
+Sometimes the best solution is a direct simulation
+Clean condition checks can outperform overthinking
+Strong fundamentals matter, even for easy problems
+Consistency > Intensity 💪
+ On to the next problem!
