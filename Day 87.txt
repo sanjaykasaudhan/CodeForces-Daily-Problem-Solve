@@ -1,0 +1,22 @@
+🍎 Codeforces Accepted | Circle of Apple Trees (Problem A)
+
+Solved “Circle of Apple Trees” from Codeforces Round 1057 (Div. 2) on Codeforces ✅ using Python.
+
+🔗Problem Link: https://lnkd.in/gbW49_Jv
+
+🧠 Problem Insight
+Each apple tree has a beauty value, and trees are arranged in a circle.
+ The goal was to determine how many distinct beauty values exist.
+
+💡 Solution Idea
+Read the list of beauty values
+Use a set to automatically remove duplicates
+Output the count of unique values
+Simple logic, but a good reminder that:
+Choosing the right data structure makes the solution effortless.
+
+🚀 Takeaway
+Python’s built-in set() is powerful for uniqueness problems
+Even easy problems strengthen clarity and speed in contests
+Consistency > complexity
+Onward to the next challenge 💪
