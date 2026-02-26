@@ -1,0 +1,22 @@
+🍬 Codeforces Accepted | Candies (Problem A)
+
+Solved “Candies” from Codeforces Round 636 (Div. 3) on Codeforces ✅ using Python.
+
+🔗Problem Link: https://lnkd.in/gWWwyXAs
+
+🧠 Problem Insight
+Given a number of candies n, we need to find the maximum number of people such that:
+Candies can be evenly distributed
+Each person gets a number following the form (2ᵏ − 1)
+
+💡 Solution Approach
+Iterate over powers of 2
+Check divisibility of n by (2ᵏ − 1)
+The first valid division gives the required answer
+Efficient and elegant use of bit manipulation 💡
+
+🚀 Key Learnings
+Powers of 2 appear frequently in competitive problems
+Bitwise thinking simplifies math-heavy logic
+Div-3 problems are great for strengthening fundamentals
+On to the next challenge 💪
