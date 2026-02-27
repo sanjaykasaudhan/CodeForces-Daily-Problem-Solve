@@ -1,0 +1,27 @@
+✅ Codeforces Accepted | A. Be Positive (Div. 3)
+
+Solved “A. Be Positive” from Codeforces Round 1054 (Div. 3) on Codeforces 🚀
+ Language used: Python
+
+🔗Problem Link: https://lnkd.in/gzNSz7WY
+
+🧠 Problem Idea
+You’re given an array containing -1, 0, and 1.
+ In one operation, you can increase any element by 1.
+ The goal is to make the product of the array positive using the minimum number of operations.
+
+💡 Key Insight
+Every 0 must be converted to 1 → 1 operation per zero
+Count of -1 matters:
+If the number of -1 is odd, the product becomes negative
+Fix it by converting one -1 → 1 (needs 2 operations)
+So the solution becomes:
+
+Elegant logic + greedy thinking ✨
+
+🚀 What I Learned
+Handling sign-based product problems
+Importance of parity (odd/even) in array logic
+How simple counting can replace complex simulations
+Consistency > Motivation 💪
+ On to the next problem!
