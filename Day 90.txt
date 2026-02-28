@@ -1,0 +1,34 @@
+✅ Codeforces Accepted | DBMB and the Array (Div. 3)
+
+Solved “DBMB and the Array” from Codeforces Round 1076 (Div. 3) on Codeforces 🚀
+ Language used: Python
+
+🔗Problem Link: https://lnkd.in/gcHSXRTT
+
+🧠 Problem Summary
+You’re given:
+An array of size n
+A target sum s
+A number x
+You can increase any array element by x any number of times.
+ The task is to determine whether it’s possible to make the array sum exactly equal to s.
+
+💡 Key Observation
+Let:
+current_sum = sum(array)
+Then:
+If current_sum > s → ❌ impossible
+Else, check if the difference (s - current_sum) is divisible by x
+That’s it. No simulation needed ✔️
+
+If s ≥ current_sum and (s - current_sum) % x == 0 → YES
+Else → NO
+
+Simple math + clean logic ✨
+
+🚀 What I Learned
+Reducing array problems to mathematical conditions
+Avoiding unnecessary operations with early checks
+Importance of modulo reasoning in competitive programming
+One more step forward in my DSA & CP journey 💪
+ Consistency always wins.
