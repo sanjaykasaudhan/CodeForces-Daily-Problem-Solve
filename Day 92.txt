@@ -1,0 +1,21 @@
+✅ Codeforces Accepted | Blacklist and Showering (Div. 3)
+
+Successfully solved “Blacklist and Showering” from Codeforces Round 1071 (Div. 3) on Codeforces 🚀
+ 🧑‍💻 Language: Python
+
+🔗Problem Link: https://lnkd.in/g3XUxWJY
+
+🧠 Problem Breakdown
+The challenge focused on minimizing the total discomfort, calculated as the sum of absolute differences between adjacent elements.
+ The key idea was to strategically remove or adjust one element to reduce the overall cost.
+
+💡 What I Learned
+Precomputing the initial total cost saves time
+Smartly handling edge cases (first and last elements)
+Local impact analysis helps avoid unnecessary recomputation
+Efficient O(n) logic makes the solution scalable
+
+🚀 Takeaway
+Problems like this reinforce how small local changes can significantly impact a global result.
+ Div. 3 problems are excellent for building optimization intuition.
+Consistent practice → Better logic → Cleaner solutions 📈
