@@ -1,0 +1,19 @@
+✅ Codeforces Accepted | Shizuku Hoshikawa and Farm Legs (Div. 3)
+
+Solved “Shizuku Hoshikawa and Farm Legs” from Codeforces Round 1065 (Div. 3) on Codeforces 🚀
+ 🧑‍💻 Language: Python
+
+🔗Problem Link: https://lnkd.in/gszZMY4r
+
+🧠 Key Insight
+The problem boils down to parity logic:
+If the total number of legs is odd → impossible
+Otherwise, compute the minimum number of cows needed using a simple formula
+A nice example where mathematical observation > brute force.
+
+💡 What this problem reinforces
+Importance of edge-case analysis
+Using simple math to derive optimal solutions
+Div. 3 problems sharpen logical thinking under constraints
+Consistently solving problems and learning something new every day 📈
+ Onward to the next one 💪
