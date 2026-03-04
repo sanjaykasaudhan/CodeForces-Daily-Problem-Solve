@@ -1,0 +1,20 @@
+✅ Codeforces Accepted | Vasya and Socks (Div. 2) 🧦
+
+Solved “Vasya and Socks” from Codeforces Round 262 (Div. 2) on Codeforces 🚀
+ 🧑‍💻 Language: Python
+
+🔗Problem Link: https://lnkd.in/gTfeVvi5
+
+🧠 Problem Insight
+This problem is a great example of simulation with conditions:
+Vasya uses one pair of socks per day
+Every m-th day, he gets one new pair
+The task is to simulate until socks run out and count total days
+A simple loop with careful condition checking does the job efficiently.
+
+💡 Key Takeaways
+Simulation problems test attention to detail
+Simple logic can solve problems with seemingly tricky constraints
+Writing clean and readable code matters in contests
+Consistent practice, one problem at a time 💪
+ On to the next challenge 🚀
