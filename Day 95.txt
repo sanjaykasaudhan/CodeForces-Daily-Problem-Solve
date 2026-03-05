@@ -1,0 +1,20 @@
+✅Codeforces Accepted | Make AP (Div. 3) 🎯
+
+Solved “Make AP” from Codeforces Round 764 (Div. 3) on Codeforces 🚀
+🧑‍💻 Language: Python
+
+🔗Problem Link: https://lnkd.in/gvnrnWUv
+
+🧠 Problem Insight
+The goal was to check whether three numbers can form an Arithmetic Progression after modifying at most one element.
+The solution involved:
+Applying AP conditions
+Verifying divisibility and positivity constraints
+Covering all possible adjustment cases efficiently
+
+💡 What I Learned
+Mathematical reasoning can greatly simplify logic
+Always check edge cases (large values, divisibility)
+Clean condition checks lead to fast ACs ⚡
+Consistent problem-solving is paying off 💪
+More challenges ahead 🚀
