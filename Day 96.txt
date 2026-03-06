@@ -1,0 +1,19 @@
+🚀 Another Codeforces Problem Solved!
+
+Successfully solved “01 Game” from Educational Round 90 on Codeforces and got it Accepted ✅
+
+🔗Problem Link: https://lnkd.in/gscwqsfs
+
+🧠 Key Idea:
+The game removes adjacent 01 or 10. Each move removes one 0 and one 1.
+So the total number of possible moves = min(count(0), count(1)).
+If the number of moves is odd → Alice wins (DA)
+If the number of moves is even → Bob wins (NET)
+
+💡 What this problem teaches:
+Convert a game simulation into a simple counting problem
+Look for patterns instead of brute force
+Competitive programming often rewards mathematical observation
+
+📌 Language: Python
+Practicing consistently to strengthen DSA, problem-solving, and algorithmic thinking. More problems coming soon! 💻🔥
