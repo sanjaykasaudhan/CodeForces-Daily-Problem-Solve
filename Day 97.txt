@@ -1,0 +1,21 @@
+🚀 Codeforces Accepted | Two-gram (Div. 3)
+
+Solved “Two-gram” from Codeforces Round 479 (Div. 3) on Codeforces and got it Accepted ✅
+
+🔗Problem Link: https://lnkd.in/gKmxeRZG
+
+🧠 Problem Idea:
+Given a string, the task is to find the most frequent substring of length 2 (two-gram).
+The approach was simple and efficient:
+Iterate through the string
+Count occurrences of every 2-character substring
+Output the substring with the maximum frequency
+
+💡 Key Takeaways:
+Efficient use of hash maps / dictionaries for frequency counting
+Sliding through strings to analyze substrings
+Simple logic can solve problems effectively when implemented cleanly
+
+🧑‍💻 Language: Python
+Every problem solved strengthens algorithmic thinking and pattern recognition.
+Consistency in practice is the real progress! 💪
