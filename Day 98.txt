@@ -1,0 +1,20 @@
+🚀 Codeforces Accepted | Comparison String (Div. 2)
+
+Solved “Comparison String” from Educational Round 149 on Codeforces and received an Accepted verdict ✅
+
+🔗Problem Link: https://lnkd.in/g-HDt97c
+
+🧠 Problem Idea:
+The string contains comparison symbols (< and >).
+The goal is to determine the maximum possible length of a valid sequence based on consecutive identical comparison symbols.
+
+💡 Approach:
+Traverse the string and track consecutive runs of the same character.
+Maintain the maximum run length encountered.
+The final answer becomes max_run + 1, representing the longest valid sequence that can be formed.
+
+🔑 Key Learning:
+Sometimes the optimal solution comes from observing patterns in consecutive elements rather than simulating every possibility.
+
+🧑‍💻 Language: Python
+Another step forward in strengthening algorithmic thinking and competitive programming skills. More practice ahead! 💻🔥
