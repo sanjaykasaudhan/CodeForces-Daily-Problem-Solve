@@ -1,0 +1,20 @@
+🚀 Codeforces Accepted | Isanatid and His Magic Wand (Div. 4)
+
+Solved “Isanatid and His Magic Wand” from Codeforces Round 1062 (Div. 4) on Codeforces and received an Accepted verdict ✅
+
+🔗Problem Link: https://lnkd.in/gTuU8T3Y
+
+🧠 Problem Idea:
+The task involves checking the parity (odd/even) of numbers in an array.
+If the array contains both odd and even numbers, sorting the array helps achieve the required order. Otherwise, the array remains unchanged.
+
+💡 Approach:
+Check if the array contains at least one even and one odd element.
+If both exist → sort the array.
+Otherwise → print the array as it is.
+
+🔑 Key Learning:
+Sometimes the entire solution depends on identifying a simple property like parity, which dramatically simplifies the logic.
+
+🧑‍💻 Language: Python
+Each problem solved strengthens my problem-solving mindset and algorithmic thinking. Continuing the journey of consistent competitive programming practice! 💻🔥
