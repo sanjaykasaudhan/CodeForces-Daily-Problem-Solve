@@ -1,0 +1,22 @@
+🚀 Codeforces Accepted | Case of the Zeros and Ones (Div. 2)
+
+Solved “Case of the Zeros and Ones” from Codeforces Round 310 (Div. 2) on Codeforces and received an Accepted verdict ✅
+
+🔗Problem Link: https://lnkd.in/gtM4JYzV
+
+🧠 Problem Idea:
+Given a binary string, we repeatedly remove pairs of 01 or 10.
+Each removal eliminates one 0 and one 1 from the string.
+So the remaining length after all possible removals is:
+n − 2 × min(count(0), count(1))
+
+💡 Approach:
+Count the number of zeros and ones in the string.
+Determine how many pairs can be removed.
+Compute the final remaining length using the formula.
+
+🔑 Key Learning:
+Many string problems become simpler when converted into counting problems instead of simulations.
+
+🧑‍💻 Language: Python
+Consistent practice on competitive programming platforms continues to sharpen my problem-solving and algorithmic thinking. More problems coming soon! 🚀
