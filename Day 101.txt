@@ -1,0 +1,21 @@
+🚀 Codeforces Accepted | Business Trip (Div. 2)
+
+Solved “Business Trip” from Codeforces Round 106 (Div. 2) on Codeforces and received an Accepted verdict ✅
+
+🔗Problem Link: https://lnkd.in/gYFUsD2k
+
+🧠 Problem Idea:
+The goal is to determine the minimum number of months required for a plant to grow at least k centimeters, given the growth in each month.
+
+💡 Approach:
+If the required growth k = 0, the answer is 0 months.
+Otherwise, sort the monthly growth values in descending order.
+Accumulate growth month by month until the total growth ≥ k.
+Count the number of months used.
+If it’s impossible to reach k, output -1.
+
+🔑 Key Learning:
+A greedy approach works well here—always pick the largest growth values first to minimize the number of months.
+
+🧑‍💻 Language: Python
+Consistent practice on competitive programming platforms keeps improving my algorithmic thinking and problem-solving skills. More challenges ahead! 💻🔥
