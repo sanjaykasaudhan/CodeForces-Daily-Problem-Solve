@@ -1,0 +1,17 @@
+🚀 Another Problem Solved on Codeforces! ✅
+
+Just got Accepted on Problem A — Jellyfish and Undertale from Codeforces Round 901 (Div. 2)! 🎯
+
+🔗Problem Link: https://lnkd.in/gM-7m2Nj
+
+🧩 The Problem: A bomb has a timer starting at b. Each second it decreases by 1. You have n tools — each tool increases the timer by xᵢ, but due to a bug, the timer can never exceed a. Maximize the total time before the bomb explodes!
+
+💡 My Approach — Greedy Thinking:
+The key insight is: when is the best time to use a tool?
+✔️ Use each tool exactly when the timer hits 1 (just before explosion). 
+✔️ At that point, the timer jumps by min(xᵢ, a - 1) — because the timer is currently 1, so we can gain at most (a - 1) extra seconds from any single tool. 
+✔️ Tools with xᵢ ≥ a are capped at (a - 1), and smaller tools contribute their full xᵢ.
+So the formula becomes beautifully simple:
+Answer = b + Σ min(xᵢ, a - 1)
+
+📌 Key Takeaway: Greedy works beautifully here — always use a resource at the moment its contribution is maximized. Don't overthink it; sometimes the simplest observation unlocks the whole problem. 🧠
