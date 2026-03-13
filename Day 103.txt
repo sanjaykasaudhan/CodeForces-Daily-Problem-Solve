@@ -1,0 +1,28 @@
+✅ Accepted on Codeforces! Problem A — Magic Numbers | Round 189 (Div. 2)
+
+Another green verdict, and this one was genuinely fun to think through! 🧠💚
+
+🔗Problem Link: https://lnkd.in/gXH_uXfQ
+
+🔢 What's a Magic Number? A number is "magic" if:
+It contains only digits 1 and 4
+It starts with 1 (not 4)
+It never has three consecutive 4s (no "444")
+Given a number as a string, determine if it's magic — YES or NO.
+
+💡 My Approach — Greedy String Parsing:
+Instead of checking conditions separately after reading the whole string, I scan through it left to right, greedily consuming valid patterns in priority order:
+
+🔍 Priority-based matching at each position:
+If the next 3 characters are "144" → consume all 3 (i += 3) ✅
+Else if the next 2 characters are "14" → consume both (i += 2) ✅
+Else if the current character is "1" → consume it (i += 1) ✅
+Else → it's an invalid character → print "NO" and stop ❌
+If we reach the end of the string without hitting an invalid character → print "YES" 🎯
+
+🧩 Why this works:
+Consuming "144" before "14" prevents "444" from being formed — a greedy guard!
+Any digit other than 1 or 4, or a 4 appearing where a 1 is expected, gets caught immediately.
+The string must start with 1, which is naturally enforced since "4", "44", or "444" at the start would all fall into the else branch.
+
+📌 Key Takeaway: When validating patterns in a string, greedy priority-based parsing can be more elegant than checking rules independently. Scan once, decide early, and trust the order of your conditions. 🔑
