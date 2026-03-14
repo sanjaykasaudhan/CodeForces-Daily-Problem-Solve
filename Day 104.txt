@@ -1,0 +1,18 @@
+✅ Accepted on Codeforces! Problem A — Mocha and Math | Round 738 (Div. 2)
+
+Sometimes the most elegant solutions hide behind a single key insight. This one had me thinking about bitwise operations in a whole new way! 🤔💡
+
+🔗Problem Link: https://lnkd.in/gTnxVq4G
+
+🧩 The Problem: You have an array of n integers. You can repeatedly pick any subarray [l, r] and for each index i, replace aᵢ with aᵢ & aₗ₊ᵣ₋ᵢ (AND with its mirror element). You can do this any number of times. Find the minimum possible value of each element after all operations.
+
+💡 The Key Insight — Bitwise AND Property:
+🔑 The crucial observation: a & b ≤ min(a, b)
+Applying AND never increases a value — it can only stay the same or get smaller. So if we can apply operations unlimited times, every position will eventually be AND-ed with every other position in the array!
+This means the minimum achievable value at every index is simply:
+a[0] & a[1] & a[2] & ... & a[n-1]
+Just AND the entire array together! 🤯
+
+📌 Key Takeaway: Don't get intimidated by fancy operation descriptions. Always ask: "What is the theoretical lower bound?" Here, AND operations can only decrease values, so the lower bound is the AND of all elements — and it's always achievable! 🧠
+
+Competitive programming teaches you to strip away the noise and find the mathematical truth underneath. 🎯
