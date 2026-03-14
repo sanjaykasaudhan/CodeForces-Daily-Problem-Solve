@@ -1,0 +1,27 @@
+✅ Accepted on Codeforces! Problem B — Construct the String | Round 634 (Div. 3)
+
+One line of code. That's all it took. 🤯 Sometimes competitive programming rewards you for thinking smart, not hard!
+
+🔗Problem Link: https://lnkd.in/g9rzf8JQ
+
+🧩 The Problem: Construct a string of length n such that every consecutive window of size a contains exactly b distinct characters. Use the smallest possible letters of the alphabet.
+
+💡 The Insight — Pure Pattern Recognition:
+Ask yourself: what's the simplest string that guarantees every window of size a has exactly b distinct characters?
+
+🔑 Just repeat the first b letters of the alphabet cyclically, across all n characters!
+Why does it work?
+Any window of size a ≥ b will always contain a full cycle of those b letters ✅
+No extra letters are introduced → exactly b distinct chars, never more, never less ✅
+Repeating cyclically ensures every window satisfies the constraint ✅
+So the formula becomes:
+For position i → character = chr(ord('a') + i % b)
+
+Example:
+n=7, a=5, b=3 → abcabca ✨
+n=6, a=1, b=1 → aaaaaa ✨
+n=5, a=2, b=2 → ababa ✨
+
+ 📌 Key Takeaway: Before writing complex logic, always ask — "Does a simple repeating pattern satisfy all constraints?" In construction problems, the answer is often YES! 🎯
+
+The elegance of competitive programming lies in finding the minimum structure that satisfies maximum constraints. 🧠
