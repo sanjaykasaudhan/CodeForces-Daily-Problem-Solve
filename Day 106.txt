@@ -1,0 +1,26 @@
+✅ Accepted on Codeforces! Problem A — Almost Prime | Beta Round 26
+
+Number theory strikes again! 🔢 This one was a great exercise in factorization and prime decomposition. Let's break it down!
+
+🔗Problem Link: https://lnkd.in/g9P7VGNK
+
+🧩 The Problem: A number is called "Almost Prime" if it has exactly 2 distinct prime factors. Given n, count how many numbers in the range [2, n] are almost prime.
+Examples:
+12 = 2² × 3 → 2 distinct primes ✅ Almost Prime!
+6 = 2 × 3 → 2 distinct primes ✅ Almost Prime!
+4 = 2² → only 1 distinct prime ❌
+
+💡 My Approach — Trial Division Factorization:
+For every number x from 2 to n:
+Step 1: Find all distinct prime factors of x using trial division:
+Try every p from 2 to √x
+If p divides x, add it to a primes set and divide out all occurrences
+If a remainder > 1 remains after the loop, it's a prime factor too → add it
+Step 2: Check if the primes set has exactly 2 elements → if yes, increment counter!
+
+📌 Key Takeaways:
+Using a set for prime factors automatically handles duplicates 🧹
+Trial division only needs to go up to √x — a classic optimization 🔍
+Completely dividing out each prime before moving on ensures we only collect distinct primes ✅
+
+🧠 Fun Fact: Almost primes are also known as semiprimes in number theory — they're widely used in cryptography (RSA keys are products of exactly 2 large primes)! 🔐
