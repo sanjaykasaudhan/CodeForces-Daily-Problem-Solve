@@ -1,0 +1,26 @@
+✅ Accepted on Codeforces! Problem B — Bad Boy | Round 726 (Div. 2)
+
+Grid problems are always a treat 🗺️ — and this one had a clever geometric twist that made the solution really satisfying!
+
+🔗Problem Link: https://lnkd.in/grZQsqfe
+
+🧩 The Problem: You're on an n × m grid, starting at cell (i, j). You need to visit at least one corner of the grid. The cost of your path is the total Manhattan distance travelled. Find the pair of corners (c1, c2) such that the path start → c1 → c2 is maximized! 🏁
+(Manhattan distance between (x1,y1) and (x2,y2) = |x1-x2| + |y1-y2|)
+
+💡 My Approach — Brute Force Over Corners:
+The grid has exactly 4 corners:
+(1,1), (1,m), (n,1), (n,m)
+The key insight: we only need to check all pairs of corners (there are just 4×3/2 = 6 pairs) and pick the one that maximises:
+cost = dist(start → c1) + dist(c1 → c2)
+Why not dist(start → c1) + dist(start → c2)? Because you must travel through c1 first, then continue to c2 — it's a sequential path, not independent trips! 🛤️
+
+O(1) per test case (only 6 pairs to check)! ⚡ Handles grids up to 10⁹ × 10⁹ with ease!
+
+📌 Key Takeaways:
+When the search space is tiny and fixed (4 corners), brute force is not just acceptable — it's optimal! 🎯
+Manhattan distance problems on grids often reduce to checking extreme points (corners, edges)
+Always think: "Can I enumerate all candidates cheaply?" — here the answer was a clear YES ✅
+
+🧠 The Intuition: The maximum distance path between two points on a grid will almost always involve corners — they are the farthest points from any interior cell. So instead of thinking geometrically, just try all corner pairs and pick the best!
+
+💬 Do you prefer geometry-based proofs or brute-force enumeration for grid problems? Let me know your approach! 👇
