@@ -1,0 +1,28 @@
+✅ Accepted on Codeforces! Problem B — Reverse a Permutation | Round 1076 (Div. 3)
+
+Permutations are one of my favourite topics in CP — and this problem had a beautiful suffix-based twist! 🔄
+
+🔗Problem Link: https://lnkd.in/guPFUcTt
+
+🧩 The Problem: You're given a permutation p of length n. In one operation, you pick an index l and reverse the subarray p[l..r], where r is the position of the maximum element in the suffix starting at l. You must apply operations until p becomes [1, 2, 3, ..., n] (sorted). Find the resulting permutation after doing all necessary operations — it's guaranteed a solution always exists!
+
+💡 My Approach — Suffix Maximum + Greedy Simulation:
+Step 1 — Build a Suffix Maximum array:
+suffix_max[i] = maximum value in p[i..n-1]
+Built in O(n) from right to left ✅
+Step 2 — Find the leftmost "unsorted" position l:
+Walk from left while p[l] == suffix_max[l] (meaning this prefix is already the largest possible — already in place)
+Stop at the first l where this breaks
+Step 3 — Reverse the subarray p[l..r]:
+r = index of suffix_max[l] in p
+Reverse p[l:r+1] in-place
+Step 4 — Print the result! 🎯
+
+📌 Key Takeaways:
+🔍 Suffix Maximum tells you the largest value you could ever bring to position l with one reversal — that's the greedy choice!
+
+🎯 Greedy works because: the leftmost unsorted position must be fixed first, and the only valid reversal brings the suffix maximum to the front of the remaining unsorted segment.
+
+🔄 One operation is always enough — a single well-chosen reversal fixes the entire permutation!
+
+🧠 The Elegant Insight: The suffix maximum array transforms a seemingly complex simulation into a clean "find & fix" strategy. Build once, use once, done. That's the beauty of preprocessing! 🏗️
