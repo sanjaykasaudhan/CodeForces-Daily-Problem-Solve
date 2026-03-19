@@ -1,0 +1,27 @@
+✅ Accepted on Codeforces! Problem D — Manhattan Circle | Round 952 (Div. 4)
+
+A Problem D solved! 🥳 This one looked intimidating at first but turned out to be a beautiful application of counting — let me walk you through it!
+
+🔗Problem Link: https://lnkd.in/gfu8FEb7
+
+🧩 The Problem: You're given an n × m grid filled with . and #. A Manhattan Circle of radius r centred at (cx, cy) covers all cells where the Manhattan distance from the centre is ≤ r. You're told the grid contains exactly one such Manhattan Circle somewhere. Find its centre (cx, cy)! 🎯
+
+💡 My Approach — Row Max + Column Max:
+The key geometric insight about Manhattan Circles:
+🔑 The centre row has the most # cells of any row — because the widest horizontal cross-section passes through the centre!
+🔑 Among all rows, the centre column has the most # cells in its column — because the tallest vertical cross-section passes through the centre!
+So the algorithm is elegantly simple:
+Step 1 — Find best_row:
+Count # in each row
+The row with the maximum count is the centre row ✅
+Step 2 — Find best_col:
+Count # in each column across the entire grid
+The column with the maximum count is the centre column ✅
+Step 3 — Output (best_row + 1, best_col + 1) 🎯
+
+📌 Key Takeaways:
+🔷 Geometry helps! The Manhattan Circle is symmetric — its widest row AND tallest column both pass through the centre. This symmetry is the entire key to the solution.
+🔷 Decompose axes independently — instead of searching a 2D space, find the best row and best column separately. This reduces O(n²) search to O(n + m)!
+🔷 Max counting is powerful — sometimes complex geometry reduces to a simple argmax operation. Always ask: "What's special about the centre compared to other cells?" 🧠
+
+🤯 The "Aha!" Moment: Once you realise the Manhattan Circle looks like a diamond shape ♦️ — and that its widest horizontal slice and tallest vertical slice both pass through the centre — the rest is just counting!
