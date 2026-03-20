@@ -1,0 +1,26 @@
+✅ Accepted on Codeforces! Problem C — Clock and Strings | Round 944 (Div. 4)
+
+A Problem C down! 🕐 This one is a beautiful puzzle about circular arcs — and the solution fits in just a few lines once you see the trick!
+
+🔗Problem Link: 
+
+🧩 The Problem: Imagine a clock with positions 1 to 12. You have two hands forming arc A→B and two more forming arc C→D (going clockwise). Do the two arcs intersect? Print YES or NO.
+The catch: the clock is circular — so an arc from 10 to 2 wraps around through 11, 12, 1! 🔄
+
+💡 My Approach — The "Between on a Circle" Function:
+The core insight: two arcs on a circle intersect if and only if exactly one of C or D lies strictly inside arc A→B (not both, not neither).
+This is because:
+If both C and D are inside A→B → arc CD is fully contained, no crossing ❌
+If neither C nor D is inside A→B → arc CD is fully outside, no crossing ❌
+If exactly one of C, D is inside A→B → the arcs must cross! ✅
+So the answer is simply: c_in XOR d_in → c_in != d_in
+The between(x, a, b) function checks if x lies in the clockwise arc from a to b:
+If a < b: it's a normal arc, just check a < x < b
+If a > b: the arc wraps around 12, so check x > a OR x < b
+
+📌 Key Takeaways:
+🔵 Circular thinking is different from linear thinking — always handle the wrap-around case separately when dealing with clocks, rings, or modular arithmetic!
+🔵 XOR logic is powerful — "exactly one of two conditions" maps perfectly to != or XOR. A neat trick for intersection problems!
+🔵 Reduce geometry to membership tests — instead of computing actual intersection points, just ask "is this point inside or outside the arc?" and reason from there. 🧠
+
+🤯 The "Aha!" Moment: Two arcs cross ↔ one endpoint of each arc separates the endpoints of the other. Once you see this, the problem collapses from a geometry puzzle into a simple point-in-arc membership check! 🎯
