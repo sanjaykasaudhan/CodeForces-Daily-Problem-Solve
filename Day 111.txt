@@ -1,0 +1,33 @@
+✅ Accepted on Codeforces! Problem A — Exciting Bets | Round 730 (Div. 2)
+
+Short code, deep math! 🧮 This problem looks like a betting puzzle on the surface, but underneath it's a pure number theory gem!
+
+🔗Problem Link: https://lnkd.in/g37HwsAp
+
+🧩 The Problem: You have two numbers a and b. In one operation, you can either increase both by 1 or decrease both by 1 simultaneously. You want to maximise GCD(a, b). Find:
+The maximum possible GCD
+The minimum number of operations to achieve it
+
+💡 The Key Insight — GCD and Differences:
+Here's the mathematical magic 🪄:
+GCD(a, b) always divides (a - b)
+When you add or subtract 1 from both a and b simultaneously, their difference stays constant! So no matter how many operations you perform:
+a - b = constant throughout all operations!
+This means:
+Maximum GCD = |a - b| (since GCD must divide the difference, and |a-b| is the largest such divisor)
+Special case: if a == b, GCD is already infinite → output 0 0
+Minimum operations = get a (or b) to the nearest multiple of d = |a - b|:
+r = a % d → how far a is from the previous multiple
+Answer = min(r, d - r) → go to the closer multiple (either round down or round up) ✅
+
+Examples:
+a=8, b=5 → d=3, r=8%3=2 → ops=min(2,1)=1 → GCD=3 ✅
+a=1, b=2 → d=1, r=1%1=0 → ops=0 → GCD=1 ✅
+a=3, b=9 → d=6, r=3%6=3 → ops=min(3,3)=3 → GCD=6 ✅
+
+📌 Key Takeaways:
+🔢 The difference is invariant — adding/subtracting 1 from both numbers doesn't change a - b. This is the entire foundation of the solution!
+🔢 GCD divides differences — a classic number theory fact: gcd(a,b) | (a-b) always. So the max GCD is bounded by |a-b|!
+🔢 Modular distance — finding the minimum steps to reach a multiple is just min(r, d-r), the classic "closest multiple" formula. 🎯
+
+🤯 The "Aha!" Moment: Once you realise the difference never changes, the problem transforms from a dynamic optimisation into a static number theory question. That's the power of finding invariants! 🔒
