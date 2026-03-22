@@ -1,0 +1,24 @@
+✅ Accepted on Codeforces! Problem C — Stripes | Round 827 (Div. 4)
+
+Sometimes the simplest observation wins the contest! 🏆 This problem taught me to look at the big picture before writing a single line of logic!
+
+🔗Problem Link: https://lnkd.in/gdG9xvR4
+
+🧩 The Problem: You're given an 8×8 grid filled with R (red) and B (blue) cells. The grid was created by drawing horizontal blue stripes and vertical red stripes — and red always goes on top of blue. Determine whether the last stripe drawn was Red or Blue! 🎨
+
+💡 The Key Insight — What Does "Last" Mean?
+Since red stripes are drawn on top of blue stripes:
+A blue stripe drawn last → will have no red cells in its row (red hasn't covered it yet)
+A red stripe drawn last → will have no blue cells in its column (blue hasn't covered it yet... but blue is horizontal so red columns cut through them)
+
+🔑 The decisive rule:
+If there exists any row that contains R but NO B → the last stripe was Red 🔴
+Otherwise → the last stripe was Blue 🔵
+Why? Because if a red vertical stripe was drawn after all blue stripes, its column cells would be pure R with no B bleeding in. But if a blue stripe was drawn last, every row containing R must also have a B somewhere (since blue was painted over everything last).
+
+📌 Key Takeaways:
+🔴 Layering order matters — the last layer drawn is the one that isn't "overwritten" by anything. Ask: "Which colour appears in a pure, uncontaminated row/column?"
+🔴 Scan for exceptions, not rules — instead of verifying complex painting logic, just look for the one row that breaks the blue-presence pattern. One exception tells the whole story! 🕵️
+🔴 Grid problems often have elegant O(1) or O(n²) solutions when the grid size is fixed (8×8 here). Don't overthink it! 🧠
+
+🤯 The "Aha!" Moment: The problem seems like it needs you to simulate the entire painting process — but you just need to look at one row and ask: "Is there any row with R and no B?" That's it! 🎯
