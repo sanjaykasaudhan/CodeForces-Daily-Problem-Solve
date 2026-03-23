@@ -1,0 +1,28 @@
+✅ Accepted on Codeforces! Problem B — Make it Divisible by 25 | Round 748 (Div. 3)
+
+Digit manipulation + divisibility rules = a super satisfying solve! 🔢✨ Let me walk you through the elegant thinking behind this one!
+
+🔗Problem Link: https://lnkd.in/guH8yQ9E
+
+🧩 The Problem: Given a number as a string s, find the minimum number of digit deletions to make it divisible by 25. You can only delete digits (not rearrange them), and the result must have no leading zeros (unless it's 0 itself).
+
+💡 The Key Insight — What Makes a Number Divisible by 25?
+A number is divisible by 25 if and only if its last two digits form one of:
+00, 25, 50, 75
+So the strategy is:
+For each of these 4 target endings:
+🔍 Scan from the right to find the units digit (d2) — count deletions skipped
+🔍 Continue scanning left from there to find the tens digit (d1) — count more deletions
+➕ Total deletions = steps to find d2 + steps to find d1
+🏆 Take the minimum across all 4 endings!
+Example: s = "71345", target ending "25"
+Find '5' from right → at index 4, steps = 0
+Find '2' from index 3 leftward → at index 2 ('3'→skip, '2'→found), steps2 = 1
+Total = 1 deletion ✅
+
+📌 Key Takeaways:
+🔢 Divisibility rules unlock search space — knowing that only 4 two-digit endings matter for ÷25 reduces an infinite problem to 4 simple scans!
+🔢 Greedy from right — always find the rightmost valid digit first to minimise deletions. Scanning from right to left naturally minimises the count!
+🔢 Enumerate all cases — when the number of valid target states is small (here just 4), try all of them and take the best. No complex DP needed! 🎯
+
+🤯 The "Aha!" Moment: Instead of thinking about which digits to delete, flip it: think about which two digits to keep as the suffix, and count everything after them as "deletions". The last two digits determine everything! 🔑
