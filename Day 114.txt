@@ -1,0 +1,22 @@
+✅ Accepted on Codeforces! Problem A — Forked! | Round 914 (Div. 2)
+
+Chess meets competitive programming! ♟️ This problem was a fantastic blend of geometry and enumeration — and the solution is surprisingly clean!
+
+🔗Problem Link: https://lnkd.in/gmcExCJK
+
+🧩 The Problem: A chess knight at position (xK, yK) attacks using an (a, b) fork — it can move (±a, ±b) or (±b, ±a). You need to place the knight such that it simultaneously attacks both a King at (xQ, yQ) (wait — actually both targets are given as Queen Q and King K, but in the problem they're two pieces). Find how many positions the knight can stand to attack both pieces at once! 🎯
+
+💡 My Approach — Generate Candidates + Verify:
+Step 1 — Generate all squares that attack the Knight's position (xK, yK): A knight at position (xK + sa, yK + sb) can reach (xK, yK) with an (a,b) move.
+For all sign combinations of (sa, sb) ∈ {(a,-a)} × {(b,-b)}:
+Add (xK + sa, yK + sb) → knight position that attacks King ✅
+Add (xK + sb, yK + sa) → swapped axes ✅
+This gives at most 8 candidate positions 🎯
+Step 2 — Check which candidates also attack the Queen: For each candidate (x, y), check if it attacks (xQ, yQ) using the same (a,b) fork:
+
+📌 Key Takeaways:
+♟️ Reverse the problem — instead of asking "where can the knight go?", ask "which squares can reach the King?". This flips a search problem into a generation problem!
+♟️ Use a set for deduplication — when a == b, some candidates coincide. A set handles this automatically without any special casing! 🧹
+♟️ Small fixed search space = brute force wins — a knight has at most 8 moves. Generating all 8 and filtering is cleaner than any geometric formula! 🎯
+
+🤯 The "Aha!" Moment: The key insight is that you don't need to search over an infinite board. The knight's position must be within one (a,b)-move of the King — that's at most 8 squares. Generate those 8, check each against the Queen, done! ✅
