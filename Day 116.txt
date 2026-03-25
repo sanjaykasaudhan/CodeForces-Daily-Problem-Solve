@@ -1,0 +1,30 @@
+✅ Accepted on Codeforces! Problem A — AvtoBus | Round 791 (Div. 2)
+
+A bus scheduling puzzle that's secretly a math problem in disguise! 🚌➗ This one required careful case analysis and modular arithmetic — super satisfying once it clicked!
+
+🔗Problem Link: https://lnkd.in/gND-UWAJ
+
+🧩 The Problem: You have n people to transport. Buses come in two sizes: 4-seaters and 6-seaters. All buses must be completely full (no empty seats!). Find the minimum and maximum number of buses needed, or output -1 if it's impossible.
+
+💡 My Approach — Smart Enumeration with Modular Arithmetic:
+First — When is it impossible?
+If n is odd → impossible (4 and 6 are both even, so any combination gives even total) ❌
+If n < 4 → impossible (can't fill even one bus) ❌
+Finding MAX buses (prefer 4-seaters): Try using 0, 1, or 2 six-seaters (b ∈ {0,1,2}), fill the rest with 4-seaters:
+rem = n - 6*b
+If rem >= 0 and rem % 4 == 0 → valid! Max buses = rem//4 + b → break at first valid (b=0 gives most 4-seaters = most buses) 🎯
+Finding MIN buses (prefer 6-seaters): Try using 0, 1, or 2 four-seaters (a ∈ {0,1,2}), fill the rest with 6-seaters:
+rem = n - 4*a
+If rem >= 0 and rem % 6 == 0 → valid! Min buses = rem//6 + a → break at first valid (a=0 gives most 6-seaters = fewest buses) 🎯
+
+Examples:
+n=4 → 1×4-seater → min=max=1 ✅
+n=7 → odd → -1 ✅
+n=24 → min: 4×6 = 4, max: 6×4 = 6 ✅
+
+📌 Key Takeaways:
+🚌 Only 3 cases to try — because 3×4=12 and 3×6=18, and LCM(4,6)=12, so the remainder cycle is short. You never need more than 2 buses of the "minority" type to make things divisible! 🔢
+🚌 Separate min and max cleanly — max buses = maximise use of smaller buses (4-seaters), min buses = maximise use of larger buses (6-seaters). Two independent greedy subproblems! 🎯
+🚌 Early termination matters — break at first valid b (or a) since we want the extreme case (b=0 for max, a=0 for min). Don't iterate unnecessarily! ⚡
+
+🤯 The "Aha!" Moment: The key insight is that you only need to fix the count of one bus type (trying 0, 1, 2) and check if the remainder is divisible by the other type. The remainder cycle is short — so brute force over just 3 values is both correct and optimal! 🔑
