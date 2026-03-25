@@ -1,0 +1,28 @@
+✅ Accepted on Codeforces! Problem A — Three Indices | Educational Round 91 (Rated for Div. 2)
+
+Sometimes the cleanest problems have the cleanest solutions! 🌟 This one is a perfect example of how a single well-known concept unlocks everything instantly!
+
+🔗Problem Link: https://lnkd.in/giVb7uEB
+
+🧩 The Problem: Given a permutation p of length n, find three indices i < j < k such that:
+p[j] > p[i] and p[j] > p[k]
+In other words — find a local maximum in the array and output its index along with its two neighbours! If no such triplet exists, print "NO".
+
+💡 The Key Insight — Local Maximum = Done!
+A local maximum at position j means:
+p[j] > p[j-1] AND p[j] > p[j+1]
+And the three indices are automatically (j-1, j, j+1) — i.e., (j, j+1, j+2) in 1-indexed! 🎯
+But wait — does a local maximum always exist in a permutation?
+Yes! ✅ The only arrays with NO local maximum are strictly monotone sequences (always increasing or always decreasing). But a permutation of length ≥ 3 that isn't strictly monotone must have a local maximum somewhere. And even for strictly monotone permutations of length ≥ 3... wait, those don't have local maxima. The problem guarantees n ≥ 3 and a permutation, so we just scan and check!
+
+Examples:
+[2, 1, 4, 3] → index 2 (0-based) = value 4 → local max → 2 3 4 ✅
+[4, 6, 1, 2, 5, 3] → index 1 = value 6 → local max → 1 2 3 ✅
+[5, 3, 1, 2, 4] → no local max in middle → NO ✅
+
+📌 Key Takeaways:
+🏔️ Local maxima are your friends — any time a problem asks for "a middle element greater than its neighbours", think local maximum scan immediately!
+🏔️ Break early — once the first local max is found, stop scanning. No need to find all of them — just one suffices! ⚡
+🏔️ Output format matters — the problem asks for 1-indexed output, so remember to add 1 to your 0-indexed positions. A small but critical detail! 🔍
+
+🤯 The "Aha!" Moment: The problem asks for three indices satisfying a relationship — but that relationship is exactly the definition of a local maximum! Once you recognise that, it's a one-liner scan. Pattern recognition is everything in CP! 🧠
