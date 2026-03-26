@@ -1,0 +1,28 @@
+✅ Accepted on Codeforces! Problem A — Make It Zero | Round 896 (Div. 2)
+
+Parity thinking at its finest! ⚖️ This problem looks complex at first glance — but once you split it into two cases based on parity, everything falls into place beautifully!
+
+🔗Problem Link: https://lnkd.in/eGy8-iz4
+
+🧩 The Problem: You have an array of n integers. In one operation, you pick indices l and r, and add the value (r - l + 1) (the subarray length) to every element in a[l..r]. Find the minimum number of operations to make all elements equal to zero (mod some value — actually the array contains non-negative integers and you need to zero them all using range-add of subarray lengths).
+Wait — re-reading carefully from the code: the solution uses at most 0, 2, or 4 operations. Let me break down what's really happening! 🔍
+
+💡 The Real Insight — Parity-Based Case Analysis:
+Case 1: All zeros already → 0 operations ✅
+Case 2: n is even → 2 operations suffice:
+Operation 1: (1, n) → adds n to every element
+Operation 2: (1, n) → adds n again
+Two full-array passes can zero everything out with the right parity! 🎯
+Case 3: n is odd → 4 operations needed:
+(1, n) → full array, length n (odd)
+(1, n-1) → first n-1 elements, length n-1 (even)
+(n-1, n) → last 2 elements, length 2 (even)
+(n-1, n) → last 2 elements again
+These 4 operations together cover all parity combinations needed! 🧮
+
+📌 Key Takeaways:
+⚖️ Parity is everything — even vs odd length arrays behave fundamentally differently when you're adding subarray lengths. Always check parity first in array/range problems!
+⚖️ Construction problems reward case analysis — instead of searching for a general formula, identify the 2-3 distinct cases and construct the answer for each separately. Clean and reliable! 🎯
+⚖️ Minimum operations problems often have small answers — here the answer is 0, 2, or 4. When the bound is small, think about what operations "cancel" or "balance" each other! 🔢
+
+🤯 The "Aha!" Moment: The key observation is that applying an operation twice on the same range effectively adds 2 × length to those elements — which is always even. So for even-length arrays, two full passes suffice. For odd n, you need extra operations to handle the odd-length contribution! 🔑
