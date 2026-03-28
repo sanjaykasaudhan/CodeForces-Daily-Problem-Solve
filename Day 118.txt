@@ -1,0 +1,31 @@
+✅ Accepted on Codeforces! Problem C — Rudolf and the Ugly String | Round 933 (Div. 3)
+
+String parsing with greedy priority — one of my favourite problem types! 🧵 The key here is knowing which pattern to consume first when patterns overlap. Let me break it down!
+
+🔗Problem Link: https://lnkd.in/gvVtQFkx
+
+🧩 The Problem: Given a string, count the minimum number of characters to delete to make it contain no occurrence of either "map" or "pie" as a substring. The tricky part: "mapie" contains both patterns overlapping — and deleting just one character ('a' or 'p') can kill both at once! 🎯
+
+💡 My Approach — Greedy Left-to-Right Scan with Priority:
+Scan through the string with index i, consuming patterns greedily:
+Priority order matters critically:
+🥇 Check for "mapie" first (length 5): If s[i:i+5] == "mapie" → one deletion kills both patterns simultaneously!
+count += 1, i += 5 ✅ (most efficient!)
+🥈 Check for "map" or "pie" (length 3): If either found → one deletion needed
+count += 1, i += 3 ✅
+🥉 Otherwise: just advance → i += 1
+
+Why check "mapie" first? Because "mapie" = "map" + "pie" overlapping at 'p'. If we greedily consumed "map" first, we'd count it as 1 deletion and then hit "pie" for another 1 — total 2 deletions. But one smart deletion of 'a' (or 'p') breaks both — only 1 deletion needed! Checking the longer pattern first saves us! 🧠
+
+Examples:
+"mmapnapie" → finds "map" (+1), then "pie" (+1) → 2 ✅
+"mappppie" → "map" (+1), then "pie" (+1) → 2 ✅
+"mapmapmapmap" → 4 × "map" → 4 ✅
+"pppiepieeee" → finds "pie" twice → 2 ✅
+
+📌 Key Takeaways:
+🔤 Overlapping pattern priority is everything — always check longer/combined patterns before their subpatterns. Consuming "mapie" as one unit is strictly better than consuming "map" and "pie" separately!
+🔤 Greedy scanning works here because patterns don't chain further — after consuming 5 or 3 characters, the next overlap window is always fresh. No backtracking needed! ✅
+🔤 This is the same approach as the Magic Numbers problem — priority-based greedy parsing is a reusable template for many string problems! 🗂️
+
+🤯 The "Aha!" Moment: "mapie" is the only way the two patterns can overlap (they share the 'p'). Recognising this single overlap case — and handling it greedily — is the entire trick! Everything else is straightforward. 🔑
