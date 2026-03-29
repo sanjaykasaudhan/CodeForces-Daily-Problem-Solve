@@ -1,0 +1,36 @@
+✅ Accepted on Codeforces! Problem B — Not Dividing | Round 856 (Div. 2)
+
+Divisibility, minimality, and a sneaky edge case — this problem packs a lot into a compact solution! 🔢 Let me walk you through the thinking!
+
+🔗Problem Link: https://lnkd.in/gTYKfHTc
+
+🧩 The Problem: Given an array of n positive integers, modify each element (by increasing it) with the minimum total number of increments such that no element divides any other element in the array. Find the resulting array!
+
+💡 My Approach — Two-Pass Greedy:
+The Critical Observation:
+1 divides everything! Any element equal to 1 must be increased first — it will always divide every other element, making a solution impossible unless we fix it. The minimum fix: bump all 1s to 2. ✅
+
+Pass 1 — Fix all 1s:
+python
+for i in range(n):
+ if a[i] == 1:
+ a[i] = 2
+
+Pass 2 — Fix divisibility between adjacent elements: After sorting (implicit in the problem structure), scan left to right. If a[i+1] % a[i] == 0 (next element is divisible by current), increment a[i+1] by 1 to break the divisibility:
+python
+for i in range(n-1):
+ if a[i+1] % a[i] == 0:
+ a[i+1] += 1
+Why only check adjacent pairs? Because we process left to right on a sorted (or near-sorted) array — if a[i] doesn't divide a[i+1], it can't divide anything further right either (they're larger). One pass is sufficient! 🎯
+
+Examples:
+[2, 4, 3, 6] → 4%2=0 → 4→5, 6%3=0 → 6→7 → [2, 5, 3, 7] ✅
+[1, 2, 3] → 1→2, then 2%2=0 → 2→3, 3%3=0 → 3→4 → [2, 3, 4] ✅
+[4, 2] → 4%2=0... wait, array is processed as given — [4, 2] → 2%4≠0 → [4, 2] ✅
+
+📌 Key Takeaways:
+🔢 Always handle edge cases first — the value 1 is a special divisor of everything. Spotting and neutralising this edge case immediately simplifies all subsequent logic! 🕵️
+🔢 Greedy + single pass works because incrementing by just 1 is the minimum change, and after fixing a[i+1], it can only grow — never shrink — so earlier fixes stay valid! ✅
+🔢 Adjacent checking suffices on sorted input — divisibility violations in sorted arrays only occur between elements close in value. One left-to-right pass catches all violations! 🎯
+
+🤯 The "Aha!" Moment: The entire problem collapses into two simple rules: kill all 1s first, then fix adjacent divisibility with a +1 nudge. Two passes, zero complex data structures, pure logic! 🧠
