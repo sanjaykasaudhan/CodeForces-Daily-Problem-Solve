@@ -1,0 +1,30 @@
+✅ Accepted on Codeforces! Problem B — Permutation Swap | Round 873 (Div. 2)
+
+Math + permutations = one of the most elegant problem types in competitive programming! 🔢✨ This one had a beautiful GCD-based insight hiding beneath a seemingly complex setup!
+
+🔗Problem Link: https://lnkd.in/gp59NZf8
+
+🧩 The Problem: Given a permutation p of length n, you can swap any two elements p[i] and p[j] if |i - j| is divisible by some fixed integer k. Find the maximum possible k such that you can sort the permutation completely using only swaps where the distance between indices is divisible by k!
+
+💡 The Key Insight — Displacement + GCD:
+For each element p[i], its displacement is:
+displacement = |i + 1 - p[i]| (how far it is from its correct sorted position, 1-indexed)
+To sort the permutation, every element must eventually reach its target. For element at index i to reach position p[i], k must divide its displacement!
+So k must divide ALL non-zero displacements simultaneously → k = GCD of all non-zero displacements! 🎯
+Why GCD?
+k must divide every displacement
+The largest such k is the GCD of all displacements
+Elements already in place (displacement = 0) are ignored since every k divides 0 ✅
+
+Examples:
+[3, 1, 2] → displacements: |1-3|=2, |2-1|=1, |3-2|=1 → GCD(2,1,1) = 1 ✅
+[3, 4, 1, 2] → displacements: 2, 2, 2, 2 → GCD = 2 ✅
+[4, 2, 6, 7, 5, 3, 1] → GCD of all displacements = 3 ✅
+
+📌 Key Takeaways:
+🔢 Displacement is the key metric — don't think about the swaps themselves. Think about how far each element needs to travel, and what that implies about k!
+🔢 GCD accumulates constraints — each element imposes a divisibility constraint on k. The GCD of all constraints gives the maximum valid k. A classic and reusable pattern! 🎯
+🔢 Zero displacements are free — elements already in place impose no constraint (every integer divides 0), so safely skip them when computing GCD! ✅
+🔢 math.gcd(0, x) = x — Python's gcd handles the initialisation elegantly: starting result at 0 means the first non-zero displacement sets the baseline automatically! 🐍
+
+🤯 The "Aha!" Moment: Instead of simulating swaps, ask: "What must k divide?" → It must divide every displacement. The answer to "what's the largest number dividing a set of numbers?" is always their GCD. Problem solved! 🔑
