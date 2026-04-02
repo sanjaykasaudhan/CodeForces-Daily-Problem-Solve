@@ -1,0 +1,30 @@
+✅ Accepted on Codeforces! Problem A — Juicer | AIM Tech Round 3 (Div. 2)
+
+A simulation problem with a satisfying real-world flavour! 🍹 Sometimes competitive programming is just about carefully modelling what the problem describes — no tricks needed, just clean logic!
+
+🔗Problem Link: https://lnkd.in/gh9Kge5W
+
+🧩 The Problem: You have a juicer with a waste container of capacity d. You process n fruits one by one. Each fruit with size x:
+If x ≤ b (fits in the juicer): add x to the waste container If waste exceeds d: empty the container (count += 1) and reset waste to 0
+If x > b (too big): skip it (can't be juiced)
+Count the minimum number of times you need to empty the waste container!
+
+💡 My Approach — Direct Simulation:
+This problem is a pure simulation — just follow the rules exactly as stated!
+For each fruit x in the array:
+Skip if x > b (fruit too large for the juicer)
+Add x to waste
+If waste > d → increment count, reset waste = 0
+That's the complete algorithm! No edge cases to worry about, no tricky invariants — just faithful simulation! 🎯
+The key insight: you only empty when strictly over capacity (waste > d), not at exactly d. Read the problem statement carefully! 👀
+
+Examples:
+n=2, b=7, d=10, a=[5,6] → waste=5, waste=11>10 → empty! → count=1 ✅
+n=1, b=5, d=10, a=[7] → 7>5 → skip → count=0 ✅
+
+📌 Key Takeaways:
+🍹 Simulation problems reward careful reading — the only "trick" here is noticing that fruits larger than b are skipped entirely, and emptying happens when waste > d (strictly greater, not ≥). One misread and you get WA! 📖
+🍹 Don't overthink it — not every CP problem needs a clever algorithm. Sometimes the problem IS the algorithm. Code exactly what you read, test on examples, submit! ✅
+🍹 Accumulator + threshold pattern — this "accumulate until threshold, then reset" pattern appears everywhere: sliding windows, rate limiting, batch processing. Recognise it and code it in seconds! 🔄
+
+🤯 The Lesson: In competitive programming, problem A is often about reading comprehension + careful implementation more than algorithmic insight. Build the habit of translating problem statements into code line by line — it pays off massively! 🧠
