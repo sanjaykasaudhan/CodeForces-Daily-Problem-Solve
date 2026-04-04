@@ -1,0 +1,29 @@
+✅ Accepted on Codeforces! Problem B — Kana and Dragon Quest Game | Round 635 (Div. 2)
+
+Consistent problem solving! 🔥 And this one had a wonderfully sneaky greedy insight hiding inside a fantasy-themed problem!
+
+🔗Problem Link: https://lnkd.in/g8JJFtH4
+
+🧩 The Problem: You have a dragon with x HP. You have n fireballs and m ice spells:
+🔥 Fireball: If HP > 20, halve it and subtract 10 → x = x // 2 + 10... wait, actually reduces: x → x//2 - 10? Let me read the code carefully: x = x // 2 + 10 → but this increases...
+Reading the code again precisely:
+Each fireball (used when x > 20): x = x // 2 + 10 — but note the next line subtracts 10 * m
+After all fireballs: x -= 10 * m (each ice spell deals 10 damage)
+WIN if x <= 0! 🐉
+So fireballs halve + add 10, ice spells each deal flat 10 damage. Can you defeat the dragon?
+
+💡 My Approach — Greedy: Use Fireballs First When Beneficial!
+Key insight: A fireball is only worth using when x > 20:
+If x > 20: x // 2 + 10 < x (halving a large number beats flat damage)
+If x ≤ 20: fireball would make things worse or neutral → skip it!
+So the greedy strategy:
+Use all n fireballs greedily — only apply when x > 20, transform x = x // 2 + 10
+Apply all m ice spells — flat x -= 10 * m
+Check if x ≤ 0 → YES, else NO!
+
+📌 Key Takeaways:
+🐉 Greedy ordering matters — always use the "multiplicative" reduction (fireball) before the "additive" reduction (ice). Halving a large number is far more powerful than subtracting 10! Always apply the stronger operation first! 🔢
+🐉 Threshold conditions simplify decisions — the x > 20 check elegantly separates "fireball is useful" from "fireball is wasteful". One condition, zero ambiguity! ✅
+🐉 Batch the additive operations — instead of looping m times over ice spells (each -10), compute 10 * m in one shot. Recognise when loops can be collapsed into arithmetic! ⚡
+
+🤯 The "Aha!" Moment: Fireballs are only powerful against large HP values — once HP drops to ≤ 20, halving it barely helps. So use all fireballs greedily while HP is large, then finish with flat ice damage. Greedy ordering + smart batching = clean solution! 🔑
