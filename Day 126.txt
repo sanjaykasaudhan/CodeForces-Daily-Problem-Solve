@@ -1,0 +1,34 @@
+✅ Accepted on Codeforces! Problem C — Unique Number | Round 690 (Div. 3)
+
+Greedy digit construction with a neat upper bound — this one was super satisfying to crack! 🔢✨
+
+🔗Problem Link: https://lnkd.in/gFcS2shB
+
+🧩 The Problem: Given a number x, find the smallest positive integer whose digits are all unique and sum to exactly x. If no such number exists, print -1!
+
+💡 The Key Insight — Greedy from Large Digits:
+First — What's the maximum possible digit sum with all unique digits? Using digits 1-9 (each once): 1+2+3+...+9 = 45
+So if x > 45 → impossible, print -1! ✅
+For x ≤ 45 — Greedy Construction: To get the smallest number, we want:
+Fewest digits possible (fewer digits = smaller number)
+Among same digit count, smaller digits first (ascending order)
+To minimise digit count → use the largest digits first (9, 8, 7...) to "spend" the remaining sum as fast as possible!
+Algorithm:
+Try digits from 9 down to 1
+If remaining >= d → take digit d, subtract from remaining
+Stop when remaining == 0
+Sort collected digits in ascending order → smallest number! 🎯
+
+Examples:
+x=1 → take 1 → digits=[1] → "1" ✅
+x=5 → take 5 → digits=[5] → "5" ✅
+x=15 → take 9→6 remaining, take 6→0 remaining → digits=[6,9] → sort → "69" ✅
+x=50 → 50>45 → "-1" ✅
+
+📌 Key Takeaways:
+🔢 Know your bounds — 1+2+...+9 = 45 is the magic upper limit. Any x > 45 is instantly impossible. Precomputing simple bounds like this saves you from unnecessary computation! 🎯
+🔢 Greedy digit selection — use largest digits first to minimise the count of digits needed. Then sort ascending to get the numerically smallest arrangement. Two-step thinking! 💡
+🔢 Uniqueness is free here — by iterating digits from 9 down to 1 and taking each at most once, uniqueness is guaranteed by construction. No need for extra checks! ✅
+🔢 "Smallest number" ≠ "smallest digits first" during selection — counterintuitively, we SELECT largest first (to minimise digit count), then ARRANGE smallest first (to minimise value). The two goals are handled separately! 🧠
+
+🤯 The "Aha!" Moment: The maximum sum of 45 immediately gives you the impossibility check. Then greedy from 9 downward gives the fewest digits, and sorting them ascending gives the smallest number. Two clean observations, zero complex logic! 🔑
