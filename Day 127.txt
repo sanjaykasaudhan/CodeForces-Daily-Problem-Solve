@@ -1,0 +1,30 @@
+✅ Accepted on Codeforces! Problem A — Lights Out | Round 168 (Div. 2)
+
+Grid simulation with neighbour counting — a classic problem type that's all about getting the logic exactly right! 💡🔲
+
+🔗Problem Link: https://lnkd.in/gVCWphHm
+
+🧩 The Problem: You have a 3×3 grid where each cell is either ON (1) or OFF (0). When you press a cell, it toggles itself and all its adjacent neighbours (up, down, left, right). Given the initial state, find what the grid looks like after pressing every cell exactly once! 🔀
+
+💡 My Approach — Count Toggles per Cell:
+When every cell is pressed exactly once, each cell (i, j) gets toggled once for each of its neighbours that is pressed (including itself).
+So the new value of cell (i, j) = (original_value + number_of_pressed_neighbours_including_self) % 2
+Since every cell is pressed exactly once:
+Toggles for cell (i,j) = count of cells in {(i,j), (i±1,j), (i,j±1)} that are valid (within bounds) → that's just the number of valid neighbours including itself!
+Wait — re-reading carefully: every cell IS pressed, so toggles = count of (i,j) and its valid neighbours (since each valid cell in that set was pressed once).
+New value = (1 + sum_of_valid_neighbours_including_self) % 2
+The +1 accounts for the cell itself being pressed (it toggles its own neighbourhood)!
+
+Example:
+Input: Output:
+1 0 0 001
+0 0 0 → 010
+0 0 1 100
+
+📌 Key Takeaways:
+💡 Direction vectors are your best friend — dirs = [(0,0),(0,1),(0,-1),(1,0),(-1,0)] elegantly covers self + 4 neighbours in one loop. Always use direction arrays for grid neighbour problems! 🗂️
+💡 Bounds checking is critical — 0 <= ni < 3 and 0 <= nj < 3 ensures we never go out of bounds. Missing this causes index errors or wrong counts at corners/edges! ⚠️
+💡 The (1 + toggles) % 2 formula — the 1 accounts for the cell pressing itself in the toggle chain. Think carefully about what "pressing" means for the cell's own state! 🧮
+💡 Fixed-size grids = brute force wins — a 3×3 grid has only 9 cells and 5 neighbours max. Never overthink fixed small grids — just simulate directly! 🎯
+
+🤯 The "Aha!" Moment: Instead of simulating each press one by one (9 iterations of toggling neighbours), realise that pressing every cell once means each cell's final value depends only on how many of its neighbours (including itself) were pressed — which is just the count of valid cells in its neighbourhood! 🔑
