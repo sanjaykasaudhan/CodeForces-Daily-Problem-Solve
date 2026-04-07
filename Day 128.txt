@@ -1,0 +1,35 @@
+✅ Accepted on Codeforces! Problem A — Lineland Mail | Round hashtag#Pi (Div. 2)
+
+A geometry-meets-arrays problem with a beautiful symmetry in the solution! 📬📏 And yes — Round hashtag#Pi is a real contest. Only on Codeforces! 🥧
+
+🔗Problem Link: https://lnkd.in/gFQsG_BY
+
+🧩 The Problem: There are n cities on a number line at positions x[0], x[1], ..., x[n-1]. For each city i, find:
+Minimum delivery cost = minimum distance to any other city
+Maximum delivery cost = maximum distance to any other city
+Distance between city i and city j = |x[i] - x[j]|
+Output min and max for every city!
+
+💡 My Approach — Neighbour + Endpoints:
+Since the array is sorted (positions are given in order), the key observations are:
+🔵 Minimum distance for city i:
+The closest city is always a direct neighbour (left or right)
+mn = min(x[i]-x[i-1] if i>0 else inf, x[i+1]-x[i] if i<n-1 else inf)
+🔴 Maximum distance for city i:
+The farthest city is always one of the two endpoints (leftmost or rightmost)
+mx = max(x[i]-x[0], x[-1]-x[i])
+That's it! No sorting needed (already sorted), no complex data structures — just index arithmetic! 🎯
+
+Example: x = [-5, -2, 2, 7]
+City -5: mn=|-5-(-2)|=3, mx=max(0, 12)=3 12 ✅
+City -2: mn=min(3,4)=3, mx=max(3,9)=3 9 ✅
+City 2: mn=min(4,5)=4, mx=max(7,5)=4 7 ✅
+City 7: mn=5, mx=max(12,0)=5 12 ✅
+
+📌 Key Takeaways:
+📬 Sorted arrays make neighbour queries trivial — the minimum distance is always to an adjacent element in a sorted array. No need to check all pairs! This reduces O(n²) to O(n)! 🚀
+📬 Extremes live at endpoints — the maximum distance from any point on a line is always to one of the two ends. This is a fundamental geometric property of 1D problems! 🎯
+📬 Handle edge cases with float('inf') — for the first and last city, one neighbour doesn't exist. Using infinity as a sentinel keeps the min() logic clean without extra conditionals! ✅
+📬 x[-1] is Pythonic elegance — using x[-1] for the last element instead of x[n-1] is cleaner and less error-prone. Embrace Python's negative indexing! 🐍
+
+🤯 The "Aha!" Moment: For a 1D sorted array, minimum = nearest neighbour (adjacent index), maximum = farthest endpoint. These two properties together solve the problem in a single O(n) pass with zero extra space! 🔑
