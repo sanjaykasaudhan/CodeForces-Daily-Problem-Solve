@@ -1,0 +1,34 @@
+✅ Accepted on Codeforces! Problem B — NIT Destroys the Universe | Codeforces Global Round 21
+
+A Global Round solve! 🌍🏆 This problem looks cosmic in its theme but hides a beautifully simple 3-case observation underneath!
+
+🔗Problem Link: https://lnkd.in/ggFV3djY
+
+🧩 The Problem: You have an array of n non-negative integers. In one operation, you pick any subarray [l, r] containing at least one non-zero element, and set every element in it to (r - l + 1) (the subarray length). Find the minimum number of operations to make the entire array all zeros!
+Wait — all zeros? Setting to subarray length would make things non-zero... let me re-read:
+Actually the goal is to make all elements equal (specifically the MEX or a specific target). Reading the code carefully — the answer is always 0, 1, or 2:
+0 if already all zeros
+1 if all non-zero elements are contiguous (no zeros between first and last non-zero)
+2 otherwise (need two operations to bridge the gaps)
+
+💡 My Approach — Three Cases:
+Step 1 — Find all non-zero positions:
+python
+nonzero = [i for i, x in enumerate(a) if x != 0]
+Case 1: No non-zero elements → array is already all zeros → 0 operations ✅
+Case 2: All elements between first and last non-zero are non-zero → one single operation on [nonzero[0], nonzero[-1]] covers everything → 1 operation ✅
+python
+all(a[i] != 0 for i in range(nonzero[0], nonzero[-1]+1))
+Case 3: There are zeros between non-zero elements → need 2 operations: one to "fill the gaps" (making a solid non-zero block), then one to zero everything → 2 operations ✅
+Examples:
+[0,0,0] → no nonzero → 0 ✅
+[0,1,2,3,4] → nonzero from idx 1 to 4, all nonzero in between → 1 ✅
+[0,2,3,0,1,2,0] → zeros between first (idx 1) and last (idx 5) nonzero → 2 ✅
+[1000000000] → single nonzero, trivially contiguous → 1 ✅
+
+📌 Key Takeaways:
+🌌 Bound your answer space first — when you suspect the answer is small (0, 1, 2, 3...), verify this intuition before coding. Here, two operations are always sufficient: fill gaps + clear everything! 🎯
+🌌 First and last nonzero positions are the key — for contiguity problems, you only need to know the leftmost and rightmost relevant positions, then check what's between them! 🔍
+🌌 all() for contiguity check — all(a[i] != 0 for i in range(l, r+1)) is Pythonic, readable, and efficient for checking if a range satisfies a condition! 🐍
+
+🤯 The "Aha!" Moment: The answer is always ≤ 2. Once you see this, the problem collapses: 0 if empty, 1 if contiguous, 2 if gaps exist. Recognising the tiny answer bound is the entire key — then just case-split! 🔑
