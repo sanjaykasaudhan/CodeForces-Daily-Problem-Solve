@@ -1,0 +1,25 @@
+✅ Accepted on Codeforces! Problem D — Unnatural Language Processing | Round 1915
+
+A Problem D cracked! 🏆 This one was a linguistics-meets-programming puzzle — and the greedy parsing approach made it click beautifully!
+
+🔗Problem Link: https://lnkd.in/gTZtMwz8
+
+🧩 The Problem: Lura invented a simple language using only 5 letters: a, b, c, d, e. Vowels are a and e (V), consonants are b, c, d (C). Valid syllables are either CV (consonant + vowel) or CVC (consonant + vowel + consonant). A word is a sequence of syllables. Codeforces
+
+Given a valid word, split it into syllables separated by '.'. Any valid splitting is accepted! 🔤
+
+💡 My Approach — Greedy Priority Parsing:
+Since the word is guaranteed to be valid, scan left to right and greedily consume the longest valid syllable at each position:
+Each syllable starts with a consonant (C), followed by a vowel (V). The question is: is the next character after CV another consonant that belongs to this syllable (CVC) or starts the next syllable (CV...)?
+Priority rule:
+🥇 Start with syl = s[i] (consonant) + s[i+1] (vowel) → advance i by 2
+🥈 Check if s[i] (next char) is a consonant AND (we're at end OR s[i+1] is also a consonant) → if so, this consonant closes the current syllable as CVC → append and advance
+The key condition: absorb the trailing consonant into CVC only if the character after it is NOT a vowel (otherwise it would start a fresh CV syllable next)!
+
+📌 Key Takeaways:
+🔤 Greedy longest match wins — when multiple valid parsings exist, always try to consume the longer pattern (CVC) first, falling back to shorter (CV) if needed. This is a classic greedy parsing template! 🎯
+🔤 Look-ahead is the secret weapon — the decision to extend CV → CVC depends on what comes after the potential trailing consonant. One character of lookahead resolves the ambiguity completely! 👀
+🔤 Guaranteed valid input = no backtracking needed — when the problem guarantees a valid solution exists, greedy parsers never need to backtrack. Trust the greedy and push forward! ✅
+🔤 Same pattern as Magic Numbers & Rudolf problems — priority-based greedy scanning is a reusable template. Build your mental library of patterns! 🧠
+
+🤯 The "Aha!" Moment: The only ambiguity is whether a consonant after CV belongs to the current syllable (CVC) or starts the next one (CV). Answer: it belongs to the current one only if what follows it is NOT a vowel. One lookahead, zero ambiguity! 🔑
