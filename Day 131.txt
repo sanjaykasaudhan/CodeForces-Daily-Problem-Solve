@@ -1,0 +1,33 @@
+✅ Accepted on Codeforces! Problem A — Carnival Wheel | Global Round 31 (Div. 1 + Div. 2)
+
+A Global Round problem solved — and it's a beautiful blend of modular arithmetic and cycle detection! 🎡🔢
+
+🔗Problem Link: https://lnkd.in/g5R-Vx7y
+
+🧩 The Problem: A wheel of circumference l starts at position a. It moves forward by b units each step. Find the maximum position (highest point on the wheel) ever occupied during the first gcd(l, b) * (l // gcd(l, b)) ... actually:
+You track positions a, (a+b)%l, (a+2b)%l, ... until the cycle repeats. Find the maximum position value seen across all steps! 🎯
+
+💡 My Approach — GCD Cycle Length + Simulation:
+Key Insight — How long is the cycle?
+The sequence a, (a+b)%l, (a+2b)%l, ... is periodic. Starting from any position, adding b mod l repeatedly cycles back to the start after exactly:
+steps = l // gcd(l, b)
+This is because gcd(l, b) is the step size of the underlying cycle in modular arithmetic — the wheel visits exactly l / gcd(l, b) distinct positions before repeating! 🔄
+Algorithm:
+Compute g = gcd(l, b)
+steps = l // g → total unique positions
+Simulate steps steps, tracking best = max(pos) at each step
+Advance: pos = (pos + b) % l
+ 
+Examples:
+l=5, a=3, b=2 → gcd=1, steps=5 → positions: 3,0,2,4,1 → max=4 ✅
+l=2, a=0, b=6 → gcd=2, steps=1 → position: 0 → max=0 ✅
+l=8, a=2, b=4 → gcd=4, steps=2 → positions: 2,6 → max=6 ✅
+l=100, a=0, b=1 → gcd=1, steps=100 → max=99 ✅
+
+ 📌 Key Takeaways:
+🎡 GCD determines cycle length in modular arithmetic — l // gcd(l, b) is the number of distinct values in the sequence {kb mod l}. This is a fundamental number theory result worth memorising! 🔢
+🎡 Don't simulate more than needed — simulating beyond the cycle length wastes time and revisits old values. GCD tells you exactly when to stop! ⚡
+🎡 Modular sequences are predictable — (a + k*b) % l is fully determined by gcd(l, b). Whenever you see "advance by b mod l", think GCD immediately! 🧠
+🎡 Global Round = accessible A problems — Global Rounds target both Div. 1 and Div. 2, so problem A is designed to be clean and approachable. Perfect for building confidence! 💪
+
+🤯 The "Aha!" Moment: The wheel doesn't visit ALL l positions — it only visits l // gcd(l, b) of them. Simulating exactly this many steps gives you every unique position exactly once, making the maximum search complete and efficient! 🔑
