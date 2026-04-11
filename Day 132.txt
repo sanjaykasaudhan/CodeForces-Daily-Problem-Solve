@@ -1,0 +1,30 @@
+✅ Accepted on Codeforces! Problem A — Filling Diamonds | Round 633 (Div. 2)
+
+Three lines of code. One mathematical observation. The purest form of competitive programming! 💎🤯
+
+🔗Problem Link: https://lnkd.in/g3ZpXWBh
+
+🧩 The Problem: You have a diamond-shaped grid of height 2n-1. You need to fill it with unit rhombuses (small diamond shapes). Find the number of ways to tile the diamond of size n!
+
+💡 The Key Insight — It's Just n!
+After visualising the diamond shape:
+Size 1: 1 way (trivially one rhombus fills it)
+Size 2: 2 ways
+Size 3: 3 ways
+Size n: n ways!
+The pattern is simply n — the answer equals the input! 🎯
+Why? The diamond of size n has exactly n "columns" of decision points, and at each one there's exactly one binary choice that propagates uniquely. The total count of distinct tilings equals exactly n.
+That's it. Read n, print n! 🐍⚡
+
+📌 Key Takeaways:
+💎 Always look for the pattern first — before writing any complex tiling/DP logic, check small cases (n=1,2,3,4). The pattern here is immediately obvious: answer = n. Spot it and save yourself hours! 🔍
+💎 Geometry can simplify to arithmetic — what looks like a complex combinatorial tiling problem can collapse into a single formula. Trust the math! 🧮
+💎 The simplest solutions are often correct — when your solution is print(n), run the examples, verify, and submit with confidence. Don't second-guess elegance! 💪
+💎 Problem A tests pattern recognition — in competitive programming, problem A often rewards the person who spots the simple pattern fastest, not the one who codes the most complex solution! 🎯
+
+🤯 The "Aha!" Moment: Draw n=1, n=2, n=3 on paper. Count the tilings. See 1, 2, 3. Submit print(n). Get Accepted. Sometimes that's all it takes! 🔑
+This is competitive programming at its most pure — a geometry problem that requires zero geometry to solve!
+
+🏆 Lesson for today:
+"The best code is the code you don't need to write."
+When the answer is staring at you from the examples, trust your pattern recognition! 🧠
