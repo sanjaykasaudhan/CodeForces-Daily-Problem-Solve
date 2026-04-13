@@ -1,0 +1,35 @@
+✅ Accepted on Codeforces! Problem A — Maple and Multiplication | Round 1048 (Div. 2)
+
+Divisibility logic with clean case analysis — elegant, fast, and satisfying! 🍁🔢
+
+🔗Problem Link: https://lnkd.in/g2NvpHTZ
+
+🧩 The Problem: Given two integers a and b, determine the minimum number of multiplication operations needed. The answer is always 0, 1, or 2:
+0 if a == b (already equal — no operations needed)
+1 if one divides the other (b % a == 0 or a % b == 0)
+2 otherwise (need two multiplications to bridge the gap)
+
+💡 The Key Insight — Three Cases Only:
+Case 0 — Equal: If a == b, they're already the same. Nothing to do! ✅
+Case 1 — One divides the other: If b % a == 0 → b is a multiple of a → one multiplication of a reaches b If a % b == 0 → a is a multiple of b → one multiplication of b reaches a Either way, a single operation suffices! ✅
+Case 2 — Neither divides the other: We need to first transform one into a multiple of the other, then apply the second multiplication. Two operations minimum — and always achievable! ✅
+The answer space is beautifully bounded: {0, 1, 2}. No complex computation needed! 🎯
+
+Examples:
+a=1, b=2 → 2%1=0 → 1 ✅
+a=10, b=3 → neither divides → 2 ✅
+a=1000, b=1000 → equal → 0 ✅
+
+📌 Key Takeaways:
+🍁 Always bound the answer first — realising the answer is in {0, 1, 2} immediately tells you to write three cases, not a general algorithm. Bounding the output space is a superpower! 🎯
+🍁 Divisibility is the core check — a % b == 0 or b % a == 0 covers whether one number is reachable from the other in a single step. This is the fundamental divisibility test to memorise! 🔢
+🍁 Symmetric conditions need both checks — b % a == 0 or a % b == 0 handles both directions. Don't check only one way! ✅
+🍁 Case ordering matters for readability — check the most restrictive case (a == b) first, then progressively broader cases. This makes logic clear and prevents overlap! 🧠
+
+🤯 The "Aha!" Moment: Once you see that:
+0 ops: already equal
+1 op: one divides the other
+2 ops: everything else
+...the code practically writes itself! The art is recognising these three cases exist and nothing else does. 🔑
+
+💬 Do you have a mental checklist for "what are the possible answer values?" before coding? This habit of bounding outputs has saved me countless times in CP! Share your approach below! 👇
