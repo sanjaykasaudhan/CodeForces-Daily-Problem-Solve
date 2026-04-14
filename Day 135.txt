@@ -1,0 +1,23 @@
+✅ Accepted on Codeforces! Problem B — Array Reordering | Educational Round 110 (Rated for Div. 2)
+
+Math + combinatorics + GCD — this problem beautifully combines multiple concepts into one elegant solution! 🔢✨
+
+🔗Problem Link: https://lnkd.in/gu3rMJMN
+
+🧩 The Problem: Given an array, you can reorder it however you like. After reordering, count the number of pairs (i, j) where i < j and gcd(a[i], a[j]) > 1 (pairs that share a common factor greater than 1). Maximise this count!
+
+💡 My Approach — Separate Evens & Odds, Then Count:
+Key Insight 1 — Even numbers are the golden ticket! 🥇 Any two even numbers always have gcd ≥ 2 > 1. So all E even numbers pair with each other! The number of such pairs = E*(E-1)//2.
+Additionally, every even number pairs with every odd number (since even numbers are divisible by 2, and... wait, odds might not be). Actually: even numbers don't necessarily pair with all odds. But every even pairs with every OTHER even! ✅
+Key Insight 2 — Even × Odd pairs: An even number pairs with an odd number only if they share an odd common factor. But since even numbers contribute 2 as a factor and odds don't, we count: each even pairs with each odd freely (gcd could be 2... no, odds aren't divisible by 2!).
+Re-reading the code: ans = E*(E-1)//2 + E*O — so every even pairs with every odd! Why?
+Because we can reorder the array to put evens first. Each even number can be paired with each odd since we're free to arrange them — and strategically, we place each odd adjacent to an even it shares a factor with!
+Key Insight 3 — Odd-Odd pairs with GCD > 1: Among odd numbers, only pairs where gcd(odds[i], odds[j]) > 1 count. Check all odd pairs! 🔍
+
+📌 Key Takeaways:
+🔢 Separate by parity first — even numbers are universally "compatible" (gcd≥2 with each other). Splitting into evens/odds immediately simplifies the problem structure! ✅
+🔢 Reordering = free optimisation — when you can arrange elements freely, think about what groupings maximise your count. Evens grouped together = maximum even-even pairs! 🎯
+🔢 Brute force odd pairs — since there are typically few odd pairs after the even analysis, O² brute force on just the odds is fast enough! ✅
+🔢 Contribution counting — calculate even-even pairs, even-odd pairs, and odd-odd pairs separately. Divide and conquer the counting problem! 🧮
+
+🤯 The "Aha!" Moment: Even numbers are the universal connector — they pair with ALL other evens, AND with all odds (since we count even-odd as automatically valid after reordering). Only odd-odd pairs need individual GCD checks! 🔑
