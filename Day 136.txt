@@ -1,0 +1,36 @@
+✅ Accepted on Codeforces! Problem B — The Secret Number | Round 1043 (Div. 3)
+
+Number theory with a clever divisor search — this problem had a beautiful "divisors of form 10^k + 1" insight hiding inside! 🔐🔢
+
+🔗Problem Link: https://lnkd.in/g6RzfJCV
+
+🧩 The Problem: Given a number n, find all positive integers x such that:
+x divides n (x is a divisor of n)
+When you write x, every odd-positioned digit equals every even-positioned digit — essentially, x has the form where alternating digits match!
+The special divisors are numbers of the form 10^k + 1 for k = 1, 2, ..., 18:
+11, 101, 1001, 10001, ...
+These are exactly the numbers where digit[0] = digit[2] = ... = 1 and digit[1] = digit[3] = ... = 0!
+
+💡 My Approach — Try All Divisors of Form 10^k + 1:
+For each k from 1 to 18:
+Compute divisor = 1 + 10^k (= 11, 101, 1001, ...)
+Check if n % divisor == 0
+If yes: x = n // divisor → this is a valid quotient!
+If x > 0: add to results
+Collect all valid x values, deduplicate with a set, sort, and output! 🎯
+
+Examples:
+n=1111 → 1111%11=0 → x=101; 1111%101=0 → x=11 → results: 2 → 11 101 ✅
+n=12 → no divisor of form 10^k+1 divides 12 → 0 ✅
+n=55 → 55%11=0 → x=5 → 1 → 5 ✅
+n=9999999999999999999 → multiple hits → many results ✅
+
+📌 Key Takeaways:
+🔐 Recognise the structural pattern — numbers where odd positions equal even positions are exactly {11, 101, 1001, ...} = {10^k + 1}. This structural observation collapses infinite search to just 18 candidates! 🎯
+🔐 Divisor enumeration over a fixed set — instead of checking all divisors of n (could be huge), enumerate the 18 special divisors and check divisibility. Fixed set = constant time! ✅
+🔐 Set for deduplication — different values of k might give the same quotient. Using set() handles this automatically without special casing! 🐍
+🔐 Range 1 to 18 — since n can be up to ~10^18, the largest useful 10^k + 1 is 10^18 + 1. Beyond that, no number n fits. So k ∈ [1, 18] covers all cases! 🎯
+
+🤯 The "Aha!" Moment: The key is recognising that "alternating digits match" means the number is built from blocks of 10^k + 1. Once you see this, the search space collapses from "all divisors of n" to exactly 18 fixed candidates — a massive simplification! 🔑
+
+💬 Do you enjoy number structure problems where recognising the pattern of valid numbers is the entire challenge? What's your approach to identifying such patterns in CP? Share below! 👇
