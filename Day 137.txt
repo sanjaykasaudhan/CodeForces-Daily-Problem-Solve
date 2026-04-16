@@ -1,0 +1,36 @@
+✅ Accepted on Codeforces! Problem C — Gorilla and Permutation | Round 957 (Div. 3)
+
+A Problem C cracked with pure constructive thinking! 🦍🔢 This one is a beautiful permutation construction problem where the insight is surprisingly clean!
+
+🔗Problem Link: https://lnkd.in/ghfBZdrs
+
+🧩 The Problem: Construct a permutation of [1, 2, ..., n] such that:
+The prefix sums are maximised for indices up to m
+The suffix sums are maximised for indices from k to n
+(m and k define which portions need to be "heavy")
+Given n, m, k, build any valid permutation satisfying these constraints!
+
+💡 My Approach — Three-Part Construction:
+Split [1..n] into three groups:
+🔴 Large (front): Numbers n, n-1, ..., m+1 in descending order
+These go at the beginning to maximise prefix sums for positions 1..m
+🟡 Middle: Numbers m+1, m+2, ..., k-1 in ascending order
+These fill the middle gap (between m and k)
+🟢 Small (back): Numbers 1, 2, ..., m in ascending order
+These go at the end to maximise suffix sums from position k onward
+The key insight: putting the largest numbers at the front maximises early prefix sums, and putting small numbers at the end (ascending) keeps suffix sums controlled!
+
+Examples:
+n=5, m=2, k=5 → large=[5,4,3], middle=[], small=[1,2] → 5 4 3 1 2 ✅
+n=3, m=1, k=3 → large=[3,2], middle=[], small=[1] → 3 2 1 ✅
+n=10, m=3, k=8 → large=[10,9,8], middle=[4,5,6,7], small=[1,2,3] → 10 9 8 4 5 6 7 1 2 3 ✅
+
+📌 Key Takeaways:
+🦍 Construction problems = think in segments — when asked to build a permutation with constraints on different parts, divide it into zones and fill each optimally. Structure first, code second! 🎯
+🦍 Descending large at front, ascending small at back — this is a classic construction pattern for max-prefix / max-suffix problems. The large values dominate prefix sums; small values don't hurt suffix sums! ✅
+🦍 Middle is just a filler — the elements between m and k have no special constraint, so fill them in any valid order (ascending works great for clarity)! 🔢
+🦍 range(n, k-1, -1) — Python's range with negative step is perfect for generating descending sequences. Master this pattern for permutation construction! 🐍
+
+🤯 The "Aha!" Moment: The constraints separate naturally into three zones. The largest n-k+1 elements go front (descending for max prefix), the smallest m elements go back (ascending for controlled suffix), and everything in between fills the middle. Three zones, three range calls, done! 🔑
+
+💬 Do you find permutation construction problems satisfying? What's your go-to strategy when you need to build a sequence with multi-zone constraints? Share below! 👇
