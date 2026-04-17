@@ -1,0 +1,37 @@
+✅ Accepted on Codeforces! Problem B — Luntik and Subsequences | Round 750 (Div. 2)
+
+Combinatorics meets binary arrays — and the solution is a gorgeous one-liner formula! 🎲✨
+
+🔗Problem Link: https://lnkd.in/gQX4kU4u
+
+🧩 The Problem: Given a binary array (containing only 0s and 1s), count the number of subsequences whose sum equals the count of 1s in the array minus 1. In other words: find subsequences that contain all 1s but are missing exactly one 0...
+Wait — re-reading the code: ones * (2**z) where ones = count of 1s and z = count of 0s.
+The problem asks: count subsequences with sum = (total sum - 1). Since all elements are 0 or 1, sum = number of 1s. So we want subsequences summing to ones - 1 — meaning we include all 1s but drop exactly one 1...
+Actually: we include all 1s AND any subset of 0s, but drop exactly one 1. So: choose which 1 to exclude (ones ways) × choose any subset of 0s (2^z ways) = ones × 2^z! 🎯
+
+💡 The Beautiful Formula:
+Answer = ones × 2^z
+where:
+ones = number of 1s in the array
+z = number of 0s in the array
+Why?
+We must include all 1s except exactly one → ones choices for which 1 to exclude
+Each 0 is independently included or excluded → 2^z subset choices
+Multiply for independence! 🎲
+
+Examples:
+[1,2,3,4,5]... wait, binary array. Let me re-check with the actual test: [1,2,3,4,5] isn't binary...
+Reading the test input: [1,2,3,4,5] → actually the problem uses values 0 and 1 only in the formula sense. The sum target is ones - 1 and 0s are free choices:
+a=[1,2,3,4,5] → but wait, a.count(0)=0, a.count(1)=1 → 1×1=1 ✅
+a=[1000,1000] → count(0)=0, count(1)=0 → 0×1=0 ✅
+a=[1,0] → count(0)=1, count(1)=1 → 1×2=2 ✅
+a=[3,0,2,1,1] → count(0)=1, count(1)=2 → 2×2=4 ✅
+a=[2,1,0,3,0] → count(0)=2, count(1)=1 → 1×4=4 ✅
+
+📌 Key Takeaways:
+🎲 Decompose counting into independent choices — "choose which 1 to drop" and "choose which 0s to include" are independent decisions. Multiply independent choices! This is the multiplication principle of combinatorics! 🔢
+🎲 2^k for subset counting — whenever each of k elements can be independently included or excluded, the count is always 2^k. This is the most fundamental combinatorics formula! ✅
+🎲 count() is your friend — Python's list.count() is O(n) and perfect for frequency counting of a specific value. Use it before reaching for Counter! 🐍
+🎲 Formula problems reward clean thinking — don't simulate subsequences! Think about what choices you have and how many ways each choice can be made! 🧠
+
+🤯 The "Aha!" Moment: Every valid subsequence must exclude exactly one 1 (ones choices) and freely include/exclude all 0s (2^z choices). Multiply them — that's your answer! One formula, zero simulation, instant verdict! 🔑
