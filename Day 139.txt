@@ -1,0 +1,32 @@
+✅ Accepted on Codeforces! Problem A — The Equalizer | Round 1091 (Div. 2) & CodeCraft 26
+
+Two contests, one problem, one beautiful parity insight! ⚖️✨ This problem looks deceptively simple — but the math behind it is genuinely elegant!
+
+🔗Problem Link: https://lnkd.in/gctDdwfc
+
+🧩 The Problem: Given an array a of n integers and a value k, can you make all elements equal by performing operations where you add k to exactly one element each time? Answer YES or NO!
+
+💡 The Key Insight — Parity Analysis:
+For all elements to become equal, say to value T, each element a[i] needs exactly (T - a[i]) / k operations applied to it. The total number of operations across all elements must be a non-negative integer.
+Think of it this way: each operation adds k to one element. After all operations, the total increase = (target × n) - sum(a). This total must be divisible by k and non-negative.
+But the code uses a simpler parity check:
+YES if: sum(a) % 2 == 1 OR (n * k) % 2 == 0
+This captures:
+If sum(a) is odd → the target sum (n × T) must be odd → always achievable with odd k!
+If (n * k) is even → the parity constraint is always satisfiable!
+
+Examples:
+n=1, k=1, a=[1] → sum=1 (odd) → YES ✅
+n=2, k=67, a=[67,67] → sum=134 (even), n*k=134 (even) → YES ✅
+n=3, k=2, a=[3,3]... → sum=6 (even), n*k=6 (even) → YES ✅
+n=11, k=3, a=[1..11] → sum=66 (even), n*k=33 (odd) → NO ✅
+
+📌 Key Takeaways:
+⚖️ Parity is often the deciding factor — when dealing with "can we reach target X?" questions with fixed step size k, always check if the parity of the required total change is compatible with k! 🎯
+⚖️ sum(a) % 2 and (n*k) % 2 — these two parity checks capture whether the total increase needed can be distributed as multiples of k across n elements. Elegant and fast! ✅
+⚖️ OR logic in conditions — "YES if either condition holds" means you only need ONE escape hatch. If either parity works out, the answer is YES! 🔢
+⚖️ Think about invariants under operations — each operation changes the total sum by exactly k. So the reachable sums from sum(a) are sum(a) + j*k for j ≥ 0. The target total is n*T — check if this is reachable! 🧮
+
+🤯 The "Aha!" Moment: The entire problem reduces to: can we reach a total sum n*T from sum(a) by adding multiples of k? That's a pure parity/divisibility question — no simulation, no search, just arithmetic! 🔑
+
+💬 Do you immediately think about parity and divisibility when you see "add k repeatedly" problems? What invariant do you check first? Share your CP instincts below! 👇
