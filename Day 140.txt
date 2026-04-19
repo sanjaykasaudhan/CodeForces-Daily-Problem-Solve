@@ -1,0 +1,38 @@
+✅ Accepted on Codeforces! Problem A — Everyone Loves to Sleep | Round 811 (Div. 3)
+
+Time arithmetic with a real-world flavour — and a beautifully clean modular solution! ⏰😴
+
+🔗Problem Link: https://lnkd.in/gz9qBF-2
+
+🧩 The Problem: You go to bed at time H:M (hours:minutes). You have n alarms set at various times. Find the minimum waiting time until the next alarm goes off — i.e., which alarm rings soonest after your bedtime? Output the wait in hours and minutes!
+The clock is 24-hour circular — so times wrap around midnight! 🔄
+
+💡 My Approach — Convert to Minutes + Circular Distance:
+Step 1 — Convert bedtime to total minutes:
+bed = H * 60 + M
+Step 2 — For each alarm, compute circular wait time:
+alarm = h * 60 + m
+wait = (alarm - bed) % (24 * 60)
+The % (24 * 60) handles the wrap-around beautifully:
+If alarm is after bed → positive wait ✅
+If alarm is before bed (next day) → wraps around via modulo ✅
+If alarm equals bed → wait = 0 ✅ (already time to wake up!)
+Step 3 — Track minimum wait across all alarms:
+min_wait = min(min_wait, wait)
+Step 4 — Convert back to hours and minutes:
+print(min_wait // 60, min_wait % 60)
+
+Examples:
+Bed=6:13, alarms: [8:0, 12:30, 14:45, 6:0] → waits: [107, 377, 511, 1427] → min=107 → 1 47 ✅
+Bed=3:60... (12:30=750min) wait= (360-390)%1440=1410 → min=0 → 0 0 ✅
+Bed=23:35, alarms: [20:15, 10:30] → waits: [(1215-1415)%1440=1240, (630-1415)%1440=655] → min=655 → 10 55 ✅
+
+📌 Key Takeaways:
+⏰ Always convert time to a single unit — working in minutes (not hours+minutes separately) eliminates all carry/borrow issues. One number, zero edge cases! ✅
+⏰ Modulo is the circular clock operator — (alarm - bed) % (24*60) handles ALL cases: same day, next day, exact match. This single formula replaces complex if-else chains! 🎯
+⏰ float('inf') initialisation — perfect sentinel for minimum tracking when you don't know the range of values. Always use it for clean min-tracking loops! 🐍
+⏰ Convert back at the end — // 60 for hours, % 60 for minutes. The inverse of the initial conversion. Keep this pair as a mental template! 🧮
+
+🤯 The "Aha!" Moment: (alarm - bed) % (24 * 60) is the entire key. A negative difference (alarm before bed) wraps around via modulo to give the correct "next day" wait time. One formula handles a 24-hour circular clock perfectly! 🔑
+
+💬 Do you instinctively convert time to minutes before solving clock problems? What other unit normalisation tricks do you use in competitive programming? Share below! 👇
