@@ -1,0 +1,33 @@
+✅ Accepted on Codeforces! Problem B — Food Buying | Round 617 (Div. 3)
+
+A greedy simulation with a clever cashback loop — real-world supermarket math meets competitive programming! 🛒💰
+
+🔗Problem Link: https://lnkd.in/gQ_FfjMe
+
+🧩 The Problem: You have s burles (currency). At a supermarket, for every 10 burles you spend, you get 1 burle cashback. You want to maximise the total amount spent (i.e., buy as much food as possible). Find the total burles spent!
+
+💡 My Approach — Greedy Cashback Simulation:
+The strategy is simple and greedy:
+Each round:
+Spend the largest multiple of 10 that fits: spend = (s // 10) * 10
+Accumulate that into total
+Get cashback: s -= spend - spend // 10 → effectively s = s % 10 + spend // 10
+Keep repeating until you have less than 10 burles left (can't trigger any more cashback), then spend whatever remains!
+Why greedy works: Each round you maximise your spending to earn maximum cashback, which then enables more spending in the next round. It's always optimal to spend as much as possible each iteration! 🎯
+
+Examples:
+s=1 → s<10 immediately → total=1 ✅
+s=10 → spend=10, total=10, s=0+1=1 → total+=1=11 ✅
+s=19 → spend=10, total=10, s=9+1=10 → spend=10, total=20, s=0+1=1 → total=21 ✅
+s=9876 → multiple rounds → 10973 ✅
+s=1000000000 → many rounds → 1111111111 ✅
+
+📌 Key Takeaways:
+🛒 Greedy = spend max each round — always use the maximum possible multiple of 10. Never "save" money for later — the cashback is proportional, so spending more now always generates more cashback! ✅
+🛒 s -= spend - spend//10 — this elegant update subtracts what you spent NET of cashback. spend//10 is the cashback received, so your balance decreases by spend - cashback! 🧮
+🛒 Termination: s < 10 — once you can't trigger cashback (less than 10 burles), spend the remainder directly with no further benefit! 💡
+🛒 O(log s) complexity — each iteration roughly multiplies your balance by 1/9 (you net spend 9/10 each round). So iterations ≈ log₁₀(s) ≈ 9 for s = 10⁹. Lightning fast! ⚡
+
+🤯 The "Aha!" Moment: The update s -= spend - spend//10 is the entire trick. You spend spend burles but get spend//10 back — net outflow is spend * 9/10. The balance shrinks geometrically, guaranteeing fast convergence! 🔑
+
+💬 Do you enjoy cashback/discount simulation problems in CP? They appear disguised in many forms — can you spot the greedy pattern when you see one? Share your favourite variant below! 👇
