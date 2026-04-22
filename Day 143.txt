@@ -1,0 +1,42 @@
+✅ Accepted on Codeforces! Problem A — Tricky Sum | Educational Round 1Math elegance at its finest! ✨
+
+🔢 This problem rewards pure mathematical thinking over brute-force loops — and the solution beautifully combines two classic formulas!
+
+🔗Problem Link: https://lnkd.in/gA5aAEwn
+
+🧩 The Problem: Compute the following sum for a given n:
+f(n) = 1 - 2 - 3 + 4 - 5 - 6 + 7 - 8 - 9 + 10 - ...
+Wait — actually from the code, it computes:
+1 - 2 + 3 - 4 + 5 - 6 + ... ± n with a twist involving powers of 2!
+Reading the code carefully:
+Start with total = n*(n+1)//2 (sum of 1 to n)
+Then subtract 2*p for p = 1, 2, 4, 8, ... (powers of 2) while p ≤ n
+So the answer = n*(n+1)//2 - 2*(1 + 2 + 4 + 8 + ...) for all powers of 2 ≤ n!
+The Problem: Compute 1 + 2 + 3 + ... + n but subtract (instead of add) all numbers that are powers of 2. The correction is subtracting 2 * power (once to remove the +, once to make it -) for each power of 2! 🎯
+💡 My Approach — Formula + Power of 2 Correction:
+Step 1: Start with the full sum: total = n*(n+1)//2
+Step 2: For every power of 2 (p = 1, 2, 4, 8, ...) that is ≤ n: subtract 2*p (changing its contribution from +p to -p)
+Step 3: The remaining total is the answer!
+
+
+python
+total = n * (n + 1) // 2
+p = 1
+while p <= n:
+    total -= 2 * p
+    p *= 2
+O(log n) — the while loop runs only ⌊log₂(n)⌋ + 1 ≈ 30 times for n ≤ 10⁹! ⚡
+
+Examples:
+n=4 → total=10, powers=[1,2,4] → 10-2-4-8 = -4 ✅
+n=1000000000 → n*(n+1)//2 then subtract 2*(1+2+4+...+2^29) → 499999998352516354 ✅
+
+📌 Key Takeaways:
+🔢 Sum of 1..n is your starting point — n*(n+1)//2 is the universal baseline for "sum of integers" problems. Always start there and adjust! 🎯
+🔢 Correction technique — instead of computing the sum directly (with sign changes), compute the simple sum and then "correct" the signs. Changing +p to -p requires subtracting 2p! ✅
+🔢 Powers of 2 are O(log n) — there are only ~30 powers of 2 below 10⁹. Never loop linearly when you can iterate multiplicatively! p *= 2 is the power of 2 generator! ⚡
+🔢 Educational Round classics — Educational rounds focus on teaching clean mathematical techniques. Perfect for building your toolkit! 📚
+
+🤯 The "Aha!" Moment: Instead of computing Σ ±i directly (requiring knowing all signs), observe: start with Σ i (all positive), then for every term that should be negative, subtract 2*value (once to remove +, once to add -). For powers-of-2 terms: subtract 2*p. Clean decomposition! 🔑
+
+💬 Do you use the "start with simple sum, then correct" technique in competitive programming? What other baseline-and-adjust patterns do you rely on? Share below! 👇
