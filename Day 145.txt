@@ -1,0 +1,37 @@
+✅ Accepted on Codeforces! Problem B — Promo | Educational Round 130 (Rated for Div. 2)
+
+Prefix sums + sorting = one of the most powerful combinations in competitive programming! 📊⚡ This problem is a perfect showcase of how preprocessing transforms O(q×n) into O(n + q)!
+
+🔗Problem Link: https://lnkd.in/gyjn-qXZ
+
+🧩 The Problem: You have n items with prices. You get y items for free (the cheapest ones). Given q queries each asking: "if I buy x items and get y cheapest free, what's the maximum total price of the FREE items?" Find the answer for each query! 🛍️
+Key: Sort descending. Take the top x items. Among them, the y cheapest (= last y of the top x) are free. Maximise the value of free items!
+
+💡 My Approach — Sort + Prefix Sums:
+Step 1 — Sort descending:
+p = sorted(map(int, input().split()), reverse=True)
+Largest prices first.
+Step 2 — Build prefix sum array:
+prefix = [0] * (n+1)
+for i in range(n):
+    prefix[i+1] = prefix[i] + p[i]
+prefix[k] = sum of top k prices.
+Step 3 — Answer each query in O(1): For query (x, y):
+You pick top x items (most expensive)
+The y cheapest among those = items at positions x-y+1 to x (0-indexed: p[x-y] to p[x-1])
+Their sum = prefix[x] - prefix[x-y] ✅
+
+Example:
+p = [5,3,1,5,2] → sorted desc: [5,5,3,2,1]
+prefix: [0,5,10,13,15,16]
+Query (3,2): prefix[3]-prefix[1] = 13-5 = 8 ✅
+Query (1,1): prefix[1]-prefix[0] = 5-0 = 5 ✅
+Query (5,3): prefix[5]-prefix[2] = 16-10 = 6 ✅
+
+📌 Key Takeaways:
+📊 Sort + prefix sum = the ultimate range query setup — whenever you need "sum of top k" or "sum of elements i to j", sort first and build prefix sums. O(1) per query forever after! 🎯
+📊 prefix[x] - prefix[x-y] — this elegant subtraction gives the sum of exactly y elements from position x-y to x in the sorted array. The core trick! ✅
+📊 sys.stdin.readline for speed — with q queries and large inputs, fast I/O is critical. Always use sys.stdin.readline when handling 10⁵+ lines! 🐍⚡
+📊 Preprocess once, query many — the philosophy of prefix sums: pay O(n) upfront, then answer unlimited queries in O(1). This transforms the problem complexity dramatically! 🚀
+
+💬 Do you build prefix sum arrays as a first instinct for range query problems? What's the most creative use of prefix sums you've seen in CP? Share below! 👇
