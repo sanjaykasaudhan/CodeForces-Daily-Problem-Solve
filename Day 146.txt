@@ -1,0 +1,22 @@
+✅ Accepted on Codeforces! Problem A — Oath of the Night's Watch | Divide by Zero 2017 & Round 399 (Div. 1 + Div. 2)
+
+Game of Thrones meets competitive programming! ⚔️🐺 And the solution? A legendary one-liner that Jon Snow would approve of!
+
+🔗Problem Link: https://lnkd.in/g4abc4bT
+
+🧩 The Problem: You have n recruits with varying "honour" values. Jon Snow needs people for the Night's Watch. Count how many recruits have a value strictly between the minimum and maximum values in the array — these are the "suitable" recruits: neither the weakest nor the strongest! 🏰
+
+💡 The Insight — Min, Max, and Everything Between:
+Find mn = min(a) and mx = max(a). Count elements x where mn < x < mx (strictly between both extremes).
+That's literally it! 🎯
+Examples:
+n=2, a=[1,5] → mn=1, mx=5 → no elements between → 0 ✅
+n=3, a=[1,2,5] → mn=1, mx=5 → only 2 is between → 1 ✅
+
+📌 Key Takeaways:
+⚔️ Python chained comparisons are elegant — mn < x < mx reads like mathematics and is equivalent to mn < x and x < mx. Use it whenever you can! 🎯
+⚔️ sum(1 for x in ... if condition) — this generator expression is the Pythonic way to count elements satisfying a condition. No need for a separate counter variable! ✅
+⚔️ Find extremes first, then filter — when counting elements relative to the range of an array, always find min and max first, then use them as reference points for filtering! 🔢
+⚔️ Combined rounds = interesting themes — "Divide by Zero" themed rounds often have creative problem names (Night's Watch!) but straightforward implementations! 😄
+
+🤯 The "Aha!" Moment: "Strictly between min and max" is exactly the complement of "equal to min OR equal to max". So alternatively: n - count(mn) - count(mx) works too! But the generator expression is cleaner and more readable! 🔑
