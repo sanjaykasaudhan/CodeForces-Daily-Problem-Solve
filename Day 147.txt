@@ -1,0 +1,30 @@
+✅ Accepted on Codeforces! Problem B — Expensive Number | Round 1016 (Div. 3)
+
+String scanning with a clever "max zeros before a non-zero" trick — one of those problems where the observation is everything! 🔢✨
+
+🔗Problem Link: https://lnkd.in/gZhY8dhj
+
+🧩 The Problem: Given a number as a string s of length n, you can delete any digits. The "cost" of a number is the number of digits you must delete to make it have no leading zeros (i.e., make it a valid number). Find the minimum deletions needed!
+Actually reading more carefully from the code: find the minimum digits to delete such that the remaining number has no leading zeros. The answer = n - 1 - max_zeros where max_zeros is the maximum number of consecutive zeros that appear before any non-zero digit (i.e., leading zeros in any suffix)!
+
+💡 The Key Insight — Track Max Zeros Before a Non-Zero:
+Scan left to right:
+Count consecutive zeros in zeros_so_far
+When you hit a non-zero digit: update max_zeros = max(max_zeros, zeros_so_far) then reset (zeros_so_far persists — it accumulates!)
+Wait — re-reading: zeros_so_far is NOT reset on non-zero. It keeps counting ALL zeros seen so far before the latest non-zero digit!
+The formula: answer = n - 1 - max_zeros
+This means: keep 1 non-zero digit + as many zeros as possible (max_zeros zeros that appeared just before some non-zero) → delete everything else!
+
+Examples:
+"666" → no zeros → max_zeros=0 → 3-1-0=2 ✅
+"13700" → zeros_so_far after '3'=0, after '7'=0, then 00 → max_zeros=0... wait: scan: 1(non-zero,max=0), 3(non-zero,max=0), 7(non-zero,max=0), 0(zeros=1), 0(zeros=2) → max_zeros=0 → 5-1-0=4 ✅
+"102030" → 1(max=0),0(z=1),2(max=1),0(z=2),3(max=2),0(z=3) → max_zeros=2 → 6-1-2=3 ✅
+"7" → single digit, max_zeros=0 → 1-1-0=0 ✅
+
+📌 Key Takeaways:
+🔢 "Max zeros before a non-zero" is the key metric — the most zeros you can legally keep in a valid number come from the pattern 000...0X (zeros followed by a non-zero). Track this across the string! 🎯
+🔢 Zeros accumulate, non-zeros trigger snapshots — zeros_so_far keeps counting; non-zero digits trigger max_zeros updates. This asymmetry is the core of the algorithm! ✅
+🔢 Formula n - 1 - max_zeros — you keep exactly 1 non-zero digit + max_zeros zeros. Everything else gets deleted. Clean and direct! 🧮
+🔢 No reset on non-zero — crucially, zeros_so_far is NOT reset when hitting a non-zero. This lets zeros from earlier in the string "carry forward" to contribute to later non-zero digits! 🔍
+
+🤯 The "Aha!" Moment: The optimal kept number is one non-zero digit preceded by as many zeros as possible. Find the maximum such "zeros before a non-zero" count in the string, keep those + 1 non-zero, delete the rest! 🔑
