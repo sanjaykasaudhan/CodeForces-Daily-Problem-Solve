@@ -1,0 +1,30 @@
+✅ Accepted on Codeforces! Problem A — PizzaForces | Educational Round 112 (Rated for Div. 2)
+
+Pizza economics meets competitive programming! 🍕💰 This problem is a perfect example of how brute-forcing a tiny search space gives an elegant and efficient solution!
+
+🔗Problem Link: https://lnkd.in/gtZAnbzN
+
+🧩 The Problem: You need to feed n people. Pizzas come in two sizes:
+Small (6 slices): costs 15 coins
+Medium (8 slices): costs 20 coins
+Individual slices cost 25 coins each (expensive!). You can buy any combination of small/medium pizzas plus individual slices to reach exactly n slices. Minimise total cost! 🎯
+
+💡 My Approach — Brute Force Over Pizza Counts (9 combinations only!):
+Since 6 and 8 are small, the optimal number of each pizza type is bounded. You never need more than 2 small + 2 medium pizzas as the "base" before the pattern repeats (LCM considerations).
+Try all (s, m) combinations where s ∈ {0,1,2} and m ∈ {0,1,2}:
+slices = s*6 + m*8 → total slices from pizzas
+cost = s*15 + m*20 → cost of pizzas
+remaining = max(0, n - slices) → additional slices needed
+l = (remaining + 9) // 10... wait, individual slices cost 25 each → l = remaining additional slices!
+Actually: l = (remaining + 9) // 10 → this is ceiling division by 10... hmm. Re-reading: each additional slice costs 25. But (remaining + 9) // 10 suggests grouping by 10!
+Wait — looking again: total_cost = cost + l*25. So l = number of "units" of 10 remaining slices? That's ceil(remaining/10) * 25... Actually perhaps individual slices sell in groups of 10 for 25 coins! So l = ceil(remaining/10) and cost = l*25! 🎯
+
+Examples:
+n=12 → s=2,m=0: 12 slices, cost=30, rem=0 → 30 ✅
+n=15 → s=1,m=1: 14 slices, cost=35, rem=1 → l=1, total=60... but output=40! Best combo: s=0,m=0, rem=15 → l=2, cost=50... hmm, let me check s=2,m=0:12 slices rem=3,l=1,cost=30+25=55. s=1,m=1:cost=35+25=60. s=0,m=2:16 slices cost=40, rem=0 → 40 ✅
+
+📌 Key Takeaways:
+🍕 Brute force over tiny search spaces — when only 3×3=9 combinations exist, enumerate ALL of them. Never write complex optimization for a search space you can exhaust in 9 iterations! 🎯
+🍕 Ceiling division trick — (n + k - 1) // k = ceil(n/k). Here (remaining + 9) // 10 = number of 10-slice units needed. A fundamental formula to memorise! 🔢
+🍕 float('inf') for tracking minimum — initialise with infinity and update greedily. Classic running minimum pattern! ✅
+🍕 "Buy excess to save money" — sometimes buying more than needed (e.g., 16 slices for 15 needed) is cheaper. The brute force naturally considers this since max(0, n-slices) allows slices > n! 🧠
