@@ -1,0 +1,34 @@
+✅ Accepted on Codeforces! Problem A — Hexadecimal's Theorem | Round 125 (Div. 2)
+
+Two lines of code. One legendary mathematical theorem. The most satisfying submit of the week! 🔢✨
+
+🔗Problem Link: https://lnkd.in/gkf9t8M4
+
+🧩 The Problem: Given n, find three non-negative integers a, b, c such that:
+a + b + c = n
+That's literally it. Output any valid triple! 😄
+
+💡 The "Theorem" — 0 + 0 + n = n:
+The "Hexadecimal's Theorem" being referenced here is simply:
+Every non-negative integer n can be written as 0 + 0 + n
+
+The checker confirms: 0 + 0 + n = n ✅ for any n!
+The problem is completely trivial — but it's a beautiful reminder that sometimes the simplest mathematical truth (the existence of zero!) is all you need! 🧮
+
+Examples:
+n=3 → 0 0 3 → 0+0+3=3 ✅
+n=13 → 0 0 13 → 0+0+13=13 ✅
+n=0 → 0 0 0 → 0+0+0=0 ✅
+The checker says "ok ok. 0 + 0 + n = n" — confirming the simplest possible answer is perfectly valid! 🏆
+
+📌 Key Takeaways:
+🔢 Read the constraints carefully — the problem says "non-negative integers", NOT "positive integers". Zero is allowed! This single detail makes the entire problem trivial. Always check if zero is valid! 🎯
+🔢 The simplest solution is often correct — before writing any logic, ask: "What's the most trivially valid answer?" Here, 0, 0, n is valid and requires zero computation! ✅
+🔢 "Theorem" problems in CP — sometimes problems are named after famous theorems (Goldbach's Conjecture, Fermat's Last Theorem, etc.) to make them sound harder than they are. Don't be intimidated by the name! 😄
+🔢 Problem A tests reading comprehension — the hardest part here was realising zero was allowed. That single read unlocks everything! 📖
+
+🏆 Competitive Programming Lesson for Today:
+"The most complex-sounding problems sometimes have the simplest solutions. Trust the trivial case."
+Zero is valid. Print it. Get Accepted. Move on! 💪
+
+💬 What's the simplest solution you've ever submitted that you almost didn't believe was correct? Drop your story below — I know I'm not alone! 👇😄
