@@ -1,0 +1,29 @@
+✅ Accepted on Codeforces! Problem B — Sum of Medians | Round 684 (Div. 2)
+
+Greedy selection with a beautiful insight about medians — this one made me appreciate how structure in a problem can lead to an O(n) solution! 📊🎯
+
+🔗Problem Link: https://lnkd.in/gMzA7V2f
+
+🧩 The Problem: You have n numbers and need to split them into groups of size k each (so n/k groups). For each group, take the median (the ⌈k/2⌉-th smallest element). Maximise the sum of all medians!
+
+💡 My Approach — Greedy: Pack Large Numbers Together!
+Key Insight: To maximise the sum of medians, you want as many large numbers as possible to be medians. The median of a group of k elements is the ⌈k/2⌉-th smallest — meaning ⌈k/2⌉ - 1 elements are smaller than the median in each group.
+Strategy:
+Sort the array
+m = ⌈k/2⌉ = position of median in each group
+above = n - m = number of elements needed "above" the median (to fill positions above median in the group)
+Greedy from right (largest first): For each of the n/k groups:
+Skip above elements (they go above the median in this group)
+Take the next element as the median (add to total)
+Move pointer back by 1
+This greedily assigns the largest possible value as each group's median! 🏆
+
+Wait — re-reading: m = math.ceil(n/2) is positions of median in a group? Let me re-check with the code: m = ceil(n/2), above = n - m. For k groups, scanning from right: skip above, take median, step back 1. ✅
+O(n log n) for sorting (input is pre-sorted!), O(k) for the greedy! ⚡
+Example: n=7, k=2, a=[0,24,34,58,62,64,69,78] → m=4, above=3 → take a[idx-3] repeatedly → 165 ✅
+
+📌 Key Takeaways:
+📊 Greedy from the largest end — to maximise medians, work backwards from the sorted array. The largest elements should be medians, not "wasted" above the median! 🎯
+📊 above = n - m is the key gap — this tells you exactly how many elements to skip before landing on the optimal median position. Derived from the group structure! ✅
+📊 Pre-sorted input = O(k) greedy — when input is already sorted, many greedy problems reduce to a single pointer sweep. Always check if the input has order! 🔢
+📊 math.ceil(n/2) for median position — ceiling division gives the exact median index in a 1-indexed sorted array of size n. Classic formula! 🧮
