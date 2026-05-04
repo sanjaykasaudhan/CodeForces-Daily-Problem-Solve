@@ -1,0 +1,27 @@
+✅ Accepted on Codeforces! Problem A — Lunch Rush | Round 169 (Div. 2)
+
+A classic greedy optimisation problem with a real-world flavour — and the solution is a beautifully clean one-liner logic! 🍽️⚡
+
+🔗Problem Link: https://lnkd.in/gAN7Pp5h
+
+🧩 The Problem: You have n food stalls, each with a "fun value" f and a queue time t. You have k minutes total. If you spend time at a stall:
+If t ≤ k: you enjoy the full experience → joy = f
+If t > k: you're rushed and lose some joy → joy = f - (t - k)
+Find the stall that maximises your joy! 🎯
+
+💡 The Insight — Simple Conditional Joy Formula:
+For each stall (f, t):
+joy = f          if t ≤ k
+joy = f - (t-k)  if t > k
+This can be written as: joy = f - max(0, t-k)
+Just iterate through all stalls, compute joy for each, track the maximum! 🏆
+
+Examples:
+n=2, k=5, stalls=[(3,3),(4,5)] → joy: min(3,3→3), (4,5→4) → max=4 ✅
+n=4, k=6, stalls=[(4,6),(5,8),(3,6),(2,3),(2,2)] → joy: 4, 5-(8-6)=3, 3, 2, 2 → max=3 ✅
+
+📌 Key Takeaways:
+🍽️ float('-inf') for maximum tracking — perfect sentinel when values could be negative. The first real value always replaces it! ✅
+🍽️ Ternary expression for clean conditionals — f if t <= k else f - (t-k) reads like English and avoids verbose if-blocks! 🐍
+🍽️ Equivalent formula: f - max(0, t-k) — this single expression handles both cases elegantly without branching. Always look for unified formulas! 🎯
+🍽️ Problem A = warm-up, but every detail matters — even simple problems teach the habit of clean initialisation, correct conditional logic, and minimal code! 💪
