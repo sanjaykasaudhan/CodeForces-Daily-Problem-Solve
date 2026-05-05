@@ -1,0 +1,29 @@
+✅ Accepted on Codeforces! Problem B — DIV + MOD | Round 776 (Div. 3)
+
+Number theory with a clever candidate generation — this problem beautifully combines // and % in a way that makes you think deeper about integer arithmetic! 🔢✨
+
+🔗Problem Link: https://lnkd.in/gDesx-7K
+
+🧩 The Problem: Define f(x) = x // a + x % a for some fixed a. Given a range [l, r], find the value of x in [l, r] that maximises f(x)!
+
+💡 The Key Insight — Where Does f(x) Peak?
+f(x) = x // a + x % a — the sum of quotient and remainder when dividing by a.
+Observation: As x increases by 1 within a block of the same quotient, x % a increases by 1 (so f increases). But when x crosses a multiple of a, the remainder resets to 0 (drops by a-1) while quotient increases by 1 (net drop of a-2 for a≥3).
+So f(x) is maximised just before a multiple of a — specifically at positions ka - 1 for some integer k!
+Strategy:
+Find the largest multiple-of-a-minus-1 within [l, r]: candidate = (r // a) * a + (a - 1)
+If candidate > r → try candidate -= a (one block earlier)
+If candidate < l → use r itself (no valid ka-1 in range)
+Compare f(candidate) vs f(r) (r is always valid!) → take max! 🎯
+
+Examples:
+l=1, r=4, a=3 → candidate=(4//3)*3+2=5>4 → 5-3=2, 2≥1 → f(2)=0+2=2, f(4)=1+1=2 → max=2 ✅
+l=5, r=8, a=4 → candidate=(8//4)*4+3=11>8 → 11-4=7, 7≥5 → f(7)=1+3=4, f(8)=2+0=2 → 4 ✅
+l=6, r=10, a=6 → candidate=(10//6)*6+5=11>10 → 11-6=5<6 → candidate=r=10 → f(10)=1+4=5, f(10)=5 → 5 ✅
+l=1, r=10^9, a=10^9 → candidate=10^9-1, f=0+(10^9-1) → 999999999 ✅
+
+📌 Key Takeaways:
+🔢 f(x) peaks just before multiples of a — this is the core mathematical insight. x % a is maximised at ka - 1 (value = a-1), giving the highest combined sum! 🎯
+🔢 Always compare against r — r is always a valid answer. The candidate ka-1 may or may not be in range, but r always is. Take max(f(candidate), f(r))! ✅
+🔢 Careful boundary handling — two boundary checks (candidate > r → shift left; candidate < l → fallback to r) cover all edge cases cleanly! ⚠️
+🔢 (r // a) * a + (a-1) formula — this directly computes the ka-1 value in the block containing r. A clean one-shot candidate formula! 🧮
