@@ -1,0 +1,28 @@
+✅ Accepted on Codeforces! Problem B — Make Product Equal One | Round 580 (Div. 2)
+
+Sign manipulation with careful case analysis — this problem rewards methodical thinking and handling edge cases like a pro! ➕➖🎯
+
+🔗Problem Link: https://lnkd.in/gA2v9BUu
+
+🧩 The Problem: Given an array of integers, you can change each element to any value with the same sign (positive stays positive, negative stays negative, zero can become ±1). Minimise the total cost (sum of absolute changes) to make the product of all elements equal to 1!
+Since the product must be 1, ALL elements must eventually be ±1, and the count of -1s must be even!
+
+💡 My Approach — Greedy Cost Calculation:
+For each element, the minimum cost to make it ±1:
+Positive x: cost = x - 1 (bring it to +1)
+Negative x: cost = |x| - 1 = abs(x) - 1 (bring it to -1), count as a negative
+Zero: cost = 1 (make it +1 or -1), track separately
+Then handle parity of negatives:
+Case 1: Zeros exist (zero_count > 0):
+If neg_count is odd → make one zero into -1 (flip one negative, no extra cost! neg_count becomes even)
+If neg_count is even → make all zeros into +1 (already fine)
+Either way: total_cost += zero_count (each zero costs 1 to change)
+Case 2: No zeros:
+If neg_count is odd → must flip one -1 to +1 → extra cost of 2 (from -1 to +1 = 2 steps)
+If neg_count is even → done!
+
+📌 Key Takeaways:
+🔢 Product = 1 requires even negatives — the product of ±1 values is 1 iff there are an even number of -1s. This is the core constraint driving all decisions! 🎯
+🔢 Zeros are flexible wildcards — a zero can become +1 or -1 for the same cost of 1. Use this flexibility to fix parity of negatives for free! ✅
+🔢 Two separate cases based on zero presence — with zeros available, parity correction is free (just assign one zero to -1). Without zeros, parity correction costs 2 (flip -1 → +1). Always split on zero presence! 🧮
+🔢 neg_count % 2 == 1 as parity check — odd negatives always need fixing. One extra operation handles it! ⚠️
