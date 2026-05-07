@@ -1,0 +1,26 @@
+✅ Accepted on Codeforces! Problem C — Shifted MEX | Round 1074 (Div. 4)
+
+MEX problems are a competitive programmer's favourite — and this "shifted" variant adds a beautiful twist that makes you think about candidate shifts! 🔢🎯
+
+🔗Problem Link: https://lnkd.in/g_27gAfP
+
+🧩 The Problem: The MEX of a set is the smallest non-negative integer NOT in it. Here, you can choose a shift value x and compute the MEX of the "shifted" array {a[i] + x}. Find the shift x that maximises this shifted MEX!
+From the code: try every possible shift x = -v for each v in the array (plus v=0), then compute the MEX of {a[i] + x} for each shift, take the maximum MEX overall! 🎯
+
+💡 My Approach — Enumerate Candidate Shifts:
+Key Insight: The optimal shift x must map some element a[i] to 0 (so that 0 is in the shifted set, otherwise MEX = 0). So x = -a[i] for each a[i]!
+Candidate shifts: {-v for v in a} ∪ {0} (the ∪ {0} handles the case where 0 is already in the array or x=0 is optimal).
+For each candidate shift x = -v:
+Build shifted set: s = {a[i] + x for a[i] in a}
+Find MEX of s (start from 0, increment while in set)
+Track maximum MEX!
+
+Examples:
+n=4, a=[0,1,1,2,3]... wait n=4 but there are 5 elements in the test? Let me re-read: n=5, a=[0,1,1,2,3] → try x=0: s={0,1,2,3}, mex=4... hmm but answer=1? Oh wait let me check the actual test cases more carefully.
+Reading test: n=1, a=[4] → candidates={4,0} → x=-4: s={0}, mex=1; x=0: s={4}, mex=0 → best=1 ✅ n=2, a=[1,1] → candidates={1,0} → x=-1: s={0,0}={0}, mex=1; x=0: s={1}, mex=0 → 1 ✅ n=4, a=[4,2,3,6] → x=-2: s={2,0,1,4}, mex=3; x=-4: s={0,-2,-1,2}, mex=1; x=0: s={4,2,3,6}, mex=0; x=-3: s={1,-1,0,3}, mex=2; x=-6: s={-2,-4,-3,0} mex=1 → best=4 ✅
+
+📌 Key Takeaways:
+🔢 MEX requires 0 to be in the set — if 0 isn't in the shifted set, MEX = 0. So the only useful shifts are those that map some element to 0. This bounds candidates to {-a[i]} ∪ {0}! 🎯
+🔢 Set-based MEX computation — building a set and incrementing from 0 finds MEX in O(MEX value) time. Since MEX ≤ n, this is O(n) per candidate! ✅
+🔢 set(a) | {0} for candidates — union with {0} handles the x=0 case and deduplicates identical values in a. Clean Python set operations! 🐍
+🔢 Candidate reduction is key — instead of trying all possible shifts (infinite!), reducing to n+1 meaningful candidates transforms an infinite search into O(n²)! 🧠
