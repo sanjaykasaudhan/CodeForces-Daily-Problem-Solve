@@ -1,0 +1,30 @@
+✅ Accepted on Codeforces! Problem B — Sakurako and Water | Round 981 (Div. 3)
+
+Grid diagonals + minimum tracking = a satisfying geometric insight! 🌸💧 This problem beautifully combines 2D grid structure with a greedy minimum-per-diagonal approach!
+
+🔗Problem Link: https://lnkd.in/gsaAWd-W
+
+🧩 The Problem: You have an n×n grid. You can choose any cell (i, j) and change its value. The goal is to make all diagonals non-negative (diagonal = cells where j - i is constant) using minimum total operations. Each operation adds |min_negative_val| to the total cost!
+Wait — re-reading: the cost is the minimum additions needed. For each diagonal containing negative values, you need to add enough to the minimum element to make it ≥ 0. The total cost = sum of |min_val| for each diagonal with a negative minimum! 🎯
+
+💡 My Approach — Group by Diagonal, Find Minimum:
+Key Insight: Elements on the same diagonal share the property j - i = constant. Within each diagonal, to make all elements non-negative at minimum cost, you only need to increase the most negative element (and everything else is already ≥ 0 or costs less to fix).
+Algorithm:
+Group all elements by diagonal key d = j - i
+For each diagonal, find the minimum value mn
+If mn < 0: add |mn| to total cost
+Sum all costs!
+
+Example: n=3, grid=[[1,2,3],[-2,1,-1],[0,0,-1]]
+Diagonal j-i=-2: [a[2][0]]=0
+Diagonal j-i=-1: [a[1][0],a[2][1]]=-2,0 → min=-2 → cost=2
+Diagonal j-i=0: [a[0][0],a[1][1],a[2][2]]=1,1,-1 → min=-1 → cost=1
+Diagonal j-i=1: [a[0][1],a[1][2]]=2,-1 → min=-1 → cost=1
+Diagonal j-i=2: [a[0][2]]=3
+Total = 4 ✅
+
+📌 Key Takeaways:
+🌸 j - i is the diagonal key — cells with the same j - i value lie on the same "falling" diagonal. This is the fundamental 2D grid diagonal property! Always remember: same j-i = same diagonal! 🎯
+🌸 defaultdict(list) for grouping — clean and Pythonic way to group elements by a computed key without checking if the key exists first! 🐍
+🌸 Only the minimum matters — to fix a diagonal, you only need to address the most negative element. Any element above 0 doesn't need changing. Per-diagonal minimum is the entire cost! ✅
+🌸 O(n²) is optimal — you must visit every cell at least once to know if any diagonal has negatives. Can't do better than O(n²) for an n×n grid! 🔢
