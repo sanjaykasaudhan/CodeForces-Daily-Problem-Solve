@@ -1,0 +1,29 @@
+✅ Accepted on Codeforces! Problem A — Distance and Axis | Round 665 (Div. 2)
+
+Number line geometry with a beautiful three-case parity solution — clean, instant, and deeply satisfying! 📏✨
+
+🔗Problem Link: https://lnkd.in/gFCgQU99
+
+🧩 The Problem: On a number line, point A is at position n and point B is somewhere between 0 and n (at position n - x for some x ≥ 0). The distance from A to the origin is n, and from B to the origin is n - x. You want dist(A, B) = k. Find the minimum number of moves to achieve this (each move shifts B by 1)!
+From the geometry: B is at position b, A is at n. We want |n - b| = k, so b = n - k or b = n + k. Since 0 ≤ b ≤ n, only b = n - k is valid → B must be exactly k units left of A.
+Starting position of B = 0 (at origin initially). So B needs to move to n - k.
+But wait — re-reading the code: the answer depends on k > n, (n-k) % 2, or just 1! 🎯
+
+💡 The Three Cases:
+Case 1: k > n B can't be k units from A while staying in [0, n] → need to extend: minimum moves = k - n ✅
+Case 2: k ≤ n and (n - k) % 2 == 0 B starts at 0 and needs to reach n - k. The distance is n - k which is even → can be achieved with 0 additional moves (B can always be placed at exactly n-k from its starting path)! → 0 moves ✅
+Case 3: k ≤ n and (n - k) % 2 == 1 The parity doesn't match → need exactly 1 extra move to fix parity! ✅
+
+Examples:
+n=4, k=0 → (4-0)%2=0 → 0 ✅
+n=5, k=8 → k>n → 8-5=3 ✅
+n=0, k=1000000 → k>n → 1000000 ✅
+n=0, k=0 → (0-0)%2=0 → 0 ✅
+n=1, k=0 → (1-0)%2=1 → 1 ✅
+n=1000000, k=1000000 → (0)%2=0 → 0 ✅
+
+📌 Key Takeaways:
+📏 Parity is the deciding factor — when k ≤ n, the answer is purely determined by whether n - k is even or odd. One parity check, instant answer! 🎯
+📏 k > n is the overflow case — B can't reach k-distance from A within bounds. The excess k - n is the minimum required extension! ✅
+📏 Three clean cases, no overlap — structure your if-elif-else to cover the full solution space without redundancy. This case analysis is a template for geometry problems! 🔢
+📏 Parity in geometry = distance parity — moving on a number line, you can only change position by odd/even amounts. The "parity mismatch" requires one extra step to fix. Classic! 🧮
