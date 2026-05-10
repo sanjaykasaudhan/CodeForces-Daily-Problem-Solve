@@ -1,0 +1,29 @@
+✅ Accepted on Codeforces! Problem C — Dominant Piranha | Round 677 (Div. 3)
+
+A Problem C with a greedy "find the max with a smaller neighbour" insight — elegant and fast! 🐟🎯
+
+🔗Problem Link: https://lnkd.in/guf73_rV
+
+🧩 The Problem: You have n piranhas with sizes in an array. A piranha can eat its neighbour if it's strictly larger. The "dominant" piranha is one that can eventually eat all others. Find any index (1-indexed) of a piranha that can become dominant, or -1 if impossible!
+Key Rule: A piranha can only eat an adjacent smaller piranha. After eating, it gets bigger and can eat more! 🦈
+
+💡 The Key Insight — Find the Maximum with a Smaller Neighbour:
+Only the maximum-sized piranhas can potentially be dominant (smaller ones can never eat the largest). But even among max-sized piranhas, not all can win:
+If ALL piranhas are the same size → no one can eat anyone → -1
+Otherwise: find ANY maximum-valued piranha that has at least one neighbour strictly smaller than it
+Such a piranha can eat that neighbour first, grow bigger than all others, then dominate! 🎯
+Why only one check? Because the maximum piranha with a smaller neighbour can always eat that neighbour to get a head start, making it strictly larger than all others (since it was already tied for maximum, now it's strictly above all). Then it can sweep!
+
+Examples:
+a=[5,3,4,4,5] → mx=5, check i=0: a[1]=3<5 → ans=1 ✅
+a=[1,1,1] → mx=1, all equal, no smaller neighbour → -1 ✅
+a=[4,4,3,4,4] → mx=4, check i=0: a[1]=4 not <4; i=1: a[2]=3<4 → ans=2 ✅
+a=[5,5,4,3,2] → mx=5, i=0: a[1]=5 not <5; i=1: a[2]=4<5 → ans=2 ✅
+a=[1,1,2] → mx=2, i=2: a[1]=1<2 → ans=3 ✅
+a=[5,4,3,5,5] → mx=5, i=0: a[1]=4<5 → ans=1 ✅
+
+📌 Key Takeaways:
+🐟 Only max-valued elements can be dominant — a non-maximum piranha can never eat the largest ones. Immediately restrict your search to a[i] == mx! 🎯
+🐟 "Smaller neighbour" is the activation condition — a max piranha with a smaller neighbour can immediately eat it to break the tie. First eat = decisive advantage! ✅
+🐟 Break after first valid candidate — any valid max piranha with a smaller neighbour works. No need to find the "best" one — all such candidates are equally dominant! ⚡
+🐟 -1 only when all elements are equal — if all are equal, no piranha can eat any other. This is the only impossible case! 🔢
