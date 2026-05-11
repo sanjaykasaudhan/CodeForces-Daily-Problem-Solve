@@ -1,0 +1,31 @@
+✅ Accepted on Codeforces! Problem C — MEX rose | Round 1054 (Div. 3)
+
+Another Problem C down! 🌹 This one combines frequency counting with a beautiful two-part answer — understanding what to maximise is the entire key!
+
+🔗Problem Link: https://lnkd.in/gdkAAed8
+
+🧩 The Problem: Given an array of n non-negative integers and a value k, you can add any non-negative integers to the array. Maximise the MEX (minimum excludant — smallest missing non-negative integer) of the array after optimally adding exactly k elements!
+Goal: After adding k elements, make the MEX as large as possible! 🎯
+
+💡 My Approach — Frequency Count + Two Strategies:
+Step 1 — Count frequencies: freq[x] = how many times x appears in a.
+Step 2 — Find how many values are missing in [0, k-1]: missing = count of i in [0, k-1] where freq[i] == 0
+These are "gaps" — values not yet in the array below k.
+Step 3 — The answer = max of two strategies:
+🔵 Strategy A: Fill gaps, then push MEX up
+Use missing elements to fill all gaps in [0, k-1]
+Use remaining k - missing elements to extend MEX beyond k
+But we track: missing missing values need to be filled first!
+🔴 Strategy B: Use all k elements to extend beyond existing MEX
+Just keep adding k, k+1, k+2... → adds k to the MEX beyond whatever's already at position k!
+Contribution from position k: freq[k] already there + we can add k more...
+Actually: ans = max(missing, freq[k])
+Why?
+If missing > freq[k]: we have many gaps to fill — answer = missing (we fill them all with k elements, MEX jumps to at least k after filling)
+If freq[k] ≥ missing: position k already has many duplicates — use k elements to push MEX further → answer = freq[k]
+
+📌 Key Takeaways:
+🌹 MEX = smallest missing — always think about gaps in [0, 1, 2, ...]. Filling gaps is the primary way to increase MEX! 🎯
+🌹 Two competing strategies — either fill the missing gaps (increasing MEX to k) or leverage duplicates at position k to push beyond. Take the max! ✅
+🌹 freq[k] is special — it represents how many extra elements you can "redirect" from position k to push the MEX further. Clever use of existing duplicates! 🧮
+🌹 freq = [0] * (n+1) sizing — values in the array can be at most n (pigeonhole), so n+1 size covers all cases! ✅
