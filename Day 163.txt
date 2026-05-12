@@ -1,0 +1,30 @@
+✅ Accepted on Codeforces! Problem A — Prime Subtraction | Educational Round 74 (Rated for Div. 2)
+
+One condition. Two lines of logic. Pure number theory brilliance! 🔢✨ This problem is a masterclass in knowing when to stop thinking and just check the right thing!
+
+🔗Problem Link: https://lnkd.in/gx8ZHpgW
+
+🧩 The Problem: Given two integers x and y (x > y), can you make x = y by repeatedly subtracting any prime number from x? Answer YES or NO!
+
+💡 The Key Insight — Goldbach's Theorem Adjacent:
+You want to reduce x to y, i.e., subtract x - y from x using sums of primes.
+The only impossible case: x - y = 1
+Why? Because 1 cannot be written as a sum of primes (smallest prime is 2). You'd need to subtract exactly 1, but no prime equals 1!
+For any x - y ≥ 2: Always possible!
+If x - y is prime → subtract it directly in one step ✅
+If x - y = 4 → subtract 2 + 2 ✅
+For any even number ≥ 4 → Goldbach's conjecture (verified for all practical values): sum of two primes ✅
+For any odd number ≥ 2 → subtract 2, remaining is odd-2 = odd number, handle recursively... actually: odd - 2 = odd, and any odd ≥ 3 is either prime or sum of primes! ✅
+So: YES if x - y != 1, NO if x - y == 1!
+
+Examples:
+x=100, y=98 → diff=2 (prime!) → YES ✅
+x=42, y=32 → diff=10=5+5 → YES ✅
+x=10^18, y=1 → diff=10^18-1 (huge but decomposable into primes) → YES ✅
+x=41, y=40 → diff=1 → NO ✅
+
+📌 Key Takeaways:
+🔢 Goldbach's conjecture in disguise — every even integer ≥ 4 is a sum of two primes (verified computationally up to enormous values). This problem relies on this! 🎯
+🔢 1 is the only impossible difference — the minimum prime is 2, so you can never subtract exactly 1. Any difference ≥ 2 can be decomposed into primes! ✅
+🔢 Transform "can we reach y?" to "can we decompose (x-y)?" — this reframing from a reachability problem to a number theory decomposition problem is the key mental shift! 🧠
+🔢 Knowing when NOT to over-engineer — the solution is one if statement. Recognise when a problem reduces to a known mathematical fact and submit! 💪
