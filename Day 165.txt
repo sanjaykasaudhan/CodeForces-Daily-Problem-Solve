@@ -1,0 +1,28 @@
+✅ Accepted on Codeforces! Problem B — Delete from the Left | Round 496 (Div. 3)
+
+String suffix matching with a clean reverse-scan — elegant, minimal, and satisfying! 🔤✂️
+
+🔗Problem Link: https://lnkd.in/gRc9ciY9
+
+🧩 The Problem: Given two strings s and t, you can delete characters from the left of either string. Find the minimum total number of deletions to make the two strings equal!
+The optimal strategy: find the longest common suffix of s and t — keep that, delete everything else! 🎯
+
+💡 The Key Insight — Longest Common Suffix:
+After deleting from the left, both strings must end with the same suffix. To minimise deletions, maximise the common suffix length!
+Scan from the right end of both strings simultaneously:
+While s[i] == t[j]: extend the common suffix (common += 1), move both pointers left
+Stop when characters differ or a string runs out
+Total deletions = len(s) + len(t) - 2 * common
+(Remove common characters from each string's deletion count, since we keep them!) ✅
+
+Examples:
+s="test", t="west" → scan from right: t==t✅, s==s✅, e==e✅, stop(t≠w) → common=3 → 4+4-6=2 ✅
+s="codeforces", t="yes" → scan: s≠s stop... wait: s[9]='s', t[2]='s'✅; s[8]='e', t[1]='e'✅; s[7]='c', t[0]='y'❌ → common=2 → 10+3-4=9 ✅
+
+📌 Key Takeaways:
+✂️ "Delete from left" = "keep a suffix" — framing the problem as "what suffix do we keep?" instead of "what do we delete?" immediately reveals the optimal strategy! 🎯
+✂️ Two pointers from the right — scan both strings simultaneously from their ends. This is the canonical way to find the longest common suffix in O(n)! ✅
+✂️ len(s) + len(t) - 2 * common — elegant formula: total characters minus twice the saved suffix (once for s, once for t). Memorise this pattern! 🧮
+✂️ No extra data structures — just two indices and a counter. Pure pointer arithmetic, zero memory overhead! 🐍
+
+
