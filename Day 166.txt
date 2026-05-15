@@ -1,0 +1,33 @@
+✅ Accepted on Codeforces! Problem A — Orac and Factors | Round 641 (Div. 2)
+
+Number theory + greedy in one beautiful package! 🔢🎯 This problem teaches a fundamental insight about smallest prime factors and optimal increment strategies!
+
+🔗Problem Link: https://lnkd.in/guZfNiVx
+
+🧩 The Problem: Given n and k, perform exactly k operations. Each operation: add any divisor of the current n (other than n itself) to n. Maximise the final value of n! 📈
+
+💡 The Key Insight — Smallest Prime Factor First, Then Double:
+Step 1 — Find smallest prime factor d of n:
+If n is even → d = 2 (most common case!)
+Otherwise → trial divide from 2 to √n
+Step 2 — Apply ONE operation: n += d
+After this, n becomes n + d
+Since d divides n, and n + d is also divisible by d (d divides both n and d)
+So now n is even! (because d divides n+d, and if d=smallest factor, n+d is even when d is odd: n was odd, d is odd, n+d is even!)
+Wait — more precisely: after n += d:
+If d was odd (n was odd): n + d = odd + odd = even → now n is even!
+If d was 2: n + 2 is also even → stays even!
+Step 3 — Remaining k-1 operations: always add 2 (the smallest even divisor)
+Each remaining operation adds 2: n += 2 * (k - 1)
+This greedy works because after making n even, every subsequent +2 is optimal! Adding 2 each time is the minimum increment per operation, but since we want to maximise, we do the analysis: larger divisors could be added, but they reduce the number of times we can add — actually we add the SAME divisor each remaining step, so adding 2 (k-1) times = adding 2*(k-1) total. This is always ≥ any single large divisor addition!
+
+Examples:
+n=5, k=1 → d=5(itself, but wait—d starts as n=5)... hmm. Let me re-read: if no factor found in [2,√n], d stays as n. Then n+=d = n+n = 2n. But for n=5 (prime), d=5: n=5+5=10, then +2*(1-1)=0 → 10 ✅
+n=8, k=2 → d=2: n=8+2=10, +2*(2-1)=2 → 12 ✅
+n=3, k=4 → d=3(prime): n=3+3=6, +2*(4-1)=6 → 12 ✅
+
+📌 Key Takeaways:
+🔢 Smallest prime factor is the key — finding the smallest factor of n determines the first (and only "special") operation. Trial division up to √n is sufficient! 🎯
+🔢 After one operation, n is always even — if n was odd, adding its smallest odd prime factor makes it even. If n was even, it stays even. Once even, always use 2! ✅
+🔢 Batch the remaining operations — n += 2 * (k - 1) collapses k-1 identical +2 operations into one arithmetic step. O(1) vs O(k) loop! ⚡
+🔢 d = n initialisation — handles the prime case: if no factor ≤ √n exists, the only proper divisor is... wait, n itself isn't a proper divisor. Hmm — for primes, d stays = n → n += n = 2n, making it even for subsequent steps! 🧮
