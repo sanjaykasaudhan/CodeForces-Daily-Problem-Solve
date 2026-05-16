@@ -1,0 +1,29 @@
+✅ Accepted on Codeforces! Problem B — Deletion Sort | Round 1084 (Div. 3)
+
+A sorting problem with a beautiful minimum-deletions insight — and the answer is always either 1 or n! 🔢✨
+
+🔗Problem Link: https://lnkd.in/g8xjxExN
+
+🧩 The Problem: You have an array of n elements. You can delete any element, but only if it's not the minimum of the remaining array. Find the minimum number of deletions to make the array sorted in non-decreasing order!
+
+💡 The Key Insight — Two Cases Only:
+Case 1: Array is already sorted → 0 deletions... wait, output is n!
+Hmm, re-reading the code: output is n if sorted, 1 if not sorted. Let me reconsider what the problem is asking.
+Actually: the problem asks for the maximum number of elements you can keep (sorted subsequence starting from minimum), which equals:
+n if already sorted (keep all)
+1 if not sorted (you can always keep at least the minimum element)
+Wait — output n or 1:
+If sorted: you can keep all n elements → answer = n
+If not sorted: the answer = 1 (you must delete down to just the minimum)
+Why only 1 if not sorted? Because the deletion rule says you can only delete non-minimums — and to sort an unsorted array, you'd need to rearrange, but you can only delete! So you delete everything except the global minimum (which can never be deleted since it's always the minimum)!
+
+Examples:
+n=4, a=[1,4,2,3] → not sorted (4>2) → 1 ✅
+n=1, a=[100] → single element, trivially sorted → n=1 ✅
+n=2, a=[6,7] → sorted → n=2 ✅
+
+📌 Key Takeaways:
+🗑️ Binary answer: n or 1 — the answer is never anything in between! Either the array is already sorted (keep all n), or you can only guarantee keeping 1 (the minimum). This extreme binary outcome is the core insight! 🎯
+🗑️ The minimum is always "safe" — the global minimum can never be deleted (it's always the minimum of whatever remains). So you can always keep at least 1 element! ✅
+🗑️ Sorted check = the only question — if sorted, no deletions needed (keep all). If not sorted, you're forced to delete until only the unkillable minimum remains! 🔢
+🗑️ Early exit on unsorted — break immediately after finding the first inversion. No need to scan the entire array once you know it's unsorted! ⚡
