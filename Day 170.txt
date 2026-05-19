@@ -1,0 +1,27 @@
+✅ Accepted on Codeforces! Problem B — The 67th 6-7 Integer Problem | Round 1090 (Div. 4)
+
+67 strikes again! 😄 But this time with a beautiful mathematical formula hiding underneath the surface! 🔢✨
+
+🔗Problem Link: https://lnkd.in/ekes_6Kv
+
+🧩 The Problem: Given an array, compute 2 * max(a) - sum(a). That's the formula from the code — but what does it mean mathematically?
+The interpretation: You want to make all elements equal to the maximum. The total "deficit" = sum of (max - a[i]) for all i = n * max - sum(a). But the output is 2 * max - sum(a), which suggests n=2 or a specific relationship...
+Actually — reading more carefully: the output 2 * mx - total where total = sum(a). This equals mx - (total - mx) = max - sum_of_others. So it measures how much the maximum "dominates" over the sum of all other elements! 🎯
+
+💡 The Mathematical Insight:
+2 * max(a) - sum(a) = max(a) - (sum(a) - max(a)) = max(a) - sum_of_non_max_elements
+This formula computes: the maximum element minus the sum of all other elements!
+When is this positive? When the max is bigger than the sum of everything else → the array is "max-dominated"!
+The answer can be negative (sum dominates), zero, or positive (max dominates)!
+
+Examples:
+a=[41]*8 → mx=41, total=328 → 82-328=-246 ✅
+a=[6,9,4,20,6,7,67] → mx=67, total=119 → 134-119=15 ✅
+a=[1,2,3,4,5,6,7] → mx=7, total=28 → 14-28=-14 ✅
+a=[6,7,6,7,6,7,6] → mx=7, total=45 → 14-45=-31 ✅
+
+📌 Key Takeaways:
+🔢 2 * mx - total = mx - (total - mx) — recognise this algebraic identity! It's "max minus sum-of-rest", a useful measurement for how dominant the maximum element is! 🎯
+🔢 One-pass computation — sum() and max() both iterate once. In Python, computing both in separate calls is fine (2n total), but you could combine them if needed for very large inputs! ✅
+🔢 Formula problems reward algebraic thinking — always try to simplify f(a) algebraically before coding. 2*max - sum becomes obvious once you expand it! 🧮
+🔢 67 Easter eggs in Round 1090 — this round had multiple 67-themed problems! The problem setter clearly loves 67 (Codeforces' "lucky number")! 😄
