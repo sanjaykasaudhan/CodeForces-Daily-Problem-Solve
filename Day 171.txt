@@ -1,0 +1,26 @@
+✅ Accepted on Codeforces! Problem B — Lasers | Round 1050 (Div. 4)
+
+A physics-inspired problem with a beautifully counter-intuitive solution — the actual laser positions are completely irrelevant! 🔦🎯
+
+🔗Problem Link: https://lnkd.in/gNMpDh4v
+
+🧩 The Problem: You have two walls with n mirrors on the left wall and m mirrors on the right wall. A laser bounces between walls hitting mirrors. Given the coordinates of mirrors on each wall (and the laser entry/exit points x and y), find the minimum number of mirrors the laser must hit!
+The code reads n, m, x, y... then reads two more lines (the actual mirror positions!) and discards them entirely with just input(). Then outputs n + m! 😮
+The answer is always n + m! 🎯
+
+💡 The Mathematical Insight:
+No matter where the mirrors are positioned on each wall, a laser bouncing between two parallel walls must hit every single mirror on both walls before exiting (due to the geometry of reflections)!
+This is a classic result from optics and geometry: in a system of two parallel reflective walls, a laser beam that enters and exits will necessarily interact with ALL mirrors present, regardless of their positions!
+Therefore:
+Minimum mirrors hit = n + m
+The positions x and y of entry/exit, and the actual mirror coordinates, are ALL irrelevant! 🤯
+
+Examples:
+n=1, m=1, ... → 1+1=2 ✅
+n=2, m=1, ... → 2+1=3 ✅
+
+📌 Key Takeaways:
+🔦 Sometimes ALL the input is a red herring — reading x, y, and mirror positions but discarding them entirely is the correct approach! The answer depends only on n and m! 🎯
+🔦 Physics/geometry theorems collapse complex problems — the reflection theorem that forces a laser to hit all mirrors reduces a seemingly complex optimization to a trivial sum! ✅
+🔦 input() as a discard operation — when you need to skip input lines in Python, bare input() without assignment is the clean way! 🐍
+🔦 Read ALL the input — even if you discard it, failing to consume all input lines causes runtime errors on subsequent test cases! Always read what the problem gives you! ⚠️
