@@ -1,0 +1,30 @@
+✅ Accepted on Codeforces! Problem B — Unconventional Pairs | Round 1054 (Div. 3)
+
+Sort + adjacent pair scan — a beautifully clean approach to maximising differences! 🔢📊
+
+🔗Problem Link: https://lnkd.in/g9kZ-_U6
+
+🧩 The Problem: Given an array of n integers, pair them up into n/2 pairs (n is always even). Maximise the minimum absolute difference across all pairs... wait, actually re-reading the code: it maximises the maximum difference among adjacent pairs after sorting, stepping by 2!
+From the code: sort, then check pairs (a[0],a[1]), (a[2],a[3]), ... and find the maximum |a[i] - a[i+1]| among consecutive even-indexed pairs. The answer is the maximum of these differences!
+
+💡 The Key Insight — Sort and Pair Consecutively:
+After sorting the array, the optimal pairing strategy pairs elements at positions (0,1), (2,3), (4,5), ... — consecutive pairs in sorted order.
+For each such pair (a[i], a[i+1]) where i is even, compute |a[i] - a[i+1]|.
+The maximum of these values is the answer!
+Why consecutive pairs after sorting?
+This is the classic "minimise maximum within pairs" greedy for the dual problem
+Or here: find the pairing that maximises the maximum difference, which requires checking all adjacent pairs in sorted order!
+Actually: range(0, n, 2) steps by 2, checking pairs (a[0],a[1]), (a[2],a[3])... finding max difference! 🎯
+
+Examples:
+n=2, a=[1,2] → sorted=[1,2], pair=(1,2): diff=1 → 1 ✅
+n=4, a=[10,1,2,9] → sorted=[1,2,9,10], pairs: (1,2)→1, (9,10)→1 → max=1 ✅
+n=6, a=[3,8,9,3,3,2] → sorted=[2,3,3,3,8,9], pairs: (2,3)→1, (3,3)→0, (8,9)→1 → 1 ✅
+n=8, a=[5,5,5,5,5,5,5,5] → all pairs diff=0 → 0 ✅
+n=4, a=[-5,-1,2,6] → sorted=[-5,-1,2,6], pairs: (-5,-1)→4, (2,6)→4 → 4 ✅
+
+📌 Key Takeaways:
+📊 Sort first for pair problems — sorting makes adjacent elements the "most similar". Pairing adjacent elements after sorting reveals the minimum possible within-pair differences! 🎯
+📊 range(0, n, 2) for every other index — stepping by 2 iterates over even indices: 0, 2, 4, ... This accesses the first element of each consecutive pair in O(n/2)! ✅
+📊 abs(a[i] - a[i+1]) — absolute difference between consecutive sorted pairs. After sorting, a[i] ≤ a[i+1] always, so a[i+1] - a[i] without abs works too! 🐍
+📊 Initialise ans = 0 — differences are always ≥ 0, so 0 is the correct lower bound sentinel! 🔢
