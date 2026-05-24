@@ -1,0 +1,31 @@
+✅ Accepted on Codeforces! Problem A — Array Coloring | Round 1073 (Div. 2)
+
+Permutation positions + parity — a beautifully subtle problem that rewards careful thinking about indices! 🎨🔢
+
+🧩 The Problem: Given a permutation of [1..n], you need to color each element either red or blue such that consecutive values i and i+1 have different parities of their positions. Find if such a coloring exists!
+From the code: pos[a[i]] = i stores the position of each value. Then check: for each consecutive pair (i, i+1), do pos[i] and pos[i+1] have different parities?
+If ALL consecutive value-pairs have positions of different parity → YES, else NO! 🎯
+
+🔗Problem Link: https://lnkd.in/gsmZzAW4
+
+💡 The Key Insight — Position Parity of Consecutive Values:
+In a permutation, values i and i+1 are "consecutive" in value space. For a valid coloring:
+Value i at position pos[i]
+Value i+1 at position pos[i+1]
+These positions must have different parity (one even, one odd)
+Algorithm:
+Build pos[] array: pos[value] = index
+For each i from 1 to n-1: check pos[i] % 2 != pos[i+1] % 2
+If any consecutive pair has SAME parity positions → NO
+
+Examples:
+n=4, a=[2,3,4,1] → pos: 1→3,2→0,3→1,4→2 → pairs: (3,0)→diff✅, (0,1)→diff✅, (1,2)→diff✅ → YES ✅
+n=3, a=[2,3,1] → pos: 1→2,2→0,3→1 → (2,0)→same❌ → NO ✅
+n=5, a=[3,4,1,2,5] → check all pairs → YES ✅
+n=5, a=[3,1,4,2,5] → check → NO ✅
+
+📌 Key Takeaways:
+🎨 Invert the array → build position lookup — pos[value] = index is the standard trick for "where is value v in the permutation?" questions. Always invert when working with value-space properties! 🎯
+🎨 Parity alternation = coloring condition — requiring consecutive values to have different-parity positions is equivalent to a 2-coloring condition. Parity checks are the go-to for coloring feasibility! ✅
+🎨 (a % 2) == (b % 2) → same parity, !=  → different parity. Clean and readable parity comparison! 🐍
+🎨 Break early — once any violation is found, immediately set ok = False and break. Don't scan unnecessarily! ⚡
