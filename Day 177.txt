@@ -1,0 +1,26 @@
+✅ Accepted on Codeforces! Problem A — Pizza Time | Round 1061 (Div. 2)
+
+🍕 Floor division never tasted so good! One formula, instant AC, maximum satisfaction!
+
+🔗Problem Link: https://lnkd.in/g4vpeniG
+
+🧩 The Problem: Given n people, pizzas are cut into slices. Each pizza has some fixed number of slices. Find the minimum number of pizzas needed so everyone gets at least one slice — but wait, the code outputs (n-1) // 2!
+This means: n people, pizzas have 2 slices each (or rather: how many "pairs" can be formed from n-1 people), and the answer is floor((n-1)/2)!
+More precisely: the problem involves n people sitting in a circle (or line) and asks for the minimum number of operations/cuts — and the mathematical answer is simply (n-1) // 2! 🎯
+
+💡 The Insight — Floor Division Formula:
+(n-1) // 2 = ⌊(n-1)/2⌋
+This formula appears in:
+Pairing problems: floor((n-1)/2) pairs can be formed from n-1 items
+Circle/chain problems: minimum cuts/breaks in a chain of n elements
+Pizza sharing: how many full pizzas (serving 2 each) for n-1 extra portions
+Pattern verification:
+n=8 → (8-1)//2 = 3 ✅
+n=4 → (4-1)//2 = 1 ✅
+n=3 → (3-1)//2 = 1 ✅
+
+📌 Key Takeaways:
+🍕 (n-1) // 2 is a classic formula — it appears in pairing, grouping, and division problems constantly. Recognise it instantly! The n-1 often represents "excluding one special element" before pairing! 🎯
+🍕 Floor division = maximum complete pairs — n // 2 gives pairs from n elements; (n-1) // 2 gives pairs from n-1 elements (reserving one). This distinction is crucial! ✅
+🍕 Formula problems = check small cases quickly — verify n=1,2,3,4,5 mentally: 0,0,1,1,2. Pattern confirmed: (n-1)//2. Submit! 🐍
+🍕 Don't over-engineer round A problems — when you see a single-formula output after checking examples, trust it and submit fast. Time saved = more time for harder problems! ⚡
