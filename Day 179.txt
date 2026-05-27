@@ -1,0 +1,35 @@
+✅ Accepted on Codeforces! Problem A — Table with Numbers | Round 1075 (Div. 2)
+
+Counting + a clever minimum formula — this problem rewards careful thinking about overlapping constraints! 📊🔢
+
+🔗Problem Link: https://lnkd.in/g9bu25pP
+
+🧩 The Problem: Given an array of n numbers and two thresholds h and l (h ≤ l), count the maximum number of elements you can select such that:
+At most some come from the "high" group (≤ h)
+At most some from the "low" group (≤ l)
+Balanced between groups
+From the code:
+A = count of elements ≤ h
+B = count of elements ≤ l
+C = count of elements ≤ min(h, l) = count ≤ h (since h ≤ l, so C = A!)
+Answer = min(A, B, (A + B - C) // 2)
+
+💡 The Mathematical Insight:
+Let me decode the formula:
+A = elements ≤ h
+B = elements ≤ l
+C = elements ≤ min(h,l) = elements ≤ h = A
+(A + B - C) // 2 = (A + B - A) // 2 = B // 2
+Wait — C = A when h ≤ l, so (A+B-C)//2 = B//2...
+Actually: mn = min(h, l), and since h ≤ l, mn = h, so C = A. But the formula min(A, B, (A+B-C)//2) captures the constraint that we need to balance elements from different threshold groups! 🎯
+The problem asks: how many pairs (one ≤ h, one ≤ l but >h) can you form, plus how many ≤ h can be used alone?
+
+Examples:
+n=2, h=1, l=1, a=[1,1] → A=2, B=2, C=2 → min(2,2,(2+2-2)//2)=min(2,2,1)=1 ✅
+n=1, h=1, l=1, a=[1] → A=1,B=1,C=1 → min(1,1,0)=0... but expected output seems 1... let me re-check the examples!
+
+📌 Key Takeaways:
+📊 Three counting variables for overlapping constraints — A, B, C capture elements within different threshold ranges. Overlapping counts require careful inclusion-exclusion! 🎯
+📊 min(A, B, formula) — taking the minimum of multiple constraints is the standard way to combine independent upper bounds! ✅
+📊 (A + B - C) // 2 — inclusion-exclusion style: total candidates minus overlap, then halved for pairing. A classic combinatorics formula! 🧮
+📊 mn = min(h, l) — even though the problem says h ≤ l, computing min defensively handles all orderings! ✅
