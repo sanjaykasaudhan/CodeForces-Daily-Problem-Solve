@@ -1,0 +1,35 @@
+✅ Accepted on Codeforces! Problem A — New Year String | Educational Round 186 (Rated for Div. 2)
+
+A festive string problem just in time for the new year vibes! 🎉🔢 And the solution is a delightfully clean two-condition check!
+
+🔗Problem Link: https://lnkd.in/g4Brwcax
+
+🧩 The Problem: Given a string s, determine if it can represent a valid "New Year" transition. The string is valid (output 1) if:
+It contains "2025" as a substring ✅
+It does NOT contain "2026" as a substring ✅
+If EITHER "2026" is present OR "2025" is absent → output 0!
+
+💡 The Logical Condition:
+if "2026" in s or "2025" not in s:
+    print(0)
+else:
+    print(1)
+Valid (output 1) iff:
+"2025" IS in s AND
+"2026" is NOT in s
+This perfectly captures "the string celebrates 2025 but hasn't entered 2026 yet"! 🎯
+
+Examples:
+s="0000" → no "2025" → 0 ✅
+s="2025" → has "2025", no "2026" → 1 ✅
+s="2026" → has "2026" → 0 ✅
+s="20252026" → has both → 0 ✅
+s="20252025" → has "2025", no "2026" → 1 ✅
+s="202520256" → has "2025", check "2026": 2-0-2-5-6... no "2026" → 1... wait: "20256" contains "2025"✅ and no "2026"✅ → 1 ✅
+s="202520265" → "20265" contains "2026"! → 0 ✅
+
+ 📌 Key Takeaways:
+🎉 Python's in operator for substring search — "2025" in s uses efficient string matching under the hood. For competitive programming, it's clean and fast enough for typical constraints! ✅
+🎉 De Morgan's Law in code — "2026" in s or "2025" not in s is the negation of "2026" not in s and "2025" in s. Knowing when to express the NEGATIVE condition often leads to cleaner code! 🧮
+🎉 Themed problems are fun — Educational rounds often feature year-themed problems during New Year season! Enjoy them — they're usually accessible warm-ups! 🎊
+🎉 Two substring checks = O(n) each — Python substring search (in) uses optimised algorithms. Two checks on a string of length n is still O(n)! ⚡
