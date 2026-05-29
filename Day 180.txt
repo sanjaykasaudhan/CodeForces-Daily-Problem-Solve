@@ -1,0 +1,25 @@
+✅ Accepted on Codeforces! Problem A — Sleeping Through Classes | Round 1068 (Div. 2)
+
+A class attendance simulation with a clean "wake window" spreading approach! 😴📚 Sometimes brute force on small inputs is exactly the right tool!
+
+🔗Problem Link: https://lnkd.in/gMZQ7has
+
+🧩 The Problem: You have n classes represented as a binary string s. A '1' means you're awake at that class. When you're awake at position i, you stay awake for the next k classes too (positions i to i+k-1). Count how many classes you miss (are asleep for)! 💤
+
+💡 My Approach — Mark Awake Windows:
+For each position i where s[i] == '1' (you're awake):
+Mark positions i, i+1, ..., min(n-1, i+k-1) as awake
+Use range(i, min(n, i+k+1)) to mark the window
+Then count positions still marked False (asleep) — those are the missed classes!
+
+Examples:
+n=4, k=1, s="1001" → i=0: mark [0,1]; i=3: mark [3] → awake=[T,T,F,T] → 1 asleep → 1 ✅
+n=3, k=3, s="000" → no '1's → all False → 3 ✅
+n=3, k=1, s="001" → i=2: mark [2,3→capped at 2] → awake=[F,F,T] → 2 ✅
+n=8, k=2, s="01000101" → mark windows → 2 ✅
+
+📌 Key Takeaways:
+😴 Boolean marking arrays — awake = [False] * n initialised to all-asleep, then mark awake windows. Simple, readable, and effective! 🎯
+😴 min(n, i + k + 1) — crucial bounds check! Without it, you'd go out of bounds for windows near the end of the string. Always clamp your ranges! ⚠️
+😴 awake.count(False) — Python's .count() on a list is O(n). Perfect for counting False values! 🐍
+😴 Simulation > formula — when n is small enough (e.g., n ≤ 10⁵), simulation is cleaner than derivation. Know your constraints! ✅
