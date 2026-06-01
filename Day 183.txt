@@ -1,0 +1,32 @@
+✅ Accepted on Codeforces! Problem B — Party Monster | Round 1096 (Div. 3)
+
+Bracket matching at its most elegant — and the solution is literally one comparison! 🎉🔢
+
+🔗Problem Link: https://lnkd.in/gXqpVVTB
+
+🧩 The Problem: Given a string of parentheses ( and ), determine if it's a valid "party" string. 
+From the code:
+if s.count('(') == s.count(')'):
+    print("YES")
+else:
+    print("NO")
+The condition is simply: equal number of ( and ) → YES! 🎯
+
+💡 The Insight — Balanced Count = Valid Party:
+A string has a valid party arrangement if and only if the number of opening brackets equals the number of closing brackets. This is the necessary condition for any balanced bracket sequence!
+Note: This is a weaker check than full bracket validation (which also requires proper ordering) — but for this problem, just counting is sufficient! The problem apparently doesn't require structural validity, only count equality! ✅
+
+Examples:
+s="()" → 1==1 → YES ✅
+s=")(" → 1==1 → YES ✅ (equal count, even though unordered!)
+s="(((" → 3≠0 → NO ✅
+s="()()()" → 3==3 → YES ✅
+s="(()(" → 3≠1 → NO ✅
+s=")()(" → 2==2 → YES ✅
+s=")()("→ 2==2 → YES ✅
+
+📌 Key Takeaways:
+🎉 Know what the problem actually asks — this isn't full bracket validation (which requires a stack). It's just count equality. Read carefully before overcomplicating! 🎯
+🎉 s.count('(') == s.count(')') — Python's .count() is O(n) and perfectly readable. No need for a Counter, defaultdict, or complex data structure! 🐍
+🎉 Count checks vs structural checks — bracket problems range from "just count" (this problem) to "must be properly nested" (requires stack). Identify which level is needed! ✅
+🎉 n is given but unused — the code reads n but uses len(s) implicitly via .count(). This happens when the input format includes n but Python can just use the string directly! ⚠️
