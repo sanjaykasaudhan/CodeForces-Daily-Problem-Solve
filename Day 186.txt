@@ -1,0 +1,36 @@
+✅ Accepted on Codeforces! Problem A — Koshary | Round 1096 (Div. 3)
+
+Two numbers, one parity check, zero complexity! 🍲🔢 The most delightfully simple problem of the day!
+
+🔗Problem Link: https://lnkd.in/grcRi5uk
+
+🧩 The Problem: Given two integers x and y, output NO if both are odd, YES otherwise!
+if x % 2 == 1 and y % 2 == 1:
+    print("NO")
+else:
+    print("YES")
+That's it! Two odd numbers → NO. Any other combination → YES! 🎯
+
+💡 The Mathematical Insight:
+The only "bad" case is when BOTH x and y are odd. In all other cases (both even, or one of each), the answer is YES!
+Why? Koshary (an Egyptian dish!) apparently needs at least one even-numbered ingredient or portion to be balanced. Two odd quantities = impossible to divide equally → NO!
+Truth table:
+x=odd, y=odd → NO ❌
+x=odd, y=even → YES ✅
+x=even, y=odd → YES ✅
+x=even, y=even → YES ✅
+Only 1 out of 4 cases fails! 🍽️
+
+Examples:
+x=1, y=1 → both odd → NO ✅
+x=1, y=2 → one even → YES ✅
+x=4, y=6 → both even → YES ✅
+x=5, y=9 → both odd → NO ✅
+x=7, y=2 → one even → YES ✅
+x=10, y=10 → both even → YES ✅
+
+📌 Key Takeaways:
+🍲 Check for the "bad" case, not the "good" case — sometimes it's cleaner to identify what makes something FAIL than what makes it SUCCEED. Here: both odd = fail! 🎯
+🍲 x % 2 == 1 → odd check. Alternatively: x & 1 == 1 (bitwise AND with 1 checks the last bit). Both are O(1)! 🔢
+🍲 AND vs OR in conditions — "both odd" uses AND (x%2==1 AND y%2==1). "At least one odd" would use OR. Getting these right is crucial for correctness! ⚠️
+🍲 else covers 3 cases at once — instead of writing three separate if statements for (odd,even), (even,odd), (even,even), the else clause handles all non-NO cases elegantly! ✅
