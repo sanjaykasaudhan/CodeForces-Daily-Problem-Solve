@@ -1,0 +1,26 @@
+✅ Accepted on Codeforces! Problem A — Notelock | Round 1060 (Div. 2)
+
+Binary string segmentation with a clean gap-counting approach — and a beautiful edge case for all-zero strings! 🔒🔢
+
+🔗Problem Link: https://lnkd.in/gvE2bk9i
+
+🧩 The Problem: Given a binary string s of length n and integer k, find the minimum number of "locks" (groups) needed to cover all '1' positions such that no two consecutive '1's within the same group are more than k apart (exclusive)!
+Essentially: split the '1' positions into the minimum number of groups where each group spans at most k positions! 🎯
+
+💡 My Approach — Gap-Based Group Counting:
+Step 1 — Find all positions of '1':
+ones = [i for i, ch in enumerate(s) if ch == '1']
+Edge case: If no '1's exist → 0 groups needed!
+Step 2 — Count groups by gaps: Start with ans = 1 (at least one group if any 1s exist). Scan consecutive '1' positions. If the gap ones[i] - ones[i-1] >= k → start a new group (ans += 1)!
+Why k? If two consecutive '1's are ≥ k apart, they can't be in the same group — a new lock is needed!
+
+Examples:
+n=2, k=2, s="11" → ones=[0,1], gap=1<2 → 1 group → 1 ✅
+n=11, k=6, s="10001000100" → ones=[0,4,8], gaps=4<6,4<6 → 1 group ✅
+... continue checking all cases!
+
+📌 Key Takeaways:
+🔒 Collect positions first, then scan gaps — instead of tracking groups dynamically, collect all '1' positions first, then check gaps between consecutive ones. Cleaner and more readable! 🎯
+🔒 Edge case: no '1's — always handle the empty case! if not ones: print(0) saves you from index errors! ⚠️
+🔒 ans = 1 initialisation — start with 1 group (since we know at least one '1' exists after the edge case check). Each gap ≥ k adds one more group! ✅
+🔒 List comprehension for index positions — [i for i, ch in enumerate(s) if ch == '1'] is the Pythonic way to collect all positions satisfying a condition! 🐍
