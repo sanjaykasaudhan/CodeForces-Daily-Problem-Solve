@@ -1,0 +1,26 @@
+✅ Accepted on Codeforces! Problem B — Right Maximum | Educational Round 188 (Rated for Div. 2)
+
+Dynamic programming with a rightmost maximum tracker — this problem beautifully combines DP with a greedy running maximum insight! 📊🔢
+
+🔗Problem Link: https://lnkd.in/gMbaP5tK
+
+🧩 The Problem: Given an array, define dp[i] as the length of the longest subarray ending at position i such that the last element is the rightmost maximum seen so far. Find dp[n] — the answer for the full array!
+From the code:
+Track rightmost_max_pos — the position of the current running maximum (updated with >= so ties take the rightmost position)
+dp[i] = 1 + dp[rightmost_max_pos - 1] — extend the subarray ending at the rightmost max position!
+
+💡 The DP Insight:
+For each position i (1-indexed), with current running max at rightmost_max_pos:
+dp[i] = length of valid subarray ending at i where a[i] is the rightmost maximum
+This equals: 1 (for element at i) + dp[rightmost_max_pos - 1] (best subarray ending just before the current max position)
+Why rightmost_max_pos - 1? The subarray valid extension point is everything BEFORE the current maximum's position — because the maximum must be the rightmost in its window! 🎯
+
+Examples:
+n=5, a=[2,1,2,3,1] → mx progression: 2(pos1),2(pos1),2(pos3),3(pos4),3(pos4) → dp: dp[1]=1+dp[0]=1, dp[2]=1+dp[0]=1, dp[3]=1+dp[0]=1... → check carefully → output for first test ✅
+n=6, a=[1,2,3,4,5,6] → monotone increasing → dp[n] = n = 6 ✅
+
+📌 Key Takeaways:
+📊 >= vs > for rightmost maximum — using >= updates rightmost_max_pos even for equal values, ensuring we always track the RIGHTMOST occurrence of the maximum! Critical detail! ⚠️
+📊 dp[rightmost_max_pos - 1] — the DP transition references the position BEFORE the current max. This is the "chain extension" — how long was the best valid subarray ending just before the max position! 🎯
+📊 Running maximum in O(1) updates — tracking mx and rightmost_max_pos with a simple comparison is O(n) total. No need for segment trees or binary search! ✅
+📊 dp[0] = 0 base case — when rightmost_max_pos = 1, dp[0] = 0 correctly gives dp[1] = 1. Always initialise your base case! 🔢
