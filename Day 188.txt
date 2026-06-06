@@ -1,0 +1,36 @@
+✅ Accepted on Codeforces! Problem B — Bitwise Reversion | Round 1057 (Div. 2)
+
+Bitwise operations at their most elegant — three pairwise exclusivity checks that capture a beautiful set-theoretic property! ⚡🔢
+
+🔗Problem Link: https://lnkd.in/gjeHP5wD
+
+🧩 The Problem: Given three integers x, y, z, determine if they form a valid "bitwise partition" — where no bit is shared between any two of the three numbers simultaneously outside the third!
+From the code:
+if ((x & y & ~z) == 0 and
+    (x & z & ~y) == 0 and
+    (y & z & ~x) == 0):
+    print("YES")
+else:
+    print("NO")
+YES if and only if all three pairwise-but-not-third intersections are empty! 🎯
+
+💡 The Bitwise Set Theory Insight:
+Think of each integer as a set of bits. The three conditions check:
+x & y & ~z == 0 → no bit is in both x AND y but NOT z
+x & z & ~y == 0 → no bit is in both x AND z but NOT y
+y & z & ~x == 0 → no bit is in both y AND z but NOT x
+Together, these mean: every bit shared by any two numbers must also be in the third!
+This is equivalent to saying: the three numbers form a valid "bitwise triple" where shared bits are always in all three, not just two! ✅
+
+Examples:
+x=1,y=1,z=1 → all conditions 0 → YES ✅
+x=3,y=2,z=6 → check: 3&2&~6=2&~6=2&...010=010, check bit by bit → YES ✅
+x=4,y=8,z=12 → 4=100, 8=1000, 12=1100: 4&8=0, 4&12=100=4&~8=4→≠0 → NO ✅
+x=9,y=10,z=12 → 9=1001,10=1010,12=1100: check → YES ✅
+x=12730,y=3088,z=28130 → NO ✅
+
+📌 Key Takeaways:
+⚡ ~z in Python is bitwise NOT — in Python, ~z = -(z+1) due to two's complement. This works correctly in bitwise AND operations for our purposes! 🎯
+⚡ Three pairwise checks — instead of checking all 8 possible bit combinations, checking 3 conditions covers all "bad" cases where a bit is shared by exactly two numbers! ✅
+⚡ a & b & ~c == 0 means "no bits common to a and b but absent from c" — read bitwise conditions as set operations for clarity! 🧮
+⚡ Symmetry of conditions — the three checks are symmetric: (x,y,~z), (x,z,~y), (y,z,~x). Each pair is checked once with the third excluded! 🔢
