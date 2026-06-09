@@ -1,0 +1,25 @@
+✅ Accepted on Codeforces! Problem A — Friendly Numbers | Round 1079 (Div. 2)
+
+Self numbers, digit sums, and a tight search window — this number theory problem is both elegant and computationally bounded! 🔢✨
+
+🔗Problem Link: https://lnkd.in/gMq9SAsJ
+
+🧩 The Problem: A number y is "friendly" to x if y - digit_sum(y) == x. Given x, count how many friendly numbers y exist in the range [x, x+90]!
+Why only check 90 numbers? The maximum digit sum of any number is bounded — for a number near x (at most 90 away), checking 91 candidates covers all possible friendly numbers! 🎯
+
+💡 The Key Insight — Bounded Search Window:
+For any number y, y - digit_sum(y) is always less than y. The question is: how far above x can y be?
+Maximum digit sum for a number with d digits is 9d. For reasonable constraints (x up to ~10^9), we're looking at at most 10 digits → max digit sum = 90!
+So if y is friendly to x, then y - digit_sum(y) = x → y = x + digit_sum(y) ≤ x + 90.
+Therefore, we only need to check y ∈ [x, x+90] — a window of just 91 numbers! ✅
+
+Examples:
+x=1 → check 1..91: any y where y-digitsum(y)=1? y=10: 10-1=9≠1... → 0 ✅
+x=18 → check 18..108: y=20: 20-2=18✅, y=21: 21-3=18✅... → 10 ✅
+x=998244360 → similar window → 10 ✅
+
+📌 Key Takeaways:
+🔢 Bounded search windows are powerful — knowing the maximum digit sum is 90 (for 10-digit numbers) transforms an infinite search into a 91-element scan! Always look for natural bounds! 🎯
+🔢 digit_sum via repeated modulo — n % 10 extracts the last digit, n //= 10 removes it. Classic digit extraction pattern! Memorise it! 🐍
+🔢 "Self numbers" connection — numbers y where y - digit_sum(y) = x are related to "self numbers" in recreational mathematics. Some numbers have 0 generators, others have many! 🧮
+🔢 Why the answer is often 10? For large x, there are almost always exactly 10 friendly numbers in the window — one per possible last digit! Interesting pattern! ✅
