@@ -1,0 +1,28 @@
+✅ Accepted on Codeforces! Problem A — MEX Partition | Round 1058 (Div. 2)
+
+The classic MEX (Minimum EXcludant) problem — and the solution is a beautifully clean set-based computation! 🔢✨
+
+🔗Problem Link: https://lnkd.in/gYkQdadG
+
+🧩 The Problem: Given an array, find its MEX — the smallest non-negative integer NOT present in the array!
+That's it. Pure MEX computation! 🎯
+
+💡 The Approach — Set Lookup for O(1) Membership:
+Step 1: Convert array to set for O(1) membership checks:
+s = set(a)
+Step 2: Start from 0, increment while the number exists in the set:
+mex = 0
+while mex in s:
+ mex += 1
+Step 3: Print the MEX — the first integer not found! ✅
+Why set? List lookup is O(n) per check, but set lookup is O(1). For large arrays with MEX potentially = n, this is the difference between O(n²) and O(n)! 🚀
+
+Examples:
+n=3, a=[0,0,0] → s={0}, mex=0→in s→1, 1 not in s → 1 ✅
+n=2, a=[1,2] → s={1,2}, mex=0 not in s → 0 ✅
+
+📌 Key Takeaways:
+🔢 MEX = smallest non-negative integer not in set — always start from 0, increment until you find a missing value! The while-loop pattern is the standard MEX implementation! 🎯
+🔢 set(a) for O(1) lookup — converting to set before MEX computation is the critical optimisation. Never check mex in a (O(n)) when you can check mex in s (O(1))! 🚀
+🔢 MEX is bounded by n — if {0,1,...,n-1} are all present, MEX = n. So the while loop runs at most n+1 iterations. Combined with set construction, total = O(n)! 🧮
+🔢 MEX appears everywhere in CP — game theory (Nim/Sprague-Grundy values), greedy algorithms, set operations. It's one of the most fundamental CP concepts! ✅
