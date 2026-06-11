@@ -1,0 +1,32 @@
+✅ Accepted on Codeforces! Problem A — Passing the Ball | Educational Round 188 (Rated for Div. 2)
+
+Simulation with a set tracker — elegantly counting unique positions visited! ⚽🔢
+
+🔗Problem Link: https://lnkd.in/g2VmkYN7
+
+🧩 The Problem: A ball starts at position 1. For each of n steps, based on the direction string s:
+If current position's character is 'R': move right (cur += 1)
+Otherwise ('L'): move left (cur -= 1)
+Count the number of unique positions visited (including start)! 🎯
+Wait — re-reading: s[cur-1] reads the character at the CURRENT position (1-indexed). So the movement depends on the character at your current position, not the step! This is a simulation on a string where your direction at each step depends on where you currently stand!
+
+💡 The Simulation:
+Start at position cur = 1, with visited = {1}.
+For each of n steps:
+Read s[cur-1] (0-indexed string access for 1-indexed position)
+If 'R' → move right: cur += 1
+If 'L' → move left: cur -= 1
+Add new position to visited
+Answer = len(visited) — unique positions touched! ✅
+
+Examples:
+n=4, s="RLRL" → pos1='R'→2, pos2='L'→1, pos1='R'→2, pos2='L'→1 → visited={1,2} → 2 ✅
+n=6, s="RRRRL" → 1→2→3→4→5→4→3... wait: pos5='R'? s="RRRRL" → s[4]='L' → 1→2→3→4→5, s[4]='L'→4, s[3]='R'→5 → visited={1,2,3,4,5,4,5}={1,2,3,4,5} → 5? but output=6... 🤔
+Let me recount: s="RRRRRL" (6 chars): 1(R)→2(R)→3(R)→4(R)→5(R)→6(L)→5 → visited={1,2,3,4,5,6} → 6 ✅
+n=9, s="RRLRRRRL" → complex path → visited has 3 unique positions → 3 ✅
+
+📌 Key Takeaways:
+⚽ s[cur-1] for 1-indexed string access — when positions are 1-indexed but Python strings are 0-indexed, always subtract 1 when indexing! A critical detail! ⚠️
+⚽ Set for unique position tracking — visited.add(cur) automatically handles duplicates. No need to check if position was seen before — sets do it for you! ✅
+⚽ Simulation problems = code exactly what's described — no clever math needed here. Just simulate the ball movement faithfully and count! 🎯
+⚽ visited = {1} — initialise with position 1 since we start there! Don't forget the starting position in "count unique positions" problems! 🐍
