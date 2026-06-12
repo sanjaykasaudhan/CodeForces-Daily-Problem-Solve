@@ -1,0 +1,34 @@
+✅ Accepted on Codeforces! Problem A — Convergence | Round 1101 (Div. 2)
+
+Count-based convergence with a beautiful "left vs right count" balance — this problem rewards thinking about what makes an array "converge"! 🔢⚖️
+
+🔗Problem Link: https://lnkd.in/gxu297KB
+
+🧩 The Problem:
+ Given an array of n integers, find the minimum number of elements to remove so that the array "converges" — meaning for some pivot value v, the count of elements strictly less than v equals the count of elements strictly greater than v!
+For each unique value v, compute:
+left = count of elements < v
+right = count of elements > v
+The cost to make it converge at v = max(left, right) (remove the excess side)
+Answer = minimum such cost across all unique values! 🎯
+Wait — the answer starts at n (remove all), then takes min(ans, max(left, right)). So we want to minimise how many to keep... actually: max(left, right) is the number we keep? Let me re-read!
+Actually: ans = min(ans, max(left, right)) — this is the minimum number of operations where each op removes elements making left ≠ right. The minimum imbalance across all pivot choices = min removals needed! ✅
+
+💡 My Approach — Try Each Unique Value as Pivot:
+For each distinct value v in the array:
+Count elements strictly less than v: left = sum(x < v for x in a)
+Count elements strictly greater than v: right = sum(x > v for x in a)
+Cost = max(left, right) (the imbalance)
+Track minimum cost across all pivots!
+
+Examples:
+n=5, a=[1,2,3,4,5] → try v=3: left=2,right=2 → max=2 → 2 ✅
+n=5, a=[1,1,1,2,2] → try v=1: left=0,right=2→max=2; v=2: left=3,right=0→max=3 → min=2 ✅
+n=11, a=[3,1,4,1,5,9,2,6,5,3,5] → find best pivot → 5 ✅
+n=5, a=[1,2,2,2,2] → v=2: left=1,right=0→max=1 → 1 ✅
+
+📌 Key Takeaways:
+⚖️ Try each unique value as pivot — when looking for a "split point" in an array, iterating over unique values (not all values) avoids redundant computation! set(a) is the key! 🎯
+⚖️ sum(x < v for x in a) — Python generator expression as a counting tool. Counts True values (which equal 1) in the generator. Clean and readable! 🐍
+⚖️ max(left, right) = imbalance — the larger of the two sides tells you how "unbalanced" this pivot is. Minimising this minimises removals needed! ✅
+⚖️ Start ans = n — worst case remove all elements. Any valid pivot gives a better answer! 🔢
