@@ -1,0 +1,34 @@
+✅ Accepted on Codeforces! Problem C — Snowfall | Round 1096 (Div. 3)
+
+A Problem C with a smart divisibility-based sorting! ❄️🔢 This problem beautifully combines divisibility classification with a specific ordering requirement!
+
+🔗Problem Link: https://lnkd.in/gFd2GmPK
+
+🧩 The Problem:
+ Given an array, rearrange it such that elements divisible by 6 come first, then elements divisible by 2 (but not 6), then elements divisible by 3 (but not 6), then remaining elements!
+Wait — the output order from code is A + B + D + C:
+A: divisible by both 2 and 3 (= divisible by 6) → first
+B: divisible by 2 only (not 3) → second
+D: neither divisible by 2 nor 3 → third
+C: divisible by 3 only (not 2) → fourth
+The specific ordering A → B → D → C is what the problem requires! 🎯
+
+💡 My Approach — Four-Bucket Classification:
+For each element x:
+div2 = (x % 2 == 0) → divisible by 2?
+div3 = (x % 3 == 0) → divisible by 3?
+Four cases:
+div2 and div3 → A (divisible by 6) ✅
+div2 only → B (divisible by 2, not 3) ✅
+div3 only → C (divisible by 3, not 2) ✅
+neither → D (not divisible by 2 or 3) ✅
+Output: A + B + D + C — note D comes before C! 🎯
+
+Example:
+n=6, a=[12,7,9,4,18,5] → 12:A, 7:D, 9:C, 4:B, 18:A, 5:D → A=[12,18], B=[4], D=[7,5], C=[9] → 12 18 4 7 5 9 ✅
+
+📌 Key Takeaways:
+❄️ Four-bucket classification by divisibility — using div2 and div3 as boolean flags, four cases emerge naturally. This is cleaner than chaining multiple conditions! 🎯
+❄️ Order matters: A + B + D + C — notice D (neither) comes BEFORE C (div3 only)! This is a specific ordering requirement. Read the output spec carefully! ⚠️
+❄️ Precompute boolean flags — div2 = (x % 2 == 0) computed once and reused in conditions avoids redundant modulo operations! ✅
+❄️ List concatenation for output — A + B + D + C creates the correctly ordered final list. Simple and readable! 🐍
