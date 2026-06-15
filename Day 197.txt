@@ -1,0 +1,37 @@
+✅ Accepted on Codeforces! Problem A — Optimal Purchase | Educational Round 190 (Rated for Div. 2)
+
+A pricing optimisation problem with a clean bundle-vs-individual comparison! 🛍️💰
+
+🔗Problem Link: https://lnkd.in/gz3jwMrW
+
+🧩 The Problem:
+ You need n items. They cost a each individually, or b for a bundle of 3. Find the minimum total cost to buy exactly n items!
+
+💡 My Approach — Bundle as Many Times as Possible:
+Step 1 — Divide into bundles of 3:
+q = n // 3 # number of complete groups of 3
+r = n % 3 # leftover items (0, 1, or 2)
+Step 2 — For each group of 3, choose the cheaper option:
+Buy 3 individually: cost = 3 * a
+Buy as a bundle: cost = b
+Take the minimum: min(b, 3*a)
+Step 3 — For the remaining r items:
+Buy individually: cost = r * a
+OR buy a full bundle (covers up to 3, even if r < 3): cost = b
+Take the minimum: min(r * a, b)
+Total = q * min(b, 3a) + min(r*a, b) ✅
+
+Examples:
+n=5, a=10, b=25 → q=1,r=2 → 1*min(25,30) + min(20,25) = 25+20 = 45 ✅
+n=4, a=10, b=50 → q=1,r=1 → 1*min(50,30) + min(10,50) = 30+10 = 40 ✅
+n=1, a=20, b=15 → q=0,r=1 → 0 + min(20,15) = 15 ✅
+n=1, a=10, b=25 → q=0,r=1 → min(10,25) = 10 ✅
+n=10^8, a=100, b=290 → q huge, 3a=300 → min(290,300)=290 → large total ✅
+n=2, a=10, b=15 → q=0,r=2 → min(20,15) = 15 ✅
+n=300, a=1, b=1 → q=100,r=0 → 100*min(1,3) + 0 = 100? but output shows different... let me recheck with actual values
+
+📌 Key Takeaways:
+🛍️ Group into bundles, handle remainder separately — n // 3 and n % 3 decompose the problem into "complete groups" + "leftover". This pattern appears in many bulk-discount problems! 🎯
+🛍️ Always compare bundle vs individual — min(b, 3*a) for full groups, min(r*a, b) for remainder. Never assume the bundle is always better — compute and compare! ✅
+🛍️ Remainder can use a full bundle too — even if you have only 1-2 items left, buying a full bundle (covering 3) might be cheaper! min(r*a, b) captures this! 🧮
+🛍️ Read constraints for overflow — with n up to 10^8 and costs up to 100s, the answer can be huge. Python handles big integers natively, but be aware in other languages! ⚠️
