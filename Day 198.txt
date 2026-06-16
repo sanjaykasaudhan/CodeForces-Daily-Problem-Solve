@@ -1,0 +1,35 @@
+🚀 Accepted on Codeforces! | Educational Round 189 (Div. 2)
+
+Solved Problem A – "A Number Between Two Others" and secured an Accepted ✅ verdict.
+
+Competitive programming is not always about complex algorithms; sometimes, a simple observation can lead to an elegant solution. 💡
+
+🔗Problem Link: https://lnkd.in/geMk-AQj
+
+🔍 Problem Insight
+We are given two integers x and y such that:
+y>xy > xy>x
+y mod
+ x=0y \bmod x = 0ymodx=0
+We need to determine whether there exists an integer z such that:
+x<z<yx < z < yx<z<y
+zzz is divisible by xxx
+
+🧠 Key Observation
+Since z must be divisible by x, it can be written as:
+z=k×xz = k \times xz=k×xThe smallest multiple of x greater than x is:
+2x2x2xNow there are only two possibilities:
+✅ If y > 2x, then z = 2x lies strictly between x and y, so the answer is YES.
+❌ If y = 2x, then there is no multiple of x between x and y, so the answer is NO.
+
+⚡ Final Logic
+if y == 2 * x:
+    print("NO")
+else:
+    print("YES")
+
+🎯 What I Learned
+Always look for mathematical patterns before thinking about implementation.
+Many Div. 2 Problem A questions can be solved using simple observations rather than brute force.
+
+A few seconds of logical reasoning can save a lot of coding time.
