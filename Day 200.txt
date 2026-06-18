@@ -1,0 +1,48 @@
+🚀 Another Codeforces Accepted Submission! ✅
+
+Happy to share that I successfully solved Problem A – "Blocked" from Codeforces Round 1093 (Div. 2) and received an Accepted verdict. 🎉
+
+This problem was a great example of how a simple mathematical observation can completely eliminate the need for complex computations. 💡
+
+🔗Problem Link: https://lnkd.in/gJ-KkEzH
+
+🔍 Problem Understanding
+A position is considered blocked if its value can be represented as the sum of a subset of the previous elements.
+We need to construct an arrangement where no position is blocked, or determine that it's impossible.
+
+🧠 Key Observation
+If the array contains duplicate elements, then the second occurrence of any value can always be formed using the first occurrence of the same value.
+For example:
+[3, 3]
+The second 3 can be represented using the first 3, making it blocked.
+Therefore:
+❌ If duplicates exist → Answer is -1
+What if all elements are distinct?
+If every element is unique, we can sort the array in decreasing order.
+Why?
+Because each element becomes smaller than the sum required to be formed by future elements, preventing any element from being represented as a subset sum of the previous elements.
+Example:
+Original: 1 5 9
+Sorted : 9 5 1
+5 cannot be formed using {9}
+1 cannot be formed using {9, 5}
+Hence, no position becomes blocked. ✅
+
+⚡ Approach
+1️⃣ Check whether all elements are unique using a set.
+2️⃣ If duplicates exist:
+print(-1)
+
+3️⃣ Otherwise:
+sort in descending order
+print(array)
+
+Complexity
+⏱️ Time Complexity: O(n log n) (sorting)
+💾 Space Complexity: O(n)
+
+🎯 Takeaway
+This problem reinforced an important competitive programming lesson:
+Before searching for a complicated solution, look for a strong observation that simplifies the entire problem.
+
+Many Codeforces Problem A questions reward logical thinking more than lengthy implementations. 🚀
