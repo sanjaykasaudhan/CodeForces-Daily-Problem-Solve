@@ -1,0 +1,55 @@
+🚀 Accepted on Codeforces! | Problem B – Tatar TV Show 📺
+
+Excited to share another Accepted ✅ solution from Codeforces Round 1103 (Div. 3).
+
+This problem looked tricky at first because it involved operations on a binary string, but the key was identifying the hidden pattern behind the allowed transformations. 💡
+
+🔗Problem Link: https://lnkd.in/gx4zbDVN
+
+🔍 Problem Insight
+We are given:
+A binary string s of length n
+An integer k
+The operation allows us to flip bits at positions that belong to the same modulo-k group.
+The goal is to determine whether it is possible to make the entire string consist of 0s using the allowed operations.
+
+🧠 Key Observation
+Positions with the same remainder when divided by k are connected:
+r, r+k, r+2k, ...
+
+For each remainder class:
+
+r = 0, 1, 2, ..., k-1
+
+count how many '1's appear in that group.
+Important Fact:
+A group can be converted completely to 0s only if the number of 1s in that group is even.
+Why?
+Each operation changes the parity of the count in a controlled way, so an odd number of 1s can never be fully eliminated.
+
+⚡ Approach
+For every remainder class:
+
+for r in range(k):
+
+1️⃣ Count the number of '1's in positions:
+r, r+k, r+2k ...
+
+2️⃣ If the count is odd:
+answer = "NO"
+
+3️⃣ Otherwise continue checking.
+If all groups have an even count of 1s:
+answer = "YES"
+
+📈 Complexity
+Time Complexity: O(n)
+Space Complexity: O(1)
+Efficient enough even for the largest constraints. 🚀
+
+🎯 What I Learned
+This problem highlights a common competitive programming strategy:
+✅ Break the problem into independent groups.
+✅ Look for an invariant (here, the parity of the number of 1s).
+✅ Reduce a seemingly complex operation problem into a simple counting problem.
+Sometimes the entire solution is hidden inside a single observation. 💡
