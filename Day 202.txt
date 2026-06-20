@@ -1,0 +1,52 @@
+🚀 Accepted on Codeforces! | Problem A – Games on the Train 🚆
+
+Excited to share another Accepted ✅ solution from Codeforces Round 1103 (Div. 3).
+
+At first glance, the problem seemed to involve multiple tower configurations and game mechanics, but the solution boiled down to a simple mathematical observation. 💡
+
+🔗Problem Link: https://lnkd.in/gvRkDVZY
+
+🔍 Problem Insight
+We are given the heights of several towers.
+The task is to determine how many distinct integer heights can be achieved after the players perform their moves according to the problem rules.
+
+🧠 Key Observation
+Instead of simulating every possible move, let's focus on the smallest and largest tower heights.
+Let:
+minimum height = min(h)
+maximum height = max(h)
+
+Every integer height between these two values (inclusive) can be obtained.
+Therefore, the answer is simply:
+max(h)−min(h)+1\text{max}(h) - \text{min}(h) + 1max(h)−min(h)+1Example
+Heights = [2, 6, 4]
+
+min = 2
+max = 6
+
+Possible heights:
+2, 3, 4, 5, 6
+
+Count =
+6 - 2 + 1 = 5
+
+✅ Answer = 5
+
+⚡ Approach
+1️⃣ Find the minimum tower height.
+2️⃣ Find the maximum tower height.
+3️⃣ Count all integers in the inclusive range:
+
+print(max(h) - min(h) + 1)
+
+📈 Complexity
+Time Complexity: O(n)
+Space Complexity: O(1)
+A very elegant solution for a Problem A! 🚀
+
+🎯 What I Learned
+This problem is a reminder that:
+✅ Not every game simulation requires simulation.
+✅ Sometimes identifying the range of valid values is enough.
+✅ A single observation can transform a problem into a one-line solution.
+Competitive Programming is all about finding these hidden patterns. 🔥
