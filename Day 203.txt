@@ -1,0 +1,56 @@
+🚀 Accepted on Codeforces! | Educational Codeforces Round 191 (Div. 2) – Problem A: AI Project Development 🤖
+
+Happy to share another Accepted ✅ solution on Codeforces!
+
+This problem was particularly interesting because it combined mathematical reasoning with a real-world AI development scenario. Instead of simulating every possible strategy, the key was to compare two independent approaches and choose the faster one. 💡
+
+🔗Problem Link: https://lnkd.in/gWWh68sr
+
+🔍 Problem Understanding
+Maxim develops the project continuously at a speed of x lines/hour.
+Nikita has two choices:
+1️⃣ Start coding immediately at y lines/hour.
+2️⃣ Spend z hours setting up an AI agent 🤖, after which productivity increases to 10 × y lines/hour.
+The goal is to determine the minimum time required to complete a project consisting of n lines of code.
+
+🧠 Key Observation
+Instead of simulating the coding process hour by hour, we can directly calculate the completion time for both strategies.
+Strategy 1: No AI Setup
+Both developers work from the beginning.
+Combined speed:
+x+yx + yx+yTime required:
+⌈nx+y⌉\left\lceil \frac{n}{x+y} \right\rceil⌈x+yn​⌉Strategy 2: Use AI
+Nikita first spends z hours setting up the AI.
+During these z hours, only Maxim contributes:
+x×zx \times zx×zlines of code.
+Case 1: Project finishes during setup
+If
+x×z≥nx \times z \ge nx×z≥nthen the project is completed before the AI is even ready.
+Time:
+⌈nx⌉\left\lceil \frac{n}{x} \right\rceil⌈xn​⌉Case 2: AI becomes active
+Remaining work:
+n−xzn - xzn−xzAfter setup, the combined speed becomes:
+x+10yx + 10yx+10yAdditional time:
+⌈n−xzx+10y⌉\left\lceil \frac{n-xz}{x+10y} \right\rceil⌈x+10yn−xz​⌉Total time:
+z+⌈n−xzx+10y⌉z + \left\lceil \frac{n-xz}{x+10y} \right\rceilz+⌈x+10yn−xz​⌉
+
+⚡ Final Approach
+Compute:
+time_without_ai
+time_with_ai
+
+and output:
+min(time_without_ai, time_with_ai)
+
+Simple, efficient, and mathematically optimal. ✅
+📈 Complexity Analysis
+Time Complexity: O(1) per test case
+Space Complexity: O(1)
+No simulation required — just direct calculations.
+
+🎯 Key Learning
+This problem reinforces an important competitive programming lesson:
+✅ Compare multiple strategies independently.
+✅ Use mathematical formulas instead of brute-force simulation.
+✅ Always check edge cases where an optimization (AI setup) may not actually be beneficial.
+Sometimes the smartest solution is simply evaluating all possible choices and selecting the best one. 🚀
