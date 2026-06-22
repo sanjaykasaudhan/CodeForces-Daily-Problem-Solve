@@ -1,0 +1,84 @@
+🚀 Accepted on Codeforces! | Problem B – Palindrome, Twelve and Two Terms 🎯
+
+Happy to share another Accepted ✅ solution from Codeforces Round 1102 (Div. 2).
+
+This problem looked like a number theory challenge at first, but the trick was to find a small palindrome such that the remaining value becomes divisible by 12. Once the pattern was identified, the solution became surprisingly simple. 💡
+
+🔗Problem Link: https://lnkd.in/gtbGujnn
+
+🔍 Problem Statement
+We need to find two non-negative integers:
+a (must be a palindrome)
+b (must be divisible by 12)
+such that:
+a+b=na + b = na+b=nIf no such pair exists, print -1.
+
+🧠 Key Observation
+Since b must be divisible by 12:
+b=n−ab = n - ab=n−aTherefore:
+(n−a) mod
+ 12=0(n - a) \bmod 12 = 0(n−a)mod12=0which means:
+a≡n(mod12)a \equiv n \pmod{12}a≡n(mod12)So, we only need a small palindrome whose value has the same remainder as n modulo 12.
+
+💡 Finding the Palindrome
+Let:
+r = n % 12
+
+Case 1: r ≤ 9
+Single-digit numbers are already palindromes.
+a = r
+
+Example:
+n = 25
+r = 1
+
+a = 1
+b = 24
+
+✅ 1 is a palindrome
+ ✅ 24 is divisible by 12
+Case 2: r = 10
+There is no one-digit palindrome equal to 10.
+Use:
+a = 22
+
+because:
+22 % 12 = 10
+
+Case 3: r = 11
+Use:
+a = 11
+
+which is already a palindrome and:
+11 % 12 = 11
+
+Special Case
+For:
+n = 10
+
+No valid pair exists because every palindrome matching the required remainder exceeds n.
+Therefore:
+Answer = -1
+
+⚡ Final Approach
+1️⃣ Compute:
+
+r = n % 12
+
+2️⃣ Choose the smallest palindrome with remainder r.
+3️⃣ Output:
+
+a, n - a
+
+4️⃣ Handle n = 10 separately.
+📈 Complexity
+Time Complexity: O(1)
+Space Complexity: O(1)
+A constant-time solution with pure mathematical reasoning. 🚀
+
+🎯 What I Learned
+This problem reinforced a valuable competitive programming lesson:
+✅ Reduce the problem to modular arithmetic.
+✅ Look for the smallest valid construction instead of searching exhaustively.
+✅ A clever observation can turn a seemingly difficult problem into an O(1) solution.
+Every accepted solution adds another piece to the problem-solving mindset. 💪🔥
