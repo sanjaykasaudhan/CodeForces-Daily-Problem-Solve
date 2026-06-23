@@ -1,0 +1,44 @@
+🚀 Accepted on Codeforces! | Educational Codeforces Round 187 (Div. 2) – Problem A: Towers of Boxes 📦
+
+Excited to share another Accepted ✅ solution on Codeforces!
+
+This problem demonstrates how a simple mathematical observation can replace simulation entirely. Instead of trying different tower arrangements, we can directly compute the maximum height of a valid tower and determine the minimum number of towers required. 💡
+
+🔗Problem Link: https://lnkd.in/gk2Qxf8f
+
+🔍 Problem Understanding
+We are given:
+n identical boxes
+Weight of each box = m
+Durability of each box = d
+A box can support boxes above it only if the total weight above it does not exceed its durability.
+The goal is to determine the minimum number of towers needed to place all n boxes.
+
+🧠 Key Observation
+Consider a tower of height H.
+The bottom box must support:
+(H−1)×m(H-1)\times m(H−1)×mweight from the boxes above it.
+For the tower to be valid:
+(H−1)×m≤d(H-1)\times m \le d(H−1)×m≤dRearranging:
+H≤⌊dm⌋+1H \le \left\lfloor \frac{d}{m} \right\rfloor + 1H≤⌊md​⌋+1Thus, the maximum possible height of any tower is:
+H=⌊dm⌋+1H = \left\lfloor \frac{d}{m} \right\rfloor + 1H=⌊md​⌋+1⚡ Finding the Minimum Number of Towers
+If one tower can hold at most H boxes, then to place all n boxes we need:
+⌈nH⌉\left\lceil \frac{n}{H} \right\rceil⌈Hn​⌉towers.
+Using integer arithmetic:
+
+H = d // m + 1
+answer = (n + H - 1) // H
+
+📈 Complexity Analysis
+Time Complexity: O(1)
+Space Complexity: O(1)
+A pure math solution with no loops or simulation required. 🚀
+
+🎯 What I Learned
+This problem reinforced a key competitive programming principle:
+✅ Convert constraints into mathematical inequalities.
+✅ Find the maximum capacity of a single structure.
+✅ Use ceiling division to compute the minimum number of groups needed.
+Sometimes the shortest solutions come from understanding the problem mathematically rather than coding extensively. 💡
+
+Another step forward in my competitive programming journey! 🚀🔥
