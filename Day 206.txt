@@ -1,0 +1,92 @@
+🚀 Accepted on Codeforces! | Problem A – String Rotation Game 🔄
+
+Happy to share another Accepted ✅ solution from Codeforces Round 1081 (Div. 2).
+
+This problem was a great example of how carefully analyzing the structure of a string can lead to a very elegant solution. Instead of simulating all rotations, the answer can be derived by observing the transitions between adjacent characters. 💡
+
+🔗Problem Link: https://lnkd.in/gH7NEptx
+
+🔍 Problem Understanding
+We are given a circular string and need to determine the minimum number of rotations required according to the game's rules.
+At first glance, checking every possible rotation seems natural, but that would be inefficient. The key is to focus on how the characters change around the circle.
+
+🧠 Key Observation
+Since the string is circular, compare every character with its next character:
+
+s[i] and s[(i + 1) % n]
+
+Count how many positions have different adjacent characters.
+Let:
+D = Number of adjacent differences
+
+This value completely determines the answer.
+Case 1️⃣: All Characters Are Identical
+Example:
+aaaaaa
+
+Every adjacent pair is equal.
+D = 0
+
+Only one rotation pattern exists.
+✅ Answer = 1
+Case 2️⃣: Every Adjacent Pair Is Different
+Example:
+ababab
+
+Every position contributes to a difference.
+D = n
+
+Each rotation creates a distinct arrangement.
+✅ Answer = n
+Case 3️⃣: Mixed Transitions
+Example:
+abccc
+
+Differences occur only at specific boundaries.
+If:
+0 < D < n
+
+Then:
+Answer = D + 1
+
+⚡ Approach
+1️⃣ Traverse the circular string.
+2️⃣ Count adjacent character changes.
+
+for i in range(n):
+    if s[i] != s[(i + 1) % n]:
+        D += 1
+
+3️⃣ Apply:
+
+if D == 0:
+    print(1)
+elif D == n:
+    print(n)
+else:
+    print(D + 1)
+
+📈 Complexity Analysis
+Time Complexity: O(n)
+Space Complexity: O(1)
+Efficient and scalable even for large strings. 🚀
+
+🎯 What I Learned
+This problem reinforced an important competitive programming lesson:
+✅ Circular structures often require modulo indexing.
+✅ Instead of simulating operations, identify the property that remains invariant.
+✅ Counting transitions can reveal the entire behavior of a string.
+Many seemingly difficult string problems become simple once we focus on the boundaries between character blocks. 🔥
+
+💻 Core Idea
+
+D = count of positions where
+s[i] != s[(i+1)%n]
+
+Then:
+
+D == 0  -> 1
+D == n  -> n
+otherwise -> D + 1
+
+A neat observation-based solution that turns a rotation problem into a simple counting problem. 🚀
