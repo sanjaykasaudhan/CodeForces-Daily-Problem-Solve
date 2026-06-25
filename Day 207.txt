@@ -1,0 +1,77 @@
+🚀 Accepted on Codeforces! | Educational Codeforces Round 187 (Div. 2) – Problem A: Simons and Making It Beautiful ✨
+
+Successfully solved "Simons and Making It Beautiful" and secured an Accepted ✅ verdict on Codeforces.
+
+What I found interesting about this problem was that it wasn't about implementing a complicated algorithm—it was about understanding the behavior of a permutation and identifying how a single swap can significantly improve the result. 💡
+
+🔗Problem Link: https://lnkd.in/gb-4mnrd
+
+🔍 Problem Understanding
+For a permutation p of length n, an index i is called ugly if:
+i=max⁡(p1,p2,...,pi)i = \max(p_1, p_2, ..., p_i)i=max(p1​,p2​,...,pi​)In simple words, while scanning from left to right, if the current maximum value seen so far is exactly equal to the current position, that position becomes ugly.
+The task was to perform at most one swap and obtain a permutation with the minimum possible number of ugly indices.
+
+🧠 Key Observation
+An ugly index appears whenever the prefix maximum "matches" the position number.
+To make the permutation more beautiful, we want to break these matches.
+Since only one swap is allowed, the strategy is:
+✅ Try every possible pair of positions.
+✅ Perform the swap.
+✅ Count the number of ugly indices.
+✅ Keep the permutation that produces the minimum count.
+
+⚡ Approach
+Step 1: Count Ugly Indices
+Traverse the permutation while maintaining the maximum value seen so far.
+
+mx = 0
+cnt = 0
+for x in p:
+    mx = max(mx, x)
+    if mx == current_position:
+        cnt += 1
+
+Step 2: Try All Possible Swaps
+For every pair (i, j):
+
+swap(p[i], p[j])
+
+Recalculate the ugly count.
+If the result is better:
+
+best = current_permutation
+
+Restore the swap and continue.
+Step 3: Early Optimization
+The minimum possible ugly count is:
+1
+
+(because the last position of a permutation is always ugly)
+So if we reach:
+ugly_count = 1
+
+we can stop immediately. 🚀
+
+📈 Complexity Analysis
+For a permutation of size n:
+Checking one permutation → O(n)
+Trying all swaps → O(n²)
+Overall:
+O(n3)O(n^3)O(n3)Since the constraints for this problem are small, this brute-force approach is completely acceptable. ✅
+
+🎯 What I Learned
+This problem reinforced a valuable lesson:
+🔹 Sometimes the constraints are small enough that a brute-force solution is the intended approach.
+🔹 Before searching for advanced algorithms, always analyze the limits carefully.
+🔹 A well-implemented brute-force solution can be both simple and effective.
+Competitive Programming isn't always about the most complex technique—it's often about choosing the right one for the given constraints. 💪🔥
+
+💻 Core Idea
+
+Try every swap
+↓
+Count ugly indices
+↓
+Keep the best permutation
+
+Simple observation + exhaustive search = Accepted ✅
