@@ -1,0 +1,62 @@
+🚀 Accepted on Codeforces! | Spectral::Cup 2026 Round 2 (Codeforces Round 1100) – Problem A: Slimes on a Line 🟢
+
+Happy to share another Accepted ✅ solution on Codeforces!
+
+This problem looked like it required simulating multiple operations on the slimes' positions, but the real solution came from identifying a simple mathematical invariant. Instead of tracking every move, we only need to focus on the distance between the farthest slimes. 💡
+
+🔗Problem Link: https://lnkd.in/eeqnsEFE
+
+🔍 Problem Understanding
+We are given the positions of n slimes on a number line.
+In one operation, we choose an integer x:
+Every slime to the left of x moves one step right.
+Every slime to the right of x moves one step left.
+A slime already at x does not move.
+The goal is to determine the minimum number of operations required so that all slimes end up at the same position.
+
+🧠 Key Observation
+Each operation can reduce the distance between the leftmost and rightmost slime by at most 2:
+Leftmost slime moves one step right.
+Rightmost slime moves one step left.
+So the only value that really matters is:
+d = max(a) - min(a)
+
+where:
+max(a) = rightmost slime
+min(a) = leftmost slime
+Since the distance decreases by at most 2 in each operation, the minimum number of operations is simply:
+⌈d2⌉\left\lceil \frac{d}{2} \right\rceil⌈2d​⌉Using integer arithmetic:
+
+answer = (d + 1) // 2
+
+⚡ Approach
+1️⃣ Find the minimum position.
+2️⃣ Find the maximum position.
+3️⃣ Compute the distance:
+
+d = max(a) - min(a)
+
+4️⃣ Output:
+
+print((d + 1) // 2)
+
+No simulation is required—just one mathematical observation. ✅
+
+📈 Complexity Analysis
+Time Complexity: O(n) (to find the minimum and maximum positions)
+Space Complexity: O(1)
+An optimal solution that efficiently handles large inputs.
+
+🎯 What I Learned
+This problem reinforced an important competitive programming lesson:
+✅ Focus on the extreme values rather than simulating every operation.
+✅ Identify what changes after each operation—in this case, only the maximum distance matters.
+✅ Many seemingly difficult simulation problems can be reduced to a simple mathematical formula.
+Sometimes, a single observation is all it takes to transform a complex problem into a one-line solution. 🚀
+
+💻 Core Idea
+
+d = max(a) - min(a)
+print((d + 1) // 2)
+
+Simple observation + mathematics = Accepted! 🎉
