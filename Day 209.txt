@@ -1,0 +1,62 @@
+🚀 Accepted on Codeforces! | Educational Codeforces Round 187 (Div. 2) – Problem B: Simons and Cakes for Success 🎂
+
+Excited to share another Accepted ✅ solution on Codeforces!
+
+This problem initially seemed to require searching for the smallest integer k satisfying a divisibility condition. However, the key insight was that the answer depends entirely on the prime factorization of n, turning the problem into a neat number theory exercise. 💡
+
+🔗Problem Link: https://lnkd.in/g8ENdWFV
+
+🔍 Problem Understanding
+We are given an integer n and need to find the smallest positive integer k such that:
+n∣knn \mid k^nn∣knIn other words, n must divide knk^nkn.
+
+🧠 Key Observation
+Express n in its prime factorization:
+n=p1a1×p2a2×⋯×pmamn = p_1^{a_1} \times p_2^{a_2} \times \cdots \times p_m^{a_m}n=p1a1​​×p2a2​​×⋯×pmam​​For knk^nkn to be divisible by n, every prime factor of n must also appear in k.
+Suppose:
+n = 12 = 2² × 3
+
+Then k must contain both prime factors:
+k = 2 × 3 = 6
+
+Checking:
+6126^{12}612contains far more than enough powers of both 2 and 3, so it is divisible by 12.
+Therefore, the smallest valid k is simply the product of all distinct prime factors of n.
+This value is also known as the square-free kernel (or radical) of n.
+
+⚡ Approach
+1️⃣ Factorize n.
+2️⃣ For every distinct prime factor, multiply it into the answer.
+3️⃣ Ignore repeated occurrences of the same prime.
+Example:
+n = 360
+
+360 = 2³ × 3² × 5
+
+Answer:
+k = 2 × 3 × 5 = 30
+
+💻 Core Implementation
+
+ans = 1
+
+for each distinct prime factor p:
+    ans *= p
+
+print(ans)
+
+📈 Complexity Analysis
+Time Complexity: O(√n) (trial division factorization)
+Space Complexity: O(1)
+Efficient enough for the given constraints.
+
+🎯 What I Learned
+This problem reinforced an important competitive programming lesson:
+✅ Many divisibility problems become much simpler after prime factorization.
+✅ Focus on distinct prime factors, not their exponents, when the exponent is amplified by a power like knk^nkn.
+✅ Mathematical observations often eliminate the need for brute-force searching.
+Every accepted problem strengthens both algorithmic thinking and mathematical intuition. 🚀
+
+💡 Key Takeaway
+The smallest valid k is the product of all distinct prime factors of n.
+A beautiful example where number theory transforms a seemingly difficult problem into an elegant solution. 🎯
