@@ -1,0 +1,74 @@
+🚀 Accepted on Codeforces! | Spectral::Cup 2026 Round 1 (Codeforces Round 1094, Div. 1 + Div. 2) – Problem A: A Wonderful Contest 🏆
+
+Excited to share another Accepted ✅ solution on Codeforces!
+
+This problem initially appeared to require checking many different score combinations. However, after carefully analyzing the scoring constraints, the solution turned into a classic greedy algorithm based on interval coverage.
+
+🔗Problem Link: https://lnkd.in/g-Fv_PGX
+
+🔍 Problem Understanding
+Each problem consists of several subtasks, and every subtask contributes an equal amount to the total score of 100.
+For a problem with aᵢ subtasks:
+Each subtask is worth 100 / aᵢ points.
+The goal is to determine whether it's possible to obtain every score from 1 to 100 by selecting appropriate subtasks from all problems.
+
+🧠 Key Observation
+Each problem contributes values that are multiples of:
+100ai\frac{100}{a_i}ai​100​Instead of checking every possible score separately, we can think of each problem as extending the range of scores that are currently achievable.
+Let:
+reach = Maximum score we can currently construct continuously
+
+Initially,
+reach = 0
+
+Now, sort all minimum score contributions:
+
+vals = sorted(100 // x for x in a)
+
+For every value v:
+If v > reach + 1, then there is a gap that cannot be filled.
+❌ Answer = No
+Otherwise, this problem extends the reachable range:
+reach += 100
+
+Continue until all problems are processed.
+
+⚡ Greedy Approach
+1️⃣ Compute the minimum score contribution for each problem:
+
+value = 100 // a[i]
+
+2️⃣ Sort these values.
+3️⃣ Maintain the largest continuous score range (reach).
+4️⃣ If a gap appears, print "No".
+5️⃣ Otherwise, print "Yes".
+
+💻 Core Logic
+
+vals = sorted(100 // x for x in a)
+
+reach = 0
+
+for v in vals:
+    if v > reach + 1:
+        print("No")
+        break
+    reach += 100
+else:
+    print("Yes")
+
+📈 Complexity Analysis
+Time Complexity: O(n log n) (sorting dominates)
+Space Complexity: O(n)
+Efficient enough for all given constraints. 🚀
+
+🎯 What I Learned
+This problem reinforced an important competitive programming lesson:
+✅ Many construction problems can be transformed into interval coverage problems.
+✅ Sorting combined with a greedy strategy often leads to an optimal solution.
+✅ Instead of exploring all possibilities, focus on maintaining the largest continuous range that is already achievable.
+Small observations often lead to elegant and efficient solutions. 💡
+
+🌟 Key Takeaway
+Sort the minimum score contributions and greedily extend the reachable score range. If no gaps remain, the answer is "Yes".
+Another enjoyable problem that highlights the power of greedy thinking in competitive programming! 🚀
