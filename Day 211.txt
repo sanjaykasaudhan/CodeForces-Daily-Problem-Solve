@@ -1,0 +1,65 @@
+🚀 Accepted on Codeforces! | Technocup 2016 – Elimination Round 1 | Problem B: Assemble the Table 🪵
+
+Happy to share another Accepted ✅ solution on Codeforces!
+
+This problem looked like it would require testing different pairings of table leg parts, but the key insight was much simpler: after sorting the lengths, pairing the smallest remaining part with the largest remaining part always produces a valid solution. 💡
+
+🔗Problem Link: https://lnkd.in/gd9dx-qQ
+
+🔍 Problem Understanding
+We are given 2n table leg parts, and we need to form n complete table legs.
+Each completed leg must have the same total length, while every part can be used exactly once.
+The task is to output one valid pairing.
+
+🧠 Key Observation
+Since the problem guarantees that a valid solution always exists, we don't need to search through all possible combinations.
+Instead:
+Sort all part lengths in ascending order.
+Pair the smallest remaining part with the largest remaining part.
+This ensures that every pair has the same total length.
+For example:
+Parts: 1 2 3 4 5 6
+
+Sorted: 1 2 3 4 5 6
+
+Pairing:
+1 + 6 = 7
+2 + 5 = 7
+3 + 4 = 7
+
+Every completed table leg has the same length. ✅
+
+⚡ Approach
+1️⃣ Read the 2n part lengths.
+2️⃣ Sort the array.
+3️⃣ Pair:
+First element with the last
+Second element with the second last
+Continue until all parts are used.
+
+a.sort()
+
+for i in range(n):
+    print(a[i], a[2*n - 1 - i])
+
+📈 Complexity Analysis
+Time Complexity: O(n log n) (sorting dominates)
+Space Complexity: O(1) (excluding input storage)
+Efficient and optimal for the given constraints.
+
+🎯 What I Learned
+This problem reinforced an important competitive programming lesson:
+✅ When a solution is guaranteed to exist, look for a deterministic construction instead of brute-force searching.
+✅ Sorting often reveals hidden patterns that make pairing problems much easier.
+✅ Greedy pairing of the smallest and largest elements is a common and powerful technique in algorithm design.
+Sometimes, the simplest strategy is the optimal one. 🚀
+
+💡 Core Idea
+
+Sort the array
+↓
+Pair smallest with largest
+↓
+Repeat until all parts are used
+
+A simple greedy observation leads directly to an Accepted ✅ solution!
