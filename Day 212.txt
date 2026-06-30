@@ -1,0 +1,62 @@
+🚀 Accepted on Codeforces! | Codeforces Round 1106 (Div. 2) – Problem A: Another Puzzle from Papyrus 📜
+
+This problem initially looked like it would require trying many transformations on the arrays. However, after carefully analyzing the allowed operations, the solution boiled down to checking only two possible strategies and choosing the one with the minimum cost. 💡
+
+🔗Problem Link:https://lnkd.in/gJqfnppE
+
+🔍 Problem Understanding
+We are given two arrays:
+a – the initial array
+b – the target array
+The allowed operations let us modify the array in a restricted way, and each operation has an associated cost.
+Our goal is to determine the minimum cost required to transform a into b, or report that it is impossible.
+
+🧠 Key Observation
+Instead of simulating every possible sequence of operations, there are only two meaningful scenarios to consider.
+✅ Strategy 1: Keep the Original Order
+Compare each corresponding element:
+a[i] → b[i]
+
+If every element in a is at least as large as the corresponding element in b, the transformation is possible.
+The cost is simply:
+∑(ai−bi)\sum (a_i - b_i)∑(ai​−bi​)Otherwise, this strategy is impossible.
+✅ Strategy 2: Rearrange Optimally
+Sort both arrays independently.
+
+sa = sorted(a)
+sb = sorted(b)
+
+Now compare them element by element.
+If every sorted element satisfies:
+sa[i] ≥ sb[i]
+
+then a valid transformation exists.
+The cost becomes:
+C+∑a−∑bC + \sum a - \sum bC+∑a−∑bwhere C is the fixed cost specified in the problem.
+
+⚡ Approach
+1️⃣ Check whether the transformation is possible without sorting.
+2️⃣ Compute its total cost.
+3️⃣ Sort both arrays.
+4️⃣ Check whether the sorted version is feasible.
+5️⃣ Compute its cost.
+6️⃣ Output the minimum of the two valid costs.
+If neither strategy works:
+
+print(-1)
+
+📈 Complexity Analysis
+Time Complexity: O(n log n) (sorting dominates)
+Space Complexity: O(n)
+Efficient enough for the given constraints.
+
+🎯 What I Learned
+This problem reinforced an important competitive programming lesson:
+✅ Don't simulate every operation if you can identify the only meaningful outcomes.
+✅ Sorting is often a powerful tool for comparing multisets optimally.
+✅ Breaking a problem into a few well-defined cases can lead to a much cleaner and faster solution.
+Competitive programming is often about recognizing patterns rather than writing lengthy code. 🚀
+
+🌟 Key Takeaway
+Evaluate the original configuration and the sorted configuration, compute the cost for both, and choose the minimum valid answer.
+Another enjoyable problem that strengthened my understanding of greedy thinking, sorting, and case analysis. 💪
