@@ -1,0 +1,36 @@
+🚀 Codeforces Accepted | Another Popcount Problem 💻⚡
+
+Today's challenge was "Another Popcount Problem", where the goal was to maximize the total number of set bits (popcount) while ensuring the sum of constructed numbers does not exceed n.
+
+Every competitive programming problem reinforces an important lesson: sometimes the optimal solution isn't about brute force—it's about identifying the mathematical pattern hidden inside the constraints. 🧠
+
+🔗Problem Link: https://lnkd.in/gQ_GEr7g
+
+💡 My Approach
+🔹 Observation 1:
+ Each additional set bit increases the overall popcount, so we need to maximize the number of bits while keeping the total sum within n.
+🔹 Observation 2:
+ The minimum value that can contain b set bits is:
+2b−12^b - 12b−1This means if we want more set bits, we must ensure this minimum value is still ≤ n.
+🔹 Binary Search on the Answer:
+ Instead of checking every possible number of set bits, binary search is used to find the maximum feasible number of bits.
+For each candidate number of bits:
+Calculate the minimum cost required to create those set bits.
+If the cost is within n, try a larger answer.
+Otherwise, reduce the search space.
+🔹 Efficient Cost Calculation:
+ The solution computes the minimum value needed for any given number of set bits using powers of two, allowing each feasibility check to run in O(1).
+
+⚙️ Complexity
+Binary Search: O(log n)
+Cost Calculation: O(1)
+Overall: O(log n) per test case
+
+📚 Key Learnings
+✅ Binary Search on Answer
+ ✅ Bit Manipulation (Popcount)
+ ✅ Powers of Two Properties
+ ✅ Mathematical Optimization
+ ✅ Efficient Greedy Thinking
+
+Every accepted submission is another step toward becoming a stronger problem solver and improving algorithmic intuition. 🚀
