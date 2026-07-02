@@ -1,0 +1,35 @@
+🚀 Codeforces Accepted | Yuu Koito and Minimum Absolute Sum 💻✨
+
+Today's problem, "Yuu Koito and Minimum Absolute Sum," was an interesting exercise in handling unknown values (-1) while minimizing the absolute difference between adjacent elements.
+
+This problem wasn't about trying every possible replacement—it was about identifying the minimum changes required through careful observation and handling edge cases efficiently. 🧠
+
+🔗Problem Link: https://lnkd.in/gSnvWtVC
+
+💡 My Approach
+🔹 Step 1: Handle the Boundary Elements
+The first and last elements determine the initial absolute difference.
+If both are -1, replace them with 0, resulting in a minimum difference of 0.
+If only one is -1, copy the value of the other endpoint so their difference becomes 0.
+If neither is -1, simply compute:
+∣a[n−1]−a[0]∣|a[n-1] - a[0]|∣a[n−1]−a[0]∣
+🔹 Step 2: Replace Remaining Unknown Values
+Every remaining -1 inside the array is replaced with 0.
+Since the minimum absolute sum has already been determined using the endpoints, replacing internal unknowns with 0 satisfies the required output while keeping the implementation simple.
+🔹 Step 3: Print the Result
+Output the minimum absolute difference.
+Print the modified array.
+
+⚙️ Complexity Analysis
+Time Complexity: O(n) per test case
+Space Complexity: O(1) (excluding input storage)
+An efficient linear-time solution that avoids unnecessary computations.
+
+📚 Key Learnings
+✅ Careful Edge Case Handling
+ ✅ Greedy Observation
+ ✅ Array Manipulation
+ ✅ Mathematical Reasoning
+ ✅ Linear-Time Optimization
+
+Every Codeforces problem reminds me that strong problem-solving often comes from finding the right observation rather than writing more code. 🚀
