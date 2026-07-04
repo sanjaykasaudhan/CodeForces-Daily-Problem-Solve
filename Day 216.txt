@@ -1,0 +1,39 @@
+🚀 Codeforces Accepted | Down with Brackets 🧩💻
+
+Today's challenge, "Down with Brackets," was a great exercise in understanding the properties of balanced bracket sequences. The solution didn't require modifying the string—instead, it relied on identifying a key observation about its balance.
+
+🔗Problem Link: https://lnkd.in/gK6bYg4Y
+
+💡 My Approach
+🔹 Step 1: Track the Bracket Balance
+Traverse the string from left to right while maintaining a balance:
+'(' → Increase balance by 1
+')' → Decrease balance by 1
+This balance represents the number of unmatched opening brackets seen so far.
+🔹 Step 2: Look for an Early Balanced Prefix
+While scanning the string, check if:
+The balance becomes 0, and
+We are not at the last character.
+If this happens, it means the sequence can be split into two non-empty balanced bracket sequences.
+This indicates that after removing one '(' from the first part and one ')' from the second part, the remaining sequence will no longer be balanced.
+So, the answer is:
+✅ YES
+🔹 Step 3: Otherwise
+If the balance only returns to 0 at the very end of the string, then the sequence consists of a single balanced block.
+In this case, removing one opening and one closing bracket still preserves balance.
+So, the answer is:
+❌ NO
+
+⚙️ Complexity Analysis
+Time Complexity: O(n) per test case
+Space Complexity: O(1)
+A simple linear scan is enough to solve the problem efficiently.
+
+📚 Key Learnings
+✅ Balanced Bracket Sequences
+ ✅ Prefix Balance Technique
+ ✅ Observation-Based Problem Solving
+ ✅ Linear Traversal
+ ✅ Efficient O(n) Solution
+
+Competitive programming often rewards finding the right observation over implementing complicated algorithms. A single pass through the string was all it took to solve this problem efficiently! 🚀
