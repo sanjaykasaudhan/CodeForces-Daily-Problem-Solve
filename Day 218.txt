@@ -1,0 +1,38 @@
+🚀 Codeforces Accepted | Split the Multiset 🧩💻
+
+Today's problem, "Split the Multiset," initially looked like a simulation problem, but the solution was actually based on identifying a mathematical pattern instead of performing every split.
+
+🔗Problem Link: https://lnkd.in/g78dvq9c
+
+💡 My Approach
+🔹 Step 1: Understand the Operation
+Initially, the multiset contains only one number n.
+In one operation, we split one number into k positive integers whose sum remains the same.
+Notice that every split increases the total number of elements in the multiset by (k − 1).
+🔹 Step 2: Determine the Target
+We need to end up with n elements (all equal to 1).
+Starting with 1 element, we must increase the number of elements by:
+n − 1
+Since each operation contributes k − 1 new elements, the minimum number of operations is simply:
+⌈(n − 2) / (k − 1)⌉
+This can be computed efficiently using integer arithmetic:
+
+(n + k - 3) // (k - 1)
+
+🔹 Step 3: Print the Answer
+No simulation is required.
+Just apply the mathematical formula for each test case and output the result.
+
+⚙️ Complexity Analysis
+Time Complexity: O(1) per test case
+Space Complexity: O(1)
+The solution uses only a few arithmetic operations, making it extremely efficient.
+
+📚 Key Learnings
+✅ Mathematical Observation
+✅ Counting Growth per Operation
+✅ Ceiling Division Trick
+✅ Constant-Time Solution
+✅ Pattern Recognition over Simulation
+
+Competitive programming often rewards finding the hidden mathematical relationship instead of simulating every step. Once I realized that each split always increases the number of elements by exactly (k − 1), the entire problem reduced to a simple formula. 🚀
