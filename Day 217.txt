@@ -1,0 +1,36 @@
+🚀 Codeforces Accepted | Yet Another Tetris Problem 🧩💻
+
+Another Codeforces challenge solved successfully! ✅
+
+Today's problem, "Yet Another Tetris Problem," looked like a simulation problem at first, but the key insight was much simpler—it all comes down to the parity (even/odd) of the column heights.
+
+🔗Problem Link: https://lnkd.in/g2MW9CkR
+
+💡 My Approach
+🔹 Step 1: Observe the Allowed Operation
+Each move adds 2 blocks to a single column.
+Since adding 2 never changes whether a number is even or odd, the parity of every column always remains the same.
+🔹 Step 2: Find the Initial Parity
+Take the parity of the first column:
+
+parity = a[0] % 2
+
+This becomes the reference parity.
+🔹 Step 3: Compare All Columns
+Traverse the array and check whether every column has the same parity.
+If every height is either all even or all odd, then it's possible to make all heights equal by repeatedly adding 2.
+If there is a mix of even and odd heights, no sequence of operations can ever make them equal because parity never changes.
+
+⚙️ Complexity Analysis
+Time Complexity: O(n) per test case
+Space Complexity: O(1)
+Only one linear scan is needed to determine the answer.
+
+📚 Key Learnings
+✅ Parity (Even/Odd) Observation
+ ✅ Invariant-Based Problem Solving
+ ✅ Linear Array Traversal
+ ✅ Mathematical Reasoning
+ ✅ Efficient O(n) Solution
+
+Competitive programming often teaches that understanding the properties of an operation is more valuable than simulating it. Here, recognizing that adding 2 preserves parity leads directly to a simple and elegant solution. 🚀
