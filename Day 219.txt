@@ -1,0 +1,38 @@
+🚀 Codeforces Accepted | Shifting Stacks 📦💻
+
+Another Codeforces challenge solved successfully! ✅
+
+Today's problem, "Shifting Stacks," seemed like a greedy simulation problem, but the key idea was to transfer surplus blocks from left to right while ensuring every stack can satisfy the minimum required height.
+
+🔗Problem Link: https://lnkd.in/gsB-dFUW
+
+💡 My Approach
+🔹 Step 1: Understand the Allowed Operation
+We can only move blocks from the i-th stack to the (i+1)-th stack.
+This means blocks can only travel to the right, never back to the left.
+🔹 Step 2: Process Stacks from Left to Right
+For every stack at index i, it must contain at least i blocks (0-based indexing) so that the final sequence can become strictly increasing:
+0, 1, 2, 3, ...
+
+If a stack has fewer than i blocks, it's impossible to fix because blocks cannot move from the right back to the left.
+🔹 Step 3: Pass the Extra Blocks Forward
+If the current stack has more than the required number of blocks, transfer the surplus to the next stack:
+extra = h[i] - i
+h[i+1] += extra
+
+Continue this process for every stack.
+If all stacks satisfy the condition, the answer is YES; otherwise, NO.
+
+⚙️ Complexity Analysis
+Time Complexity: O(n) per test case
+Space Complexity: O(1) (excluding the input array)
+Only one linear traversal is required while redistributing the extra blocks.
+
+📚 Key Learnings
+✅ Greedy Strategy
+✅ Prefix-Based Simulation
+✅ Resource Redistribution
+✅ Left-to-Right Traversal
+✅ Linear Time Optimization
+
+Competitive programming often teaches that understanding the constraints of an operation is more important than trying every possibility. Here, realizing that blocks can only move to the right naturally leads to a simple greedy solution that works in O(n) time. 🚀
