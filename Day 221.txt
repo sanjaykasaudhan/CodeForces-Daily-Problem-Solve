@@ -1,0 +1,45 @@
+🚀 Codeforces Accepted | Submission Bait 🎯💻
+
+Today's problem, "Submission Bait," looked like a game theory problem at first, but the solution actually depended on a simple observation about the frequency of numbers in the array.
+
+🔗Problem Link: https://lnkd.in/gUuWsuH9
+
+💡 My Approach
+🔹 Step 1: Count the Frequency of Each Number
+Instead of simulating the game, I first counted how many times each number appears using a frequency map.
+
+from collections import Counter
+
+cnt = Counter(a)
+
+This allows us to quickly determine the occurrence of every value.
+🔹 Step 2: Process Values in Descending Order
+I traversed the unique numbers from largest to smallest.
+The intuition is that larger values become more influential during the gameplay, so checking them first helps identify the deciding factor.
+🔹 Step 3: Look for an Odd Frequency
+If any number appears an odd number of times, then the first player can force a winning strategy.
+
+for v in sorted(cnt.keys(), reverse=True):
+    if cnt[v] % 2 == 1:
+        print("YES")
+        break
+else:
+    print("NO")
+
+If every number appears an even number of times, neither player gains an advantage, and the answer is NO.
+
+⚙️ Complexity Analysis
+Time Complexity: O(n + m log m)
+O(n) to count frequencies.
+O(m log m) to sort the distinct values, where m is the number of unique elements.
+Space Complexity: O(m)
+A frequency map is used to store the count of each distinct value.
+
+📚 Key Learnings
+✅ Frequency Counting with Counter
+✅ Game Theory Observation
+✅ Hash Maps
+✅ Sorting Unique Elements
+✅ Pattern Recognition over Simulation
+
+Competitive programming often teaches that not every game requires simulation. By identifying the right invariant—in this case, the parity of element frequencies—the problem becomes much simpler and can be solved efficiently. 🚀
