@@ -1,0 +1,51 @@
+🚀 Codeforces Accepted | Permutation Sort 🔄💻
+
+Today's problem, "Permutation Sort," is a great example of how carefully analyzing the positions of elements can lead to a very simple solution. Instead of actually sorting the permutation, the task is to determine the minimum number of operations required based on the arrangement of the first and last elements.
+
+🔗Problem Link: https://lnkd.in/g2MVgpVv
+
+💡 My Approach
+🔹 Step 1: Check if the Permutation is Already Sorted
+The easiest case is when the given permutation is already in increasing order.
+
+if a == sorted(a):
+    print(0)
+
+If it's already sorted, 0 operations are needed.
+🔹 Step 2: Observe the Boundary Elements
+If the permutation isn't sorted, the positions of 1 and n become very important.
+If the first element is 1, or
+If the last element is n
+then the array can always be sorted in 1 operation.
+
+elif a[0] == 1 or a[-1] == n:
+    print(1)
+
+🔹 Step 3: Check the Worst Arrangement
+If
+the first element is n, and
+the last element is 1
+then both boundary elements are in the worst possible positions.
+This requires 3 operations.
+
+elif a[0] == n and a[-1] == 1:
+    print(3)
+
+🔹 Step 4: Remaining Cases
+Every other unsorted arrangement can be fixed in exactly 2 operations.
+
+else:
+    print(2)
+
+⚙️ Complexity Analysis
+Time Complexity: O(n) per test case (checking sorted order dominates the runtime)
+Space Complexity: O(1) (excluding the temporary list used by sorted())
+
+📚 Key Learnings
+✅ Observation-Based Problem Solving
+ ✅ Understanding Permutation Properties
+ ✅ Boundary Element Analysis
+ ✅ Case-Based Algorithm Design
+ ✅ Simple Yet Elegant Implementation
+
+Competitive programming often rewards careful observation over complex algorithms. This problem is a perfect reminder that identifying key properties—in this case, the positions of the smallest and largest elements—can reduce what looks like a sorting problem into just a few logical cases. 🚀
