@@ -1,0 +1,55 @@
+🚀 Codeforces Accepted | Devu, the Singer and Churu, the Joker 🎤😂
+
+Today's problem, "Devu, the Singer and Churu, the Joker," is a straightforward implementation problem that revolves around time management and careful calculation. The main idea is to first determine whether all songs can fit within the available time, and then maximize the number of jokes told during the remaining free time.
+
+🔗Problem Link: https://lnkd.in/gVvCZzZv
+
+💡 My Approach
+🔹 Step 1: Calculate the Minimum Required Time
+The minimum time required consists of:
+The total duration of all songs.
+A mandatory 10-minute break between every two consecutive songs.
+
+need = sum(t) + (n - 1) * 10
+
+This gives the least amount of time needed to complete the performance.
+🔹 Step 2: Check Feasibility
+If the required time exceeds the total available time d, it's impossible to complete the performance.
+
+if need > d:
+    print(-1)
+
+In this case, the answer is simply -1.
+🔹 Step 3: Utilize the Remaining Time
+If enough time is available, compute the unused time:
+
+extra = d - need
+
+The mandatory breaks already provide opportunities to tell jokes.
+Since there are (n − 1) breaks and 2 jokes can be told during each break:
+
+2 * (n - 1)
+
+🔹 Step 4: Tell More Jokes
+Any remaining free time can also be used for jokes.
+Each additional joke takes 5 minutes, so the number of extra jokes is:
+
+extra // 5
+
+The final answer becomes:
+
+2 * (n - 1) + extra // 5
+
+⚙️ Complexity Analysis
+Time Complexity: O(n)
+Space Complexity: O(1)
+Only one pass through the song durations is required.
+
+📚 Key Learnings
+✅ Greedy Time Allocation
+ ✅ Simple Arithmetic Reasoning
+ ✅ Constraint Validation Before Computation
+ ✅ Implementation-Based Problem Solving
+ ✅ Efficient O(n) Solution
+
+Competitive programming often isn't about finding a complex algorithm—sometimes it's about carefully interpreting the problem statement and translating it into a few precise calculations. This problem is a perfect example where correct observation leads to a clean and efficient implementation. 🚀
