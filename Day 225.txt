@@ -1,0 +1,55 @@
+🚀 Codeforces Accepted | Simple Palindrome 🔤✨
+
+Today's problem, "Simple Palindrome," is a neat constructive problem where the goal is to create a string of length n using only the vowels a, e, i, o, u, while ensuring that each vowel appears as evenly as possible.
+
+🔗Problem Link: https://lnkd.in/gse2KDdV
+
+💡 My Approach
+🔹 Step 1: Store the Vowels
+Since only the five English vowels are allowed, store them in a fixed order.
+
+vowels = "aeiou"
+
+🔹 Step 2: Divide Characters Evenly
+Every vowel should appear at least:
+
+q = n // 5
+
+times.
+If n isn't divisible by 5, there will be some extra characters:
+
+r = n % 5
+
+🔹 Step 3: Distribute the Remaining Characters
+The remaining r characters are assigned to the first r vowels.
+For each vowel:
+
+count = q + (i < r)
+
+This ensures:
+The difference between the frequency of any two vowels is at most 1.
+Every vowel appears at least once whenever possible.
+🔹 Step 4: Construct the Final String
+Repeat each vowel according to its assigned count and concatenate everything together.
+
+ans = []
+for i in range(5):
+    ans.append(vowels[i] * (q + (i < r)))
+
+print("".join(ans))
+
+The resulting string satisfies all the required conditions.
+
+⚙️ Complexity Analysis
+Time Complexity: O(n)
+Space Complexity: O(n)
+Each character is generated exactly once.
+
+📚 Key Learnings
+✅ Constructive Algorithms
+ ✅ Even Distribution Strategy
+ ✅ Quotient & Remainder Technique
+ ✅ String Construction
+ ✅ Efficient O(n) Solution
+
+This problem highlights an important competitive programming lesson: constructive problems are often solved by distributing resources as evenly as possible. Using simple arithmetic with quotient and remainder leads to an elegant and efficient solution. 🚀
