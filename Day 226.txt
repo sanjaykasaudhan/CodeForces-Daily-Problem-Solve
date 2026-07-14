@@ -1,0 +1,44 @@
+🚀 Codeforces Accepted | Fireworks 🎆💻
+
+Today's problem, "Fireworks," is a simple math-based problem where the goal is to determine the maximum number of fireworks visible at the same time. Instead of simulating every launch, the solution comes from identifying how many launches occur before the visibility duration ends.
+
+🔗Problem Link: https://lnkd.in/g-gddJCG
+
+💡 My Approach
+🔹 Step 1: Understand the Launch Schedule
+The first launcher fires every a minutes.
+The second launcher fires every b minutes.
+Every firework remains visible for m minutes after being launched.
+To maximize the number of visible fireworks, we count how many launches from each launcher are still visible at a given moment.
+🔹 Step 2: Count Visible Fireworks from the First Launcher
+Within a visibility window of m minutes, the number of launches from the first launcher is:
+
+m // a + 1
+
+The +1 accounts for the launch occurring at the beginning of the interval.
+🔹 Step 3: Count Visible Fireworks from the Second Launcher
+Similarly, the second launcher contributes:
+
+m // b + 1
+
+visible fireworks.
+🔹 Step 4: Compute the Final Answer
+Since both launchers operate independently, the total maximum number of visible fireworks is simply:
+
+print(m // a + m // b + 2)
+
+This directly computes the answer without any simulation.
+
+⚙️ Complexity Analysis
+Time Complexity: O(1) per test case
+Space Complexity: O(1)
+Only a few arithmetic operations are required.
+
+📚 Key Learnings
+✅ Mathematical Observation
+ ✅ Interval Counting
+ ✅ Integer Division (//) Tricks
+ ✅ Constant-Time Problem Solving
+ ✅ Efficient O(1) Solution
+
+Competitive programming often rewards recognizing patterns and mathematical properties instead of simulating events. This problem is a great reminder that a few simple calculations can replace an otherwise expensive simulation. 🚀
