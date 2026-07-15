@@ -1,0 +1,45 @@
+🚀 Codeforces Accepted | Divide and Conquer ⚡➗
+
+Today's problem, "Divide and Conquer," looks like it requires repeatedly performing operations on a number. However, the key observation is much simpler: the operation can only divide x by its divisors, so reaching y is possible if and only if y divides x.
+
+🔗Problem Link: https://lnkd.in/gpHMz6fi
+
+💡 My Approach
+🔹 Step 1: Understand the Allowed Operation
+We can repeatedly choose any divisor z of x and update:
+
+x = x / z
+
+Since every operation only divides x, we can never introduce new prime factors or increase its value.
+🔹 Step 2: Find the Key Observation
+To transform x into y:
+y must be a divisor of x.
+If y does not divide x, it's impossible.
+Mathematically,
+
+x % y == 0
+
+is the only condition that matters.
+🔹 Step 3: Check Divisibility
+The implementation becomes extremely simple:
+
+if x % y == 0:
+    print("YES")
+else:
+    print("NO")
+
+If y divides x, we can always divide x step by step until it becomes exactly y.
+
+⚙️ Complexity Analysis
+Time Complexity: O(1) per test case
+Space Complexity: O(1)
+Only a single modulo operation is required.
+
+📚 Key Learnings
+✅ Mathematical Observation
+ ✅ Divisibility Properties
+ ✅ Prime Factor Intuition
+ ✅ Constant-Time Decision Making
+ ✅ Efficient O(1) Solution
+
+Competitive programming often rewards finding the hidden invariant instead of simulating every operation. In this problem, recognizing that division can only remove factors immediately reduces the entire solution to a single divisibility check. 🚀
