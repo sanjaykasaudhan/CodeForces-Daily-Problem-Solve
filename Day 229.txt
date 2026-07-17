@@ -1,0 +1,41 @@
+🚀 Codeforces Accepted | BAN BAN 🟡🔵
+
+Today's problem, "BAN BAN," was an interesting constructive algorithm problem. At first glance, it seems like we need to manipulate the string directly, but the key observation is that only a specific set of swaps is required to achieve the desired arrangement.
+
+🔗Problem Link: https://lnkd.in/g53jNq7M
+
+💡 My Approach
+🔹 Step 1: Observe the Pattern
+The string is formed by repeating "BAN" exactly n times.
+Example:
+n = 2 → BANBAN
+n = 3 → BANBANBAN
+Instead of simulating swaps on the string, we only need to identify which positions should be swapped.
+🔹 Step 2: Pair Characters from Both Ends
+The optimal strategy is to pair:
+the 'A' near the beginning
+with the 'N' near the end.
+For every operation:
+Left position = 3 × i + 2
+Right position = 3 × (n − i)
+This gradually fixes the string while using the minimum number of swaps.
+🔹 Step 3: Number of Operations
+Only the first half of the pairs are needed.
+Therefore,
+operations = (n + 1) // 2
+
+Then print every swap pair generated using the above formula.
+
+⚙️ Complexity Analysis
+Time Complexity: O(n)
+Space Complexity: O(1)
+The solution simply generates the required swap positions without modifying the string.
+
+📚 Key Learnings
+✅ Constructive Algorithms
+ ✅ Pattern Recognition
+ ✅ Mathematical Indexing
+ ✅ Greedy Pairing Strategy
+ ✅ Efficient O(n) Solution
+
+This problem reinforced an important competitive programming lesson: sometimes the goal isn't to simulate every operation, but to discover the mathematical pattern behind the required moves. Once the pattern is identified, the implementation becomes surprisingly simple. 🚀
