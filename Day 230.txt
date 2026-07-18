@@ -1,0 +1,49 @@
+🚀 Codeforces Accepted | Also Try Minecraft ⛏️🧱
+
+Today's problem, "Also Try Minecraft," looked like a path simulation problem at first, but the key insight was that the cost between adjacent blocks can be precomputed using prefix sums.
+
+🔗Problem Link: https://lnkd.in/g3Yw6Z8U
+
+💡 My Approach
+🔹 Step 1: Understand the Movement Cost
+When moving between adjacent blocks:
+Moving uphill costs the height difference.
+Moving downhill or on the same level costs 0.
+Since there are multiple queries, calculating the answer for every query independently would be too slow.
+🔹 Step 2: Precompute Prefix Arrays
+I created two prefix arrays:
+prefR[i] → Total cost when moving from left to right up to index i.
+prefL[i] → Total cost when moving from right to left up to index i.
+For every adjacent pair:
+While moving left → right, add:
+max(0, a[i-1] - a[i])
+
+While moving right → left, add:
+max(0, a[i+1] - a[i])
+
+These arrays store cumulative costs, allowing each query to be answered instantly.
+🔹 Step 3: Answer Queries in O(1)
+For every query:
+If moving from left to right (s < t):
+answer = prefR[t] - prefR[s]
+
+Otherwise:
+answer = prefL[t] - prefL[s]
+
+Using prefix sums avoids recalculating costs for every path.
+
+⚙️ Complexity Analysis
+Preprocessing: O(n)
+Each Query: O(1)
+Overall: O(n + m)
+Space Complexity: O(n)
+This is significantly faster than simulating every movement for every query.
+
+📚 Key Learnings
+✅ Prefix Sum Technique
+ ✅ Precomputation for Multiple Queries
+ ✅ Efficient Range Query Processing
+ ✅ Direction-Based Observation
+ ✅ Optimizing from O(n × m) to O(n + m)
+
+This problem highlights a valuable competitive programming lesson: when multiple queries involve the same data, precomputing useful information often transforms an expensive solution into an efficient one. 🚀
