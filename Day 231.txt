@@ -1,0 +1,38 @@
+🚀 Codeforces Accepted | Index and Maximum Value 📈💻
+
+Today's problem, "Index and Maximum Value," focused on processing multiple range update queries efficiently. The key observation was that only the current maximum element matters, making it unnecessary to update the entire array after every operation.
+
+🔗Problem Link: https://lnkd.in/gnrFXXU4
+
+💡 My Approach
+🔹 Step 1: Track Only the Maximum
+Instead of modifying every element in the given range, I first determined the current maximum value in the array.
+
+mx = max(a)
+
+Since the answer after each query depends only on the maximum value, the remaining elements don't need to be updated explicitly.
+🔹 Step 2: Check Whether the Maximum is Affected
+For every query:
+If the current maximum lies inside the range [l, r], then:
+'+' → increase the maximum by 1
+'-' → decrease the maximum by 1
+Otherwise, the maximum remains unchanged.
+This simple observation eliminates unnecessary array updates.
+🔹 Step 3: Print the Updated Maximum
+After processing each operation, output the current value of the maximum.
+Since only one variable is maintained throughout the process, the solution stays clean and efficient.
+
+⚙️ Complexity Analysis
+Finding Initial Maximum: O(n)
+Each Query: O(1)
+Overall: O(n + m)
+Space Complexity: O(1) (excluding input storage)
+
+📚 Key Learnings
+✅ Observation-Based Optimization
+ ✅ Range Query Analysis
+ ✅ Maintaining a Running Maximum
+ ✅ Efficient Query Processing
+ ✅ Reducing Unnecessary Updates
+
+This problem is a great reminder that understanding exactly what the output depends on can dramatically simplify the solution. Instead of updating the whole array after every query, tracking only the maximum value leads to an elegant O(n + m) approach. 🚀
