@@ -1,0 +1,46 @@
+🚀 Codeforces Accepted | Quick Sort ⚡📊
+
+Today's problem, "Quick Sort," wasn't about implementing the Quick Sort algorithm itself. Instead, it required identifying how many operations were needed to sort the permutation by leveraging the longest correctly ordered prefix.
+
+🔗Problem Link: https://lnkd.in/g4udRugg
+
+💡 My Approach
+🔹 Step 1: Find the Longest Sorted Prefix
+Starting from the expected value 1, I traversed the permutation and checked whether the numbers appeared in increasing order.
+need = 1
+
+For each element:
+    if element == need:
+        need += 1
+
+At the end of the traversal:
+matched = need - 1 gives the number of correctly placed elements.
+The remaining elements still need to be fixed.
+🔹 Step 2: Count Remaining Elements
+The number of unsorted elements is:
+remaining = n - matched
+
+If no elements remain, the answer is simply 0.
+🔹 Step 3: Calculate Minimum Operations
+Each operation can correctly place at most k remaining elements.
+Therefore, the minimum number of operations is:
+answer = ceil(remaining / k)
+
+Using integer arithmetic:
+answer = (remaining + k - 1) // k
+
+This directly computes the required operations without simulating the sorting process.
+
+⚙️ Complexity Analysis
+Time Complexity: O(n) per test case
+Space Complexity: O(1)
+Only one linear scan through the permutation is required.
+
+📚 Key Learnings
+✅ Greedy Observation
+ ✅ Prefix Matching Technique
+ ✅ Ceiling Division Formula
+ ✅ Efficient Linear Traversal
+ ✅ Avoiding Unnecessary Simulation
+
+This problem demonstrates an important competitive programming lesson: understanding what is already in the correct order can be far more valuable than simulating every operation. By focusing on the longest valid prefix, the solution becomes a clean and efficient O(n) algorithm. 🚀
