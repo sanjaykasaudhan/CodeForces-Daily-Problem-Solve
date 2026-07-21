@@ -1,0 +1,35 @@
+🚀 Codeforces Accepted | Mark the Dust Sweeper 🧹💻
+
+Today's problem, "Mark the Dust Sweeper," initially looked like a simulation problem, but the key insight was realizing that the answer depends only on the dust levels before the last room and the zeros between non-zero rooms.
+
+🔗Problem Link: https://lnkd.in/giaFBy2J
+
+💡 My Approach
+🔹 Step 1: Count the Required Operations
+Every unit of dust in the first n − 1 rooms must eventually be moved toward the last room.
+Therefore, the initial contribution to the answer is simply:
+answer = sum(a[0...n-2])
+
+This accounts for all dust particles that need to be transferred.
+🔹 Step 2: Handle Empty Rooms
+While scanning the first n − 1 rooms:
+Once the first non-zero room is encountered, every 0 that appears afterward creates an extra operation.
+This is because dust must pass through these empty rooms before reaching the end.
+So, for every zero between non-zero rooms, increment the answer by 1.
+🔹 Step 3: Ignore the Last Room
+The amount of dust already present in the last room doesn't matter, since it's the destination where all remaining dust eventually accumulates.
+Thus, only the first n − 1 rooms influence the result.
+
+⚙️ Complexity Analysis
+Time Complexity: O(n) per test case
+Space Complexity: O(1)
+The solution requires only a single traversal of the array.
+
+📚 Key Learnings
+✅ Greedy Observation
+ ✅ Linear Array Traversal
+ ✅ Counting Instead of Simulation
+ ✅ Edge Case Handling
+ ✅ Efficient O(n) Solution
+
+This problem reinforces an important competitive programming lesson: many simulation problems can be simplified by identifying what actually contributes to the final answer. Instead of moving dust step by step, counting the necessary operations directly leads to a clean and efficient solution. 🚀
