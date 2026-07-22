@@ -1,0 +1,82 @@
+🚀 Codeforces Accepted | A. Chips Moving 🧩💻
+
+This problem looks simple at first, but the key lies in observing the movement rules carefully.
+
+🔗Problem Link: https://lnkd.in/guZuACrD
+
+💡 Problem Insight
+Each chip can move:
+±2 positions for free ✅
+±1 position with a cost of 1 💰
+Since moving by 2 never changes the parity of a number:
+An even-positioned chip will always stay on an even position for free.
+An odd-positioned chip will always stay on an odd position for free.
+Therefore, to gather all chips at one position:
+If we choose an even destination, only the odd chips need to pay.
+If we choose an odd destination, only the even chips need to pay.
+The answer is simply:
+
+min(number_of_even_chips, number_of_odd_chips)
+
+🔍 Code Explanation
+
+n = int(input())
+x = list(map(int, input().split()))
+
+even = 0
+odd = 0
+
+for v in x:
+    if v % 2 == 0:
+        even += 1
+    else:
+        odd += 1
+
+print(min(even, odd))
+
+Step-by-Step
+✅ Read Input
+
+n = int(input())
+x = list(map(int, input().split()))
+
+Read the number of chips.
+Store all chip positions in a list.
+✅ Count Even & Odd Positions
+
+even = 0
+odd = 0
+
+Initialize counters.
+Loop through every chip:
+
+for v in x:
+    if v % 2 == 0:
+        even += 1
+    else:
+        odd += 1
+
+If the position is even → increment even.
+Otherwise → increment odd.
+✅ Find Minimum Cost
+
+print(min(even, odd))
+
+Two possibilities:
+Move all chips to an even position → odd chips pay.
+Move all chips to an odd position → even chips pay.
+Choose the smaller cost.
+
+⚡ Approach
+Traverse the array once.
+Count chips on even positions.
+Count chips on odd positions.
+Return the minimum of the two counts.
+This works because chips can move freely within the same parity, and only changing parity costs 1.
+
+⏱️ Time Complexity
+Time: O(n) ✅ (single traversal)
+Space: O(1) ✅ (only two counters)
+
+🎯 Key Learning
+Sometimes the solution isn't about simulating every move—it’s about identifying an invariant. Here, the parity (even/odd nature) of a chip's position never changes with free moves, which transforms the problem into a simple counting exercise.
