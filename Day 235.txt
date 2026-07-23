@@ -1,0 +1,68 @@
+🚀 Codeforces Accepted | B. Coin Games 🪙💻
+
+At first glance, this game appears to require simulating every move. However, the key observation simplifies the entire problem to just counting the number of facing-up (U) coins.
+
+💡 Problem Insight
+The winner depends only on whether the total number of U (up-facing) coins is odd or even.
+✅ If the count of U is odd, Alice (who plays first) wins.
+❌ If the count of U is even, Bob wins.
+No simulation is required—the parity of the number of U coins determines the outcome.
+
+⚡ Approach
+Read the coin configuration.
+Count the number of U coins.
+Check whether the count is odd or even.
+Output the result accordingly.
+Instead of simulating every move, we rely on the mathematical property that only the parity (odd/even) of the up-facing coins matters.
+
+🔍 Code Explanation
+
+t = int(input())
+
+for _ in range(t):
+    n = int(input())
+    s = input().strip()
+
+    if s.count('U') % 2 == 1:
+        print("YES")
+    else:
+        print("NO")
+
+✅ Read Test Cases
+
+t = int(input())
+
+Read the number of test cases.
+✅ Process Each Test Case
+
+for _ in range(t):
+
+Iterate through all test cases.
+✅ Read Input
+
+n = int(input())
+s = input().strip()
+
+n → Number of coins.
+s → String representing the state of coins (U or D).
+✅ Count Up-Facing Coins
+
+s.count('U')
+
+This counts how many coins are facing up.
+✅ Decide the Winner
+
+if s.count('U') % 2 == 1:
+    print("YES")
+else:
+    print("NO")
+
+If the count of U is odd, print YES (Alice wins).
+Otherwise, print NO (Bob wins).
+
+⏱️ Time Complexity
+Time Complexity: O(n) per test case (single traversal to count U)
+Space Complexity: O(1)
+
+🎯 Key Learning
+Many game theory problems don't require full simulation. By identifying an invariant—in this case, the parity of the number of up-facing coins—we can solve the problem with a simple counting approach.
