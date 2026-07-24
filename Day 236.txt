@@ -1,0 +1,97 @@
+🚀 Codeforces Accepted | A. Hossam and Combinatorics 🧮💻
+
+This problem looks like it requires checking every possible pair, but with one important observation, the solution becomes much simpler.
+
+🔗Problem Link: https://lnkd.in/gP-3cgqH
+
+💡 Problem Insight
+We need to count the number of ordered pairs (ai, aj) such that:
+The difference between the two numbers is maximum possible.
+The maximum possible difference in an array is always:
+max_element - min_element
+
+So instead of checking every pair, we only need to focus on:
+The minimum element
+The maximum element
+Two Cases:
+✅ Case 1: All elements are the same (min == max)
+Every ordered pair of different indices is valid.
+Answer:
+n × (n - 1)
+
+✅ Case 2: Minimum and maximum are different
+Suppose:
+Minimum occurs cnt_min times.
+Maximum occurs cnt_max times.
+Every minimum can pair with every maximum in both directions.
+Answer:
+2 × cnt_min × cnt_max
+
+⚡ Approach
+Read the array.
+Find the minimum and maximum values.
+Count their frequencies.
+If both are equal, return n × (n − 1).
+Otherwise, return 2 × cnt_min × cnt_max.
+Instead of checking all possible pairs (O(n²)), we directly use the frequencies of the minimum and maximum elements.
+
+🔍 Code Explanation
+
+t = int(input())
+
+for _ in range(t):
+    n = int(input())
+    a = list(map(int, input().split()))
+
+    mn = min(a)
+    mx = max(a)
+
+    cnt_min = a.count(mn)
+    cnt_max = a.count(mx)
+
+    if mn == mx:
+        print(n * (n - 1))
+    else:
+        print(2 * cnt_min * cnt_max)
+
+✅ Read Input
+
+t = int(input())
+
+Read the number of test cases.
+✅ Find Minimum & Maximum
+
+mn = min(a)
+mx = max(a)
+
+Determine the smallest and largest values in the array.
+✅ Count Their Occurrences
+
+cnt_min = a.count(mn)
+cnt_max = a.count(mx)
+
+Find how many times the minimum and maximum appear.
+✅ Compute the Answer
+If all numbers are equal:
+
+print(n * (n - 1))
+
+Otherwise:
+
+print(2 * cnt_min * cnt_max)
+
+The factor 2 accounts for both ordered pairs:
+(min, max)
+(max, min)
+
+⏱️ Time Complexity
+Time Complexity: O(n) per test case
+Finding min → O(n)
+Finding max → O(n)
+Counting min → O(n)
+Counting max → O(n)
+Overall → O(n)
+Space Complexity: O(1) (excluding input array)
+
+🎯 Key Learning
+Many combinatorics problems can be solved without generating all possible pairs. By recognizing that the maximum difference always comes from the minimum and maximum elements, we reduce a brute-force O(n²) solution to an efficient O(n) approach.
