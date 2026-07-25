@@ -1,0 +1,86 @@
+🚀 Codeforces Accepted | A. Cookies 🍪💻
+
+At first, the problem may seem to require checking every possible bag to remove. However, with a simple observation about parity (odd/even), the solution becomes straightforward.
+
+🔗Problem Link: https://lnkd.in/gZawak3w
+
+💡 Problem Insight
+Olga wants to remove one bag so that the remaining total number of cookies becomes even, allowing the cookies to be divided equally.
+The key observation is:
+If the total sum is even, we must remove a bag containing an even number of cookies.
+If the total sum is odd, we must remove a bag containing an odd number of cookies.
+So instead of trying every bag, we only need to count:
+Number of bags with even cookies.
+Number of bags with odd cookies.
+
+⚡ Approach
+Read the array of cookie counts.
+Compute the total sum.
+Count bags containing even and odd numbers of cookies.
+If the total sum is even, output the number of even bags.
+Otherwise, output the number of odd bags.
+This avoids checking every bag individually and uses a simple parity observation.
+
+🔍 Code Explanation
+
+n = int(input())
+a = list(map(int, input().split()))
+
+total = sum(a)
+
+even = 0
+odd = 0
+
+for x in a:
+    if x % 2 == 0:
+        even += 1
+    else:
+        odd += 1
+
+if total % 2 == 0:
+    print(even)
+else:
+    print(odd)
+
+✅ Read Input
+
+n = int(input())
+a = list(map(int, input().split()))
+
+n → Number of cookie bags.
+a → Cookies in each bag.
+✅ Calculate Total Cookies
+
+total = sum(a)
+
+Find the total number of cookies.
+✅ Count Even & Odd Bags
+
+even = 0
+odd = 0
+
+for x in a:
+    if x % 2 == 0:
+        even += 1
+    else:
+        odd += 1
+
+Count how many bags contain an even number of cookies and how many contain an odd number.
+✅ Decide the Answer
+
+if total % 2 == 0:
+    print(even)
+else:
+    print(odd)
+
+If the total is even, removing an even bag keeps the total even.
+If the total is odd, removing an odd bag makes the total even.
+
+⏱️ Time Complexity
+Time Complexity: O(n)Calculate the sum → O(n)
+Count even and odd bags → O(n)
+Overall → O(n)
+Space Complexity: O(1) (excluding the input array)
+
+🎯 Key Learning
+Not every problem requires simulating every possible choice. By understanding how parity behaves under addition and subtraction, we can transform what appears to be a brute-force problem into a simple counting solution with linear time complexity.
