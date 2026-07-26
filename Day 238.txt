@@ -1,0 +1,76 @@
+🚀 Codeforces Accepted | A. Little Elephant and Rozdil 🐘💻
+
+This problem is a great example of how a simple observation can replace unnecessary sorting or multiple traversals.
+
+🔗Problem Link: https://lnkd.in/g-6tiG9V
+
+💡 Problem Insight
+The Little Elephant wants to travel to the city with the minimum travel time.
+There are only two possibilities:
+✅ If the minimum travel time is unique, print its 1-based index.
+❌ If the minimum value appears more than once, it's impossible to choose a unique city, so print:
+Still Rozdil
+
+Instead of sorting the array or comparing every pair, we only need to:
+Find the minimum value.
+Count how many times it appears.
+
+⚡ Approach
+Read the travel times.
+Find the minimum travel time.
+Count its occurrences.
+If it appears multiple times, print "Still Rozdil".
+Otherwise, print its 1-based index.
+This eliminates the need for sorting and keeps the solution simple and efficient.
+
+🔍 Code Explanation
+
+n = int(input())
+a = list(map(int, input().split()))
+
+mn = min(a)
+
+if a.count(mn) > 1:
+    print("Still Rozdil")
+else:
+    print(a.index(mn) + 1)
+
+✅ Read Input
+
+n = int(input())
+a = list(map(int, input().split()))
+
+n → Number of cities.
+a → Travel time to each city.
+✅ Find the Minimum Travel Time
+
+mn = min(a)
+
+Determine the smallest travel time in the list.
+✅ Check Whether It Is Unique
+
+if a.count(mn) > 1:
+
+Count how many times the minimum value occurs.
+If it appears more than once, there is no unique answer.
+✅ Print the Result
+
+print("Still Rozdil")
+
+Printed when multiple cities have the same minimum travel time.
+Otherwise,
+
+print(a.index(mn) + 1)
+
+index() returns the first occurrence (0-based).
+Add 1 because the problem uses 1-based indexing.
+
+⏱️ Time Complexity
+Time Complexity: O(n)Finding minimum → O(n)
+Counting occurrences → O(n)
+Finding index → O(n)
+Overall → O(n)
+Space Complexity: O(1) (excluding the input array)
+
+🎯 Key Learning
+Not every problem requires sorting to find the answer. By recognizing that we only need to know whether the minimum value is unique, we can solve the problem with simple built-in operations in linear time.
