@@ -1,0 +1,89 @@
+🚀 Codeforces Accepted | B. Maximums 📈💻
+
+At first, this problem may look like it requires reconstructing the array using multiple previous values. However, the key observation is that we only need to keep track of the maximum element constructed so far.
+
+🔗Problem Link: https://lnkd.in/gaxNsZiG
+
+💡 Problem Insight
+We're given an array b, and we need to reconstruct the original array a.
+The relationship is:
+b[i] = a[i] - max(a[0], a[1], ..., a[i-1])
+
+Rearranging the formula:
+a[i] = b[i] + current_max
+
+where current_max is the maximum value among all previously reconstructed elements.
+After calculating each a[i], we simply update the running maximum.
+
+⚡ Approach
+Read the transformed array b.
+Maintain the maximum element reconstructed so far.
+For each value in b:
+Compute a[i] = current_max + b[i].
+Store it in the answer.
+Update current_max if needed.
+Print the reconstructed array.
+Instead of repeatedly searching for previous maximums, we maintain it dynamically, making the solution highly efficient.
+
+🔍 Code Explanation
+
+n = int(input())
+b = list(map(int, input().split()))
+
+a = []
+mx = 0
+
+for x in b:
+    val = mx + x
+    a.append(val)
+
+    if val > mx:
+        mx = val
+
+print(*a)
+
+✅ Read Input
+
+n = int(input())
+b = list(map(int, input().split()))
+
+n → Size of the array.
+b → Given transformed array.
+✅ Initialize Variables
+
+a = []
+mx = 0
+
+a stores the reconstructed array.
+mx keeps track of the maximum value seen so far.
+Initially, no elements have been processed, so the maximum is 0.
+✅ Reconstruct the Array
+
+for x in b:
+    val = mx + x
+    a.append(val)
+
+Using the formula:
+a[i] = b[i] + current_max
+
+we compute each element and store it.
+✅ Update the Running Maximum
+
+if val > mx:
+    mx = val
+
+If the newly reconstructed element is larger than the current maximum, update it.
+This ensures the next iteration uses the correct previous maximum.
+✅ Print the Result
+
+print(*a)
+
+Output the reconstructed array.
+
+⏱️ Time Complexity
+Time Complexity: O(n) ✅
+Single traversal of the array.
+Space Complexity: O(n)To store the reconstructed array.
+
+🎯 Key Learning
+Many array reconstruction problems become much simpler when you maintain a running value instead of recomputing it repeatedly. Here, tracking the maximum element so far eliminates unnecessary work and leads to a clean O(n) solution.
