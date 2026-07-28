@@ -1,0 +1,99 @@
+🚀 Codeforces Accepted | A. Wizard of Orz 🧙‍♂️💻
+
+This problem is all about identifying a pattern rather than constructing the answer through complex logic. Once the sequence is observed, generating the required number becomes straightforward.
+
+🔗Problem Link: https://lnkd.in/g7adMiKZ
+
+💡 Problem Insight
+We need to construct an n-digit number that satisfies the problem's conditions.
+A simple pattern emerges:
+For n = 1, the answer is:
+9
+
+For n = 2:
+98
+
+For n = 3:
+989
+
+For n > 3:
+Start with "989"
+Append digits cyclically:
+0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1...
+
+Thus, every extra digit is simply i % 10.
+
+⚡ Approach
+Read the number of test cases.
+Handle the first three cases separately (9, 98, 989).
+For larger values of n:
+Start with "989".
+Append digits from 0 to 9 repeatedly using i % 10.
+Print the final number.
+Instead of searching or calculating dynamically, we simply generate the answer using the observed pattern.
+
+🔍 Code Explanation
+
+t = int(input())
+
+for _ in range(t):
+    n = int(input())
+
+    if n == 1:
+        print(9)
+    elif n == 2:
+        print(98)
+    elif n == 3:
+        print(989)
+    else:
+        ans = "989"
+        for i in range(n - 3):
+            ans += str(i % 10)
+        print(ans)
+
+✅ Read Input
+
+t = int(input())
+
+Read the number of test cases.
+✅ Handle Small Cases
+
+if n == 1:
+    print(9)
+elif n == 2:
+    print(98)
+elif n == 3:
+    print(989)
+
+The first three answers are fixed according to the discovered pattern.
+✅ Construct Larger Numbers
+
+ans = "989"
+
+Every answer with more than three digits starts with 989.
+✅ Append Remaining Digits
+
+for i in range(n - 3):
+    ans += str(i % 10)
+
+Generate the remaining digits using:
+0
+1
+2
+...
+9
+then repeat again.
+The modulo operation (i % 10) creates this repeating sequence automatically.
+✅ Print the Result
+
+print(ans)
+
+Output the constructed number for each test case.
+
+⏱️ Time Complexity
+Time Complexity: O(n) per test case
+We append each remaining digit exactly once.
+Space Complexity: O(n)To store the generated string.
+
+🎯 Key Learning
+Not every programming problem requires advanced algorithms. Sometimes, carefully analyzing the sample outputs reveals a repeating pattern that leads to an elegant and efficient solution. Pattern recognition is a valuable skill in competitive programming.
