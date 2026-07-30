@@ -1,0 +1,119 @@
+🚀 Codeforces Accepted | A. Alarm Clock ⏰💻
+
+This problem is a great example of converting a real-world scenario into a simple mathematical calculation. Instead of simulating every alarm, we can directly compute the answer using arithmetic.
+
+🔗Problem Link: https://lnkd.in/g2UM9Dp6
+
+💡 Problem Insight
+Polycarp needs to sleep for at least a minutes.
+The first alarm rings after b minutes.
+If that's not enough, every next alarm comes after c minutes.
+After each alarm, Polycarp loses d minutes of sleep before falling asleep again.
+So, each additional alarm effectively adds only:
+c - d
+
+minutes of actual sleep.
+There are three cases:
+✅ Case 1: First Alarm Is Enough
+If:
+b ≥ a
+
+then Polycarp already gets enough sleep.
+Answer:
+b
+
+✅ Case 2: Impossible to Gain More Sleep
+If:
+c ≤ d
+
+then every alarm cycle adds 0 or negative sleep.
+So it's impossible to reach the required sleep.
+Answer:
+-1
+
+✅ Case 3: Compute Additional Alarm Cycles
+Remaining sleep needed:
+need = a - b
+
+Effective sleep gained per cycle:
+gain = c - d
+
+Number of additional cycles required:
+k = ceil(need / gain)
+
+Final answer:
+b + k × c
+
+⚡ Approach
+Read the input values.
+If the first alarm already satisfies the required sleep, print b.
+If additional alarms don't increase effective sleep (c ≤ d), print -1.
+Otherwise:
+Calculate remaining sleep needed.
+Compute effective sleep gained per cycle.
+Find the minimum number of cycles using ceiling division.
+Output the total elapsed time.
+Instead of simulating alarm by alarm, we directly compute the required answer using simple arithmetic.
+
+🔍 Code Explanation
+
+t = int(input())
+
+for _ in range(t):
+    a, b, c, d = map(int, input().split())
+
+    if b >= a:
+        print(b)
+
+    elif c <= d:
+        print(-1)
+
+    else:
+        need = a - b
+        gain = c - d
+
+        k = (need + gain - 1) // gain
+        print(b + k * c)
+
+✅ Read Input
+
+t = int(input())
+
+Read the number of test cases.
+✅ Case 1: First Alarm Is Sufficient
+
+if b >= a:
+    print(b)
+
+If the first alarm already gives enough sleep, no extra alarms are required.
+✅ Case 2: Impossible Situation
+
+elif c <= d:
+    print(-1)
+
+If the effective sleep gained after each cycle is zero or negative, Polycarp can never reach the required sleep.
+✅ Calculate Remaining Sleep
+
+need = a - b
+gain = c - d
+
+need → Remaining minutes required.
+gain → Effective sleep obtained after every additional alarm.
+✅ Compute Required Alarm Cycles
+
+k = (need + gain - 1) // gain
+
+This is the integer implementation of:
+ceil(need / gain)
+
+which tells us the minimum number of extra alarm cycles needed.
+✅ Print the Final Time
+
+print(b + k * c)
+
+Each additional cycle occurs after c minutes, so the total elapsed time is:
+first alarm time + (number of cycles × c)
+
+⏱️ Time Complexity
+Time Complexity: O(1) per test case ✅
+Space Complexity: O(1)
