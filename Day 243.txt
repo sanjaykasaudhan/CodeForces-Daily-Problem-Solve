@@ -1,0 +1,79 @@
+🚀 Codeforces Accepted | B. Array Stabilization 📊💻
+
+At first glance, the problem seems to require checking the instability after removing every element. However, with one key observation, we only need to consider two possible removals.
+
+🔗Problem Link: https://lnkd.in/gHpaNXrW
+
+💡 Problem Insight
+The instability of an array is defined as:
+maximum element − minimum element
+
+We must remove exactly one element to minimize this instability.
+Key Observation
+Removing any element other than the minimum or maximum does not change the instability because the minimum and maximum values remain the same.
+Therefore, we only need to consider two cases:
+✅ Remove the smallest element
+New instability:
+maximum − second smallest
+
+✅ Remove the largest element
+New instability:
+second largest − minimum
+
+The minimum of these two values is the answer.
+
+⚡ Approach
+Read the array.
+Sort it in non-decreasing order.
+Compute:
+largest − second smallest
+second largest − smallest
+Print the minimum of the two values.
+Instead of checking all n removals, we reduce the problem to just two calculations.
+
+🔍 Code Explanation
+
+n = int(input())
+a = list(map(int, input().split()))
+
+a.sort()
+
+print(min(a[-1] - a[1], a[-2] - a[0]))
+
+✅ Read Input
+
+n = int(input())
+a = list(map(int, input().split()))
+
+n → Number of elements.
+a → Array elements.
+✅ Sort the Array
+
+a.sort()
+
+Sorting makes it easy to access:
+Smallest element → a[0]
+Second smallest → a[1]
+Second largest → a[-2]
+Largest → a[-1]
+✅ Compute Both Possibilities
+
+a[-1] - a[1]
+
+Represents removing the smallest element.
+
+a[-2] - a[0]
+
+Represents removing the largest element.
+✅ Print the Minimum Instability
+
+print(min(a[-1] - a[1], a[-2] - a[0]))
+
+Choose the smaller instability among the two possible removals.
+
+⏱️ Time Complexity
+Time Complexity: O(n log n)Sorting the array dominates the complexity.
+Space Complexity: O(1) (excluding the input array)
+
+🎯 Key Learning
+Many optimization problems become much simpler once you identify which elements actually influence the answer. In this problem, only the minimum and maximum affect the instability, so removing any middle element is never beneficial. This observation reduces the solution from checking O(n) possibilities to evaluating just two cases after sorting.
