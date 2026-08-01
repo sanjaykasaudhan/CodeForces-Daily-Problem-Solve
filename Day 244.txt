@@ -1,0 +1,77 @@
+🚀 Codeforces Accepted | B. Customising the Track 🏁💻
+
+At first, this problem may seem to require redistributing values across the array step by step. However, the key observation is that we only need the remainder of the total sum after dividing by the number of elements.
+
+🔗Problem Link: https://lnkd.in/gDkUbbfR
+
+💡 Problem Insight
+We want all elements to become equal using the allowed operations.
+Let:
+S = Sum of all elements
+n = Number of elements
+If the total sum is divisible by n, then every element can become exactly:
+S / n
+
+and no imbalance remains.
+However, if:
+r = S % n
+
+then:
+r elements will have the value ⌈S/n⌉
+n − r elements will have the value ⌊S/n⌋
+The minimum number of unequal pairs is simply:
+r × (n − r)
+
+⚡ Approach
+Compute the sum of the array.
+Find the remainder r = sum % n.
+If r = 0, all elements can become equal, so the answer is 0.
+Otherwise, the answer is simply:
+r × (n − r)
+
+This avoids any simulation or redistribution process.
+
+🔍 Code Explanation
+
+t = int(input())
+
+for _ in range(t):
+    n = int(input())
+    a = list(map(int, input().split()))
+
+    r = sum(a) % n
+    print(r * (n - r))
+
+✅ Read Input
+
+t = int(input())
+
+Read the number of test cases.
+✅ Read the Array
+
+n = int(input())
+a = list(map(int, input().split()))
+
+n → Number of elements.
+a → Array values.
+✅ Compute the Remainder
+
+r = sum(a) % n
+
+The remainder tells us how many elements must be one greater than the others after redistribution.
+✅ Calculate the Answer
+
+print(r * (n - r))
+
+r elements belong to one group.
+n - r elements belong to the other group.
+The total number of unequal pairs is:
+r × (n − r)
+
+⏱️ Time Complexity
+Time Complexity: O(n) per test case
+Computing the sum requires one traversal of the array.
+Space Complexity: O(1) (excluding the input array)
+
+🎯 Key Learning
+Many redistribution problems don't require simulating every operation. By focusing on the remainder after division, we can directly determine the final distribution and compute the answer with a simple mathematical formula. Recognizing such patterns is a powerful technique in competitive programming.
