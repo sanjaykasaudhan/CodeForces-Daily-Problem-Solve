@@ -1,0 +1,82 @@
+🚀 Codeforces Accepted | A. Duff and Meat 🥩💻
+
+This problem looks like it requires deciding from which day to buy meat for every future day. However, a simple greedy strategy gives the optimal answer.
+
+🔗Problem Link: https://lnkd.in/g9ZNZgHC
+
+💡 Problem Insight
+For each day:
+a → Kilograms of meat needed.
+p → Price per kilogram on that day.
+Since meat can be stored, if today's price is cheaper than all previous prices, we should buy from today onward at this new price.
+So, while traversing the days, we only need to keep track of the minimum price seen so far.
+
+⚡ Approach
+Read the number of days.
+Maintain the minimum meat price encountered so far.
+For each day:
+Update the minimum price if today's price is lower.
+Purchase today's required meat using this minimum price.
+Accumulate the total cost.
+Print the final answer.
+Instead of checking all previous prices every day, we keep a running minimum, making the solution efficient.
+
+🔍 Code Explanation
+
+n = int(input())
+
+min_price = float('inf')
+total_cost = 0
+
+for _ in range(n):
+    a, p = map(int, input().split())
+
+    min_price = min(min_price, p)
+    total_cost += a * min_price
+
+print(total_cost)
+
+✅ Read Input
+
+n = int(input())
+
+Read the number of days.
+✅ Initialize Variables
+
+min_price = float('inf')
+total_cost = 0
+
+min_price stores the cheapest price encountered so far.
+total_cost keeps track of the total amount spent.
+✅ Process Each Day
+
+for _ in range(n):
+    a, p = map(int, input().split())
+
+Read:
+a → Meat required on the current day.
+p → Price per kilogram.
+✅ Update the Minimum Price
+
+min_price = min(min_price, p)
+
+If today's price is cheaper than any previous day's price, update min_price.
+This ensures we always buy meat at the lowest price available so far.
+✅ Add Today's Cost
+
+total_cost += a * min_price
+
+Buy today's required meat using the cheapest price seen up to this day.
+✅ Print the Answer
+
+print(total_cost)
+
+Output the minimum total cost.
+
+⏱️ Time Complexity
+Time Complexity: O(n) ✅
+We traverse the days only once.
+Space Complexity: O(1)
+
+🎯 Key Learning
+Greedy algorithms often work when making the best local decision leads to the global optimum. In this problem, always buying meat at the lowest price seen so far guarantees the minimum total cost without any complex calculations or dynamic programming.
