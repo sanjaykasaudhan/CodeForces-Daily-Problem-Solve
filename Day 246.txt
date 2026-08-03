@@ -1,0 +1,118 @@
+🚀 Codeforces Accepted | A. Burenka Plays with Fractions ➗💻
+
+This problem looks like it requires modifying the fractions in different ways. However, by comparing the fractions mathematically, we can determine the answer in constant time.
+
+🔗Problem Link: https://lnkd.in/gTGMUiMa
+
+💡 Problem Insight
+We are given two fractions:
+a / b   and   c / d
+
+In one move, we can multiply the numerator or denominator of one fraction by any positive integer.
+Instead of actually performing operations, we compare the fractions using cross multiplication:
+x = a × d
+y = b × c
+
+This avoids floating-point precision issues.
+There are three possible cases:
+✅ Case 1: Fractions Are Already Equal
+If:
+a × d = b × c
+
+No operation is needed.
+Answer:
+0
+
+✅ Case 2: One Move Is Enough
+One move is sufficient if:
+One fraction is 0 while the other is not.
+One cross product is a multiple of the other.
+That is:
+x % y == 0
+
+or
+y % x == 0
+
+Answer:
+1
+
+✅ Case 3: Otherwise
+If neither of the above conditions is satisfied, we need two operations.
+Answer:
+2
+
+⚡ Approach
+Read the two fractions.
+Compare them using cross multiplication.
+If both fractions are already equal, print 0.
+If one move can make them equal, print 1.
+Otherwise, print 2.
+Instead of trying every possible multiplication, we use mathematical observations to determine the answer directly.
+
+🔍 Code Explanation
+
+t = int(input())
+
+for _ in range(t):
+    a, b, c, d = map(int, input().split())
+
+    x = a * d
+    y = b * c
+
+    if x == y:
+        print(0)
+
+    elif x == 0 or y == 0:
+        print(1)
+
+    elif x % y == 0 or y % x == 0:
+        print(1)
+
+    else:
+        print(2)
+
+✅ Read Input
+
+t = int(input())
+
+Read the number of test cases.
+✅ Compute Cross Products
+
+x = a * d
+y = b * c
+
+Instead of comparing fractions directly, compare their cross products:
+x = a × d
+y = b × c
+This avoids division and floating-point errors.
+✅ Check If Fractions Are Equal
+
+if x == y:
+    print(0)
+
+If both cross products are equal, the fractions are already identical.
+✅ Check If One Move Is Enough
+
+elif x == 0 or y == 0:
+    print(1)
+
+If one fraction is zero and the other isn't, only one operation is required.
+Or,
+
+elif x % y == 0 or y % x == 0:
+    print(1)
+
+If one cross product is divisible by the other, a single multiplication can make the fractions equal.
+✅ Otherwise
+
+else:
+    print(2)
+
+If none of the previous conditions hold, two operations are required.
+
+⏱️ Time Complexity
+Time Complexity: O(1) per test case ✅
+Space Complexity: O(1)
+
+🎯 Key Learning
+Many fraction problems can be simplified by using cross multiplication instead of division. This not only avoids floating-point precision issues but also leads to a clean constant-time solution. Recognizing divisibility relationships further eliminates the need for simulation.
