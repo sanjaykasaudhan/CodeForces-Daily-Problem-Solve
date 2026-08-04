@@ -1,0 +1,75 @@
+🚀 Codeforces Accepted | A. Modular Exponentiation ⚡💻
+
+At first glance, this problem seems to require calculating 2ⁿ mod m. However, there's a clever mathematical observation that makes the solution extremely simple.
+
+🔗Problem Link: https://lnkd.in/eabxuCy9
+
+⚡ Approach
+Read n and m.
+If n > 27, directly print m.
+Otherwise:
+Compute 2ⁿ using bit shifting (1 << n).
+Print m % (2ⁿ).
+The key idea is recognizing that for sufficiently large n, the divisor becomes larger than m, making the remainder equal to m.
+
+💡 Problem Insight
+We need to compute:
+m mod (2ⁿ)
+
+Instead of calculating 2ⁿ directly (which becomes enormous for large n), we use the constraint on m.
+Since:
+m ≤ 10^8
+
+and
+2^27 = 134,217,728 > 10^8
+
+For every n > 27:
+2ⁿ > m
+
+Therefore,
+m mod 2ⁿ = m
+
+So we only need to calculate the modulus when n ≤ 27.
+🔍 Code Explanation
+
+n = int(input())
+m = int(input())
+
+if n > 27:
+    print(m)
+else:
+    print(m % (1 << n))
+
+✅ Read Input
+
+n = int(input())
+m = int(input())
+
+n → Exponent
+m → Number whose remainder we need to find
+✅ Check if n > 27
+
+if n > 27:
+    print(m)
+
+Since 2ⁿ is already greater than m, the remainder is simply m.
+✅ Otherwise Compute the Modulus
+
+print(m % (1 << n))
+
+1 << n is a bitwise left shift that efficiently computes:
+2ⁿ
+
+For example:
+1 << 4 = 16
+1 << 6 = 64
+1 << 10 = 1024
+
+This avoids using slower exponentiation.
+
+⏱️ Time Complexity
+Time Complexity: O(1) ✅
+Space Complexity: O(1)
+
+🎯 Key Learning
+Sometimes the fastest solution comes from understanding the constraints rather than performing the computation directly. Here, a simple mathematical observation (2²⁷ > 10⁸) eliminates the need for handling very large powers, resulting in a clean constant-time solution.
