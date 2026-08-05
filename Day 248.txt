@@ -1,0 +1,78 @@
+🚀 Codeforces Accepted | A. Contest 🏆💻
+
+This problem is about comparing the final scores of Misha and Vasya after applying the contest scoring rules. The key is to calculate each participant's score using the given formula and then compare them.
+
+🔗Problem Link: https://lnkd.in/g5R9jjsc
+
+💡 Problem Insight
+For each participant, the final score is the maximum of:
+3 × points / 10
+
+and
+points - (points × time / 250)
+
+Where:
+points = Maximum score of the problem.
+time = Time taken to solve it.
+After calculating both scores, compare them:
+If Misha's score is higher → Misha
+If Vasya's score is higher → Vasya
+Otherwise → Tie
+
+⚡ Approach
+Read the maximum points and submission times for both participants.
+Compute each participant's final score using the contest formula.
+Compare the two scores.
+Print the winner or "Tie".
+The solution directly follows the scoring formula without any loops or complex logic.
+
+🔍 Code Explanation
+
+a, b, c, d = map(int, input().split())
+
+misha = max(3 * a // 10, a - a * c // 250)
+vasya = max(3 * b // 10, b - b * d // 250)
+
+if misha > vasya:
+    print("Misha")
+elif vasya > misha:
+    print("Vasya")
+else:
+    print("Tie")
+
+✅ Read Input
+
+a, b, c, d = map(int, input().split())
+
+Where:
+a → Maximum points for Misha.
+b → Maximum points for Vasya.
+c → Time taken by Misha.
+d → Time taken by Vasya.
+✅ Calculate Misha's Score
+
+misha = max(3 * a // 10, a - a * c // 250)
+
+Compute both possible scores according to the contest rules and keep the larger one.
+✅ Calculate Vasya's Score
+
+vasya = max(3 * b // 10, b - b * d // 250)
+
+Apply the same formula for Vasya.
+✅ Compare the Scores
+
+if misha > vasya:
+    print("Misha")
+elif vasya > misha:
+    print("Vasya")
+else:
+    print("Tie")
+
+Print the winner based on the higher score, or "Tie" if both scores are equal.
+
+⏱️ Time Complexity
+Time Complexity: O(1) ✅
+Space Complexity: O(1)
+
+🎯 Key Learning
+Sometimes the simplest problems test your ability to implement formulas accurately rather than designing complex algorithms. Carefully translating the mathematical rules into code is enough to solve the problem efficiently.
