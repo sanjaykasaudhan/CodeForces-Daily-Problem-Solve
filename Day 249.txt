@@ -1,0 +1,101 @@
+🚀 Codeforces Accepted | B. Ideal Point 📍💻
+
+This problem asks whether a given point k is the unique point covered by the maximum number of segments. A straightforward counting approach is enough because the coordinate values are very small.
+
+🔗Problem Link: https://lnkd.in/gjiAw9sm
+
+💡 Problem Insight
+For each test case:
+We are given n segments.
+A special point k.
+We need to determine whether k is covered by strictly more segments than every other point.
+Since the coordinates are in the range 1 to 50, we can simply count how many segments cover each point.
+
+⚡ Approach
+Read all segments.
+Consider only the segments that contain k.
+Count how many times every point is covered by these segments.
+Compare the coverage of every point with the coverage of k.
+If no other point has equal or greater coverage, print YES; otherwise print NO.
+The small coordinate limit (1–50) allows us to use direct counting instead of advanced data structures.
+
+🔍 Code Explanation
+
+t = int(input())
+
+for _ in range(t):
+    n, k = map(int, input().split())
+
+    cnt = [0] * 51
+    cover_k = 0
+
+    for _ in range(n):
+        l, r = map(int, input().split())
+
+        if l <= k <= r:
+            cover_k += 1
+
+            for x in range(l, r + 1):
+                cnt[x] += 1
+
+    ok = True
+
+    for x in range(1, 51):
+        if x != k and cnt[x] >= cover_k:
+            ok = False
+            break
+
+    print("YES" if ok else "NO")
+
+✅ Read Input
+
+t = int(input())
+
+Read the number of test cases.
+✅ Initialize Counting Array
+
+cnt = [0] * 51
+cover_k = 0
+
+cnt[x] stores how many valid segments cover point x.
+cover_k stores how many segments cover point k.
+✅ Process Every Segment
+
+l, r = map(int, input().split())
+
+Read each segment.
+If the segment contains k:
+
+if l <= k <= r:
+    cover_k += 1
+
+Increase the number of segments covering k.
+✅ Count Covered Points
+
+for x in range(l, r + 1):
+    cnt[x] += 1
+
+For every point inside that segment, increase its coverage count.
+Since coordinates are at most 50, this is very efficient.
+✅ Verify the Ideal Point
+
+for x in range(1, 51):
+    if x != k and cnt[x] >= cover_k:
+        ok = False
+        break
+
+If any point other than k is covered by the same or more valid segments, then k is not the unique ideal point.
+✅ Print the Result
+
+print("YES" if ok else "NO")
+
+Print:
+"YES" → if k is uniquely the most covered point.
+"NO" → otherwise.
+
+⏱️ Time Complexity
+Time Complexity: O(n × 50) ≈ O(n) ✅
+Space Complexity: O(50) ≈ O(1)
+
+🎯 Key Learning
+Always pay attention to the constraints. Even though the problem involves segments, the coordinate range is only 1 to 50, making a simple counting solution much easier than using prefix sums or sweep-line algorithms.
