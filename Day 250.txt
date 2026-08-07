@@ -1,0 +1,90 @@
+🚀 Codeforces Accepted | C. Specialty String 🔤💻
+
+This problem can be solved using a stack. The idea is simple: whenever two adjacent characters are the same, they cancel each other. If the entire string can be removed through these operations, the answer is YES; otherwise, it's NO.
+
+🔗Problem Link: https://lnkd.in/gwEjqbSg
+
+💡 Problem Insight
+We process the string from left to right:
+If the current character is the same as the top of the stack, remove (pop) the top.
+Otherwise, push the current character onto the stack.
+At the end:
+If the stack is empty, every character has been successfully removed → YES
+Otherwise → NO
+This efficiently simulates all valid removals.
+
+⚡ Approach
+Read the string.
+Traverse each character from left to right.
+Use a stack to simulate adjacent pair removals.
+Pop when two consecutive characters match; otherwise, push the character.
+After processing the entire string:
+Empty stack → YES
+Non-empty stack → NO
+Using a stack naturally models the repeated removal of adjacent equal characters.
+
+🔍 Code Explanation
+
+t = int(input())
+
+for _ in range(t):
+    n = int(input())
+    s = input().strip()
+
+    stack = []
+
+    for ch in s:
+        if stack and stack[-1] == ch:
+            stack.pop()
+        else:
+            stack.append(ch)
+
+    print("YES" if not stack else "NO")
+
+✅ Read Input
+
+t = int(input())
+
+Read the number of test cases.
+For each test case:
+
+n = int(input())
+s = input().strip()
+
+Read the string length and the string.
+✅ Initialize the Stack
+
+stack = []
+
+The stack keeps track of characters that have not yet found a matching adjacent character.
+✅ Process Each Character
+
+for ch in s:
+
+Traverse the string one character at a time.
+✅ Remove Matching Adjacent Characters
+
+if stack and stack[-1] == ch:
+    stack.pop()
+
+If the current character matches the top of the stack, remove the pair.
+✅ Otherwise Store the Character
+
+else:
+    stack.append(ch)
+
+If no matching pair exists, keep the character for future comparisons.
+✅ Print the Result
+
+print("YES" if not stack else "NO")
+
+Empty stack → all characters were removed → YES
+Non-empty stack → some characters remain → NO
+
+⏱️ Time Complexity
+Time Complexity: O(n) ✅
+Each character is pushed and popped at most once.
+Space Complexity: O(n)In the worst case, all characters remain in the stack.
+
+🎯 Key Learning
+Whenever a problem involves removing adjacent matching elements repeatedly, a stack is often the simplest and most efficient solution. Each element is processed only once, resulting in a clean linear-time algorithm.
