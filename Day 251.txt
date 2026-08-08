@@ -1,0 +1,73 @@
+🚀 Day 738: Codeforces Problem Solved: Serval and String Theory
+Recently, I solved Problem A — Serval and String Theory from Codeforces Round #1011 (Div. 2).
+
+The problem looks simple, but the key is to identify the right conditions instead of simulating operations. 
+
+🔗Problem Link: https://lnkd.in/gsEDA2AR
+
+🧠 Problem Idea
+A string s is called universal if:
+s < reverse(s)
+
+We need to determine whether it is possible to make the given string universal using at most k operations.
+💡 Approach
+The solution can be reduced to checking three cases:
+1️⃣ Check whether the string is already universal
+
+rev = s[::-1]
+
+if s < rev:
+    print("YES")
+
+If s is already lexicographically smaller than its reverse, no operation is required.
+2️⃣ If it is not universal, check whether we have an operation available
+
+elif k > 0 and len(set(s)) > 1:
+    print("YES")
+
+If:
+k > 0, meaning we can perform an operation, and
+the string contains at least two different characters,
+then we can rearrange it to obtain a universal string.
+3️⃣ Otherwise, the answer is NO
+
+else:
+    print("NO")
+
+This is especially important when all characters are identical, such as:
+aaaa
+
+No rearrangement can make it lexicographically smaller than its reverse.
+🔍 Why len(set(s)) > 1?
+For example:
+s = "aaaa"
+
+Every possible rearrangement is still:
+"aaaa"
+
+So:
+s == reverse(s)
+
+and the answer is NO.
+But for:
+s = "ab"
+
+we have different characters, so rearranging can produce:
+"ab" < "ba"
+
+Therefore, the answer can be YES.
+
+⏱️ Complexity
+For each test case:
+Reversing the string → O(n)
+Creating set(s) → O(n)
+Lexicographical comparison → O(n)
+Therefore:
+Time Complexity: O(n)
+ Space Complexity: O(n)
+The overall solution is linear and easily handles the given constraints. 
+
+💻 Key Learning
+The biggest takeaway for me was:
+Don't simulate when the problem can be reduced to a few logical conditions.
+Competitive programming is not only about writing code quickly — it's about finding the mathematical observation behind the problem.
