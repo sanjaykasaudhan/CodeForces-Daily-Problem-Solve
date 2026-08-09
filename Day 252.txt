@@ -1,0 +1,85 @@
+🚀 Codeforces Problem Solved: Zero Sum
+
+I recently solved Problem A — Zero Sum from Codeforces Round #1111 (Div. 2).
+The problem is a great example of how identifying an invariant can turn a seemingly complicated operation-based problem into a simple mathematical condition.
+
+🔗Problem Link: https://lnkd.in/gXvV5rM4
+
+🧠 Problem Idea
+We are given an array containing only:
+-1 and 1
+
+In one operation, we can choose two adjacent elements and flip both:
+1  → -1
+-1 → 1
+
+The goal is to determine whether we can make the sum of the entire array equal to 0.
+
+💡 Key Observation
+Let:
+
+ones = a.count(1)
+
+Suppose the array has n elements.
+For the sum to become 0, we need an equal number of 1s and -1s.
+Therefore, n must be even and the required number of 1s is:
+n / 2
+
+Now comes the important observation:
+🔑 The parity of the number of 1s never changes.
+When we flip two elements:
+1, 1 → -1, -1 → number of 1s decreases by 2
+-1, -1 → 1, 1 → number of 1s increases by 2
+1, -1 → -1, 1 → number of 1s remains unchanged
+So the parity (odd/even) of the number of 1s remains invariant.
+Therefore, we only need to check:
+
+n % 2 == 0 and ones % 2 == (n // 2) % 2
+
+If this condition is true → YES
+ Otherwise → NO.
+
+💻 Code
+
+t = int(input())
+
+for _ in range(t):
+    n = int(input())
+    a = list(map(int, input().split()))
+
+    ones = a.count(1)
+
+    if n % 2 == 0 and ones % 2 == (n // 2) % 2:
+        print("YES")
+    else:
+        print("NO")
+
+🔍 Example
+Consider:
+n = 4
+a = [1, 1, -1, -1]
+
+Here:
+ones = 2
+n/2 = 2
+
+Both have the same parity → YES.
+But for:
+n = 4
+a = [1, -1, -1, -1]
+
+ones = 1
+n/2 = 2
+
+Odd ≠ Even → NO.
+
+⏱️ Complexity
+For each test case:
+Counting 1s → O(n)
+Remaining operations → O(1)
+Time Complexity: O(n)
+ Space Complexity: O(n) because of storing the array.
+
+🎯 Key Takeaway
+The trick is not to simulate every operation. Find what remains unchanged after every operation.
+Here, the parity of the number of 1s is the invariant that gives us the answer directly.
