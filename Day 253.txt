@@ -1,0 +1,61 @@
+🚀 Codeforces Problem Solved: Not a Substring
+
+I recently solved Problem A — Not a Substring from Educational Codeforces Round 153 (Rated for Div. 2).
+This problem is a great example of how a simple observation can completely simplify a problem.
+
+🔗Problem Link: https://lnkd.in/g8RFmChD
+
+🧠 Problem Idea
+We are given a string s consisting of ( and ).
+The goal is to construct a regular bracket sequence of length 2n such that the given string s does not appear as a substring.
+
+💡 Key Observation
+Instead of trying to construct the answer character by character, we can look at the structure of s.
+There are only three cases:
+1️⃣ s contains )(
+If:
+")( " ∈ s
+
+we can simply construct:
+((...))((...))
+
+which avoids the required substring.
+2️⃣ s contains ( or )
+If the string contains only one type of bracket, we can use:
+()()()()...
+
+This creates a valid regular bracket sequence while avoiding the required substring.
+3️⃣ Otherwise → NO
+If none of the above conditions help, constructing the required sequence is impossible.
+
+💻 Code
+
+t = int(input())
+
+for _ in range(t):
+    s = input().strip()
+    n = len(s)
+
+    if ")(" in s:
+        print("YES")
+        print("(" * n + ")" * n)
+
+    elif "(" in s or ")" in s:
+        print("YES")
+        print("()" * n)
+
+    else:
+        print("NO")
+
+⏱️ Complexity
+For each test case:
+Searching for a substring → O(n)
+Checking characters → O(n)
+Constructing the answer → O(n)
+Therefore:
+Time Complexity: O(n)
+ Space Complexity: O(n) for the constructed output.
+
+🎯 Key Takeaway
+Sometimes the hardest part of a competitive programming problem is not implementation — it's finding the right construction.
+Once the possible patterns are identified, the solution becomes very simple.
