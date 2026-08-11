@@ -1,0 +1,123 @@
+🚀 Codeforces Problem Solved: Is it Rated?
+
+I recently solved Problem A — Is it Rated? from Codeforces Round #412 (Div. 2).
+This problem is a great example of using simple conditions and maintaining the order of data instead of overcomplicating the solution.
+
+🧠 Problem Idea
+For each participant, we are given:
+a → rating before the contest
+b → rating after the contest
+We need to determine whether the contest was:
+Rated
+Unrated
+Maybe
+
+🔗Problem Link: https://lnkd.in/gRHD59hq
+
+💡 Approach
+There are 3 cases to consider.
+1️⃣ If any participant's rating changed → rated
+We compare the rating before and after:
+
+if a != b:
+    changed = True
+
+If even one participant's rating changes, the contest is definitely rated.
+2️⃣ If nobody's rating changed, check the standings order
+If:
+before rating = after rating
+
+for everyone, the contest may still be unrated.
+We check whether the ratings are in the correct order according to the standings.
+Since participants are listed from top to bottom, their ratings should also be in non-increasing order.
+For every adjacent pair:
+
+if ratings[i] > ratings[i - 1]:
+    sorted_standings = False
+
+If a lower-ranked participant has a higher rating than the participant above them, the standings order has changed.
+Therefore → unrated.
+3️⃣ Otherwise → maybe
+If:
+No participant's rating changed, and
+The rating order is still consistent with the standings,
+then we cannot determine whether the contest was rated.
+So the answer is:
+maybe
+
+💻 Python Solution
+
+n = int(input())
+
+ratings = []
+changed = False
+
+for _ in range(n):
+    a, b = map(int, input().split())
+    ratings.append(a)
+
+    if a != b:
+        changed = True
+
+if changed:
+    print("rated")
+else:
+    sorted_standings = True
+
+    for i in range(1, n):
+        if ratings[i] > ratings[i - 1]:
+            sorted_standings = False
+            break
+
+    if sorted_standings:
+        print("maybe")
+    else:
+        print("unrated")
+
+🔍 Quick Example
+Suppose the ratings before the contest are:
+3000
+2500
+2000
+1500
+
+They are in decreasing order, so the standings are consistent.
+If nobody's rating changes:
+3000 → 3000
+2500 → 2500
+2000 → 2000
+1500 → 1500
+
+The answer is:
+maybe
+
+But if we have:
+3000
+2000
+2500
+1500
+
+Here, 2500 appears below 2000, meaning the ranking order doesn't match the rating order.
+Therefore:
+unrated
+
+⏱️ Complexity
+We process each participant only once.
+Time Complexity: O(n)
+ Space Complexity: O(n)
+The O(n) space is used to store the ratings.
+
+🎯 Key Takeaway
+When a problem gives you multiple possible outcomes, break the problem into mutually exclusive cases and identify the condition that proves each case.
+For this problem:
+Rating changed?
+      ↓
+     YES → rated
+
+     NO
+      ↓
+Is rating order preserved?
+   ↓             ↓
+  YES           NO
+   ↓             ↓
+ maybe        unrated
