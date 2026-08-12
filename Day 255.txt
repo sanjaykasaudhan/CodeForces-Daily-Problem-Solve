@@ -1,0 +1,106 @@
+🚀 Codeforces Problem Solved: Triangle
+
+I recently solved Problem A — Triangle from Codeforces Beta Round #6 (Div. 2 Only).
+This problem is a nice example of using combinations + the triangle inequality to find the answer efficiently.
+
+🔗Problem Link: https://lnkd.in/gtsq_5Sz
+
+🧠 Problem Idea
+We are given a set of segment lengths and need to determine what kind of triangle can be formed using any three segments.
+For three sides x, y, z, after sorting them:
+x ≤ y ≤ z
+
+the triangle condition is:
+x + y > z
+
+If this condition is satisfied, the three segments can form a TRIANGLE.
+If not, we need to determine whether the three segments can form a SEGMENT — meaning one side is exactly equal to the sum of the other two:
+x + y = z
+
+Otherwise, the answer is:
+IMPOSSIBLE
+
+💡 Approach
+Since we only need to select 3 segments, we can check every possible combination of three elements.
+Python's combinations() makes this simple:
+
+for x, y, z in combinations(a, 3):
+
+For every combination, sort the three sides:
+
+sides = sorted([x, y, z])
+
+Then check the conditions in order.
+1️⃣ Check for a valid triangle
+
+if sides[0] + sides[1] > sides[2]:
+ print("TRIANGLE")
+ break
+
+If even one combination satisfies the triangle inequality, the answer is immediately TRIANGLE.
+2️⃣ Check for a segment
+If no triangle exists, we check:
+
+if sides[0] + sides[1] == sides[2]:
+ has_segment = True
+
+If such a combination exists, the answer is SEGMENT.
+3️⃣ Otherwise → IMPOSSIBLE
+If neither condition is satisfied:
+IMPOSSIBLE
+
+💻 Python Code
+
+from itertools import combinations
+
+a = list(map(int, input().split()))
+
+has_segment = False
+
+for x, y, z in combinations(a, 3):
+ sides = sorted([x, y, z])
+
+ if sides[0] + sides[1] > sides[2]:
+ print("TRIANGLE")
+ break
+
+ if sides[0] + sides[1] == sides[2]:
+ has_segment = True
+
+else:
+ if has_segment:
+ print("SEGMENT")
+ else:
+ print("IMPOSSIBLE")
+
+🔍 Example
+For:
+4 2 1 3
+
+Consider:
+1, 2, 3
+
+Here:
+1 + 2 = 3
+
+So these segments form a straight segment.
+But:
+2, 3, 4
+
+satisfy:
+2 + 3 > 4
+
+Therefore, a valid triangle exists, so the final answer is:
+TRIANGLE
+
+⏱️ Complexity
+If there are n segments, we check every combination of 3:
+Number of combinations: C(n, 3)
+Therefore:
+Time Complexity: O(n³)
+ Space Complexity: O(1) auxiliary space
+Sorting only 3 elements takes constant time, so it doesn't change the overall complexity.
+
+🎯 Key Takeaway
+When n is small, brute-force enumeration can be the cleanest and safest solution.
+Instead of trying to construct a triangle directly, we simply examine every possible group of 3 segments and apply the triangle inequality.
