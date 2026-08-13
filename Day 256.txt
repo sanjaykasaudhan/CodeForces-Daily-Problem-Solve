@@ -1,0 +1,73 @@
+🚀 Codeforces Problem Solved: Another Divisibility Problem
+
+I recently solved Problem B — Another Divisibility Problem from Codeforces Round #1049 (Div. 2).
+At first glance, the problem looks like it requires searching for a suitable y. But the interesting part is that we can construct y directly using a simple mathematical observation.
+
+🔗Problem Link: https://lnkd.in/g2vQrWJ2
+
+🧠 Problem Idea
+Given a positive integer x, we need to find a positive integer y such that the number formed by concatenating x and y is divisible by:
+x + y
+For example:
+x = 123
+y = 456
+x#y = 123456
+
+💡 Key Observation
+We can choose:
+y = 999999999 - x
+Therefore:
+x + y = 999999999
+Now, because x < 10^8, the value of y is always a 9-digit number.
+So concatenating x and y gives:
+x#y = x × 10^9 + y
+Substitute:
+y = 999999999 - x
+We get:
+x#y = x × 10^9 + 999999999 - x
+
+     = x(10^9 - 1) + 999999999
+
+     = 999999999x + 999999999
+
+     = 999999999(x + 1)
+And since:
+x + y = 999999999
+we have:
+x#y = (x + y)(x + 1)
+Therefore, x#y is always divisible by x + y. 🎯
+
+💻 Python Solution
+t = int(input())
+
+for _ in range(t):
+    x = int(input())
+    y = 999999999 - x
+    print(y)
+That's it!
+No brute force.
+No iteration over possible values of y.
+Just one mathematical construction. 🔥
+
+🔍 Example
+For:
+x = 8
+we choose:
+y = 999999999 - 8
+  = 999999991
+Then:
+x + y = 999999999
+and:
+x#y = 8999999991
+Since:
+8999999991 = 999999999 × 9
+the condition is satisfied.
+
+⏱️ Complexity
+For every test case, we perform only a constant number of arithmetic operations.
+Time Complexity: O(1)
+Space Complexity: O(1)
+
+🎯 Key Takeaway
+Don't always search for an answer — sometimes you can construct one.
+This problem was a great reminder that in competitive programming, a small mathematical observation can completely eliminate brute force.
