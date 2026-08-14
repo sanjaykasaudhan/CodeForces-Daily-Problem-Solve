@@ -1,0 +1,76 @@
+🚀 Codeforces Problem Solved: farmpiggie and Subset Sum
+
+I recently solved Problem A — farmpiggie and Subset Sum from Codeforces Round 1108 (Div. 2). The problem is a great example of how a simple parity observation can turn a seemingly complex subset-sum problem into a straightforward construction.
+
+🔗Problem Link: https://lnkd.in/g4e2Uve7
+
+🧠 Problem Idea
+We are given an even integer n and need to construct a permutation p of 1...n.
+For every position i, we can choose:
+-i × p[i]
+0
++i × p[i]
+The goal is to construct the permutation so that no matter which choices are made, the final sum can never be ****1.
+
+💡 Key Observation: Think About Parity!
+Instead of trying to control every possible sum, we only need to make sure that every possible contribution is even.
+If every value:
+i × p[i]
+is even, then any combination of:
+±(i × p[i]) or 0
+will also produce an even final sum.
+And an even number can never be 1. 🎯
+
+🔑 Construction
+Start with the identity permutation:
+1 2 3 4 5 6 ...
+Then swap every adjacent pair:
+1 2 3 4 5 6
+↓
+2 1 4 3 6 5
+So the permutation becomes:
+[2, 1, 4, 3, 6, 5, ...]
+Now observe:
+Odd position → gets an even number
+Even position → gets an odd number
+Therefore:
+odd × even = even
+even × odd = even
+So every i × p[i] is even.
+Hence, regardless of which operations are chosen, the final value is always even:
+c_final ≠ 1
+
+🔍 Example
+For:
+n = 6
+Initially:
+1 2 3 4 5 6
+After swapping adjacent pairs:
+2 1 4 3 6 5
+Now:
+1 × 2 = 2
+2 × 1 = 2
+3 × 4 = 12
+4 × 3 = 12
+5 × 6 = 30
+6 × 5 = 30
+Every value is even.
+Therefore, any sum formed using positive, negative, or zero contributions will also be even.
+So obtaining:
+c_final = 1
+is impossible.
+
+⏱️ Complexity
+For each test case:
+Creating the permutation → O(n)
+Swapping adjacent elements → O(n)
+Printing the permutation → O(n)
+Time Complexity: O(n)
+Space Complexity: O(n)
+
+🎯 Key Takeaway
+When a problem asks you to avoid one particular value, look for an invariant that makes that value impossible.
+Here, the invariant is parity.
+Instead of considering exponentially many possible combinations of operations, we make every possible contribution even. That immediately eliminates 1 from the set of possible final sums.
+This was a great reminder that in competitive programming:
+Observation > Brute Force 🔥
