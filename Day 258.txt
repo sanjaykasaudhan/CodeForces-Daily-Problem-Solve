@@ -1,0 +1,60 @@
+🚀 Codeforces Problem Solved: Riptide
+
+I recently solved Problem A — Riptide from Codeforces Round 1114 (Div. 3).
+This problem is a nice example of simulation + careful observation. The key is to understand which players' token counts actually change in every round.
+
+🔗Problem Link: https://lnkd.in/gu73DwfX
+
+🧠 Problem Idea
+Alice, Bob, and Charlie start with:
+a, b, c
+tokens.
+Before every round, we check whether any two players have the same number of tokens.
+If two values become equal, the game stops.
+Otherwise, during each round, the players with the minimum and maximum number of tokens each receive one additional token.
+The process continues until two players have the same number of tokens.
+
+💡 Approach
+First, we make sure all three values are different:
+while a != b and b != c and a != c:
+For every round, we store the current token counts:
+players = [a, b, c]
+Then find the minimum and maximum:
+mn = min(players)
+mx = max(players)
+The important observation is:
+The player with the minimum gets +1
+The player with the maximum gets +1
+The middle value remains unchanged
+So:
+players[players.index(mx)] += 1
+players[players.index(mn)] += 1
+After updating the values, we continue the simulation.
+Eventually, the minimum value catches up with the middle value, creating an equality and ending the game.
+
+🔍 Example
+Consider:
+a = 1, b = 2, c = 3
+Initial state:
+1 2 3
+Minimum = 1, maximum = 3
+After one round:
+2 2 4
+Now Alice and Bob have the same number of tokens.
+Therefore, the game ends after:
+1 round
+
+⏱️ Complexity
+Each round performs only a constant number of operations:
+Finding minimum → O(1)
+Finding maximum → O(1)
+Updating values → O(1)
+If the game lasts R rounds:
+Time Complexity: O(R)
+Space Complexity: O(1)
+The number of rounds depends on the initial difference between the minimum and middle values.
+
+🎯 Key Takeaway
+Simulation problems become much easier when you clearly identify what changes and what stays unchanged in each step.
+Instead of trying to predict every possible state, we simply:
+Find min → Find max → Update → Check → Repeat
