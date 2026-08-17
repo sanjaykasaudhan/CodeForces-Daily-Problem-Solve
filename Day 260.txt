@@ -1,0 +1,84 @@
+🚀 Codeforces Problem Solved: Iskander and Drawings
+
+I recently solved Problem A — Iskander and Drawings from Codeforces Round 1109 (Div. 3).
+This problem is a great example of string traversal + finding the longest consecutive segment. The key observation makes the solution very simple.
+
+🔗Problem Link: https://lnkd.in/gzhe6448
+
+🧠 Problem Idea
+The page is represented by a string:
+# → 1 centimeter of a drawn line
+* → empty space
+A continuous sequence of # characters represents one line.
+For example:
+#*###**####
+contains lines of lengths:
+1, 3, 4
+We need to choose the line that takes the maximum amount of time to erase.
+
+💡 Key Observation
+During every second, one centimeter is erased from both ends of the selected line.
+So if a line has length L, approximately two centimeters disappear per second.
+The required time is:
+ceil(L / 2)
+In integer arithmetic:
+(L + 1) // 2
+Therefore, the entire problem reduces to:
+Find the longest consecutive sequence of # and calculate (length + 1) // 2.
+
+🔍 Step 1: Find the Longest Line
+We scan the string from left to right.
+Whenever we encounter #:
+current += 1
+We increase the current line length.
+When we encounter *:
+current = 0
+The current line has ended, so we reset the counter.
+At the same time, we keep track of the maximum:
+max_len = max(max_len, current)
+
+🔍 Step 2: Calculate the Answer
+Once we know the longest line:
+print((max_len + 1) // 2)
+This gives the maximum number of seconds required.
+For example:
+Line length = 7
+
+7 → 4 seconds
+because:
+7 → 5 → 3 → 1 → erased
+So:
+ceil(7 / 2) = 4
+
+🔍 Example
+Consider:
+s = "#*###**####"
+The consecutive # segments are:
+#
+###
+####
+The longest line has length:
+4
+Therefore:
+answer = (4 + 1) // 2
+ = 2
+So the maximum time required is:
+2 seconds
+
+⏱️ Complexity
+We scan the string only once.
+Time Complexity: O(n)
+Space Complexity: O(1)
+No extra array or data structure is required.
+
+🎯 Key Takeaway
+When a problem involves continuous segments in a string, a simple one-pass scan is often enough.
+The complete logic is:
+Find consecutive '#'
+ ↓
+Track maximum length
+ ↓
+ceil(max_length / 2)
+ ↓
+Answer
+A small observation + a single traversal = Accepted ✅
