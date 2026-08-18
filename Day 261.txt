@@ -1,0 +1,100 @@
+🚀 Codeforces Problem Solved: Bigrams
+
+I recently solved Problem A — Bigrams from Educational Codeforces Round 192 (Rated for Div. 2).
+This problem is a great example of how a seemingly complicated string construction problem can be reduced to a simple frequency observation.
+
+🔗Problem Link: https://lnkd.in/gQ_cVyC6
+
+🧠 Problem Idea
+We are given k different letters and the number of cards available for each letter.
+We need to arrange all cards into a string such that at least two equal bigrams appear.
+A bigram is simply a pair of adjacent characters.
+For example:
+aabab has bigrams: aa, ab, ba, ab
+Here, ab appears twice, so the condition is satisfied.
+The challenge is to determine whether such a string can be constructed.
+
+💡 Key Observation
+We don't actually need to construct the entire string.
+There are only two ways to guarantee a repeated bigram.
+1️⃣ One letter appears at least 3 times
+Suppose:
+a = 3
+We can arrange:
+aaa
+Its bigrams are:
+aa, aa
+So aa appears twice.
+Therefore:
+any(c_i >= 3) → YES
+2️⃣ Two different letters appear at least twice
+Suppose:
+a = 2
+b = 2
+We can arrange:
+aabb
+Its bigrams are:
+aa, ab, bb
+This example itself does not repeat a bigram, but we can arrange the cards as:
+aabab
+which gives:
+aa, ab, ba, ab
+Now ab appears twice.
+Therefore, if at least two different letters have frequency ≥ 2, the answer is also YES.
+This gives the complete condition:
+YES if:
+    any frequency >= 3
+OR
+    at least two frequencies >= 2
+This is also the core observation used in the official editorial.
+
+🔍 Understanding the Code
+First, we check whether any letter occurs at least 3 times:
+count_3 = any(x >= 3 for x in c)
+any() returns True as soon as it finds one frequency satisfying the condition.
+Then we count how many letters occur at least twice:
+count_2 = sum(x >= 2 for x in c)
+In Python, True behaves like 1 and False like 0, so this effectively counts the number of frequencies satisfying x >= 2.
+Finally:
+if count_3 or count_2 >= 2:
+    print("YES")
+else:
+    print("NO")
+🔍 Example 1
+c = [3]
+We have:
+3 >= 3
+So we can make:
+aaa
+and obtain:
+aa, aa
+Answer:
+YES
+🔍 Example 2
+c = [2, 2]
+Two different letters occur at least twice.
+We can construct a string containing a repeated bigram such as:
+aabab
+Therefore:
+YES
+🔍 Example 3
+c = [1, 1, 2]
+Only one letter occurs twice, and no letter occurs three times.
+There is not enough repetition to guarantee two identical bigrams.
+Therefore:
+NO
+
+⏱️ Complexity
+For each test case, we scan the k frequencies a constant number of times.
+Time Complexity: O(k)
+Space Complexity: O(k) for storing the frequency array.
+Since k ≤ 10, this solution is extremely efficient.
+
+🎯 Key Takeaway
+You don't always need to construct the answer to prove that a construction exists. Sometimes, frequency information is enough.
+For this problem, the entire construction reduces to one simple observation:
+One letter × 3
+        OR
+Two letters × 2
+        ↓
+Repeated bigram is possible
