@@ -1,0 +1,90 @@
+🚀 Codeforces Problem Solved: You Delete, I Delete
+
+I recently solved Problem A — You Delete, I Delete from Codeforces Round 1113 (Div. 2).
+This problem is a great example of a Greedy Algorithm where understanding the players' objectives is more important than complicated implementation.
+
+🔗Problem Link: https://lnkd.in/eXv7EPTY
+
+🧠 Problem Idea
+We are given a binary string containing at least one 0 and one 1.
+Two players make one move each:
+Alice deletes one 0.
+Bob then deletes one 1.
+Alice wants the final string to be lexicographically as large as possible.
+Bob wants the final string to be lexicographically as small as possible. 
+The question is:
+What will the final string look like if both players play optimally?
+
+💡 Key Greedy Observation
+The important question is:
+Which 0 should Alice delete?
+Suppose there are multiple 0s.
+Deleting an earlier 0 is always better for Alice because removing it can bring a 1 earlier in the resulting string.
+Since:
+1 > 0
+
+Alice wants to expose 1 as early as possible.
+Therefore:
+👉 Alice deletes the first 0.
+🤔 What about Bob?
+After Alice removes the first 0, Bob wants the resulting string to be as small as possible.
+Therefore, Bob should remove the first 1.
+So the entire game reduces to:
+Find first 0 → remove it
+Find first 1 → remove it
+
+That's the whole greedy strategy!
+The official editorial gives the same conclusion: the final answer is the original string with its first 0 and first 1 removed. 
+🔍 Example
+Consider:
+11001
+
+Step 1 — Alice
+The first 0 is at position 3.
+Remove it:
+1101
+
+Step 2 — Bob
+The first 1 is at position 1.
+Remove it:
+101
+
+Final answer:
+101
+
+🔎 Why does this work?
+The strategy can be summarized as:
+Alice
+ ↓
+Remove earliest 0
+ ↓
+Bring a 1 forward
+ ↓
+Bob
+ ↓
+Remove earliest 1
+ ↓
+Lexicographically smallest result
+
+There is no need for dynamic programming, sorting, or complicated data structures.
+Just one greedy observation.
+
+⏱️ Complexity
+For a string of length n:
+Finding the first 0 → O(n)
+Removing it → O(n) because of string slicing
+Finding the first 1 → O(n)
+Removing it → O(n)
+Overall:
+Time Complexity: O(n)
+Space Complexity: O(n)
+The official editorial also gives an O(n) solution. 
+
+🎯 Key Takeaway
+In greedy problems, understanding what each player wants can reveal the optimal move immediately.
+The important insight here wasn't about manipulating strings.
+It was about recognizing:
+Alice wants the string as large as possible → remove the first 0.
+Bob wants the string as small as possible → remove the first 1.
+That's competitive programming for me:
+Understand → Observe → Prove → Implement → Accept ✅
