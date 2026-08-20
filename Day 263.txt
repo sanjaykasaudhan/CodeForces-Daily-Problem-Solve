@@ -1,0 +1,83 @@
+🚀 Codeforces Problem Solved: Who Watches the Watchpig?
+
+I recently solved Problem A — Who Watches the Watchpig? from Spectral::Cup 2026 Round 3 (Codeforces Round 1110, Div. 1 + Div. 2).
+This problem is a great example of a Greedy approach based on identifying forced choices. The problem is rated 800 and tagged as greedy on Codeforces. 
+
+🔗Problem Link: https://lnkd.in/gsQTy9gp
+
+🐷 Problem Idea
+There are n piggies standing in a line.
+Each piggy faces either:
+L → Left
+R → Right
+A pair (x, y) is called a watchpig pair if:
+x < y
+x faces R
+y faces L
+
+A piggy is considered safe if it belongs to at least k such pairs.
+We are allowed to flip the direction of piggies, and our goal is to find the minimum number of flips required to make every piggy safe. If it is impossible, we print -1. 
+
+💡 The Key Greedy Observation
+The most important question is:
+Which piggies are forced to face a particular direction?
+Consider the first k piggies.
+A piggy among the first k positions cannot have k piggies before it.
+Therefore, to participate in at least k pairs, it must face right (R), so that it can pair with piggies to its right facing L.
+Similarly, consider the last k piggies.
+They cannot have k piggies after them.
+Therefore, they must face left (L).
+So we have:
+First k positions  → must be R
+Last k positions   → must be L
+
+This immediately gives us the minimum flips.
+🚨 When Is It Impossible?
+What if:
+2 × k > n
+
+Then the first k positions and last k positions overlap.
+That means at least one piggy would simultaneously need to be:
+R
+
+because it belongs to the first k positions, and
+L
+
+because it belongs to the last k positions.
+That's impossible.
+Therefore:
+
+if 2 * k > n:
+    print("-1")
+
+🔍 Counting the Required Flips
+If 2k <= n, the two groups don't overlap.
+For the first k piggies:
+
+s[:k].count('L')
+
+Any L here must be flipped to R.
+For the last k piggies:
+
+s[n-k:].count('R')
+
+Any R here must be flipped to L.
+Therefore:
+
+ans = s[:k].count('L') + s[n-k:].count('R')
+
+That's the entire greedy solution.
+
+⏱️ Complexity
+We scan/count characters in the string.
+Time Complexity: O(n) per test case.
+Because the Python implementation creates the two slices s[:k] and s[n-k:], the additional space used is O(n) in the worst case.
+The algorithm itself only needs to inspect the boundary regions, so it can also be implemented with O(1) auxiliary space using direct indexing.
+
+🎯 Key Takeaway
+A powerful greedy technique is to identify what choices are forced before trying to optimize anything else.
+For this problem:
+First k → must face R
+ Last k → must face L
+ Overlap → impossible
+That's enough to solve the entire problem.
