@@ -1,0 +1,37 @@
+🚀 Codeforces Round #1116 (Div. 2) — Problem A: Three Numbers on the Blackboard
+I recently solved Problem A — Three Numbers on the Blackboard on Codeforces. ✅
+Here’s a quick breakdown of the approach and complexity.
+
+🔗Problem Link: https://lnkd.in/garjjma4
+
+💡 Approach
+For each test case, we are given three non-negative integers a, b, and c.
+The key observation is that after sorting the three numbers:
+a ≤ b ≤ c
+we only need to compare two possible values:
+c - a → the difference between the maximum and minimum
+b → the middle value
+So the answer is:
+min(c - a, b)
+
+🔍 Why does this work?
+After sorting, the middle number b represents one possible way to balance the values, while c - a represents the amount needed to cover the gap between the smallest and largest numbers.
+Therefore, the minimum of these two values gives the optimal answer.
+
+🧑‍💻 Code Logic
+a, b, c = sorted(map(int, input().split()))
+
+ans1 = c - a
+ans2 = b
+
+print(min(ans1, ans2))
+The sorted() function makes it easy to identify the minimum, middle, and maximum values.
+
+⏱️ Complexity
+For each test case:
+Time Complexity: O(1)
+Sorting only 3 numbers takes constant time.
+Space Complexity: O(1)
+
+📌 Key Takeaway
+Sometimes a competitive programming problem looks more complicated than it actually is. The important part is identifying the mathematical observation that reduces the problem to a simple comparison.
