@@ -1,0 +1,18 @@
+🚀 Just cracked another interesting problem on Codeforces!
+I recently solved (A) Boss Fight from Codeforces Round 1115 (Div. 2). I wanted to share my approach and a quick breakdown of the logic for anyone interested in competitive programming or array manipulation! 💡
+
+🔗Problem Link: https://lnkd.in/gBcAxYRP
+
+🛠️ The Approach
+The core of the problem revolves around frequency analysis and determining if a specific arrangement is possible based on the most frequent element. Here is how I tackled it:
+
+Fast I/O Setup: To handle large test cases efficiently, I used sys.stdin.read().split() to read all inputs into memory at once instead of repeatedly calling input(). This significantly reduces overhead.
+
+Frequency Counting: I leveraged Python’s collections.Counter to quickly map each unique value in the array to its frequency.
+Identifying the Dominant Element: I iterated through the frequency map to find max_freq (the highest frequency of any single element) and its corresponding value.
+
+Arrangement Logic: I calculated S = n - max_freq, which represents the count of all other elements in the array. The condition if max_freq <= S + 2: checks if the most frequent element can be distributed without breaking the problem's constraints (a classic variation of the pigeonhole principle used in majority-element problems).
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per test case. Creating the array, counting frequencies with Counter, and finding the maximum frequency all require a single pass through the elements. Overall time complexity across $t$ test cases is bounded by O(ΣN), which easily passes within standard time limits.
+Space/Memory Complexity: O(N) per test case. This is required to store the list of elements and the hash map (Counter) for the distinct values.
