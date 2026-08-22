@@ -1,0 +1,34 @@
+🚀My Coding Journey | Codeforces
+Today I solved Educational Codeforces Round 193 (Rated for Div. 2) — Problem A: The Best Card using Python. ✅
+The problem is a great example of how a simple mathematical observation can turn into a clean implementation.
+
+🔗Problem Link: https://lnkd.in/gKdv4ett
+
+💡 Approach
+For every given number n, the task is to determine whether n + 1 is a prime number.
+I created a helper function is_prime() that checks whether a number is prime:
+If the number is less than 2, it is not prime.
+Try dividing the number by every integer from 2 to √n.
+If any number divides it completely, it is not prime.
+Otherwise, it is prime.
+Then, for every test case:
+if is_prime(n + 1):
+ print("YES")
+else:
+ print("NO")
+
+🔍 Why check only up to √n?
+If a number n has a factor greater than √n, its corresponding factor must be smaller than √n.
+So, if no number from 2 to √n divides n, the number must be prime.
+
+⏱️ Complexity
+For each test case:
+Time Complexity: O(√n)
+Space Complexity: O(1)
+For T test cases, the overall complexity is approximately:
+O(T × √n)
+
+🧠 Key Takeaway
+A useful competitive programming habit I'm building is:
+Don't check more than you need to.
+Instead of testing every number up to n, checking only up to √n makes prime checking significantly more efficient.
