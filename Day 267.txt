@@ -1,0 +1,22 @@
+🚀Keeping the momentum going on Codeforces!
+Just successfully solved (A) Threshold Movement from Codeforces Round 1112 (Div. 2). I wanted to break down my thought process and the Pythonic approach I used to tackle this one! 💡
+
+🔗Problem Link: https://lnkd.in/d25dAipp
+
+🛠️ The Approach
+This problem fundamentally relies on parity (odd/even indexing) and comparing extreme values within those subsets. Here is the step-by-step logic:
+Fast I/O: Like always, I used sys.stdin.read().split() to read the entire input stream into memory at once, avoiding the overhead of repetitive input() calls.
+
+The Odd-Length Trap: The very first check is if n % 2 != 0:. If the array has an odd length, it's impossible to satisfy the condition, so we immediately append "NO" to our results.
+
+Pythonic Slicing for Parity: For even-length arrays, I needed to separate elements based on their positions. Python's extended slicing is perfect for this:
+w[0::2] grabs all elements at even indices (0, 2, 4...).
+w[1::2] grabs all elements at odd indices (1, 3, 5...).
+The Core Logic: I extracted the minimum value from the even-indexed elements (min_odd) and the maximum value from the odd-indexed elements (max_even).
+
+The Threshold Check: The final condition boils down to a simple mathematical check: if min_odd - max_even >= 2. If the difference meets or exceeds this threshold, the answer is "YES"; otherwise, "NO".
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per test case. Slicing the array takes linear time, and finding the min() and max() of those slices also takes linear time. The overall time complexity across $t$ test cases is bounded by O(ΣN), which easily runs within the time limits.
+
+Space/Memory Complexity: O(N) per test case. Storing the array of size $N$ and generating the slices requires linear extra space. The results array takes O(t) space, which is highly efficient.
