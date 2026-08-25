@@ -1,0 +1,21 @@
+🚀 Another day, another Codeforces problem solved!
+I just wrapped up (B) Candies Division from Codeforces Round 611 (Div. 3). I love when a problem looks like it might require a loop or simulation, but can actually be solved with pure O(1) math! Here is a quick breakdown of my approach. 💡
+
+🔗Problem Link: https://lnkd.in/dCQChCtX
+
+🛠️ The Approach
+The goal is to distribute n candies among k kids such that everyone gets roughly the same amount, but we are allowed to give exactly one extra candy to at most half of the kids (k // 2). Here is how I structured the logic:
+Fast I/O: Continuing the trend, I used sys.stdin.read().split() to read all inputs instantly, bypassing the slow I/O bottleneck in Python.
+
+Calculating Base Candies: First, I determined how many candies can be perfectly divided among all k kids. The expression n - (n % k) efficiently strips away the remainder, giving us the exact number of candies distributed if everyone gets the exact same base amount.
+
+Handling the Leftovers: After the even distribution, we have n % k candies left over. The problem constraints dictate that we can only give out an extra candy to a maximum of k // 2 kids. So, the number of extra candies we can actually hand out is simply min(n % k, k // 2).
+
+The Final Answer: The maximum candies we can distribute is just the sum of the base_candies and the extra_candies.
+
+⏱️ Complexity Analysis
+Time Complexity: O(1) per test case! Since we are only doing basic arithmetic operations (modulo, division, subtraction), there is no need to iterate. For $t$ test cases, the overall time complexity is O(t), which is as fast as it gets.
+
+Space/Memory Complexity: O(1) auxiliary space per test case. The only extra memory used is the array to store the final output strings before joining and printing them all at once.
+
+Finding that clean, mathematical O(1) solution is always a great feeling. ✅
