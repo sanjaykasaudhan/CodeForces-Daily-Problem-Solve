@@ -1,0 +1,17 @@
+🚀 Keeping the problem-solving streak alive on Codeforces!
+I just tackled (A) Wet Shark and Odd and Even from Codeforces Round 341 (Div. 2). This problem is a brilliant reminder of how a little bit of mathematical intuition can turn a potentially complex problem into a highly efficient and simple solution. Here is a breakdown of my approach! 💡
+
+🔗Problem Link: https://lnkd.in/dbsKXAzj
+
+🛠️ The Approach
+The objective is to find the maximum possible even sum from a given sequence of numbers. Instead of generating all possible combinations, we can use the properties of odd and even numbers:
+The Mathematical Insight: The sum of any amount of even numbers is always even. The sum of an even count of odd numbers is even, but the sum of an odd count of odd numbers is odd.
+Total Sum Calculation: I started by calculating the sum of all elements in the array.
+Parity Check: If the total_sum is already even (total_sum % 2 == 0), we are done! That is our maximum possible even sum.
+Handling the Odd Case: If the total_sum is odd, it means our array contains an odd number of odd integers. To make the total sum even while keeping it as large as possible, we only need to remove exactly one odd number. Specifically, we must remove the smallest odd number in the sequence.
+The Logic Execution: I initialized min_odd to infinity and iterated through the array to find the smallest odd integer. The final answer is simply total_sum - min_odd.
+
+⏱️ Complexity Analysis
+Time Complexity: O(N). We only need a couple of linear passes through the array—one to calculate the total sum using Python's built-in sum() and another loop to find the minimum odd number. It is highly efficient and easily handles the maximum constraints.
+Space/Memory Complexity: O(N) to store the parsed input numbers in a list.
+I love problems like this where understanding the underlying math completely eliminates the need for complex algorithms! ✅
