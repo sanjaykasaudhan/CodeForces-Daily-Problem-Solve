@@ -1,0 +1,16 @@
+🚀 Keeping the momentum going on Codeforces!
+I recently tackled (B) Gigantomachy from Codeforces Round 1117 (Div. 2). This problem was a great exercise in identifying mathematical shortcuts instead of blindly processing all the provided data. Here is a quick breakdown of my approach! 💡
+
+🔗Problem Link: https://lnkd.in/dVvrX9QR
+
+🛠️ The Approach
+The problem provides two sequences (of lengths n and m), but processing every single element isn't actually necessary to determine the outcome. Here is how I optimized the solution:
+Fast I/O & Pointer Manipulation: I used sys.stdin.read().split() to pull all inputs into a single list. Instead of slicing or iterating through the arrays for each test case, I manually managed an index pointer (idx).
+Clever Skipping: I extracted the first element of the first sequence (a_1) and then immediately jumped the pointer forward by n (idx += n). This effectively skips reading the rest of the array, saving processing time. I repeated this exact logic for the second sequence (b_1 and jumping by m).
+The Core Logic: The crux of the problem boils down to evaluating a specific potential maximum or threshold for each side. I calculated H_A = a_1 + n - 1 and H_B = b_1 + m - 1.
+The Comparison: Finally, a simple conditional check if H_A >= H_B: determines the winner. If true, player 1 wins ("1"); otherwise, player 2 wins ("2").
+
+⏱️ Complexity Analysis
+Time Complexity: O(1) per test case! Because we are intentionally skipping the iteration of the arrays and only performing basic arithmetic on the first elements and the lengths, the processing time per test case is constant. The overall time complexity is bound only by the initial I/O read, making it exceptionally fast.
+Space/Memory Complexity: O(V) overall, where $V$ is the total number of input values across all test cases. This is strictly due to storing the initial input_data array and the out array for results. The auxiliary space per test case is O(1).
+It is incredibly satisfying when you can optimize a problem by realizing you don't even need to look at 90% of the input data! ✅
