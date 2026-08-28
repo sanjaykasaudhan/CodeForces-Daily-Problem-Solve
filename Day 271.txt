@@ -1,0 +1,15 @@
+🚀 Keeping the CP streak going!
+Just cracked (A) Creating Abbreviations from Codeforces Round 1117 (Div. 2). This problem is a classic example of why choosing the right data structure makes all the difference for efficient lookups.
+
+🔗Problem Link: https://lnkd.in/dFpFJ7qF
+
+🛠️ The Approach
+Fast I/O: I read all inputs at once using sys.stdin.read().split() to bypass the slow I/O bottleneck in Python and handle massive test cases seamlessly.
+Hash Sets for the Win: The core task is checking if we can form target abbreviations using the starting letters of a given list of words. I initialized a Python set() called pool for this.
+Building the Pool: I iterated through the $n$ available words, extracted the first character with word[0], converted it to uppercase, and added it to the set. Sets in Python provide $O(1)$ average time complexity for lookups, which is perfect here.
+Validation: I then looped through the $m$ target abbreviations. For every character, I checked if it existed in our pool. If even a single character is missing, the possible flag flips to False, and we append "NO" to our results.
+
+⏱️ Complexity Analysis
+Time Complexity: O(N + L) per test case, where $N$ is the number of given words and $L$ is the total number of characters across all target abbreviations. Building the character pool takes linear time relative to $N$, and checking characters takes linear time relative to $L$.
+Space/Memory Complexity: O(1) auxiliary space! Since the pool only stores uppercase English letters, its maximum size is strictly bounded at 26. This makes the space requirement constant regardless of how large the input size gets.
+Always satisfying when a solution comes together this cleanly! ✅
