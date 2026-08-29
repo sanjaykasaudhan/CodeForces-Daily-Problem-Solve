@@ -1,0 +1,16 @@
+🚀 Conquered another logic puzzle on Codeforces!
+I just successfully solved (B) Evanescent from Codeforces Round 1114 (Div. 3). This problem is a fantastic showcase of how calculating local state changes (deltas) can save you from recalculating everything from scratch and drastically improve efficiency. 💡
+
+🔗Problem Link: https://lnkd.in/dRe245GZ
+
+🛠️ The Approach The goal is to minimize the number of adjacent differing elements in an array by removing exactly one element. Instead of simulating every possible removal, I used a baseline-and-delta strategy:
+Fast I/O Setup: I used sys.stdin.read().split() to pull all inputs into memory at once, avoiding the overhead of repetitive input() calls.
+Finding the Base State: I first calculated the initial number of adjacent differences in the sequence. By iterating through the array once, the variable L tracks the baseline count of adjacent elements that are not equal.
+The Delta Optimization: The core challenge is finding the best single element to remove. Instead of rebuilding the array and recounting every time, I calculated the local change (delta) that removing s[i] would cause.
+Evaluating Transitions: For any element s[i] (excluding the first and last), removing it eliminates the transitions to its immediate neighbors: (s[i-1] != s[i]) and (s[i] != s[i+1]). It simultaneously introduces a new transition directly between those neighbors: (s[i-1] != s[i+1]). Subtracting the old transitions from the new one gives us the net difference.
+Finding the Minimum: I tracked the min_delta across all possible removals and simply added it to the base L to get the final optimal answer.
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per test case. We only make two linear passes through the array—one to calculate the base L and another to evaluate the delta for each element. This easily avoids the dreaded Time Limit Exceeded (TLE) verdict.
+Space/Memory Complexity: O(N) auxiliary space per testcase to store the input string/array and the compiled results.
+Identifying an O(1) local state change within an O(N) loop is one of the most rewarding patterns to apply in competitive programming! ✅
