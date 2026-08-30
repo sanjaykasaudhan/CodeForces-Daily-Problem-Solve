@@ -1,0 +1,15 @@
+🚀 Just conquered another great logic puzzle on Codeforces!
+I recently solved (A) ABC String from Educational Codeforces Round 105 (Rated for Div. 2). This problem is an excellent example of when a small constraint space allows for a clean, brute-force approach combined with a classic algorithmic technique.
+
+🔗Problem Link: https://lnkd.in/dJpijcYN
+
+🛠️ The Approach The objective is to map three characters ('A', 'B', 'C') to either an opening '(' or closing ')' bracket to create a valid bracket sequence.
+Fast I/O: Using sys.stdin.read().split() to read all test cases instantly, avoiding the standard input bottleneck.
+Generating Permutations: Since there are only three unique characters, there are only 8 possible combinations of bracket mappings (2^3). I used simple nested loops to generate every possible assignment for 'A', 'B', and 'C'.
+Classic Bracket Validation: For each generated mapping, I translated the string characters to brackets and validated the sequence using a rolling balance counter.
+The Balance Check: An opening bracket adds 1, and a closing bracket subtracts 1. A sequence is invalid if the balance ever drops below 0 during traversal, or if the final balance at the end of the string is not exactly 0. As soon as one of the 8 mappings results in a valid sequence, we flag it as "YES" and break the loop early.
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per test case, where N is the length of the string. The 8 possible mapping combinations represent a constant O(1) multiplier, and checking the balance requires a single linear pass through the string.
+Space/Memory Complexity: O(1) auxiliary space. Aside from the memory required to store the initial inputs, the mapping dictionary and balance integer require constant, minimal space.
+Sometimes the most elegant solution is simply recognizing when the search space is small enough to check exhaustively! ✅
