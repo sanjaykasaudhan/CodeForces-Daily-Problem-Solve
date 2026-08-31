@@ -1,0 +1,26 @@
+🚀 Tackled a brilliant string manipulation puzzle on Codeforces!
+I just solved (D) Deletive Editing from the 2021-2022 ICPC, NERC, Northern Eurasia Onsite. This problem is a masterclass in why traversing arrays or strings backwards can sometimes turn a complex problem into a simple greedy approach.
+
+🔗Problem Link: https://lnkd.in/dreXyT8a
+
+🛠️ The Approach The goal is to determine if string s can be transformed into target string t by deleting specific characters. Because deletions affect the first occurrence of a character, working from left to right gets complicated. Here is how I solved it by reversing the perspective:
+
+Fast I/O: As always, sys.stdin.read().split() is used to read the entire input stream at once to handle large test cases efficiently.
+
+Target Frequency Map: I built a frequency dictionary (freq) of the characters in the target string t. This tells us exactly how many of each character we still need to keep.
+
+Reverse Traversal: I iterated through the original string s from right to left. I also kept a pointer j at the end of the target string t.
+
+Greedy Matching & Validation: For each character in s (reading backwards):
+If the character is no longer needed (freq == 0), we conceptually "delete" it and move on.
+
+If the character is still needed (freq > 0), it absolutely must match the current character we are looking for in t (which is t[j]).
+If it matches, we decrement the required frequency and move our target pointer j left.
+
+If it is a needed character but does not match t[j], it means the characters are out of order. Under the rules of deletive editing, it is impossible to resolve this, so we flag it as False and break early.
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per test case, where N is the length of string s. Generating the frequency map and iterating backwards through the string both require just a single linear pass.
+
+Space/Memory Complexity: O(1) auxiliary space. The frequency dictionary only stores lowercase English letters, meaning its maximum size is capped at 26, requiring constant extra memory regardless of the input size.
+I always find it fascinating how a simple change in direction (right-to-left instead of left-to-right) can completely unlock a problem! ✅
