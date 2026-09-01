@@ -1,0 +1,16 @@
+🚀 Exploring parity and edge cases on Codeforces!
+I recently solved (A) Dual Trigger from Codeforces Global Round 25. This problem is a fantastic reminder that sometimes the most efficient solution isn't a complex algorithm, but simply identifying mathematical invariants and edge cases. 💡
+
+🔗Problem Link: https://lnkd.in/dba6v6MB
+
+🛠️ The Approach
+The core of this problem revolves around flipping pairs of bits. If an operation always changes exactly two bits, the parity of the bits must remain constant. Here is how I structured the logic:
+Fast I/O: I used sys.stdin.read().split() to read the entire input block at once, ensuring optimal execution speed in Python to handle large test cases.
+Parity Check: I counted the total number of '1's in the string using s.count('1'). Since any valid operation flips exactly two bits, an odd number of '1's makes the task mathematically impossible. If count_ones % 2 != 0, the answer is immediately "NO".
+The Crucial Edge Case: If there are exactly two '1's, we have to be careful. The problem's constraints forbid picking adjacent elements for this specific dual-trigger operation. So, if count_ones == 2 and the string contains '11' (the '1's are directly next to each other), we cannot resolve it, resulting in "NO".
+The Default State: For any other even number of '1's, or if there are exactly two '1's that are separated by at least one '0', it is always possible to resolve the string. In these cases, we append "YES".
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per test case, where $N$ is the length of the string. Both s.count('1') and the substring check '11' in s run in linear time. The overall time complexity across $t$ test cases is bounded by O(ΣN), which easily passes within the time limits.
+Space/Memory Complexity: O(N) auxiliary space per testcase to store the input strings and the compiled results array before flushing them to standard output.
+Finding the mathematical invariants is definitely one of the most rewarding parts of competitive programming! ✅
