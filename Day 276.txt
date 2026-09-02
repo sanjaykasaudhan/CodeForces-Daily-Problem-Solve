@@ -1,0 +1,17 @@
+🚀 Conquered a fantastic greedy problem on Codeforces!
+I recently solved (B) Death's Blessing from Educational Codeforces Round 138 (Rated for Div. 2). This problem perfectly illustrates how finding a simple mathematical invariant can completely replace the need for complex simulations. 💡
+
+🛠️ The Approach
+The problem asks us to eliminate a row of monsters, each with a base health a[i] and a "blessing" (spell) b[i]. When a monster is defeated, its blessing is added to the health of its adjacent neighbors. Here is how I broke down the optimal strategy:
+Fast I/O Setup: As usual, I used sys.stdin.read().split() to read all inputs into memory at once, avoiding Python's slow standard I/O bottlenecks for large test cases.
+The Inevitable Cost: No matter what order you defeat the monsters in, you absolutely must deplete their base health. Therefore, sum(a) is the unavoidable base cost of the operation.
+The Greedy Insight: Every time a monster dies, its blessing b[i] is passed to a neighbor and must eventually be depleted—with one crucial exception. The very last monster you defeat has no surviving neighbors to pass its blessing to.
+The Optimization: To minimize the total extra health you have to chew through, you want that "wasted" blessing to be as large as possible. This means we should always save the monster with the largest b[i] value for last.
+The Final Formula: The total cost is simply the sum of all base healths, plus the sum of all blessings, minus the single largest blessing. In code, this beautifully reduces to a single line: sum(a) + sum(b) - max(b).
+
+🔗Problem Link: https://lnkd.in/dr5AUSht
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per test case. Python's sum() and max() functions both require a single linear pass through the arrays. The overall time complexity across $t$ test cases is bounded by O(ΣN), which easily passes standard competitive programming time limits.
+Space/Memory Complexity: O(N) auxiliary space per test case to store the parsed a and b arrays.
+It is incredibly satisfying when a problem that looks like it requires a complex sorting or dynamic programming approach boils down to an O(N) mathematical formula! ✅
