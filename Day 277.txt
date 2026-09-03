@@ -1,0 +1,16 @@
+🚀 Serving up some fresh logic on Codeforces!
+I just solved (A) Sushi for Two from Codeforces Round 545 (Div. 2). This problem is a great exercise in processing contiguous segments efficiently without resorting to nested loops or complex two-pointer setups. 💡
+
+🔗Problem Link: https://lnkd.in/dUC7vGXc
+
+🛠️ The Approach The goal is to find the longest continuous segment of sushi that consists of two equal halves of different types (e.g., 222111 or 1122). Instead of checking every possible subarray, we can group the sushi into consecutive blocks of the same type.
+Fast I/O: sys.stdin.read().split() is used to read the entire input at once, parsing the number of pieces n and the array of sushi types t.
+Tracking Consecutive Blocks: I initialized curr_len = 1 to track the length of the current block of identical sushi, and prev_len = 0 to store the length of the block immediately preceding it.
+Linear Traversal: I iterated through the array starting from index 1. If the current sushi type matches the previous one (t[i] == t[i - 1]), we simply increment curr_len.
+Handling Transitions: When the sushi type changes (an else condition), we have a complete pair of adjacent blocks. The maximum valid sequence we can extract from these two blocks is limited by the smaller of the two, calculated as 2 * min(prev_len, curr_len). I updated max_valid with this value, then shifted prev_len = curr_len and reset curr_len = 1 for the new block.
+The Final Check: After the loop finishes, one last check is required to account for the final transition pair that doesn't trigger the else block during the loop.
+
+⏱️ Complexity Analysis
+Time Complexity: O(N). We iterate through the array of N sushi pieces exactly once. All operations inside the loop (comparisons, min(), max()) take constant time.
+Space/Memory Complexity: O(N) to store the input array of sushi types. The auxiliary space used for tracking variables (curr_len, prev_len, max_valid) is strictly O(1).
+It is always a win when you can reduce a subarray problem down to a single linear pass! ✅
