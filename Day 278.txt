@@ -1,0 +1,16 @@
+🚀 Exploring string traversal and boundary conditions on Codeforces!
+I recently cracked (B) Impost or Sus from the Good Bye 2025 contest. This problem is a great example of handling edge cases differently from the core data sequence to keep the main logic clean. Here is a quick breakdown of my approach! 💡
+
+🔗Problem Link: https://lnkd.in/dAvZc4R2
+
+🛠️ The Approach The problem requires evaluating groupings of the character 'u', but with a specific twist: characters at the very edges of the string behave differently than those in the middle. Here is how I structured the solution:
+Fast I/O: Using sys.stdin.read().split() ensures we load all test cases into memory quickly, completely bypassing Python's standard input bottlenecks.
+Handling the Boundaries: I explicitly checked the first (r[0]) and last (r[-1]) characters outside of the main loop. If either is a 'u', it acts independently and directly contributes exactly 1 to our total answer (ans += 1).
+Processing the Core: For the rest of the string (from index 1 to n-2), the 'u's need to be grouped together. I used a local counter L to track the length of consecutive 'u's.
+Calculating Pairs: Whenever the sequence is broken by any other character (the else condition), I divided the contiguous 'u' count by 2 (L // 2) and added it to the total answer. This effectively pairs up the internal 'u's. The counter L is then immediately reset to 0.
+The Final Flush: A final ans += L // 2 after the loop ensures any trailing block of 'u's right before the last character is properly processed and added to the total.
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per test case, where N is the length of the string. We perform exactly one linear scan across the characters, making it highly optimal and well within time limits.
+Space/Memory Complexity: O(N) auxiliary space per test case. This is purely to store the string in memory and compile the final output array before flushing it to standard output.
+Sometimes the most efficient solution is simply isolating your boundary logic from your main loop! ✅
