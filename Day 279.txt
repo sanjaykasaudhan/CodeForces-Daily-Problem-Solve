@@ -1,0 +1,16 @@
+🚀 Conquered a clever string manipulation puzzle on Codeforces!
+I just successfully solved (A) Split it! from Codeforces Round 706 (Div. 2). This problem is a brilliant exercise in translating complex string splitting rules into simple boundary checks and palindrome logic. 💡
+
+🔗Problem Link: https://lnkd.in/dnc3v3yK
+
+🛠️ The Approach
+The objective is to determine if a string can be split into exactly $2k + 1$ parts where the first $k$ segments perfectly mirror the last $k$ segments, leaving a non-empty middle section. Instead of actually partitioning the string, we can verify this through index matching:
+Fast I/O Setup: I leveraged sys.stdin.read().split() to pull the entire input stream into memory at once, avoiding Python's slow repetitive input overhead.
+The Length Constraint: Since the middle segment must contain at least one character, the total length of the mirrored segments ($2k$) must be strictly less than the total string length $n$. If 2 * k >= n, it is mathematically impossible, so we immediately append "NO".
+Mirrored Validation: If the length check passes, the problem essentially asks if the first $k$ characters form a mirrored sequence with the last $k$ characters. I set up a loop to compare s[i] with its counterpart from the end of the string, s[n - 1 - i].
+Early Exit: If any mismatch is detected in these first $k$ characters, the condition fails. The possible flag flips to False, the loop breaks early to save processing time, and we output "NO". Otherwise, it's a "YES".
+
+⏱️ Complexity Analysis
+Time Complexity: O(K) per test case, where $K$ is the number of characters we need to verify. Since $K$ is strictly less than half of $N$, the time complexity is bounded by O(N). The overall complexity across $t$ test cases is O(ΣN), running highly efficiently.
+Space/Memory Complexity: O(N) auxiliary space per test case. This is required purely to store the string and compile the final results array before flushing it to standard output.
+It is always incredibly satisfying when a complex-sounding partition problem reduces to a clean, symmetric two-pointer check! ✅
