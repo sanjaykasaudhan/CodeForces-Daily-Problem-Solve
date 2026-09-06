@@ -1,0 +1,16 @@
+🚀 Finding mathematical invariants is just as crucial in competitive programming as it is when designing robust fact-verification pipelines for LLMs!
+I recently cracked (A) Three Friends from Codeforces Round 605 (Div. 3). This problem is a brilliant example of how a simple geometric observation can completely replace brute-force simulation. Here is a quick breakdown of the optimal approach! 💡
+
+🔗Problem Link: https://lnkd.in/dX6qDKA4
+
+🛠️ The Approach
+The problem asks us to minimize the total pairwise distance between three friends who can each move up to one step left, right, or stay still. Instead of brute-forcing all 27 possible combinations of their moves, we can reduce the logic to a single mathematical formula:
+Fast I/O: sys.stdin.read().split() handles the input stream instantly, avoiding the overhead of repetitive I/O calls for the $q$ test cases.
+The Geometric Insight: If you place any three points on a 1D line (let's sort them as $x \le y \le z$), the sum of their pairwise distances $(y-x) + (z-x) + (z-y)$ mathematically simplifies to exactly $2(z-x)$. This means the position of the middle friend is irrelevant to the total sum—only the distance between the outermost friends matters!
+Minimizing the Gap: To make the total distance as small as possible, we simply need to move the outermost friends (the max_pos and min_pos) towards each other. Each friend can take 1 step, meaning we can reduce their total difference by exactly 2.
+The Final Formula: I calculated the initial difference with diff = max_pos - min_pos. The new total distance becomes 2 * max(0, diff - 2). The max(0, ...) ensures that if the friends start at the exact same spot or only 1 step apart, the distance correctly bottoms out at 0 instead of dipping into negative numbers.
+
+⏱️ Complexity Analysis
+Time Complexity: O(1) per test case. By using pure mathematics and a couple of built-in min() and max() checks, we completely avoid looping or simulation. The overall time for $q$ queries is strictly O(Q).
+Space/Memory Complexity: O(1) auxiliary space. The only memory used is for storing the output strings before printing them in a single batch.
+It is always incredibly satisfying when you can bypass heavy state simulations with a clean, single-line math equation! ✅
