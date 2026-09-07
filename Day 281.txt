@@ -1,0 +1,16 @@
+🚀 Whether optimizing an LLM workflow or cracking a Codeforces puzzle, finding the O(1) math shortcut is always a thrill!
+I just solved (A) Dinner Time from Codeforces Round 1024 (Div. 2). This problem is a textbook example of bypassing simulation entirely by identifying the underlying mathematical constraints. 💡
+
+🔗Problem Link: https://lnkd.in/d2dTv3Yw
+
+🛠️ The Approach
+The entire problem hinges on divisibility and strict boundaries. Instead of looping or iterating, we can resolve each test case with pure arithmetic:
+Fast I/O: I used sys.stdin.read().split() to read all test cases into memory at once, avoiding the standard I/O bottleneck in Python.
+The Modulo Check: The core logic evaluates the division of n by p. I calculated both the quotient k = n // p and the remainder r = n \% p.
+The Strict Boundary: If n is perfectly divisible by p (meaning r == 0), the constraints tighten. In this specific scenario, m must precisely equal k * q. If it matches, the answer is "YES"; otherwise, "NO".
+The Default State: If there is any remainder at all (r \neq 0), the problem's conditions are inherently satisfied without strict matching, guaranteeing a "YES" every single time.
+
+⏱️ Complexity Analysis
+Time Complexity: O(1) per test case! By relying entirely on basic arithmetic and a single conditional check, we avoid all iteration. Across $t$ test cases, the overall time complexity is strictly O(t), ensuring instantaneous execution.
+Space/Memory Complexity: O(1) auxiliary space. The only memory footprint comes from storing the I/O strings before batch-printing the results.
+It is always incredibly satisfying to reduce a problem down to a few lines of clean conditional logic! ✅
