@@ -1,0 +1,15 @@
+🚀 Mastering matrix patterns on Codeforces!
+I recently solved (B) Almost Ternary Matrix from Codeforces Round 804 (Div. 2), proving that generating structured grids is just as satisfying as designing custom attention masks for transformer models! Here is a quick breakdown of how I avoided heavy simulations with a clean modulo-based approach. 💡
+
+🔗Problem Link: https://lnkd.in/d8Ym8HSt
+
+🛠️ The Approach
+Fast I/O Setup: I leveraged sys.stdin.read().split() to parse all test cases into memory at once, ensuring Python's I/O overhead doesn't slow down the matrix generation.
+The 4x4 Invariant: The problem asks us to build a grid of 1s and 0s satisfying strict adjacency rules. Instead of placing numbers and backtracking, the optimal solution involves recognizing that the grid follows a repeating $4 \times 4$ pattern.
+Row & Column States: I defined a state variable for the current row (f_i) and column (f_j). Using the modulo operator, the state evaluates to 1 if the index modulo 4 is 0 or 3, and 0 otherwise.
+Cell Construction: For any given coordinate $(i, j)$, the cell value is simply determined by checking if the row state matches the column state (if f_i == f_j). This clean equivalence check maps out the entire grid flawlessly row by row.
+
+⏱️ Complexity Analysis
+Time Complexity: O(N * M) per testcase. We iterate through every required cell of the grid exactly once to evaluate the modulo conditions. Over $t$ test cases, the execution time scales perfectly with the required output size.
+Space/Memory Complexity: O(N * M) auxiliary space. This is needed strictly to construct and store the matrix rows in memory before printing them as a single batch using sys.stdout.write.
+Pattern recognition in 2D arrays like this always translates surprisingly well to manipulating tensor shapes in deep learning frameworks! ✅
