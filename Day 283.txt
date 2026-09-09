@@ -1,0 +1,17 @@
+🚀 Matrices are the lifeblood of deep learning, but they also make for fantastic algorithmic puzzles!
+I recently cracked (B) Symmetric Matrix from Codeforces Round 674 (Div. 3). Whether I am manipulating tensors for AI models at Sriya.AI or grinding through competitive programming, identifying matrix invariants quickly is a crucial skill. Here is a breakdown of how I avoided building the actual matrix and solved this purely through logic. 💡
+
+🔗Problem Link: https://lnkd.in/dknsWVCB
+
+🛠️ The Approach
+The problem asks if we can construct an $M \times M$ symmetric matrix using a given set of $2 \times 2$ tiles. Instead of trying to simulate the placement, we can deduce the answer using two strict conditions:
+Fast I/O: I used sys.stdin.read().split() to read the entire input stream at once, skipping Python's standard I/O overhead.
+The Size Constraint: You cannot tile an odd-sized square grid with $2 \times 2$ blocks. Therefore, $m$ absolutely must be an even number (m % 2 == 0). If it is odd, it is an immediate "NO".
+The Diagonal Invariant: For the final $M \times M$ matrix to be symmetric, it must mirror perfectly across its main diagonal. This means the $2 \times 2$ tiles placed on that main diagonal must themselves be internally symmetric.
+Checking the Tiles: A $2 \times 2$ tile is symmetric if and only if its top-right element equals its bottom-left element. I iterated through the $n$ available tiles, checking if top_right == bottom_left.
+The Final Verification: If we have at least one internally symmetric tile (to act as the diagonal spine) and the target size $m$ is even, it is always mathematically possible to construct the matrix.
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per test case, where $N$ is the number of available $2 \times 2$ tiles. We only need a single linear scan to check the internal symmetry of each tile.
+Space/Memory Complexity: O(1) auxiliary space. Aside from the memory used to parse the initial input string and store the output array, the state tracking only requires a single boolean flag (has_symmetric_tile).
+It is always incredibly satisfying when a 2D construction problem reduces down to a simple boolean check! ✅
