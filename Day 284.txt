@@ -1,0 +1,18 @@
+🚀 Nothing beats reducing a problem to pure $O(1)$ math!
+Just solved (A) Number of Apartments from Educational Codeforces Round 96. When dealing with data at scale—whether optimizing AI research pipelines or tackling competitive programming—recognizing underlying mathematical patterns is crucial to bypass brute-force bottlenecks. This problem is a perfect practice ground for that mindset! 💡
+
+🔗Problem Link: https://lnkd.in/diNddTSg
+
+🛠️ The Approach
+The goal is to represent exactly $n$ windows using apartments with 3, 5, or 7 windows. Instead of dynamic programming or exhaustive search, we can map this out with modulo arithmetic:
+Fast I/O: Using sys.stdin.read().split() to read all test cases instantly into memory.
+The Impossible Cases: You physically cannot form 1, 2, or 4 using combinations of 3, 5, and 7. For these base cases, I immediately output -1.
+Modulo 3 Logic: For everything else, I checked the remainder of $n$ divided by 3 (n % 3).
+Clean Divisibility: If n % 3 == 0, we can exclusively use 3-window apartments. The counts are n // 3 (for 3s), 0 (for 5s), and 0 (for 7s).
+Fixing a Remainder of 1: If the remainder is 1, a single 7-window apartment perfectly offsets it, since 7 divided by 3 leaves a remainder of 1. We subtract 7 from $n$, fulfill the rest with 3-window apartments, and output the counts as (n - 7) // 3, 0, and 1.
+Fixing a Remainder of 2: If the remainder is 2, a single 5-window apartment offsets it, since 5 divided by 3 leaves a remainder of 2. We subtract 5, fill the rest with 3s, and output (n - 5) // 3, 1, and 0.
+
+⏱️ Complexity Analysis
+Time Complexity: O(1) per testcase. The solution completely bypasses loops and recursion, relying entirely on conditional logic and basic arithmetic. Total time for $t$ testcases is strictly O(t).
+Space/Memory Complexity: O(1) auxiliary space. We only use memory for the results array before batch-printing everything to standard output.
+It is incredibly satisfying to swap out a potential search algorithm for a few lines of clean modulo logic! ✅
