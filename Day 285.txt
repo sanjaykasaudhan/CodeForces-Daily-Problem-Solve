@@ -1,0 +1,16 @@
+🚀 Another Codeforces puzzle down, blending competitive programming with everyday data optimization!
+I recently solved (B) Like the Bitset from Codeforces Round 1046 (Div. 2). Balancing my AI engineering internship at Sriya.AI with competitive programming constantly reminds me how crucial clean, efficient data parsing is across every domain.
+
+🔗Problem Link: https://lnkd.in/d6w6HRkd
+
+🛠️ The Approach The problem requires checking constraints on contiguous blocks of characters and constructively building an array if those constraints are met. Here is how I structured the logic:
+Fast Input Parsing: I utilized sys.stdin.read().split() to read all test cases instantly, completely bypassing Python's standard I/O bottlenecks for massive inputs.
+Pythonic String Splitting: Instead of writing a manual state-tracking loop to count consecutive '1's, I used s.split('0'). This instantly breaks the string into a list of substrings containing exclusively '1's.
+The Threshold Check: Finding the longest contiguous sequence is as simple as mapping lengths across those blocks: max(len(block) for block in blocks_of_ones). If this maximum meets or exceeds the limit k, it is mathematically impossible, so we append "NO".
+Constructive Generation: If the condition holds, the answer is "YES". I initialize an array p = [0] * n and use pre-calculated total counts of '0's and '1's (val_0 and val_1) to strategically assign values in a single linear pass.
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per testcase. Python's built-in split(), generator expressions, and count() functions are highly optimized C-level operations that run in strictly linear time. The final array population also requires just one pass.
+Space/Memory Complexity: O(N) auxiliary space. We need this linear space to store the generated blocks of '1's and to construct the final output array p before flushing the results.
+
+It is always satisfying when built-in string methods completely replace the need for complex, nested state-tracking loops! ✅
