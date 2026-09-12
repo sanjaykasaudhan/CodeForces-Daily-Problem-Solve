@@ -1,0 +1,15 @@
+🚀 Balancing my AI engineering internship at Sriya.AI with some constructive algorithmic puzzles on Codeforces!
+I just solved (B) Prime Square from Codeforces Round 678 (Div. 2). Building constraint-satisfying grids is excellent mental cross-training for designing robust, rule-bound fact-verification pipelines for LLMs.
+
+🔗Problem Link: https://lnkd.in/dESrEgha
+
+The Approach
+The problem asks us to generate an $N \times N$ matrix where all individual elements are non-prime, but the sum of every row and column is strictly prime. Instead of complex backtracking or randomized generation, this can be solved cleanly with a simple diagonal pattern.
+The Math Insight: The number 1 is not prime. If we fill a row mostly with 1s, we only need exactly one other non-prime number, $a$, such that the total sum $a + n - 1$ results in a prime number.
+Targeting the Constant: I wrote a standard $O(\sqrt{x})$ is_prime() helper function. Next, a fast while loop finds the smallest valid $a$ by checking not is_prime(a) and is_prime(a + n - 1). Because prime numbers are relatively dense, this loop terminates almost immediately.
+Matrix Construction: Once $a$ is identified, I construct the matrix by placing $a$ on the main diagonal (where the row index equals the column index) and filling every other position with 1. This guarantees every row and column has exactly one $a$ and $N-1$ ones, making every sum identical and prime.
+Fast I/O: Standardizing on sys.stdin.read().split() prevents Python's slow input reading from bottlenecking the matrix generation.
+
+Complexity Analysis
+Time Complexity: $O(N^2)$ per test case. Finding $a$ takes negligible time. The dominant operation is simply iterating through the nested loops to populate the $N \times N$ grid, which easily passes within the time limits.
+Space/Memory Complexity: $O(N^2)$ auxiliary space per testcase. This memory is required to store the row strings and the compiled output array before flushing it all to standard output at the end.
