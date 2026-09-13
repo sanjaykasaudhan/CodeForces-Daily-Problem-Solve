@@ -1,0 +1,15 @@
+🚀 Balancing model training pipelines and Codeforces grinds!
+Just solved (B) Cake Leveling from Codeforces Round 1101 (Div. 2). Efficiently computing running metrics is a fundamental algorithmic pattern, whether you are resolving array queries in competitive programming or tracking loss averages across deep learning epochs.
+
+🔗Problem Link: https://lnkd.in/ddiVV26Q
+
+The Approach
+Fast I/O Setup: I leveraged sys.stdin.read().split() to ingest all test cases into memory instantly, completely bypassing Python's standard input bottlenecks for large datasets.
+Rolling Prefix Sums: The core requirement is evaluating the average "height" up to the current index. Instead of slicing and recalculating the sum for every prefix length (which would cause a Time Limit Exceeded error), I maintained a current_sum state variable that continuously accumulates the array elements in a single pass.
+Dynamic Averaging: At each step i (from 1 to n), the baseline height is calculated dynamically using integer division (current_sum // i).
+State Tracking: I initialized min_h to infinity. As the loop progresses through the array, a simple conditional checks if the current step's average drops below our tracked minimum. If it does, min_h is updated. This guaranteed lowest height is then appended to the results array for that specific prefix.
+
+Complexity Analysis
+Time Complexity: O(N) per testcase. By tracking the rolling sum and minimums on the fly, the need for any nested loops or redundant calculations is completely eliminated. The overall execution time across $t$ test cases scales perfectly linearly as O(ΣN).
+Space/Memory Complexity: O(N) auxiliary space per testcase. This is required strictly to store the parsed input sequence and the incrementally generated output array before writing it all to standard output in a single batch.
+It is always incredibly rewarding to see a potential $O(N^2)$ simulation compress neatly into a clean, single-pass linear sweep! ✅
