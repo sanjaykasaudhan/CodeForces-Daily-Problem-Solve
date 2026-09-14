@@ -1,0 +1,15 @@
+Just cracked (B) Napoleon Cake from Codeforces Round 707 (Div. 2)! This problem highlights why processing arrays backwards is sometimes the most efficient way to handle cascading effects.
+
+🔗Problem Link: https://lnkd.in/d6KQ6V4z
+
+The Approach
+Fast I/O: Using sys.stdin.read().split() pulls the entire input stream into memory at once, completely avoiding Python's standard repetitive I/O overhead for large datasets.
+Reverse Traversal: Since the cream poured on the cake drips downwards, evaluating the array from bottom-to-top (left-to-right) would require complex lookaheads or interval merging. Instead, iterating backwards (range(n - 1, -1, -1)) perfectly models the top-down flow of the cream.
+State Tracking: A current_cream variable tracks how many layers of cream are currently cascading down. If a fresh pour at layer i (a[i]) is greater than the remaining current_cream, the state simply overrides and updates to this new maximum.
+Layer Assignment: If current_cream > 0, the current layer gets covered (ans[i] = 1), and the cascading cream decrements by 1 as it moves to the next layer down. If it hits 0, the layer remains dry (ans[i] = 0).
+
+Complexity Analysis
+Time Complexity: O(N) per test case. The reverse iteration requires exactly one linear pass through the array. The overall time complexity across all test cases scales linearly as O(ΣN), executing well within the strict time limits.
+Space/Memory Complexity: O(N) auxiliary space per test case. This is strictly required to store the input array and construct the final sequence of 1s and 0s before batch printing them to standard output.
+
+It is incredibly satisfying when a reverse linear sweep completely eliminates the need for nested loops or segment trees! ✅
