@@ -1,0 +1,17 @@
+🚀 Bringing some constructive math to the timeline today!
+I just solved (B) Rule of League from Codeforces Round 821 (Div. 2). This problem is a fantastic blend of edge-case validation and mathematical sequence construction. Here is a breakdown of how I tackled it! 💡
+
+🔗Problem Link: https://lnkd.in/dPkjKwbc
+
+🛠️ The Approach
+The problem asks us to reconstruct the winner of every match in a badminton tournament of $n$ players, given that every player wins exactly $x$ or $y$ matches. Since it's a knockout-style sequence where the winner stays on the court, we can deduce a few hard mathematical truths:
+Fast I/O: As always, I used sys.stdin.read().split() to read the entire input stream at once, bypassing Python's standard I/O bottlenecks.
+The Crucial Constraint: Because the winner stays on the court, it is physically impossible for both $x$ and $y$ to be greater than 0. At least one type of player must win 0 matches. I validated this instantly with if min(x, y) != 0 or max(x, y) == 0:. If this fails, the sequence is impossible (-1).
+Divisibility Check: There are exactly $n - 1$ matches played in total. If we denote the non-zero win count as $k$, then the total number of matches must be perfectly divisible by $k$. If (n - 1) % k != 0, we again output -1.
+Constructing the Sequence: If the constraints pass, we know exactly how many "blocks" of wins there are (blocks = (n - 1) // k).
+Assigning Winners: I looped through each block. Player 1 always wins the first block. After Player 1 defeats $k$ opponents (players 2 through $k+1$), the next winner stepping up must be player $k+2$. For any block $m > 1$, the winning player ID is dynamically calculated as (m - 1) * k + 2. We just append that winner's ID to our results $k$ times!
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per test case. We iterate exactly $n - 1$ times in total to append the winning player IDs to our answer array. The overall time complexity across $t$ test cases scales linearly as O(ΣN), easily passing the time limits.
+Space/Memory Complexity: O(N) auxiliary space per test case. This memory is required strictly to store the constructed array of $n - 1$ winners before batch-printing the results to standard output.
+It is always incredibly satisfying when you can bypass heavy simulation and directly construct an array using pure logic! ✅
