@@ -1,0 +1,16 @@
+🚀 Keeping the momentum going with some greedy array manipulation!
+I recently tackled (B) Penchick and Satay Sticks from Codeforces Round 987 (Div. 2). This problem is a great example of how understanding the constraints of a local operation can turn a sorting problem into a simple $O(N)$ verification task. 💡
+
+🔗Problem Link: https://lnkd.in/dnkc22bJ
+
+🛠️ The Approach
+The problem allows us to swap adjacent elements, but with a strict condition: they can only be swapped if their absolute difference is exactly 1. Here is how I structured the logic to solve it without needing complex sorting algorithms:
+Fast I/O Setup: I used sys.stdin.read().split() to read all inputs into memory at once, sidestepping Python's standard I/O bottlenecks for large multi-testcase problems.
+The Greedy Swap: Since we can only swap adjacent elements that differ by exactly 1, any element that is out of place by more than 1 unit from its neighbor cannot be fixed by this operation. I performed a single linear pass through the array: if p[i] > p[i+1] and p[i] - p[i+1] == 1. If this condition is met, I immediately swap them using Python's clean tuple unpacking p[i], p[i+1] = p[i+1], p[i].
+The Validation Pass: After the greedy swaps attempt to push the larger elements to the right, I do one final check. A simple loop checks if there is any remaining instance where p[i] > p[i+1].
+The Final Verdict: If the validation loop finds an out-of-order element, the is_sorted flag drops to False (we break early to save time) and we append "NO". If it finishes cleanly, the array is perfectly sorted and we append "YES".
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per testcase. We only perform two linear passes—one for the greedy swaps and one for the validation check. The overall time complexity across $t$ test cases is O(ΣN), which easily passes within the time limits.
+Space/Memory Complexity: O(N) auxiliary space per testcase. This memory is required strictly to store the parsed array p and compile the final output strings before flushing them to standard output.
+It is always incredibly satisfying when an apparent sorting simulation reduces down to a couple of clean $O(N)$ sweeps! ✅
