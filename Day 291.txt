@@ -1,0 +1,16 @@
+🚀 Exploring classic Greedy algorithms today on Codeforces!
+I just solved (B) Burglar and Matches from Codeforces Beta Round 16 (Div. 2). It’s an oldie but a goodie that perfectly demonstrates how prioritizing the most valuable items leads straight to the optimal solution! Here is a breakdown of the logic. 💡
+
+🔗Problem Link: https://lnkd.in/epdwx24V
+
+🛠️ The Approach
+The problem asks us to maximize the total number of matches a burglar can carry in a rucksack that holds exactly $n$ matchboxes. We are given $m$ containers, each holding $a$ boxes, with each box containing $b$ matches.
+Fast I/O & Parsing: I used sys.stdin.read().split() to read all inputs at once. I then parsed the data into a list of tuples called containers, where each tuple holds (a, b).
+The Greedy Choice: To maximize the haul, we must always prioritize the matchboxes that contain the highest number of matches. I achieved this by sorting the containers in descending order based on the second element (matches per box) using Python's built-in sort: containers.sort(key=lambda x: x[1], reverse=True).
+Filling the Rucksack: I iterated through the sorted containers. For each container, the burglar takes either all the boxes it has or exactly enough to fill the remaining capacity of the rucksack—whichever is smaller. This is cleanly handled by take = min(a, n).
+Updating States: I then added take * b to the total_matches counter and subtracted take from the remaining capacity n. If n drops to 0 or below, the bag is full, and we break out of the loop early!
+
+⏱️ Complexity Analysis
+Time Complexity: O(M log M), where $M$ is the number of containers. The dominant operation is sorting the list of tuples using Python's Timsort. The subsequent iteration through the containers takes at most $O(M)$ time.
+Space/Memory Complexity: O(M) auxiliary space to store the list of containers before sorting and processing them.
+There is something incredibly satisfying about solving a problem with a clean, highly intuitive greedy strategy! ✅
