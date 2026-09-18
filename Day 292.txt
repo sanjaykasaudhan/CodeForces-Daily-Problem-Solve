@@ -1,0 +1,16 @@
+🚀 Finding the optimal stopping point is a game-changer in competitive programming!
+I recently solved (A) Lucky Numbers from Codeforces Round 861 (Div. 2). This problem perfectly demonstrates how a simple early-exit condition can turn a potentially slow brute-force approach into a highly efficient solution. 💡
+
+🔗Problem Link: https://lnkd.in/dCZkE4uP
+
+🛠️ The Approach
+The problem asks us to find the "luckiest" number in a given range [l, r]. A number's luckiness is defined as the difference between its largest and smallest digits. Here is how I tackled it:
+Fast I/O: I used sys.stdin.read().split() to read all inputs into memory at once, avoiding Python's standard I/O bottlenecks for handling multiple test cases.
+Calculating Luckiness: I iterated through the range [l, r]. For each number, I converted it to a string (s = str(i)) and calculated the difference between the maximum and minimum characters using their ASCII values: ord(max(s)) - ord(min(s)).
+Tracking the Best: I maintained max_luck and best_num variables to store the best result found so far.
+The Crucial Optimization: A naive loop from l to r would trigger a Time Limit Exceeded (TLE) error for large ranges. However, the maximum possible difference between any two base-10 digits is exactly 9 (e.g., 9 - 0). If I find a number with a luckiness of 9, it is mathematically impossible to find a better answer. I added if luck == 9: break to immediately halt the search. Since a number ending in "90" or "09" appears roughly every 100 integers, this single condition prevents the loop from ever running more than 100 times!
+
+⏱️ Complexity Analysis
+Time Complexity: Effectively O(1) per test case! While it looks like an O(N) loop where $N$ is the size of the range, the early exit guarantees the loop will iterate a maximum of ~100 times, regardless of how massive the range [l, r] gets. The string conversion and max()/min() operations take constant time since the numbers have at most 6 or 7 digits.
+Space/Memory Complexity: O(1) auxiliary space. We only store a few state-tracking variables and the string representation of the current number, making it highly memory efficient.
+It is incredibly satisfying when a single line of logic completely neutralizes the threat of a TLE verdict! ✅
