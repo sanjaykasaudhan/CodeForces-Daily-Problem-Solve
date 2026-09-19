@@ -1,0 +1,16 @@
+🚀 Conquered another constructive permutation puzzle on Codeforces!
+I recently solved (B) Kevin and Permutation from Codeforces Global Round 28. This problem is a fantastic exercise in constructive algorithms, demonstrating how strategically placing elements at specific intervals can elegantly satisfy array constraints without needing complex simulations! 💡 
+
+🔗Problem Link: https://lnkd.in/d5ebF3Ku
+
+🛠️ The Approach
+The goal is to generate a permutation of length $n$ that satisfies a specific condition related to intervals of size $k$. Instead of randomizing or backtracking, the solution relies on deterministic placement: 
+Fast I/O Setup: I used sys.stdin.read().split() to pull the entire input stream into memory at once, avoiding Python's standard I/O bottlenecks for handling multiple test cases. 
+Array Initialization: I pre-allocated the result array with zeros using ans = [0] * n to serve as placeholders for the permutation. 
+Strategic Placement (The Small Numbers): To maximize or control the minimums in every $k$-sized window, I placed the smallest available numbers (1, 2, 3...) at every $k$-th position. Using a step loop range(k - 1, n, k), I assigned the current small value to ans[i] and incremented it. 
+Filling the Gaps (The Large Numbers): Once the critical positions were anchored, I set a large pointer starting exactly where small left off. A second linear pass checks for empty spots (if ans[i] == 0:) and fills them consecutively with the remaining larger numbers. 
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per test case. We perform exactly two linear passes through the array of size $N$—one jumping by $k$ to place the small numbers, and a second full pass to fill in the zeros. The overall time complexity across $t$ test cases scales perfectly as O(ΣN). 
+Space/Memory Complexity: O(N) auxiliary space per testcase. This is required strictly to store the constructed ans array before joining it into a string and batch-printing the results. 
+It is always incredibly satisfying when a permutation problem reduces down to a clean, deterministic two-pass construction! ✅
