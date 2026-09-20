@@ -1,0 +1,16 @@
+🚀 Exploring string chunking and substring validation on Codeforces!
+I recently solved (A) Moo Language School from Codeforces Round 1119 (Div. 3). This problem is a great reminder of how clean and expressive Python can be when dealing with block-based string processing! 💡 
+
+🔗Problem Link: https://lnkd.in/dmqqG22t
+
+🛠️ The Approach
+The goal is to evaluate non-overlapping segments of a string based on specific character constraints. Here is how I structured the logic:
+Fast I/O Setup: I used sys.stdin.read().split() to pull all test case data into memory at once, avoiding the overhead of repetitive standard I/O calls. 
+String Chunking: Instead of iterating character by character and maintaining a manual counter, I used Python's range() function with a step size of k (range(0, n, k)). This allows me to easily extract blocks of size k using the slice notation s[i : i+k]. 
+Block Validation: For each extracted block, I checked for the absence of the '0' character using Python's optimized in operator (if '0' not in block:). If the segment is completely free of '0's, I incremented the total valid block counter (ans += 1). 
+Batch Output: Finally, all results are stored in an array and flushed to standard output at once using \n.join() and sys.stdout.write to maintain peak efficiency.
+ 
+⏱️ Complexity Analysis
+Time Complexity: O(N) per test case. The loop executes $N/K$ times, and within each iteration, string slicing and the substring search both take $O(K)$ time. Multiplying these gives a strict linear $O(N)$ pass over the string. The overall time complexity across $t$ test cases scales as O(ΣN).
+Space/Memory Complexity: O(N) auxiliary space per testcase. This space is utilized to store the initial inputs and accumulate the final answer array before batch-printing the results. 
+It is always incredibly satisfying when a parsing simulation reduces down to a clean, Pythonic slicing operation! ✅
