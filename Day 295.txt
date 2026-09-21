@@ -1,0 +1,17 @@
+🚀 Parity to the rescue! Sometimes the best algorithm is just a solid mathematical observation.
+I just cracked (B) Laura and Operations from Codeforces Round 911 (Div. 2). This problem is a brilliant example of how recognizing invariants can instantly replace complex simulations with pure $O(1)$ logic. 💡 
+
+🔗Problem Link: https://lnkd.in/d2bKCfTJ
+
+🛠️ The Approach
+The problem involves three types of elements (let's call them $a$, $b$, and $c$), and an operation that consumes one of two different types to produce one of the third. The goal is to determine if it's possible to end up with only one specific type remaining.
+Fast I/O: I used sys.stdin.read().split() to read the entire input stream into memory at once, avoiding standard I/O bottlenecks. 
+The Parity Invariant: If you want to eliminate all items of type $b$ and type $c$ to leave only type $a$, you must perform operations that pair $b$ and $c$ together. When you pair them, both of their counts decrease by exactly 1. This means the difference between their counts remains constant in terms of parity (odd/even).
+The $O(1)$ Logic: Therefore, it is only possible to completely zero out both $b$ and $c$ if their initial counts have the exact same parity! I evaluated this cleanly using ans1 = 1 if b % 2 == c % 2 else 0. 
+Symmetry: I applied this exact same logic symmetrically to check if we can isolate type $b$ (a % 2 == c % 2) and type $c$ (a % 2 == b % 2). 
+Formatting Output: The results are formatted directly into a string f"{ans1} {ans2} {ans3}" and appended to the output array. 
+
+⏱️ Complexity Analysis
+Time Complexity: O(1) per test case. By identifying the parity rule, we avoid all loops and simulations, relying purely on modulo arithmetic. The overall time complexity across $t$ test cases is strictly O(t). 
+Space/Memory Complexity: O(N) overall to store the buffered output array before flushing it to standard output via \n.join(out). The auxiliary space per testcase is O(1). 
+It is always incredibly satisfying when a problem boils down to just comparing remainders! ✅
