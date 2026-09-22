@@ -1,0 +1,19 @@
+🚀 Parity strikes again! Sometimes finding the optimal sub-problem is all you need.
+I recently tackled (A) Even But Not Even from Codeforces Round 616 (Div. 2). Balancing my M.Tech AI engineering work with competitive programming constantly reminds me of the power of early exits and mathematical invariants. Here is how I solved it with a clean greedy approach! 💡
+
+🛠️ The Approach
+The problem asks us to find a number whose digits sum to an even number, but the number itself is odd. Instead of generating all possible substrings, we can rely on a simple mathematical truth: the sum of any two odd numbers is always even, and any number ending in an odd digit is odd. Therefore, concatenating any two odd digits from the input instantly gives us a valid answer!
+
+Fast I/O: As always, I leveraged sys.stdin.read().split() to ingest the entire dataset instantly, bypassing standard Python I/O bottlenecks.
+
+The Linear Scan: I initialized an empty list odd_digits and iterated through the characters of the input string s. For each character, I checked if it was odd using the modulo operator int(char) % 2 != 0.
+
+The Early Exit: To maximize efficiency, we don't need all the odd digits—we just need two. As soon as len(odd_digits) == 2, the loop hits a break statement and terminates early.
+
+Final Validation: After the loop, if we successfully collected exactly two odd digits, I joined them into a string ("".join(odd_digits)) and appended it to the results. If the string had fewer than two odd digits, it is mathematically impossible, so I appended "-1".
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) worst-case per testcase, where $N$ is the length of the string, but practically O(1) in most scenarios due to the early exit. The loop stops the exact moment it finds the second odd digit. Overall time across $t$ test cases scales perfectly.
+
+Space/Memory Complexity: O(1) auxiliary space. The odd_digits array never grows beyond a length of 2. We only use additional memory to compile the final output batch before writing it via sys.stdout.write.
+It is incredibly satisfying when an apparent string manipulation problem collapses into a simple parity check! ✅
