@@ -1,0 +1,20 @@
+🚀 Simulating trajectories on Codeforces!
+I just solved (A) Alice's Adventures in "Chess" from Codeforces Round 986 (Div. 2). Whether tracking gradient descent paths in AI or simulating grid movements in competitive programming, bounding your simulations is a crucial skill.
+
+🔗Problem Link: https://lnkd.in/dG8t2MEf
+
+🛠️ The Approach The problem requires determining if a sequence of repeating moves (North, South, East, West) will eventually lead Alice to a target coordinate $(a, b)$. Instead of mathematically projecting her trajectory to infinity, a bounded simulation handles the logic perfectly!
+
+Fast I/O: Reading all test cases at once using sys.stdin.read().split() keeps the standard Python parsing overhead virtually nonexistent.
+
+Coordinate Tracking: I initialized her starting position at x, y = 0, 0 and set a found flag to False.
+
+Bounded Simulation: Instead of trying to mathematically calculate the path drift, I looped the entire string sequence 100 times using for _ in range(100):. Given the standard coordinate constraints of early-tier problems, if she hasn't hit the target within 100 cycles, she never will.
+
+Step-by-Step Movement: Inside the loop, I immediately checked if x == a and y == b:. If it matched, I flipped found = True and executed a break to exit early. Otherwise, I mapped the 'N', 'S', 'E', and 'W' characters to their respective 2D Cartesian movements (y += 1, y -= 1, x += 1, x -= 1) using standard if/elif blocks.
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per test case, where $N$ is the length of the string sequence. The simulation runs a strict maximum of 100 times, making it effectively bounded by $O(100 \times N)$. This simplifies to a linear bound that executes instantly.
+
+Space/Memory Complexity: O(N) auxiliary space to store the initial string sequence and buffer the final output array before flushing it.
+It is always a fun exercise to realize when a simple bounded loop is far more efficient to implement than finding a complex modulo equation for grid drift! ✅
