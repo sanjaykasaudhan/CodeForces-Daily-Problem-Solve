@@ -1,0 +1,23 @@
+🚀 Hash maps are the absolute backbone of efficient data retrieval, whether you are querying a database at an AI startup or mapping configurations in competitive programming!
+
+I just solved (B) Radio Station from Codeforces Round 459 (Div. 2). This problem is a textbook example of why leveraging $O(1)$ dictionary lookups is vastly superior to repeated linear searching when processing log files or command streams. 💡
+
+🔗Problem Link: https://lnkd.in/dA56F8VZ
+
+🛠️ The Approach
+The task requires us to append the name of a server to a list of configuration commands based on the server's IP address. Here is how I structured the logic for maximum efficiency:
+
+Fast I/O Setup: I utilized sys.stdin.read().split() to ingest the entire dataset instantly, completely bypassing Python's standard I/O overhead.
+
+Dictionary Mapping: The problem provides $n$ server configurations consisting of a name and an IP address. I initialized an empty dictionary ip_to_name = {} and populated it by mapping each IP directly to its corresponding name (ip_to_name[ip] = name). This sets us up for instant lookups later!
+
+String Slicing: When processing the $m$ incoming commands, the provided IP addresses have a trailing semicolon (e.g., 192.168.0.1;). I used Python's concise slice notation ip_semi[:-1] to cleanly strip that final character and extract the raw IP to match against our dictionary keys.
+
+Dynamic Formatting: With the raw IP isolated, I queried the dictionary to retrieve the server name (name = ip_to_name[ip]). I then used an f-string to reconstruct the exact required format f"{command} {ip_semi} #{name}" and appended it to the final output list.
+
+⏱️ Complexity Analysis
+Time Complexity: O(N + M). Building the initial dictionary takes exactly $O(N)$ operations, and processing the subsequent commands takes $O(M)$ operations. Because Python dictionary lookups operate in constant $O(1)$ time on average, the overall script scales perfectly linearly.
+
+Space/Memory Complexity: O(N + M) auxiliary space. We need $O(N)$ memory to store the server IP-to-name mappings and $O(M)$ memory to compile the final formatted strings before batch-printing them to standard output.
+
+It is always incredibly satisfying when an apparent nested-loop search problem collapses into a clean, instantaneous hash map lookup! ✅
