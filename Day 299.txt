@@ -1,0 +1,17 @@
+🚀 Game theory combined with parity makes for some of the most elegant algorithmic solutions!
+I recently solved (A) Digit Game from Codeforces Round 671 (Div. 2). Analyzing adversarial games is great practice for understanding minimax principles, a concept I frequently encounter in my AI engineering studies. Here is how I broke down the winning strategies without actually simulating the game! 💡
+
+🔗Problem Link: https://lnkd.in/dFQsU5BU
+
+🛠️ The Approach The game's outcome is entirely deterministic and depends on the total length of the number string, which dictates exactly who gets the final move.
+
+Fast I/O Setup: I used sys.stdin.read().split() to parse all test cases instantly into memory, completely bypassing standard Python input overhead.
+
+Odd Length Logic: If the length $n$ is odd (n % 2 != 0), Player 1 (Raze) gets the last turn. Raze only operates on odd positions (represented by indices 0, 2, 4...). Raze guarantees a win if there is at least one odd digit in any of these positions. I used a loop for i in range(0, n, 2): and an early break if int(s[i]) % 2 != 0 is found, appending "1" to the output if true, and "2" otherwise.
+
+Even Length Logic: If the length $n$ is even, Player 2 (Breach) gets the final turn. Breach operates strictly on even positions (represented by indices 1, 3, 5...). Breach guarantees a win if she can preserve just one even digit in her playable positions. A similar loop for i in range(1, n, 2): checks for int(s[i]) % 2 == 0, appending "2" to the output if found, and "1" otherwise.
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per testcase in the absolute worst scenario. However, because of the break statement, the loop exits the exact moment a winning digit is verified, making it run in virtually O(1) time for most cases.
+
+Space/Memory Complexity: O(N) auxiliary space per testcase. This is needed purely to store the parsed input sequence and buffer the out array before flushing it to standard output in a single batch using \n.join(out).
