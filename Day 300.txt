@@ -1,0 +1,19 @@
+🚀 Sometimes the most intimidating geometry problems reduce to a single, elegant mathematical invariant!
+I just tackled (A) Perpendicular Segments from Educational Codeforces Round 171 (Rated for Div. 2). Balancing AI engineering at Sriya.AI with competitive programming constantly trains me to look for the most optimized, foolproof representations of spatial data. Here is how I solved this without any complex trigonometry! 💡
+
+🔗Problem Link: https://lnkd.in/dcJ6QV9z
+
+🛠️ The Approach The problem requires us to draw two perpendicular segments of at least length K within an X \times Y grid. Instead of calculating arbitrary slopes (which can lead to messy floating-point issues or out-of-bounds errors), I relied on a fundamental property of squares: their diagonals are always perfectly perpendicular.
+
+Fast I/O: I used sys.stdin.read().split() to ingest all test cases instantly, bypassing Python's standard I/O overhead.
+
+The Maximum Square: To ensure the segments are as long as possible to easily satisfy the K constraint, I found the largest square that can perfectly fit inside the given X \times Y boundaries. This is bounded by the smaller of the two dimensions: S = min(X, Y).
+
+Coordinate Mapping: Once I had the square size S, placing the perpendicular segments was trivial. The first segment is the main diagonal running from the origin to the top-right corner: f"0 0 {S} {S}". The second segment is the anti-diagonal running from the y-axis to the x-axis: f"0 {S} {S} 0".
+
+Batch Output: Both coordinates are dynamically formatted using f-strings, appended to the out array, and flushed via sys.stdout.write in a single operation.
+
+⏱️ Complexity Analysis
+Time Complexity: O(1) per testcase. The solution completely bypasses loop simulations, relying entirely on constant-time mathematical assignments. The overall time for t test cases scales linearly as O(t), executing in a lightning-fast 15 ms.
+
+Space/Memory Complexity: O(1) auxiliary space per test case. We only allocate memory for the final output array before batch-printing.
