@@ -1,0 +1,21 @@
+🚀 Taking a quick break from AI model training to flex some binary search muscles on Codeforces!
+I recently solved (A) Alice and Bob from Educational Codeforces Round 184 (Rated for Div. 2). Efficiently querying sorted arrays is a fundamental skill, whether you are optimizing data pipelines in M.Tech or grinding through competitive programming limits! Here is a breakdown of how I tackled it. 💡
+
+🔗Problem Link: https://lnkd.in/dYxFARSz
+
+🛠️ The Approach The problem requires comparing the number of elements strictly smaller than a target value a to the number of elements strictly greater than a. Instead of a slow linear scan, binary search is the perfect tool for the job.
+
+Fast I/O: I used sys.stdin.read().split() to read all test case data instantly, bypassing standard Python input overhead.
+
+Leveraging Built-ins: Rather than writing a custom binary search loop, I imported Python's highly optimized bisect_left and bisect_right functions.
+
+Counting Elements: I calculated the number of smaller elements using left_count = bisect_left(v, a). Then, I found the number of larger elements by subtracting the right insertion point from the total length: right_count = n - bisect_right(v, a).
+
+The Decision Logic: With both counts isolated in $O(\log N)$ time, the final decision is just a simple conditional constraint. If left_count > right_count, we append str(a - 1) to our output array. Otherwise, we append str(a + 1).
+
+Batch Output: The results are dynamically formatted and flushed via sys.stdout.write in a single operation.
+
+⏱️ Complexity Analysis
+Time Complexity: O(log N) per testcase. The bisect operations pinpoint the bounds logarithmically, completely avoiding a full array traversal. Over $t$ test cases, it scales beautifully as O(T log N).
+
+Space/Memory Complexity: O(N) auxiliary space per testcase. This is required strictly to store the input array $v$ and the compiled output strings before flushing them to standard output.
