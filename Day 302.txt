@@ -1,0 +1,16 @@
+🚀 Pattern matching is at the core of AI, and competitive programming is the perfect gym to keep those string manipulation skills sharp!
+I recently solved (B) Non-Substring Subsequence from Codeforces Round 685 (Div. 2). This problem is a brilliant exercise in understanding subsequence boundaries rather than brute-forcing combinations! 💡
+
+🔗Problem Link: https://lnkd.in/dZihCbak
+
+🛠️ The Approach
+The problem asks if we can form a specific substring s[l...r] as a subsequence of the main string s using at least one character outside that continuous block. Instead of complex dynamic programming, we can solve this with a simple greedy check on the edges:
+Fast I/O & Parsing: I used sys.stdin.read().split() to pull all test cases and queries into memory instantly, bypassing standard I/O bottlenecks. I also adjusted the 1-based query indices by subtracting 1 from both l and r to map them correctly to Python's 0-based indexing.
+The Edge Check Logic: For the subsequence to be non-contiguous but still match the target, we only need one character to come from outside the original range. The optimal way to achieve this is to check if the first character of the substring (s[l]) appears anywhere to its left, or if the last character (s[r]) appears anywhere to its right.
+Pythonic Validation: I evaluated these conditions using Python's highly optimized in operator combined with clean string slicing: found_left = s[l] in s[:l] and found_right = s[r] in s[r+1:].
+The Verdict: If either found_left or found_right evaluates to True, a valid subsequence exists, and we append "YES". Otherwise, we append "NO". The results are collected in the out array and flushed via sys.stdout.write using a newline join.
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per query. The string slicing and the in operator perform a linear scan over the partitioned segments of the string. Over q queries, the time scales as O(Q * N), which easily passes within the time limits for standard string lengths.
+
+Space/Memory Complexity: O(N) auxiliary space per test case. This memory is utilized to store the initial string s and construct the out array before writing the batch to standard output.
