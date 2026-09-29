@@ -1,0 +1,13 @@
+🚀 Data partitioning isnt just for machine learning datasets—it is crucial for competitive programming too!I just solved (B) The Picky Cat from Codeforces Round 1024 (Div. 2). Balancing my AI engineering workflow with algorithmic problem-solving always reinforces the importance of finding clean boundary conditions. Here is how I tackled this one without overcomplicating the logic! 💡 
+
+🔗Problem Link: https://lnkd.in/dFDuHiii
+
+🛠️ The ApproachThe problem reduces to evaluating how the rest of an array compares to the absolute magnitude of its very first element.
+Fast I/O: I implemented sys.stdin.read().split() to read the entire data stream into memory instantly, effectively bypassing Pythons standard I/O bottlenecks. 
+The Anchor Value: I isolated the absolute value of the first element in the sequence, storing it as my anchor variable a1_abs. 
+Linear Partitioning: I looped through the remaining elements in the array (range(1, n)), keeping a running counter S of how many items had an absolute value strictly smaller than our anchor. Deriving the Complement: Instead of tracking a second variable inside the loop, I derived the count of the remaining larger-or-equal elements (L) using simple math: L = (n - 1) - S. The Threshold Check: I calculated the baseline requirement as req = (n - 1) // 2. If the smaller elements fell below this threshold (S lt;= req) or the larger elements met/exceeded it (L gt;= req), the array satisfied the condition and I appended YES. Otherwise, I appended NO. Batch Output: All results are stored in an array and flushed simultaneously using sys.stdout.write(n.join(out) + n) to maintain peak efficiency. 
+
+⏱️ Complexity AnalysisTime Complexity: O(N) per testcase. We execute exactly one linear pass over the array elements to evaluate their absolute values and increment our counter $S$. The time scales linearly as O(ΣN) across $t$ testcases. 
+
+Space/Memory Complexity: O(N) auxiliary space per testcase. This is required strictly to hold the parsed input strings in memory and build the final output list before printing. 
+It is incredibly satisfying when an array distribution problem collapses into a clean threshold comparison! 
