@@ -1,0 +1,13 @@
+🚀 Evaluating board states is just as fundamental in competitive programming as it is in AI game theory!
+I recently solved (A) A and B and Chess from Codeforces Round 294 (Div. 2). This problem is a great exercise in processing fixed-grid data and mapping characters to numerical weights efficiently. 💡 
+
+🔗Problem Link: https://lnkd.in/gWJdVZ2X
+
+🛠️️ The ApproachThe goal is to calculate the total weight of chess pieces on a board and determine who has the advantage.
+Instead of tracking White and Black scores separately, I used a net-zero approach:
+Fast I/O: I used sys.stdin.read() to ingest the entire board state at once as a single string. 
+The Weight Dictionary: I defined a piece_weights hash map. To keep the logic perfectly clean, I assigned positive weights to White pieces (e.g., Q: 9, R: 5) and negative weights to Black pieces (e.g., q: -9, r: -5). Kings were assigned a weight of 0.
+Single-Pass Accumulation: I initialized a net_score to 0. By iterating through every character in the input string, I simply checked if the character existed in the dictionary (if char in piece_weights:) and added its corresponding value to the net score. The Final Verdict: With the net score tallied, the decision is just a simple check. If net_score gt; 0, I print White. If net_score lt; 0, I print Black. Otherwise, it is a Draw. 
+
+⏱️ Complexity AnalysisTime Complexity: O(N), where N is the total number of characters in the input stream. Checking the hash map takes constant time per character, making the entire board evaluation extremely fast.
+Space/Memory Complexity: O(1) auxiliary space. The memory required for the piece_weights dictionary is strictly constant since there are only 12 unique piece types. It is always incredibly satisfying when an apparent two-player simulation reduces down to a single accumulating integer! 
