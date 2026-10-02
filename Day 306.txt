@@ -1,0 +1,11 @@
+🚀 Breaking down text into optimal segments is just as crucial in competitive programming as it is in AI tokenization pipelines!
+I just solved (A2) Gardener and the Capybaras (hard version) from Codeforces Round 843 (Div. 2). This problem is a brilliant exercise in string partitioning and lexicographical logic, showing how a seemingly complex combinatorial problem can be dismantled with a single character check! 💡 
+
+🔗Problem Link: https://lnkd.in/gFsJ9HPH
+
+🛠️ The Approach
+The task requires us to split a string (consisting only of a and b characters) into three non-empty parts—A, B, and C—such that B is either lexicographically smaller than or equal to both, or greater than or equal to both (B le A, C or B ge A, C).Fast I/O: As always, I used sys.stdin.read().split() to ingest the entire dataset instantly, bypassing Pythons standard standard I/O overhead. The Crucial Observation: Since the string only contains a and b, the second character (s[1]) dictates our entire strategy. Condition 1 (B is smallest): If s[1] == a, then a is the absolute lexicographically smallest string possible. I simply isolated it by slicing the string into s[0], s[1], and s[2:]. This instantly guarantees that B le A and B le C. Condition 2 (B is largest): If s[1] is not a (meaning it is b), we want to force B to be as large as possible. I achieved this by making B the entire middle section of the string using the slice s[1:-1]. By leaving just the single first character s[0] for A and the single last character s[-1] for C, B will always be lexicographically greater than or equal to them. Batch Output: I used f-strings to dynamically format the three partitions separated by spaces, appended them to the out array, and flushed them via sys.stdout.write with a newline join. 
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per test case, where N is the length of the string. The string slicing operations run in linear time. Across all test cases, it scales perfectly as O(ΣN).
+Space/Memory Complexity: O(N) auxiliary space per test case. This is purely to allocate memory for the string slices and the final buffered output array before printing. It is incredibly satisfying when a hard version problem collapses into a clean, two-branch if/else statement based on a single index! 
