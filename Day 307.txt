@@ -1,0 +1,15 @@
+🚀 State tracking isnt just for multi-agent LLM architectures—it is the secret to stripping away nested loops in competitive programming!
+I just solved (B) Simply Sitting on Chairs from Codeforces Round 1089 (Div. 2). This problem is a fantastic showcase of using frequency arrays and running tallies to transform a potentially slow $O(N^2)$ simulation into a blazing-fast $O(N)$ sweep! 💡 
+
+🔗Problem Link: https://lnkd.in/g6vtZniY
+
+🛠️ The Approach 
+The problem involves evaluating constraints across an array up to a dynamically expanding bound R. 
+Fast I/O amp; Parsing: Utilizing sys.stdin.read().split() to read the entire dataset instantly into memory, bypassing standard I/O bottlenecks. 
+The Frequency Array: Instead of checking every element for every possible bound, I initialized a frequency array B = [0] * (n + 1). I looped through the given array p, checking if the 1-based index x was strictly less than its value px (if x lt; px:). If it was, I recorded this constraint by incrementing the frequency array at index px (B[px] += 1). 
+The Running Tally: With the conditions perfectly mapped, I used a second linear loop to iterate the bound R from 1 to n. As the boundary expanded, I maintained a current_bad_count by continuously accumulating B[R]. 
+Calculating Valid States: The number of valid chairs available at boundary R is simply calculated as current_chairs = R - current_bad_count. By tracking this continuously, we can effortlessly find the maximum without ever having to rescan the previous elements! 
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per test case. The logic is cleanly split into two independent linear passes—one to build the frequency array and one to calculate the running prefix tally. Across all test cases, it scales optimally as O(ΣN). 
+Space/Memory Complexity: O(N) auxiliary space per test case. We strictly need memory to store the parsed input array p and our state-tracking frequency array B of size $n+1$. It is always incredibly satisfying when a prefix tally completely eliminates the need for heavy data structures like Segment Trees! ✅
