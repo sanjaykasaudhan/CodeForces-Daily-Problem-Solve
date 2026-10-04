@@ -1,0 +1,16 @@
+🚀 MEX (Minimum Excluded value) problems always require a sharp eye for edge cases!
+I just solved (B) Mex Master from Codeforces Round 858 (Div. 2). Whenever a problem asks you to arrange an array to minimize or maximize adjacent sums, it is almost always a signal to look for greedy invariants rather than attempting to simulate permutations! 💡 
+
+🔗Problem Link: https://lnkd.in/gcx6e2A3
+
+🛠️ The Approach 
+The objective is to arrange the elements such that the MEX of all adjacent pairwise sums is as small as possible. The logic completely revolves around the frequency of zeros. Fast I/O amp; 
+Single Pass: Leveraging sys.stdin.read().split() to bypass standard I/O delays, I evaluated the array in a single linear sweep. 
+I tracked exactly two metrics: the total count of zeros (c0) and the maximum value present (max_val). 
+The Optimal Case (Output 0): To get a MEX of 0, we must avoid any adjacent pairs summing to 0 (which only happens with 0 + 0). If the count of zeros is small enough that we can interleave them with non-zero elements (c0 lt;= (n + 1) // 2), a MEX of 0 is guaranteed. The Fallback Case (Output 1): If we have too many zeros, a 0 + 0 pair is unavoidable, meaning 0 is in the sum array and the MEX must be at least 1. 
+However, we can achieve a MEX of 1 if the array consists entirely of zeros (max_val == 0) or if we have at least one large number to act as a buffer (max_val gt;= 2). 
+The Worst Case (Output 2): If neither condition is met, the array strictly consists of 0s and 1s, and there are too many 0s. It becomes mathematically impossible to avoid forming both 0 (0+0) and 1 (0+1), forcing the minimum excluded value up to 2. Batch Output: The decisions are appended to the out array and flushed instantly via sys.stdout.write. 
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per test case. Finding the frequencies and maximums requires only a single linear scan of the elements. Across all $t$ test cases, this scales optimally as O(ΣN). 
+Space/Memory Complexity: O(N) auxiliary space per test case to maintain the parsed input and buffer the output strings before printing. The logical evaluation itself runs in $O(1)$ space. It is incredibly satisfying when a complex arrangement problem collapses into three clean if/elif/else threshold checks! ✅
