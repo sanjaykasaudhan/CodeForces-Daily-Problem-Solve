@@ -1,0 +1,16 @@
+🚀 Game theory and optimal play—no turn-by-turn simulation required!
+I just tackled (B) Game with Colored Marbles from Educational Codeforces Round 172 (Rated for Div. 2). When studying minimax algorithms and adversarial search for my AI engineering work at Sriya.AI, you quickly learn that optimal play can often be reduced to a static formula. Here is how I solved this game without simulating a single turn! 💡 
+
+🔗Problem Link: https://lnkd.in/g37aZ4jR
+
+🛠️ The Approach 
+The game involves Alice and Bob picking colored marbles, and we need to calculate Alices maximum possible guaranteed score. 
+Fast Frequency Mapping: Instead of manual loops, I leveraged Pythons highly optimized collections.Counter to tally the frequency of each marble color instantly. 
+State Classification: I iterated through the color frequencies (counts.values()) and divided them into two distinct buckets: colors with exactly one marble (S) and colors with multiple marbles (M). 
+The Optimal Strategy: If a color has only one marble, whoever picks it gets the full bonus points. Since Alice goes first, she and Bob will alternate taking these single marbles. Alice guarantees she gets (S + 1) // 2 of them, with each being worth 2 points. 
+Handling Multiples: For colors with multiple marbles, Bob can always pick one to block Alice from getting the full-color bonus. However, Alice can easily guarantee at least 1 point from every single one of these M colors. 
+The O(1) Formula: The entire game collapses into a single mathematical evaluation: alice_score = 2 * ((S + 1) // 2) + M. The score is appended to the out array and flushed in a single batch. 
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per test case. Building the Counter dictionary and iterating through its unique keys both take strict linear time. Across t test cases, it scales perfectly. 
+Space/Memory Complexity: O(N) auxiliary space per test case. We allocate memory for the parsed input array, the Counter hash map, and the final output buffer before printing. It is incredibly satisfying when a complex adversarial game reduces to a few lines of basic arithmetic! ✅
