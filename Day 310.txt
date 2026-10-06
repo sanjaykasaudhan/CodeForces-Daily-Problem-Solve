@@ -1,0 +1,12 @@
+🚀 Mastering Greedy Algorithms and Custom Sorting on Codeforces!
+I just tackled (B) Shooting from Codeforces Round 587 (Div. 3). In both AI pipeline optimization at Sriya.AI and competitive programming, managing accumulated penalties requires a solid greedy strategy. Here is how I structured the logic to minimize the total cost! 💡 
+
+🔗Problem Link: https://lnkd.in/gsXQp-YY
+
+🛠️ The Approach 
+The problem requires us to knock down cans, but the cost of shooting a can increases based on how many cans we have already knocked down. The formula for the cost is (durability * x) + 1, where x is the number of previously knocked-down cans. 
+Fast I/O amp; Data Binding: I used sys.stdin.read().split() to instantly load the input. Because we need to print the original order of the cans, I mapped each cans durability to its 1-based original index using a tuple (durability, i + 1) and stored them in the cans array. Greedy Sorting: To minimize the total cost, we must shoot the most durable cans first when the multiplier x is at its lowest (starting at 0). I sorted the array in descending order using Pythons sort method with a custom lambda function: key=lambda item: item[0], reverse=True. Accumulating the Score: I looped through the sorted array, using the loop index x as the exact penalty multiplier. I calculated the cost (durability * x) + 1 and added it to total_shots, while appending the original_index to my order tracking list. Batch Output: Finally, the total score and the space-separated sequence of indices are printed to standard output using sys.stdout.write. 
+
+⏱️ Complexity Analysis
+Time Complexity: O(N log N). The dominant operation is sorting the list of tuples. The subsequent linear scan to accumulate the score runs in strict O(N) time. 
+Space/Memory Complexity: O(N) auxiliary space to store the tuple array and the output tracking list before printing. It is always incredibly satisfying when an optimization problem reduces down to a clean, single-axis sort! ✅
