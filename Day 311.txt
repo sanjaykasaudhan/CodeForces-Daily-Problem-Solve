@@ -1,0 +1,14 @@
+🚀 Finding the optimal intersection of boundaries is a core concept in both algorithmic problem-solving and AI parameter optimization!
+I recently solved (B) Equalize Prices from Codeforces Round 570 (Div. 3). This problem is a brilliant example of how defining strict upper and lower bounds can completely eliminate the need for sorting or complex array traversals. 💡 
+
+🔗Problem Link: https://lnkd.in/gKP_wFKa
+
+🛠️ The Approach 
+The goal is to find the maximum possible equalized price for an array of items, such that the new price differs from every original price by at most k. 
+Fast I/O amp; Parsing: I utilized sys.stdin.read().split() to read all query data instantly into memory, completely sidestepping Pythons standard standard I/O bottlenecks. 
+Finding the Bounds: Instead of checking every element sequentially or sorting the array, I immediately isolated the extremes using Pythons highly optimized built-in a_min = min(a) and a_max = max(a) functions. 
+The Greedy Candidate: To maximize the final price, the best possible answer will always be exactly k units above the absolute cheapest item. I set this directly as my candidate_B = a_min + k. The Single Validation Check: Since candidate_B is already optimally distanced from the minimum, we only need to verify if it is also valid for the maximum item. I checked if candidate_B gt;= a_max - k:. If true, it is mathematically guaranteed to be valid for every other price in the array, and I appended the candidate. If false, no valid price exists, so I appended -1. Batch Output: All answers are buffered in the out array and printed simultaneously using sys.stdout.write. 
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per query. The min() and max() functions require exactly two rapid linear passes over the array. Over $q$ queries, the time scales optimally as O(ΣN) without the O(N log N) overhead of sorting. 
+Space/Memory Complexity: O(N) auxiliary space per query to store the parsed integer array a and compile the final output string before writing. It is incredibly satisfying when a seemingly complex range-check problem collapses into a single O(N) candidate verification! ✅
