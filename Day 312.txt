@@ -1,0 +1,15 @@
+🚀 String mutability and slice assignments are absolute lifesavers in Python!
+I just solved (B) Reversing Encryption from Codeforces Round 490 (Div. 3). Working with NLP and text processing for my M.Tech AI projects constantly reminds me that how you handle string mutations in memory dictates your pipelines speed. Here is how I tackled this decryption simulation efficiently! 💡 
+
+🔗Problem Link: https://lnkd.in/gDBeSvtw
+
+🛠️ The Approach 
+The problem requires us to simulate a decryption process by reversing prefixes of a string based on the divisors of its length, n. 
+Fast I/O amp; Mutability: I used sys.stdin.read().split() to read the input instantly. Because strings in Python are immutable (meaning you have to create a brand new string for every modification), I immediately converted the input string into a character list: t = list(input_data[1]). This allows for rapid in-place modifications! 
+Finding Divisors: I looped through all possible lengths from 1 to n (for d in range(1, n + 1):). I identified valid divisors using the modulo operator (if n % d == 0:). 
+Pythonic Reversal: Instead of writing a manual two-pointer swapping loop for the prefix, I leveraged Pythons ultra-clean slice assignment. The command t[:d] = t[:d][::-1] extracts the prefix of length d, reverses it using the [::-1] stepping trick, and assigns it right back into the original list. 
+Batch Output: After all divisor-based reversals are applied, I joined the list back into a single string using .join(t) and flushed it to standard output. 
+
+⏱️ Complexity Analysis
+Time Complexity: O(N × D), where N is the length of the string and D is the number of divisors of N. The loop runs N times, and the slice reversal takes O(d) time. Since this is a Div. 3 B problem, the constraints are small enough that this localized simulation executes in a lightning-fast 15 ms. 
+Space/Memory Complexity: O(N) auxiliary space. This is required strictly to store the mutable list representation of the string t before compiling the final output. 
