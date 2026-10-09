@@ -1,0 +1,14 @@
+🚀 Replacing heavy simulations with integer division is a cheat code for optimal performance!
+I recently solved (B) Tea with Tangerines from Codeforces Round 824 (Div. 2). Whether I am designing data chunking logic for LLMs or slicing arrays in competitive programming, finding the mathematical invariant always beats manual simulation! Here is how I approached it. 💡 
+
+🔗Problem Link: https://lnkd.in/gMyxeK8J
+
+🛠️ The Approach
+The problem asks us to divide pieces of tangerine such that no piece is twice as large (or larger) than the smallest piece.
+Fast I/O Setup: Reading the entire dataset into memory at once using sys.stdin.read().split() keeps standard Python parsing overhead virtually nonexistent. 
+Defining the Threshold: The first element a1 represents our baseline smallest piece. To satisfy the problems core condition, the maximum allowable size for any resulting piece must be strictly less than twice this baseline, making our max threshold M = 2 * a1 - 1. 
+O(1) Division Math: Instead of simulating the splitting process piece by piece, I calculated the exact number of cuts required for each subsequent tangerine ai using pure integer division: (ai - 1) // M. Accumulating the Result: I looped through the remaining items using for i in range(1, n):, seamlessly adding the required number of cuts to my steps counter. Batch Output: The final steps count for each test case is appended to the out array and efficiently printed to standard output using a newline join. 
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per testcase. We make exactly one linear pass over the elements to calculate the division. Across t test cases, it scales optimally as O(ΣN). 
+Space/Memory Complexity: O(N) auxiliary space per testcase. This memory is required strictly to buffer the parsed input stream and the output strings before writing them. 
