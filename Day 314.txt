@@ -1,0 +1,13 @@
+🚀 Precomputation is the ultimate time-saver! Whether you are caching embeddings for an AI pipeline or calculating massive permutations, doing the heavy lifting upfront changes the game.
+I just cracked (B) Emordnilap from Codeforces Round 845 (Div. 2) and ByteRace 2023. This problem is a brilliant exercise in combinatorial math and the power of global precomputations. Here is how I optimized the logic to run instantly! 💡 
+
+🔗Problem Link: https://lnkd.in/g_SFW5gH
+
+🛠️ The Approach
+The problem requires calculating the total number of inversions across all possible permutations of an array concatenated with its reversed self (an emordnilap).
+Fast I/O amp; Modulo Math: I used sys.stdin.read().split() to handle input swiftly and defined a constant MOD = 1000000007 to prevent integer overflow during massive multiplication operations. 
+Global Precomputation: Calculating factorials repeatedly inside a testcase loop is a guaranteed Time Limit Exceeded (TLE) verdict. Instead, I precomputed a global fact array up to MAX_N = 100000 using a single loop before processing any queries. Each step applies the modulo: fact[i] = (fact[i - 1] * i) % MOD. The Inversion Formula: For any array of length n, the emordnilap structure guarantees exactly n times (n - 1) inversions for a single permutation. I calculated this base value as single_beauty = (n * (n - 1)) % MOD. Scaling by Permutations: To find the total across all configurations, I simply multiplied this base value by the total number of permutations n!, which I fetched instantly in O(1) time from my precomputed array: total_beauty = (single_beauty * fact[n]) % MOD. Batch Output: The results are appended to the out array and efficiently printed to standard output using sys.stdout.write with a newline join. 
+
+⏱️ Complexity Analysis
+Time Complexity: O(MAX_N + T). The factorial precomputation takes O(MAX_N) time globally, running exactly once. After that, calculating the answer for each of the t testcases relies purely on constant-time mathematical lookups, executing in strict O(1) time per query. 
+Space/Memory Complexity: O(MAX_N + T) auxiliary space. We allocate memory for the global fact array of size 100,000 and the buffered output array of size t before flushing it. 
