@@ -1,0 +1,12 @@
+🚀 Hash sets are the absolute gold standard for constant-time lookups, whether you are filtering datasets in an AI pipeline or simulating rank collections!
+I just solved (A) Dreamoon and Ranking Collection from Codeforces Round 631 (Div. 2). This problem is a perfect demonstration of why converting arrays to hash sets is a crucial optimization technique when you need to continuously check for the existence of elements. 💡 
+
+🔗Problem Link: https://lnkd.in/gGbZZs86
+
+🛠️ The Approach 
+The problem requires us to find the maximum contiguous ranking v we can achieve, starting from 1, given a list of already collected ranks and x wildcard ranks we can add. 
+Fast I/O amp; Parsing: I pulled the entire data stream into memory instantly using sys.stdin.read().split() to completely bypass Pythons standard I/O bottlenecks. 
+The Hash Set Optimization: Instead of repeatedly searching a list (which would take O(N) time per lookup), I converted the collected ranks into a Python set using a generator expression: collected = set(int(val) for val in input_data[idx : idx + n]). This reduces every existence check to O(1) time! Greedy Simulation: I initialized my current rank target to v = 1 and ran an infinite while True: loop. If v in collected, we already have the rank, so I simply moved to the next one (v += 1). If the rank was missing but we had wildcards left (elif x gt; 0:), I bought the rank by decrementing x and incrementing v. If the rank was missing and we were out of wildcards, I triggered a break to terminate the loop. The Verdict: The maximum contiguous rank achieved is v - 1, which I appended to the out array and batch-printed using a newline join. 
+
+⏱️ Complexity Analysis
+Time Complexity: O(N + V) per testcase, where N is the number of initially collected ranks and V is the final maximum rank reached. Creating the set takes O(N) time, and the while loop runs exactly V times with O(1) lookups. Across t testcases, this scales exceptionally well. Space/Memory Complexity: O(N) auxiliary space per testcase to store the collected hash set and the final output array before flushing to standard output. 
