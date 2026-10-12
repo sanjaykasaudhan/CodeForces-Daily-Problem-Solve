@@ -1,0 +1,14 @@
+🚀 Derangements and greedy swaps—sometimes the most elegant solution is just fixing collisions as you go!
+I just solved (B) Mystic Permutation from Codeforces Round 798 (Div. 2). In AI engineering, we often deal with dataset shuffling and preventing data leakage, which makes mastering permutations and derangements a valuable mental exercise. Here is how I tackled this problem using a clean, greedy approach! 💡 
+
+🔗Problem Link: https://lnkd.in/gsGKKUT4
+
+🛠️ The Approach 
+The goal is to find the lexicographically smallest permutation of an array such that no element remains in its original position (a derangement). 
+Fast I/O amp; The Impossible Case: I parsed the data instantly using sys.stdin.read().split(). Right off the bat, if the array length n is exactly 1, it is mathematically impossible to change the elements position, so I immediately appended -1 and used continue to skip to the next testcase. 
+The Optimal Baseline: To guarantee the result is lexicographically smallest, I initialized my target array q as perfectly sorted: list(range(1, n + 1)). Greedy Collision Resolution: I iterated through the array up to the second-to-last element (for i in range(n - 1):). If the current element in my sorted array perfectly matched the original array (if q[i] == p[i]:), I resolved the collision by cleanly swapping it with the immediate next element: q[i], q[i+1] = q[i+1], q[i]. Since we only swap when necessary, we preserve the smallest possible order. 
+The Final Boundary Check: The loop stops before the last element to prevent an out-of-bounds error. If the very last element ended up matching its original position (if q[-1] == p[-1]:), I simply swapped it backward with the second-to-last element: q[-1], q[-2] = q[-2], q[-1]. Batch Output: I mapped the final integers to strings, joined them with spaces, and flushed the out buffer in a single batch operation. 
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per test case. The logic requires a single linear scan and constant-time O(1) in-place swaps. Across t test cases, it scales optimally as O(ΣN). 
+Space/Memory Complexity: O(N) auxiliary space per test case. We strictly need memory to instantiate the baseline sorted list q and compile the final output strings before writing to standard output. 
