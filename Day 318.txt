@@ -1,0 +1,16 @@
+🚀 Bypassing expensive simulations by identifying sequence boundaries is a game-changer in both string algorithms and NLP tokenization!
+I just solved (B) AB Flipping from CodeTON Round 7 (Div. 1 + Div. 2, Rated, Prizes!). When working on large language models and retrieval architectures at Sriya.AI, I constantly look for ways to optimize sequence processing. This problem perfectly demonstrates how finding structural invariants can reduce a complex multi-step simulation into a single mathematical operation! 💡 
+
+🔗Problem Link: https://lnkd.in/gNhM_g_M
+
+🛠️ The Approach 
+The problem involves repeatedly flipping adjacent A and B characters. Instead of simulating the cascading flips step-by-step (which would easily hit a Time Limit Exceeded error), the optimal strategy is to define the absolute operational boundaries. 
+Fast I/O amp; Parsing: I used sys.stdin.read().split() to read the entire dataset instantly, completely avoiding standard I/O overhead. 
+Locating the Boundaries: The maximum number of valid operations is strictly bounded by the very first A and the very last B in the string. I leveraged Pythons highly optimized built-in string methods: L = s.find(A) to get the first occurrence, and R = s.rfind(B) to get the last. 
+The O(1) Formula: I applied a simple validation check: if L != -1 and R != -1 and L lt; R:. If true, every character between these boundaries can effectively participate in the cascading flips, making the total number of operations exactly R - L. 
+The Fallback: If the condition fails (e.g., all Bs appear before any As), no operations are possible, so I appended 0. 
+Batch Output: The computed results are buffered into the out array and flushed seamlessly using a newline join via sys.stdout.write. 
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per testcase. Pythons native .find() and .rfind() execute blazing-fast linear scans at the C level. Across all testcases, the execution time scales perfectly as O(ΣN). 
+Space/Memory Complexity: O(N) auxiliary space per testcase. We allocate memory strictly to store the parsed string slices and to compile the output array before batch-printing. 
