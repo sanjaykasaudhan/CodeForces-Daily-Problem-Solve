@@ -1,0 +1,16 @@
+🚀 Pooling resources into your best-performing asset is a core principle in both AI compute allocation and greedy algorithms!
+I just solved (A) Divide and Multiply from the Deltix Round, Autumn 2021 (Div. 1 + Div. 2). Balancing my AI engineering tasks constantly reminds me that when you have a limited set of multipliers, applying them all to your highest baseline yields the maximum possible return. Here is how I translated that logic into code! 💡 
+
+🔗Problem Link: https://lnkd.in/gTmf_2Wx
+
+🛠️ The Approach
+The problem allows us to take a factor of 2 from any even number in an array and multiply it into another number. To maximize the total sum of the array, we should extract every single factor of 2 available and stack them entirely onto the largest remaining base number.
+Fast I/O amp; Extraction: I used sys.stdin.read().split() to instantly load the dataset. For each number, I used a while num gt; 0 and num % 2 == 0: loop to continuously divide it by 2 (num //= 2), stripping out all its even factors. 
+The Global Pool: I kept a running tally of these extracted factors in total_twos and appended the completely reduced, odd base numbers to a new array b. 
+The Greedy Choice: To get the absolute maximum sum, I found the largest remaining base number using max_b = max(b). I then mathematically stacked all the extracted 2s onto this single value using bitwise-equivalent exponentiation: max_b * (2 ** total_twos). 
+Final Calculation: The maximum possible array sum is simply the sum of all the reduced numbers, minus the original max_b, plus our newly supercharged maximum value: sum(b) - max_b + (max_b * (2 ** total_twos)). 
+Batch Output: The results are dynamically appended to the out array and flushed via sys.stdout.write in one go. 
+
+⏱️ Complexity Analysis
+Time Complexity: O(N log(max A)) per testcase. The while loop divides by 2, meaning it runs logarithmically relative to the size of the input numbers. Finding the max and sum takes strict O(N) time. Across t testcases, this scales incredibly fast. 
+Space/Memory Complexity: O(N) auxiliary space per testcase. We strictly need memory to maintain the reduced array b and compile the final output string buffer before printing. 
