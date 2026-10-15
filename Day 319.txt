@@ -1,0 +1,16 @@
+🚀 Finding the simplest bounding envelope is a foundational concept in both computational geometry and AI spatial processing!
+I just solved (B) Cover Points from Codeforces Round 511 (Div. 2). Balancing my M.Tech AI coursework at LPU and my engineering tasks constantly trains me to look for linear invariants rather than overcomplicating data structures. Here is how I collapsed a 2D bounding problem into a single addition operation! 💡 
+
+🔗Problem Link: https://lnkd.in/g9D98JBx
+
+🛠️ The Approach 
+The problem requires us to find the minimum size of a right-angled triangle (with legs along the X and Y axes) that can cover a given set of 2D points. 
+Fast I/O amp; Parsing: I utilized sys.stdin.read().split() to pull all coordinates into memory instantly, bypassing standard I/O bottlenecks entirely. 
+The Geometric Invariant: For any given point (x, y) to be completely covered by a right triangle extending from the origin with leg length L, the point must satisfy the boundary inequality x + y le L.
+Linear Sweep: Instead of simulating bounding boxes or convex hulls, I simply initialized max_L = 0 and iterated through every parsed x and y coordinate pair. 
+The Update Logic: For each pair, I calculated their sum (current_sum = x + y) and updated max_L if this sum exceeded my current maximum. 
+Direct Output: By the end of the loop, max_L holds the precise minimum distance required to envelop every single point, which I directly printed. 
+
+⏱️ Complexity Analysis
+Time Complexity: O(N). The logic executes a single, rapid linear scan through the N points, performing only constant-time O(1) addition and comparison operations. 
+Space/Memory Complexity: O(N) auxiliary space. This is required strictly to buffer the parsed spatial input stream before evaluation. 
