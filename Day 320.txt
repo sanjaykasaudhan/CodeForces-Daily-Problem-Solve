@@ -1,0 +1,15 @@
+🚀 Evaluating symmetry is a fundamental concept, whether you are calculating edit distances for NLP models or solving algorithmic puzzles!
+I just tackled (A) Turn Into a Palindrome from Codeforces Round 1123 (Div. 2). While optimizing text processing pipelines, I am constantly looking for ways to minimize string mutation overhead. This problem is a textbook example of using symmetric index mapping to calculate the minimum edit cost efficiently! 💡 
+
+🔗Problem Link: https://lnkd.in/gPHRYcGg
+
+🛠️ The Approach 
+The goal is to determine the minimum cost (in coins) to convert a string into a palindrome, with a special cost reduction tied to a target character c. 
+Fast I/O Setup: I implemented sys.stdin.read().split() to read all dataset variables instantly into memory, completely bypassing standard Python I/O bottlenecks. 
+Symmetric Evaluation: Instead of reversing or mutating the entire string, I strictly evaluated the mirror points by looping exactly halfway through the string using for i in range(n // 2). For each step, I isolated the opposing characters as left = s[i] and right = s[n - 1 - i]. 
+Greedy Cost Calculation: If the two characters match, no action is needed. If a mismatch occurs (if left != right:), I checked if either character already matched the target character c. If left == c or right == c, it only costs 1 coin to fix the symmetric pair. If neither matches the target, the penalty is higher, costing 2 coins. 
+Batch Output: The accumulated coins for each sequence are tracked, appended to the out array, and flushed seamlessly in a single batch using a newline join. 
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per testcase. By folding the string evaluation in half, the loop only executes N/2 times, performing rapid O(1) character comparisons. Across t test cases, this linear scan scales optimally. 
+Space/Memory Complexity: O(N) auxiliary space per testcase. Memory is allocated strictly to store the parsed input strings and the final output buffer before writing them to standard output. 
