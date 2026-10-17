@@ -1,0 +1,14 @@
+🚀 Identifying the absolute mathematical bottleneck is the key to stripping away unnecessary simulations!
+I just tackled (A) Good Contest from Codeforces Round 1122 (Div. 3). Balancing my AI engineering work and competitive programming at LPU constantly reinforces that the best algorithms dont compute everything—they just compute the bounds. Here is how I solved this with pure O(1) logic! 💡 
+
+🔗Problem Link: https://lnkd.in/gPhMig7v
+
+🛠️ The Approach The problem gives us a total count $n$ and three separate capacity variables: a_1, a_2, and a_3. We need to find a minimal remaining quantity based on these overlapping conditions. 
+Fast I/O amp; Parsing: I utilized sys.stdin.read().split() to read all dataset queries instantly into memory, completely avoiding Pythons standard standard I/O bottlenecks. 
+Isolating the Bottleneck: The maximum possible number of elements that satisfy all conditions is strictly limited by the single most restrictive constraint. I isolated this boundary instantly using Pythons built-in minimum function: max_strong = min(a1, a2, a3). 
+Deriving the Complement: Instead of trying to model the intersections explicitly, the minimal weak portion is just the total population minus our maximal strong boundary: min_weak = n - max_strong. 
+Batch Output: The derived integer is cast to a string, appended to the out array, and efficiently flushed using a newline join via sys.stdout.write. 
+
+⏱️ Complexity Analysis
+Time Complexity: O(1) per testcase. The logic relies entirely on constant-time minimum evaluation and basic subtraction, executing in a lightning-fast 15 ms. Across t test cases, it scales perfectly as O(T). 
+Space/Memory Complexity: O(T) auxiliary space globally. Memory is required strictly to hold the parsed input stream and the compiled output strings before writing them to standard output.
