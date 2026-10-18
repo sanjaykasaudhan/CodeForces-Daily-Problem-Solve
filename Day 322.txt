@@ -1,0 +1,15 @@
+🚀 Periodic cycles and modular arithmetic are everywhere—from seasonal time-series forecasting in AI to optimizing algorithmic schedules!
+I just solved (A) Holidays (Problem 670A) on Codeforces. Balancing my AI engineering tasks M.Tech studies at LPU constantly reminds me that many looping simulations can be completely bypassed with a single, clean mathematical formula. Here is how I solved this scheduling problem in O(1) time! 💡 
+
+🔗Problem Link: https://lnkd.in/ga-hGpBC
+
+🛠️ The Approach
+The problem asks for the minimum and maximum possible number of days off in a continuous period of n days. Since a week always has 7 days and exactly 2 days off, we can exploit this repeating cycle.
+The Power of divmod: Instead of using separate division and modulo operations, I leveraged Pythons built-in divmod(n, 7). This instantly gives both the number of full weeks w and the remaining days r in a single, highly optimized step. 
+The Baseline: Every full week guarantees exactly 2 days off, so our baseline count is always w * 2. Calculating the Minimum: To get the absolute minimum days off, we assume the leftover r days start on a Monday. This means weekends only hit on the 6th and 7th leftover days. I captured this cleanly using max(0, r - 5). 
+Calculating the Maximum: To get the maximum days off, we assume the leftover r days start directly on a Saturday. This means the first 2 leftover days are weekends. I bounded this using min(2, r). 
+Single-Line Output: The minimum and maximum are dynamically calculated and printed in one clean line: print(w * 2 + max(0, r - 5), w * 2 + min(2, r)). 
+
+⏱️ Complexity Analysis
+Time Complexity: O(1). There are absolutely no loops or iterations. The entire problem is solved instantly using constant-time arithmetic boundaries and the divmod function. 
+Space/Memory Complexity: O(1) auxiliary space. We only allocate memory for three basic integer variables (n, w, and r), operating well within the 0 KB threshold reported by the judge.
