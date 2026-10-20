@@ -1,0 +1,14 @@
+🚀 Strategic data partitioning is the secret sauce for both AI feature engineering and algorithmic constraints!
+I just solved (B) Special Permutation from Educational Codeforces Round 117 (Rated for Div. 2). Balancing my M.Tech AI studies at LPU and engineering tasks constantly reminds me that greedy allocations often beat complex backtracking. Here is how I constructed the perfect bounded array using a simple descending loop! 💡 
+
+🔗Problem Link: https://lnkd.in/gs77fDJv
+
+🛠️ The Approach The problem requires us to build a permutation of numbers from 1 to n split into two equal halves, where the minimum of the left half is exactly a and the maximum of the right half is exactly b. 
+Fast I/O amp; Initialization: I instantly loaded the data using sys.stdin.read().split() and seeded my two halves with their required boundaries: left = [a] and right = [b]. 
+The Greedy Descending Loop: To ensure a remains the absolute minimum on the left, we should pack the left half with the largest available numbers. Conversely, the right half should get the smallest remaining numbers so b stays the maximum. I achieved this by iterating backwards using for i in range(n, 0, -1):. 
+Targeted Population: Inside the loop, I skipped our seed values using if i == a or i == b: continue. I then greedily filled the left array until it reached half capacity (if len(left) lt; n // 2:), pushing all remaining smaller numbers into the right array. 
+Final Validation: Instead of writing complex pre-checks, I just validated the final constructed halves: if min(left) == a and max(right) == b:. If valid, I joined and printed them; otherwise, I outputted -1. 
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per testcase. Constructing the arrays via the descending loop and validating them with Pythons built-in min() and max() functions both require a rapid linear scan. 
+Space/Memory Complexity: O(N) auxiliary space per testcase. Memory is strictly allocated to buffer the dynamically sized left and right arrays and the output strings before printing to standard output. 
