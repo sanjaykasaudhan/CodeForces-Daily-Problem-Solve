@@ -1,0 +1,15 @@
+🚀 Game theory problems often look like complex minimax decision trees, but they usually collapse into a single frequency threshold!
+I just solved (A) Min Max Game from Codeforces Round 1120 (Div. 2). When designing decision-making agents for my M.Tech AI projects, understanding when to simulate a game versus when to calculate the mathematical outcome directly is a crucial optimization skill. Here is how I solved this with a pure frequency check! 💡 
+
+🔗Problem Link: https://lnkd.in/gq6nr-kf
+
+🛠️ The Approach 
+The problem requires determining the winner of a game based on an arrays state. Instead of simulating the players turns, the entire outcome depends solely on the frequency of the 1 elements. 
+Fast I/O amp; Parsing: I utilized sys.stdin.read().split() to read the entire dataset instantly into memory, bypassing standard I/O overhead. 
+Linear Frequency Sweep: I initialized a count_1 variable and ran a single loop through the current arrays slice, incrementing the counter every time I encountered a 1 (if input_data[idx + i] == 1:). 
+The Threshold Condition: The games optimal play dictates that the first player (Bessie) wins if the number of 1s strictly exceeds half of the available turn space. I modeled this directly with the mathematical condition if count_1 gt; (n - 1) // 2:. 
+Batch Output: Based on the threshold, I appended either Bessie or Elsie to the out array and flushed the results simultaneously using a newline join via sys.stdout.write. 
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per testcase. The logic strictly requires one rapid linear pass over the elements to tally the frequencies. Across t test cases, this scales optimally as O(ΣN). 
+Space/Memory Complexity: O(N) auxiliary space per testcase. Memory is allocated solely to buffer the parsed input stream and to compile the output strings before writing them to standard output.
