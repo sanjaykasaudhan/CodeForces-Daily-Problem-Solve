@@ -1,0 +1,16 @@
+🚀 Parity checks are the ultimate cheat code for bypassing grid simulations—whether you are mapping robotic paths or optimizing state transitions!
+I just cracked (A) Robot Odd Moves from DeepInfra Round 1 (Codeforces Round 1126, Div. 1 + Div. 2). Balancing my AI engineering tasks and M.Tech studies at LPU constantly reminds me that evaluating states mathematically is always faster than simulating them step-by-step. Here is how I solved this with pure O(1) parity logic! 💡 
+
+🔗Problem Link: https://lnkd.in/ggJNHGPu
+
+🛠️ The Approach
+ The problem requires determining if a robot can reach a specific coordinate based on specific odd-step movement rules. Instead of simulating the path, the entire outcome depends on the parity (even/odd nature) of the coordinates.
+Fast I/O: I used sys.stdin.read().split() to read all dataset queries instantly into memory, completely avoiding Pythons standard I/O bottlenecks. 
+Matching Parity: I first checked if both coordinates share the same parity using if a % 2 == b % 2:. If they do, the target is mathematically reachable as long as the boundary constraint b lt;= a is met, resulting in exactly a steps. Otherwise, it is impossible, and we output -1. 
+Mismatched Parity: If the parities differ, the robot requires a slightly offset step alignment. I checked the boundary if b lt;= a + 1:. If valid, it takes exactly a + 1 steps. If it exceeds the boundary, it remains impossible (-1). 
+Batch Output: The evaluated answers are dynamically appended to the out array and efficiently flushed via sys.stdout.write using a newline join. 
+
+⏱️ Complexity Analysis
+Time Complexity: O(1) per testcase. The logic relies entirely on constant-time modulo arithmetic and basic conditional threshold checks, executing instantly without any loops. Across t test cases, it scales perfectly. 
+
+Space/Memory Complexity: O(N) auxiliary space globally to hold the parsed input stream and compile the output strings before batch-printing.
