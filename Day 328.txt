@@ -1,0 +1,15 @@
+🚀 Separating data streams by binary states is a foundational technique—whether you are applying attention masks in AI or parsing algorithmic arrays!
+I just solved (A) Hey, It's Me, Souvlakity from WorldQuant Round 1 (Codeforces Round 1128, Div. 1 + Div. 2). As I work on factual verification pipelines, I constantly use boolean masks to filter relevant data. This problem is a brilliant example of manually tracking 1-based indices using exactly that concept! 💡
+
+🔗Problem Link: https://lnkd.in/gvKihriF
+
+🛠️ The Approach
+The problem requires us to evaluate subsets of positions based on the presence of the character '1'.
+Fast I/O & Initialization: I pulled the entire dataset into memory instantly using sys.stdin.read().split() and initialized my testcase loop.
+Index Segregation: I looped through the string s of length n and used 1-based indexing (i + 1) to separate positions into two distinct tracking lists: S_init for characters matching '1', and K_init for everything else.
+The Edge Case: If only a single '1' exists (len(S_init) == 1), the required combinatorial operation is invalid, so I immediately appended "0" to the output and skipped to the next testcase using continue.
+Combinatorial Evaluation: To find the optimal score, I initialized a max_guaranteed_score tracker. Then, I iterated through every element F in S_init. For each element, I created a filtered sub-list C using a clean list comprehension ([v for v in S_init if v != F]) to represent the remaining elements, and evaluated the minimum value m = min(C) to simulate the score constraint.
+
+⏱️ Complexity Analysis
+Time Complexity: O(N²) worst-case per testcase. The outer loop for F in S_init: combined with the inner list comprehension evaluates the array in quadratic time relative to the number of '1's present.
+Space/Memory Complexity: O(N) auxiliary space per testcase. Memory is strictly allocated to buffer the dynamically sized S_init and K_init arrays and the output sequence before writing them to standard output.
