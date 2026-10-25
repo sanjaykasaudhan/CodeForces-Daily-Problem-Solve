@@ -1,0 +1,14 @@
+🚀 Bitwise operations are the ultimate hack for bypassing loops—whether in low-level AI hardware optimization or algorithmic math!
+I just solved (B) Mislove Has Lost an Array from Codeforces Round 581 (Div. 2). Balancing my M.Tech AI studies at LPU and engineering tasks constantly reminds me that computing geometric progressions and powers of 2 should never require a loop. Here is how I solved this array problem in pure $O(1)$ time using bitwise shifts! 💡
+
+🔗Problem Link: https://lnkd.in/gzd9GGvu
+
+🛠️ The Approach The problem asks for the minimum and maximum possible sum of an array of n elements, where elements must be powers of 2, with at least l and at most r distinct values.
+Fast I/O & Parsing: I utilized sys.stdin.read().split() to pull n, l, and r instantly into memory.
+The Minimum Sum (Bitwise Math): To minimize the sum, we must use exactly l distinct powers of 2 (starting from 2^0=1) and pad the rest of the array with 1s. The sum of the first $l$ powers of 2 is mathematically $2^l - 1$. I computed this instantly using a bitwise left shift: (1 << l) - 1. The remaining elements are all 1s, which simply adds (n - l) to the total.
+The Maximum Sum: To maximize the total, we use exactly $r$ distinct powers of 2, which sums to (1 << r) - 1. The remaining $n - r$ elements must be the largest possible value we've reached, which is $2^{r-1}$. I calculated this by multiplying the remaining count by 1 << (r - 1).
+Clean Output: Both boundaries are evaluated perfectly and printed directly using a clean Python f-string: f"{min_sum} {max_sum}".
+
+⏱️ Complexity Analysis
+Time Complexity: O(1) per testcase. By leveraging bitwise shifts and the geometric progression sum formula, the code completely avoids loops and array generation, executing instantly.
+Space/Memory Complexity: O(1) auxiliary space. We strictly allocate memory for basic integer variables, requiring zero arrays or lists.
