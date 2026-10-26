@@ -1,0 +1,15 @@
+🚀 Separating data streams and greedy elimination—perfect for both algorithmic puzzles and balancing AI datasets!
+I just solved (B) Parity Alternated Deletions from Codeforces Round 550 (Div. 3). When preprocessing data for my machine learning pipelines, splitting and sorting arrays to handle class imbalances is a daily task. Here is how I applied that same logic to minimize penalties in this greedy alternating game! 💡
+
+🔗Problem Link: https://lnkd.in/gKeKutuK
+
+🛠️ The Approach
+The problem asks us to delete elements by strictly alternating between even and odd numbers, aiming to minimize the sum of whatever is left over.
+Fast I/O & Data Segregation: I parsed the input instantly using sys.stdin.read().split(). Instead of keeping a mixed array, I iterated through the elements and separated them into two distinct lists, evens and odds, using a clean val % 2 == 0 check.
+Greedy Sorting: To minimize the final remaining sum, we must prioritize deleting the largest available numbers on every turn. I sorted both lists in ascending order using .sort(). This guarantees that the smallest numbers (which we want to leave behind if we run out of moves) are pushed to the front of the arrays.
+The Balance Threshold: I measured the lengths of the separated lists using c_e and c_o. If the counts differ by at most 1 (if abs(c_e - c_o) <= 1:), we can perfectly alternate and wipe out the entire dataset, leaving a sum of print(0).
+Pythonic Slicing: If the arrays are highly imbalanced, we will exhaust the smaller list and be forced to stop. We can delete all elements of the smaller list, plus an equal number (plus one) from the larger list. I calculated the exact number of leftover elements as rem. Since my lists were already sorted ascending, the leftovers are guaranteed to be at the very beginning, allowing me to grab and sum them instantly with a Python slice: print(sum(evens[:rem])) or print(sum(odds[:rem])).
+
+⏱️ Complexity Analysis
+Time Complexity: O(N \log N). The dominant operations are the dual .sort() calls applied to the bifurcated sub-lists. The initial segregation and the final slice summation execute in rapid O(N) time.
+Space/Memory Complexity: O(N) auxiliary space. We allocate memory strictly to buffer the separated evens and odds arrays before computing the final sum.
