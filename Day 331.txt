@@ -1,0 +1,15 @@
+🚀 Optimizing resource costs dynamically is a universal challenge—whether you are allocating GPU compute or fueling up for an algorithmic road trip!
+I just solved (A) Sasha and His Trip from Codeforces Round 539 (Div. 2). This problem is a fantastic exercise in greedy optimization and knowing exactly when to bulk-purchase resources. Here is how I approached the logic! 💡
+
+🔗Problem Link: https://lnkd.in/g6cQ25Tc
+
+🛠️ The Approach The goal is to reach city n from city 1 with the minimum possible cost, given a fuel tank capacity of v and increasing fuel prices at each subsequent city.
+Fast I/O & Parsing: I pulled the input parameters n and v instantly using my standard sys.stdin.read().split() setup.
+The Best-Case Scenario: Fuel is cheapest at city 1 (costing exactly 1 unit per liter). If our tank capacity v is large enough to cover the entire distance n - 1, the optimal greedy choice is to buy all the fuel upfront. I handled this with a clean if n - 1 <= v: check, printing exactly n - 1 as the total cost.
+The Iterative Fallback: If the tank is too small, we must buy a full tank at city 1 (costing v), and then buy exactly 1 liter at each subsequent city to keep the tank topped off until the destination is within reach. I initialized total_cost = v.
+Greedy Accumulation: I used a simple for i in range(2, n - v + 1): loop to simulate stopping at the next cities. Since the price per liter at city i is exactly i, I just added i to the total_cost at each step.
+Final Output: The calculated total_cost is directly printed to standard output.
+
+⏱️ Complexity Analysis
+Time Complexity: O(N). The fallback logic requires a single linear loop spanning at most N iterations to accumulate the costs. For small constraints, this executes in a lightning-fast 46 ms.
+Space/Memory Complexity: O(1) auxiliary space. We allocate memory strictly for our integer trackers, using a perfectly optimal 0 KB of extra memory.
