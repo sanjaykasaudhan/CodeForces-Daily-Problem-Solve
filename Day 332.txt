@@ -1,0 +1,15 @@
+🚀 Stacks are the perfect data structure for deferred execution—whether you are handling recursive AI agent calls or simulating task queues!
+I just solved (B) Did Not Go to Print from Codeforces Round 1125 (Div. 3). Balancing my AI engineering tasks and M.Tech coursework at LPU constantly reminds me that choosing the right state-tracking structure makes simulations effortless. Here is how I used a Last-In-First-Out (LIFO) stack to resolve deferred operations! 💡
+
+🔗Problem Link: https://lnkd.in/gfADH2y8
+
+🛠️ The Approach The problem simulates a system where tasks can either be executed immediately or deferred, requiring us to track which specific document IDs successfully print.
+Fast I/O & Initialization: I pulled the dataset instantly using sys.stdin.read().split(). To track the execution state, I initialized a boolean array printed = [False] * (n + 1) and an empty stack list to handle deferred tasks.
+1-Based Indexing: I used Python's enumerate(s) to loop through the string of instructions, mapping the zero-based index i to a 1-based doc_id = i + 1.
+Deferred Execution (Push): When the instruction is '1', it means the task is queued for later. I simply pushed the current doc_id onto the stack using stack.append(doc_id).
+LIFO Resolution (Pop): When the instruction is '2', the system attempts to print the most recently deferred document. I handled this by checking if stack:, setting printed[stack.pop()] = True to instantly resolve the top item. If the stack is empty, it falls back to printing the current document: printed[doc_id] = True.
+Immediate Execution: For any other instruction character (else:), the current document simply prints directly, so I flagged printed[doc_id] = True.
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per testcase. The enumerate loop scans the instruction string exactly once. Because list appends and pops operate in strict O(1) time at the end of the array, the entire simulation executes in a lightning-fast linear pass.
+Space/Memory Complexity: O(N) auxiliary space per testcase. Memory is strictly allocated to hold the printed boolean state array and the stack tracker, scaling linearly with the number of instructions.
