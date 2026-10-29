@@ -1,0 +1,13 @@
+🚀 Simple coordinate translations are the building blocks of everything from algorithmic geometry to bounding box shifts in computer vision!
+I just solved (A) In Search of Convenience from Codeforces Round 1125 (Div. 3). Balancing my computer vision tasks and M.Tech coursework at LPU constantly reinforces that the most efficient spatial algorithms often rely on basic scalar additions. Here is how I solved this with an ultra-lightweight O(1) coordinate shift! 💡
+
+🔗Problem Link: https://lnkd.in/grRt2Mkt
+
+🛠️ The Approach The problem asks us to find a valid coordinate based on a starting point (x_0, y_0) and a distance parameter r.
+Fast I/O & Parsing: I pulled the testcase parameters x0, y0, and r instantly into memory using my standard sys.stdin.read().split() setup.
+The Geometric Shift: Instead of simulating complex distance formulas or angles, the most straightforward valid point is simply a direct translation along a single axis. I kept the Y-coordinate completely static (y = y0) and just added the distance to the X-coordinate: x = x0 + r.
+Batch Output: I formatted the new coordinates into a clean string using Python's f-strings (f"{x} {y}"), appended it to my out array, and flushed all results simultaneously using sys.stdout.write with a newline join.
+
+⏱️ Complexity Analysis
+Time Complexity: O(1) per testcase. The logic strictly requires a single integer addition and an assignment, executing in a lightning-fast 15 ms.
+Space/Memory Complexity: O(1) auxiliary space. The judge confirmed a perfectly optimal 0 KB memory footprint since we strictly allocate memory for basic integer variables before batch-printing.
