@@ -1,0 +1,15 @@
+🚀 Filtering out the noise and isolating the boundaries is a superpower—whether you are dropping redundant features in an AI dataset or optimizing an algorithmic array!
+I just solved (A) Odd Eraser from Codeforces Round 1118 (Div. 2). Balancing my AI engineering tasks and M.Tech studies at LPU constantly reminds me that you rarely need to process every single data point to find the mathematical truth. Here is how I bypassed the entire array and solved this with a single GCD operation! 💡
+
+🔗Problem Link: https://lnkd.in/gWudK3t3
+
+🛠️ The Approach The problem structure implies a relationship across an array of numbers, but the core mathematical constraint actually only relies on the extreme boundaries of the sequence.
+Fast I/O & Flat Parsing: I pulled the dataset into a flat list instantly using sys.stdin.read().split().
+Ignoring the Middle: Instead of allocating memory to slice the current testcase's array, I directly extracted only the first element (a1 = int(input_data[idx])) and the last element (an = int(input_data[idx + n - 1])) using precise pointer arithmetic.
+The Math Core: The entire problem reduces to finding the Greatest Common Divisor of these two boundary elements. I passed them directly into Python's highly optimized built-in math.gcd(a1, an) function.
+Pointer Jump: I incremented my global index pointer by exactly n (idx += n) to completely leap over the unused middle elements and jump to the next testcase.
+Batch Output: The GCD result is appended to the out array and flushed seamlessly using a newline join via sys.stdout.write.
+
+⏱️ Complexity Analysis
+Time Complexity: O(log(min(a1, an))) per testcase. By ignoring the array traversal entirely, the execution time is strictly bounded by the Euclidean algorithm running inside math.gcd. This executes in a lightning-fast 46 ms.
+Space/Memory Complexity: O(1) auxiliary space per testcase. We strictly allocate memory for our two boundary integer variables, maintaining a perfectly optimal 0 KB memory footprint according to the judge.
