@@ -1,0 +1,14 @@
+🚀 Identifying the absolute bottleneck is a core skill—whether you are tuning batch sizes for an AI model or solving resource allocation puzzles!
+I just solved (A) Perfect Sandwiches from Educational Codeforces Round 195 (Rated for Div. 2). Balancing my M.Tech AI studies at LPU and engineering tasks constantly reminds me that complex simulations often collapse into a simple minimum threshold check. Here is how I solved this with pure O(1) bounding logic! 💡
+
+🔗Problem Link: https://lnkd.in/gVEBeTEh
+
+🛠️ The Approach The problem requires us to determine the maximum number of items (sandwiches) we can construct given two integer parameters, a and b.
+Fast I/O & Parsing: I utilized my standard sys.stdin.read().split() setup to pull the dataset instantly into memory, extracting the variables a and b for each query by advancing an index pointer.
+The Impossible Boundary: The very first check is to ensure the baseline constraint is met. If a <= b, the construction is mathematically impossible, so I intercepted this state and immediately appended "-1" to the output array.
+Isolating the Bottleneck: If the baseline condition passes, the maximum yield is strictly bottlenecked by the limiting factor. It is either the total amount of b, or the remaining differential a - b. I evaluated this boundary instantly using Python's built-in minimum function: max_sandwiches = min(b, a - b).
+Batch Output: The computed max_sandwiches are cast to strings, appended to the out list, and efficiently flushed to standard output via sys.stdout.write using a newline join.
+
+⏱️ Complexity Analysis
+Time Complexity: O(1) per testcase. The logic strictly relies on constant-time subtraction and a min() comparison, completely bypassing the need for simulation and executing in a lightning-fast 15 ms.
+Space/Memory Complexity: O(1) auxiliary space. We allocate memory solely for the basic integer variables before batch-printing, achieving a perfectly optimal 0 KB memory footprint according to the judge.
