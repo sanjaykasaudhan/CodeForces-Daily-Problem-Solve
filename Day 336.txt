@@ -1,0 +1,14 @@
+🚀 Extracting unique features is a fundamental step—whether you are building a vocabulary for an NLP model or solving distribution puzzles!
+I just solved (B) Power Walking from Codeforces Round 773 (Div. 2). Balancing my AI engineering tasks and M.Tech coursework at LPU constantly reminds me that Python's native hash sets are the ultimate tool for evaluating distinct states. Here is how I solved this array distribution problem using a clean O(1) lookup data structure! 💡
+
+🔗Problem Link: https://lnkd.in/gDhGe-pi
+
+🛠️ The Approach The problem asks us to find the maximum possible strength for k power-ups, where strength is determined by the number of unique types across k subsets.
+Fast I/O & Slicing: I pulled the dataset instantly into memory using my standard sys.stdin.read().split() setup, extracting the current array slice using precise index pointers: input_data[idx + 1 : idx + 1 + n].
+The Set Invariant: The absolute baseline limit of the hero's strength is dictated by the total number of unique power-up types in the entire array. Instead of sorting or maintaining complex frequency maps, I simply dropped the array slice into a Python set and measured its length: c = len(set(...)).
+Greedy List Comprehension: For every subset size k from 1 to n, the optimal strategy ensures we group duplicates first. Thus, the strength will always be exactly our unique count c, until k strictly exceeds c. Once k > c, we are forced to separate duplicates, increasing the total strength exactly to k. I modeled this boundary instantly with a clean list comprehension: ans = [str(max(c, k)) for k in range(1, n + 1)].
+Batch Output: The evaluated answers are joined with spaces, appended to the out array, and efficiently flushed to standard output via sys.stdout.write using a newline join.
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per testcase. Constructing the hash set takes expected linear time, and the list comprehension executes exactly N times using rapid O(1) max() operations. For small constraints, this runs in a lightning-fast 46 ms.
+Space/Memory Complexity: O(N) auxiliary space per testcase. Memory is strictly allocated to build the hash set, construct the ans array, and buffer the output sequence before batch-printing.
