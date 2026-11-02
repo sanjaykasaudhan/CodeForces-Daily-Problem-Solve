@@ -1,0 +1,19 @@
+🚀 Exploiting periodic cycles and XOR properties is the ultimate cheat code to bypass massive recursive simulations!
+I just solved (A) XORinacci from Manthan, Codefest 19 (open for everyone, rated, Div. 1 + Div. 2). Balancing my AI engineering tasks and M.Tech coursework at LPU constantly reinforces that identifying underlying mathematical invariants saves immense computational overhead. Here is how I reduced a potentially massive recursive sequence to a clean O(1) modulo check! 💡
+
+🔗Problem Link: https://lnkd.in/gseb5pbu
+
+🛠️ The Approach The problem asks us to compute the n-th term of a Fibonacci-like sequence where the standard addition operation is replaced by the bitwise XOR operator (\oplus).
+Fast I/O & Parsing: I utilized my standard sys.stdin.read().split() setup to instantly pull the variables a, b, and n into memory.
+The XOR Invariant: Because of the self-canceling property of XOR (x \oplus x = 0), the sequence doesn't grow infinitely. It strictly repeats in a cycle of 3:
+f(0) = a
+f(1) = b
+f(2) = a \oplus b
+f(3) = (a \oplus b) \oplus b = a \oplus 0 = a (and the cycle restarts!)
+The O(1) Modulo Mapping: Instead of simulating the sequence up to n (which would easily cause a Time Limit Exceeded error for large numbers), I just calculated the remainder using rem = n % 3.
+Direct Assignment: I mapped the remainder directly to the answer: if rem == 0: yields a, elif rem == 1: yields b, and else: yields a ^ b.
+Batch Output: The computed ans values are cast to strings, appended to the out list, and efficiently flushed via sys.stdout.write using a newline join.
+
+⏱️ Complexity Analysis
+Time Complexity: O(1) per testcase. By completely bypassing the sequence generation and leveraging a single modulo operation and a bitwise XOR, the evaluation is instantaneous.
+Space/Memory Complexity: O(1) auxiliary space. Memory is strictly allocated to evaluate the basic integer variables before batch-printing, requiring exactly 0 arrays or recursive stacks.
