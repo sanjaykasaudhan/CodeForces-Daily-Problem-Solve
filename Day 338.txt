@@ -1,0 +1,18 @@
+🚀 Stride alignment is everything—whether you are configuring convolutional filters in AI or sorting arrays with fixed step sizes!
+I just solved (B) Sort with Step from Codeforces Round 868 (Div. 2). Balancing my AI engineering internship and M.Tech coursework at LPU constantly reminds me that checking for structural invariants is infinitely faster than simulating swaps. Here is how I solved this sorting puzzle in pure O(N) time using modulo arithmetic! 💡
+
+🔗Problem Link: https://lnkd.in/gJt9zjh5
+
+🛠️ The Approach The problem allows us to swap any two elements that are exactly k indices apart. We need to find out if the array can be sorted, or if it can be sorted by making exactly one "free" swap of any two elements.
+Fast I/O & Flat Parsing: I pulled the dataset instantly into memory using my standard sys.stdin.read().split() setup, extracting the array length n and the step size k.
+The Modulo Invariant: Because elements can only move in steps of k, an element can only ever reach its correct sorted position if its current 1-based index and its target value share the same remainder when divided by k.
+Linear Misalignment Check: Instead of simulating the swaps, I initialized a bad_count = 0 tracker and ran a single loop through the array. For every element val at 0-based index i, I checked if it violated the modulo invariant: if val % k != (i + 1) % k:. If they didn't match, I incremented the bad_count.
+The Final Verdict:
+If bad_count == 0, everything is already aligned, requiring 0 free swaps.
+If bad_count == 2, exactly two elements are trapped in the wrong modulo cycles. A single free swap between them fixes the array, so I outputted "1".
+Any other count means it is mathematically impossible to fix with just one free swap, yielding "-1".
+Batch Output: The evaluated answers are appended to the out array and efficiently flushed via sys.stdout.write using a newline join.
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per testcase. The logic strictly requires one rapid linear pass over the elements to tally the modulo misalignments, completely bypassing any actual sorting algorithms.
+Space/Memory Complexity: O(N) auxiliary space per testcase. Memory is allocated solely to buffer the parsed input stream and to compile the output strings before writing them to standard output.
