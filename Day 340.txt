@@ -1,0 +1,15 @@
+🚀 Finding the fundamental step size of a dataset is crucial—whether you are normalizing AI features or solving generative math puzzles!
+I just solved (B) Doremy's Perfect Math Class from Codeforces Global Round 24. Balancing my AI engineering tasks and M.Tech coursework at LPU constantly reminds me that generating new data points from existing ones is strictly bounded by their mathematical foundations. Here is how I solved this set-generation problem using a highly optimized running GCD! 💡
+
+🔗Problem Link: https://lnkd.in/gG4nQ3A7
+
+🛠️ The Approach The problem asks for the maximum number of distinct positive integers we can generate by repeatedly taking the absolute difference of any two existing elements in a set.
+Fast I/O & Parsing: I utilized sys.stdin.read().split() to instantly load the data and built the array a using a clean list comprehension: [int(input_data[idx + i]) for i in range(n)].
+The Invariant: By Bezout's Identity, the step size of all possible generated numbers is exactly the Greatest Common Divisor (GCD) of all numbers in the initial set. The maximum possible bound is simply the largest element in the set, which I extracted as max_val = a[-1].
+Running GCD with Early Exit: I imported Python's math module, initialized g = a[0], and iterated through the array, dynamically updating it via math.gcd(g, a[i]). The absolute best optimization here is the early exit: if g ever hits 1, it can never decrease further, so I instantly halted the loop using if g == 1: break to save compute cycles.
+The O(1) Math Solution: The total number of elements that can be generated is just the maximum value divided by this fundamental GCD step size: ans = max_val // g.
+Batch Output: I appended the casted string of ans to my out buffer and flushed everything via sys.stdout.write using a newline join.
+
+⏱️ Complexity Analysis
+Time Complexity: O(N \log(\text{max } A)) worst-case per testcase, bounded by the Euclidean algorithm operating inside math.gcd. However, the break condition drastically cuts down practical execution time by preventing unnecessary GCD checks once the base unit is found.
+Space/Memory Complexity: O(N) auxiliary space per testcase. Memory is strictly allocated for the parsed array a and the output sequence before batch-printing.
