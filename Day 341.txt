@@ -1,0 +1,15 @@
+🚀 Evaluating sequence continuity is just as critical in string algorithms as it is in time-series anomaly detection!
+I just cracked (B) Alternating String from Educational Codeforces Round 189 (Rated for Div. 2). Building robust data pipelines and pursuing my M.Tech at LPU reinforces that identifying adjacent state violations is often the fastest way to validate a sequence. Here is how I solved this string puzzle with a single linear scan and a simple conflict threshold! 💡
+
+🔗Problem Link: https://lnkd.in/gJyjfCc3
+
+🛠️ The Approach The problem asks if a binary string can be made alternating under specific constraints, which mathematically translates to bounding the number of adjacent identical characters.
+Fast I/O & Parsing: I utilized sys.stdin.read().split() to instantly load the dataset into memory and extracted the string s and its length n for each query.
+State Tracking: To measure how far the string deviates from a perfectly alternating sequence, I initialized a conflicts = 0 counter.
+Adjacent Linear Scan: I iterated through the string using for j in range(n - 1): and checked strictly for adjacent duplicates using if s[j] == s[j+1]:. Every identical pair increments the conflict penalty.
+The Threshold: The sequence can only be mathematically repaired into a valid alternating state if the total number of adjacent conflicts is at most 2. I evaluated this instantly with a clean if conflicts <= 2: check, mapping it directly to "YES" or "NO".
+Batch Output: The evaluated answers are dynamically appended to the out array and efficiently flushed via sys.stdout.write using a newline join.
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per testcase. The logic strictly requires one rapid linear pass to compare adjacent characters, executing effortlessly within the 31 ms timeframe.
+Space/Memory Complexity: O(N) auxiliary space per testcase. Memory is exclusively allocated to buffer the parsed string inputs and compile the output sequences before batch-printing.
