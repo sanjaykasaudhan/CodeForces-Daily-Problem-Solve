@@ -1,0 +1,16 @@
+🚀 Finding the optimal convergence point is a mathematical certainty—whether you are minimizing loss in a neural network or aligning array values!
+I just solved (D) Lock and Unlock from Codeforces Round 1131 (Div. 3). Balancing my AI engineering tasks and M.Tech coursework at LPU constantly reinforces that the absolute optimal target for absolute differences is always the median. Here is how I solved this optimization problem using clean sorting and median mathematics! 💡
+
+🔗Problem Link: https://lnkd.in/gGQuZk8x
+
+🛠️ The Approach The problem requires us to find the minimum cost to align an array of numbers, alongside calculating the span of operations.
+Fast I/O & Parsing: I utilized sys.stdin.read().split() to parse the inputs instantly and constructed the target array a.
+The Sorting Step: I ordered the elements ascending using Python's native a.sort(). Sorting is the fastest way to expose both the median and the extreme boundaries of the dataset.
+The Median Theorem: To minimize the sum of absolute differences (L1 norm) to a single target value, the mathematically proven optimal convergence point is always the median. I extracted this in constant time using median = a[n // 2].
+Calculating Total Cost: With the optimal target identified, I used a highly efficient Python generator expression to compute the total displacement for all elements: min_cost = sum(abs(x - median) for x in a).
+Boundary Span: The secondary metric (minimum operations span) simplifies to the maximum distance between the extremes. Since the array is sorted, this is just the last element minus the first element: min_operations = a[-1] - a[0].
+Batch Output: Both computed values are dynamically formatted via f-strings and appended to the out array for a single batch print at the end.
+
+⏱️ Complexity Analysis
+Time Complexity: O(N \log N) per testcase. The dominant computational step is Python's highly optimized Timsort via a.sort(). The median extraction is O(1), and the cost summation executes in rapid O(N) time.
+Space/Memory Complexity: O(N) auxiliary space per testcase. Memory is strictly allocated to buffer the parsed array a and the output sequences before flushing to standard output.
