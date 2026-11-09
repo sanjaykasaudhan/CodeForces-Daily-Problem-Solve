@@ -1,0 +1,15 @@
+🚀 Exponential scaling is a powerful tool—whether you are tuning learning rate schedulers in AI or constructing collision-free arrays!
+I just solved (B) ezraft and Array from Codeforces Round 1108 (Div. 2). Balancing my AI engineering tasks and M.Tech coursework at LPU constantly reminds me that when a sequence needs to strictly outpace its own history, multiplying by two is often the cleanest solution. Here is how I constructed this array using a greedy geometric progression! 💡
+
+🔗Problem Link: https://lnkd.in/gqHVMUvK
+
+🛠️ The Approach
+The problem requires us to generate an array of length n that satisfies specific subset or prefix constraints, which often boils down to ensuring each new element grows fast enough to avoid overlapping with previous combinations.
+Fast I/O & Base Cases: I instantly loaded the queries using sys.stdin.read().split(). For extreme edge cases, I directly mapped n=1 to output "1" and mathematically impossible n=2 to "-1".
+Seeding the Sequence: For any valid n > 2, I initialized the foundation of the array with ans = [1, 2] and set the next target current_val = 3.
+Greedy Exponential Growth: To guarantee the constraints for the rest of the array, I used a simple for _ in range(n - 2): loop. At each step, I appended current_val to the array and instantly doubled it for the next iteration (current_val *= 2). This guarantees that every subsequent element is strictly greater than or equal to the sum of all preceding elements.
+Batch Output: I mapped the final array elements to strings, joined them with spaces, and flushed the output via sys.stdout.write using a newline join.
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per testcase. The array construction strictly requires a single rapid linear pass executing n - 2 iterations of O(1) multiplication. For small constraints, this executes in a lightning-fast 46 ms.
+Space/Memory Complexity: O(N) auxiliary space per testcase. Memory is allocated strictly to build the dynamic ans sequence and buffer the output strings before batch-printing.
