@@ -1,0 +1,15 @@
+🚀 Controlling cumulative drift is crucial—whether you are stabilizing gradient flows in an AI model or managing prefix sums in algorithmic sequences!
+I just solved (A) Avoiding Zero from Codeforces Global Round 11. Whether I am mapping out cumulative feature distributions for pipelines or tackling my M.Tech coursework at LPU, I constantly rely on greedy sorting to enforce strict boundaries. Here is how I solved this prefix-sum puzzle by exploiting the total mathematical weight of the array! 💡
+
+🔗Problem Link: https://lnkd.in/gCnZqRpp
+
+🛠️ The Approach The problem asks us to rearrange an array so that no running cumulative sum (prefix sum) ever equals zero.
+Fast I/O & Array Construction: I pulled the dataset instantly into memory using my standard sys.stdin.read().split() setup and used a clean list comprehension to extract the target array a.
+The Zero-Sum Dead End: The most critical invariant is the absolute sum of the entire array. If total_sum == 0, no matter how we rearrange the elements, the final prefix sum will inherently land exactly on zero. I trapped this mathematically impossible state immediately with if total_sum == 0: and outputted "NO".
+Greedy Weighting (Descending): If the total sum is strictly positive (total_sum > 0), we have enough positive "weight" to overpower the negatives. The safest strategy is to front-load all the largest positive numbers so the running sum climbs high and never dips back to zero. I achieved this instantly with a.sort(reverse=True).
+Greedy Weighting (Ascending): Conversely, if the total sum is negative, the negative numbers carry the dominant weight. I front-loaded them by sorting ascending using Python's default a.sort(). This ensures the running total dives deep into the negatives and safely stays away from the zero line.
+Batch Output: After confirming "YES", the successfully rearranged array is joined into a space-separated string, appended to the out buffer, and efficiently flushed to standard output via sys.stdout.write.
+
+⏱️ Complexity Analysis
+Time Complexity: O(N \log N) per testcase. The execution time is strictly bounded by Python's highly optimized Timsort algorithm handling the a.sort() operations. The initial sum(a) calculation executes in a rapid O(N) sweep.
+Space/Memory Complexity: O(N) auxiliary space per testcase. Memory is allocated solely to buffer the dynamically parsed array a and compile the output sequences before batch-printing.
