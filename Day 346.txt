@@ -1,0 +1,14 @@
+🚀 Overlapping spatial boundaries is the ultimate optimization—whether you are minimizing padding in CNNs or perfectly seating elements in a circular array!
+I just solved (B) Social Distance from Codeforces Round 783 (Div. 2). Building robust models and pursuing my M.Tech at LPU constantly reinforces that simulating circular dependencies is usually a waste of compute. Here is how I collapsed this entire circular seating arrangement into a single O(N) mathematical formula without even sorting the data! 💡
+
+🔗Problem Link: https://lnkd.in/g8NNG7KN
+
+🛠️ The Approach The problem asks if n people can sit at a round table of $m$ chairs, where each person requires a specific minimum number of empty chairs between them and their neighbors.
+Fast I/O & Parsing: I utilized my standard sys.stdin.read().split() setup to instantly load the dataset and extracted the required empty chair counts into array a using a clean list comprehension.
+The Mathematical Collapse: In a circle, every person shares the empty space with their neighbor, meaning the required space between any two adjacent people is strictly the maximum of their two individual requirements. To minimize the total chairs used, the optimal seating arrangement is simply sorted order.
+The O(N) Formula: We don't actually need to execute an O(N \log N) sort to find the total! The sum of the maximums of adjacent pairs in a sorted circle mathematically simplifies perfectly. Every person needs 1 chair for themselves (total n), plus the sum of all their baseline requirements (sum(a)). To close the circle optimally at the ends, the largest requirement overlaps with the smallest, requiring a final boundary adjustment of max(a) - min(a). I combined this instantly: min_chairs_needed = n + sum(a) + max(a) - min(a).
+Threshold Validation: I checked if this absolute minimum fits within the room's total capacity using if min_chairs_needed <= m: and appended "YES" or "NO" to the output buffer accordingly.
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per testcase. By completely bypassing the need to sort the array, the logic relies purely on Python's highly optimized native sum(), max(), and min() functions, executing in a lightning-fast 15 ms.
+Space/Memory Complexity: O(N) auxiliary space per testcase. Memory is exclusively allocated to buffer the dynamically parsed requirement array a and compile the output sequences before batch-printing via sys.stdout.write.
