@@ -1,0 +1,15 @@
+🚀 The Pigeonhole Principle is the ultimate shortcut—whether you are balancing dominant classes in an AI dataset or separating identical elements in an array!
+I just solved (A) New Year Garland from Educational Codeforces Round 79 (Rated for Div. 2). Balancing my AI engineering tasks and M.Tech coursework at LPU constantly reinforces that identifying the dominant constraint is always faster than running a step-by-step simulation. Here is how I solved this arrangement puzzle using a clean O(1) gap-filling threshold! 💡
+
+🔗Problem Link: https://lnkd.in/gSfNcNz2
+
+🛠️ The Approach The problem asks if we can arrange red, green, and blue lamps in a line such that no two lamps of the same color are adjacent.
+Fast I/O & Parsing: I utilized my standard sys.stdin.read().split() setup to instantly load the dataset, extracting the variables r, g, and b.
+Isolating the Bottleneck: The only color that can force an invalid arrangement (two identical adjacent lamps) is the one with the highest frequency. I identified this dominant class instantly using max_lamps = max(r, g, b).
+The Gap Invariant: If you lay out all the max_lamps in a row, you create exactly max_lamps - 1 gaps between them. To prevent them from touching, you must have enough of the other colors combined to fill every single gap.
+The Threshold Check: I calculated the available fillers as remaining_lamps = (r + g + b) - max_lamps. The mathematical threshold is simply a single conditional check: if remaining_lamps >= max_lamps - 1:. If true, I appended "Yes", otherwise "No".
+Batch Output: The evaluated answers are dynamically appended to the out array and efficiently flushed via sys.stdout.write using a newline join.
+
+⏱️ Complexity Analysis
+Time Complexity: O(1) per testcase. By completely bypassing the need to simulate the garland placement, the logic relies purely on Python's native max() function and basic arithmetic, executing effortlessly within the 31 ms timeframe.
+Space/Memory Complexity: O(1) auxiliary space per testcase. Memory is exclusively allocated to buffer the dynamically parsed integers before batch-printing, achieving a perfectly optimal 0 KB memory footprint according to the judge.
