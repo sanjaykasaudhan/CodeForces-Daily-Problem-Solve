@@ -1,0 +1,21 @@
+🚀 Aligning feature vectors under strict boundary conditions is a universal challenge—whether you are bounding gradient updates in AI or matching algorithmic arrays!
+I just solved (C) Two Arrays from Technocup 2022 - Elimination Round 2. Balancing my AI engineering tasks and M.Tech coursework at LPU constantly reinforces that mapping elements greedily is the most optimal way to validate structural transformation limits. Here is how I solved this array matching puzzle using parallel sorting and a strict threshold check! 💡
+
+🔗Problem Link: https://lnkd.in/g7uNDguZ
+
+🛠️ The Approach The problem requires us to determine if array a can be transformed into array b, given that we can only choose to increment any element in a by exactly 1, or leave it as is.
+
+Fast I/O & Parsing: I utilized my standard sys.stdin.read().split() setup to instantly load the dataset, using list comprehensions to cleanly extract the two target arrays, a and b.
+
+Greedy Alignment: To give the transformation the highest mathematical probability of success, the smallest elements in a must naturally pair with the smallest elements in b. I achieved this instantly by running Python's native a.sort() and b.sort().
+
+The Bounded Difference: I initialized a possible = True flag and iterated through the aligned arrays using an index-based loop. For every aligned pair, I calculated the transformation gap: diff = b[i] - a[i].
+
+Early Exit Validation: The transformation strictly limits us to adding 0 or 1. I evaluated this immediately: if diff != 0 and diff != 1:. If any pair violates this boundary, it is mathematically impossible to align the arrays, so I flagged possible = False and executed an instant break to save compute cycles.
+
+Batch Output: Based on the final boolean flag, I appended "YES" or "NO" to the output buffer and flushed everything via sys.stdout.write.
+
+⏱️ Complexity Analysis
+Time Complexity: O(Nlog⁡N)O(N \log N)O(NlogN) per testcase. The execution time is strictly dominated by Python's highly optimized Timsort algorithm aligning both arrays. The subsequent validation loop executes in a rapid O(N)O(N)O(N) sweep with a potential early exit.
+
+Space/Memory Complexity: O(N)O(N)O(N) auxiliary space per testcase. Memory is allocated solely to buffer the dynamically parsed arrays and compile the output sequences before batch-printing.
