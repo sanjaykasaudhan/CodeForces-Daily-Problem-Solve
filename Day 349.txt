@@ -1,0 +1,14 @@
+🚀 Why simulate a continuous process when relative velocity solves it in a single equation?
+I just solved (A) Wizards' Duel from Codeforces Round 327 (Div. 2). Balancing my AI engineering tasks and M.Tech coursework at LPU constantly reinforces a core principle of physics engines and continuous state spaces: never use a step-by-step simulation loop if a closed-form mathematical equation exists. Here is how I collapsed this meeting-point simulation into pure O(1) arithmetic! 💡
+
+🔗Problem Link: https://lnkd.in/gMyAdpqu
+
+🛠️ The Approach The problem asks us to find the exact coordinate where two entities (spells) will collide, given the total distance l and their respective speeds p and q.
+Fast I/O & Parsing: I utilized my standard sys.stdin.read().split() setup to instantly load the variables l, p, and q into memory.
+The Physics Equation: Instead of simulating the movement over time, I used basic relative velocity. The time t it takes for the two entities to collide is the total distance divided by their combined approaching speed: t = \frac{l}{p + q}.
+The O(1) Distance Formula: To find the exact distance the first entity traveled before the collision, we multiply its speed p by the collision time t. Substituting the time gives us the beautiful, continuous formula: d = \frac{l \times p}{p + q}. I calculated this instantly using meeting_distance = (l * p) / (p + q).
+Direct Output: The resulting floating-point meeting_distance is directly flushed to standard output via Python's built-in print().
+
+⏱️ Complexity Analysis
+Time Complexity: O(1) execution time. By completely bypassing discrete time-step simulations, the logic relies purely on a single mathematical division and multiplication, executing instantly.
+Space/Memory Complexity: O(1) auxiliary space. Memory is exclusively allocated to buffer the three basic integers, achieving a perfectly optimal 0 KB memory footprint according to the judge.
