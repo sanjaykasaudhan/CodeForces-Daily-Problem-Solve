@@ -1,0 +1,15 @@
+🚀 Tracking state transitions is the key to both time-series signal processing in AI and optimal string manipulation!
+I just solved (B) Ugu from Codeforces Round 830 (Div. 2). Balancing my AI engineering tasks and M.Tech coursework at LPU constantly reinforces that simulating operations step-by-step is usually a trap; instead, you should just map the invariants! Here is how I solved this binary string flipping problem by simply counting adjacent state changes in pure O(N) time! 💡
+
+🔗Problem Link: https://lnkd.in/gMbh83qT
+
+🛠️ The Approach The problem asks for the minimum number of suffix flip operations (changing 0s to 1s and vice versa) required to completely sort a binary string into non-decreasing order. Simulating the actual flips would create a massive O(N^2) bottleneck.
+Fast I/O & Parsing: I utilized my standard sys.stdin.read().split() setup to instantly load the queries into memory, extracting the string s and length n.
+Skipping the Noise (Prefix Bypass): Leading '0's are already perfectly sorted, so they never need to be included in any flip operation. I completely bypassed them by finding the exact index of the very first '1' using Python's highly optimized s.find('1').
+The Zero-Op Edge Case: If first_one == -1, the string contains no '1's at all. It is perfectly sorted by default, so I immediately appended "0" to the output and used continue to jump to the next query.
+Counting State Transitions: Once we hit the first '1', every single time the character changes (from '1' to '0', or '0' to '1'), it mathematically forces exactly one suffix flip to correct the inversion. I initialized ans = 0 and ran a single linear scan from first_one + 1 to n. Whenever an adjacent transition occurred (if s[i] != s[i-1]:), I simply incremented the flip counter (ans += 1).
+Batch Output: The computed ans totals are dynamically cast to strings, appended to the out array, and efficiently flushed to standard output via sys.stdout.write using a newline join.
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per testcase. The logic strictly requires one rapid .find() pass and one subsequent linear iteration to tally the adjacent inversions, avoiding any nested loops or actual string mutations.
+Space/Memory Complexity: O(N) auxiliary space per testcase. Memory is exclusively allocated to buffer the dynamically parsed strings and compile the output sequences before batch-printing.
