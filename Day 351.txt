@@ -1,0 +1,14 @@
+🚀 Breaking mathematical symmetry is just as important in algorithmic constructions as it is in neural network weight initialization!
+I just solved (B) Indivisible from Codeforces Round 869 (Div. 2). Balancing my AI engineering tasks and M.Tech coursework at LPU constantly reminds me that when a global continuous pattern fails, local adjacent swaps are usually the cleanest fix. Here is how I solved this permutation puzzle using basic parity constraints and a stride-2 loop! 💡
+
+🔗Problem Link: https://lnkd.in/gA_w72uz
+
+🛠️ The Approach The problem asks us to construct a permutation of length n where no subsegment sum is divisible by its length, or declare it impossible.
+Fast I/O & Parsing: I utilized my standard sys.stdin.read().split() setup to instantly load the queries into memory and extract the length n.
+The Odd Boundary (Impossibility): The sum of an entire permutation from 1 to n is \frac{n(n+1)}{2}. If n is an odd number greater than 1, this total sum is mathematically guaranteed to be divisible by n, immediately violating the problem's core constraint. I trapped this state instantly with elif n % 2 != 0: and appended "-1". The trivial edge case of n=1 naturally just returns "1".
+The Even Construction (Adjacent Swaps): For any even n, the solution is a beautifully simple structural pattern. We just need to break the natural sum progression by flipping adjacent pairs (e.g., 2, 1, 4, 3, 6, 5). I implemented this by stepping through the array using a stride of 2: for i in range(1, n + 1, 2):. Inside the loop, I greedily appended the flipped pair: ans.append(str(i + 1)) followed by ans.append(str(i)).
+Batch Output: The computed ans arrays are joined by spaces, appended to the out buffer, and efficiently flushed to standard output via sys.stdout.write.
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per testcase. The logic completely avoids mathematical backtracking, strictly requiring one rapid linear loop with a step size of 2 to construct the array.
+Space/Memory Complexity: O(N) auxiliary space per testcase. Memory is allocated solely to buffer the dynamically built ans string array before batch-printing.
