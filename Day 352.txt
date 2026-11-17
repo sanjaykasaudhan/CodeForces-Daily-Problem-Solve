@@ -1,0 +1,15 @@
+🚀 Why simulate nested loops for combinatorial counting when you can group multiples mathematically?
+I just solved (B) Crimson Triples from Codeforces Round 1106 (Div. 2). Balancing my AI engineering tasks and M.Tech coursework at LPU constantly reinforces that recognizing mathematical groupings is the ultimate way to bypass heavy simulations. Here is how I collapsed a potentially massive combinatorial search into a clean O(N) loop using integer division! 💡
+
+🔗Problem Link: https://lnkd.in/gtShYSys
+
+🛠️ The Approach The problem requires us to count specific valid triplets or combinations bounded by n. Instead of blindly checking every combination, we can anchor our search around one variable and calculate the valid permutations for the others instantly.
+Fast I/O & Parsing: I utilized my standard sys.stdin.read().split() setup to load all queries instantly into memory and extracted the boundary n for each testcase.
+Anchoring the Search: I initialized an accumulator ans = 0 and iterated a single variable b through the range from 1 to n (for b in range(1, n + 1):). By fixing b, the rest of the problem reduces to basic arithmetic.
+The Multiples Formula: For any given b, the number of valid multiples that fit within the boundary n is simply n // b.
+Combinatorial Product: Since the combinations can pair independently for the anchored variable, the total valid pairs for that specific b is exactly the square of the multiples. I calculated this instantly via ans += multiples * multiples.
+Batch Output: The computed ans totals are converted to strings, appended to the out array, and efficiently flushed to standard output via sys.stdout.write using a newline join.
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per testcase. By evaluating the combinations mathematically for each anchored element, the logic completely bypasses O(N^2) or O(N^3) nested loops, executing rapidly within the 46 ms timeframe.
+Space/Memory Complexity: O(N) auxiliary space per testcase. Memory is exclusively allocated to buffer the dynamically parsed input strings and compile the output sequences before batch-printing, utilizing a perfectly optimal 0 KB footprint according to the judge.
