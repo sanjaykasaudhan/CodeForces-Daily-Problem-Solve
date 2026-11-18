@@ -1,0 +1,15 @@
+🚀 Evaluating the impact of removing a node doesn't require rebuilding the entire network—whether you are pruning an AI model or calculating sequence gaps!
+I just solved (A) Minimum Difficulty from Codeforces Round 283 (Div. 2). Balancing my AI engineering tasks and M.Tech coursework at LPU constantly reinforces that simulating array mutations is computationally expensive; instead, you should just evaluate the localized delta! Here is how I solved this element-removal puzzle using two clean linear passes and a strict boundary check! 💡
+
+🔗Problem Link: https://lnkd.in/gaA_B6y8
+
+🛠️ The Approach The problem asks us to find the optimal element to remove from a strictly increasing sequence such that the maximum gap (the "difficulty") between any two adjacent surviving elements is minimized.
+Fast I/O & Parsing: I utilized sys.stdin.read().split() to instantly load the data and built the sequence array a using a list comprehension.
+The Baseline Bottleneck: Even if we remove a perfectly optimal element, the final difficulty can never be lower than the largest pre-existing gap elsewhere in the array. I found this baseline by sweeping through range(n - 1) to calculate the base_max_gap = a[i+1] - a[i].
+Simulating Node Removal: To evaluate removing an element, I completely avoided array slicing. Removing an element at index i+1 simply means the gap now spans from i directly to i+2. I ran a second linear sweep through range(n - 2) to calculate this new span: merged_gap = a[i+2] - a[i]. I tracked the smallest possible outcome of this operation as min_merged_gap.
+The Final Verdict: The true optimal difficulty is mathematically bounded by whichever is larger: the best localized removal (min_merged_gap) or the unbreakable baseline gap of the rest of the array (base_max_gap). I resolved this instantly with optimal_difficulty = max(base_max_gap, min_merged_gap).
+Direct Output: The evaluated difficulty is flushed straight to standard output via Python's print().
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per testcase. By completely bypassing the need to create N separate arrays with one missing element, the logic relies strictly on two rapid linear sweeps, executing in a lightning-fast 31 ms.
+Space/Memory Complexity: O(N) auxiliary space per testcase. Memory is exclusively allocated to buffer the initial array a before evaluation, achieving a perfectly optimal 0 KB memory footprint according to the judge.
