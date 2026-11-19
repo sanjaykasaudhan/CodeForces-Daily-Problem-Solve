@@ -1,0 +1,14 @@
+🚀 Majority voting is a powerhouse—whether you are aggregating predictions in an ensemble AI model or maximizing class scores in a matrix!
+I just solved (A) Important Exam from Codeforces Round 577 (Div. 2). Balancing my AI engineering tasks and M.Tech coursework at LPU constantly reinforces how clean Python's built-in iterators are for matrix operations. Here is how I solved this greedy frequency problem using matrix transposition and collections. 💡
+
+🔗Problem Link: https://lnkd.in/gQgpJzCm
+
+🛠️ The Approach The problem asks us to find the maximum possible total score for n students across m multiple-choice questions, where each question has a specific point weight. Since each question is independent, the optimal answer key is simply the most frequent choice for that column.
+Fast I/O & Slicing: I pulled the entire input into memory using sys.stdin.read().split(), then cleanly sliced out the answers strings (input_data[2 : 2 + n]) and converted the question weights into the points list.
+Pythonic Matrix Transposition: Instead of writing nested index loops to read down each column, I used zip(*answers) to transpose the rows of student answers into columns of question responses. I then paired each column directly with its corresponding point value using an outer zip(..., points).
+Greedy Majority Vote: For each question column, I imported Counter from collections to tally the answer frequencies and immediately grabbed the highest count via max_freq = max(Counter(col).values()).
+Score Accumulation: I multiplied each column's dominant frequency by its weight, added it to total_score, and flushed the final result directly with print(total_score).
+
+⏱️ Complexity Analysis
+Time Complexity: O(N \times M). Transposing the N \times M grid with zip(*answers) and counting character frequencies across every column takes linear time relative to the total number of cells, executing in a fast 31 ms on the test judge.
+Space/Memory Complexity: O(N \times M) auxiliary space to store the parsed input strings, with the judge reporting a lightweight 68 KB memory footprint on Test 1.
