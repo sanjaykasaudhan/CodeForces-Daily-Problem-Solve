@@ -1,0 +1,13 @@
+🚀 Splitting a problem space into constant-value regions and variable regions is a massive compute saver—whether you are optimizing piecewise functions in AI or evaluating large mathematical ranges!
+I just solved (B) Monocarp and Projects from Educational Codeforces Round 194 (Rated for Div. 2). Balancing my AI engineering tasks and M.Tech coursework at LPU constantly reinforces that brute-forcing across massive intervals is a guaranteed bottleneck; instead, you should isolate the constant zones and evaluate them in $O(1)$! Here is how I tackled this math-heavy range problem by splitting the interval around the difference d! 💡
+
+🔗Problem Link: https://lnkd.in/g9hEPk_V
+
+🛠️ The Approach The problem gives us parameters x, y, and k, requiring us to aggregate values across a range ending at end_m = x + k - 1.
+Fast I/O & Early Exit: I pulled all testcase inputs instantly using sys.stdin.read().split() and extracted x, y, and k via index pointers. I computed the core differential d = y - x and immediately intercepted the trivial edge case: if d == 0:, I appended "0" and jumped to the next query with continue.
+Isolating the Constant Region (O(1)): For any value in the range strictly greater than d, the contribution remains completely constant. Whenever end_m > d, I calculated the starting boundary start_const = max(x, d + 1) and added the entire constant block's total in one shot: ans += (end_m - start_const + 1) * d.
+Handling the Bounded Variable Region: For the remaining interval up to limit = min(end_m, d), I checked if x <= limit:, added the baseline (limit - x + 1) * d, and initialized m = x to process the variable portion inside a while m <= limit: loop.
+
+⏱️ Complexity Analysis
+Time Complexity: By collapsing the entire end_m > d segment into a single O(1) multiplication and restricting the while m <= limit loop strictly to the bounded region min(end_m, d), the solution completely avoids linear timeouts on large ranges.
+Space/Memory Complexity: O(1) auxiliary space per testcase, as memory is strictly allocated for scalar integer trackers (d, end_m, ans, limit, m) before buffering the final answers in out.
