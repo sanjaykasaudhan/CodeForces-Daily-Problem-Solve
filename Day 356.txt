@@ -1,0 +1,13 @@
+🚀 Why simulate turn-based game states when a single closed-form equation gives you the exact optimal outcome?
+I just solved (A) Toy Army from Codeforces Beta Round 72 (Div. 2 Only). Balancing my AI engineering tasks and M.Tech coursework at LPU constantly reinforces that multi-step game-theoretic simulations can often be collapsed into pure O(1) arithmetic. Here is how I solved this classic turn-based optimization problem in a single line of math! 💡
+
+🔗Problem Link: https://lnkd.in/g3eXqFGw
+
+🛠️ The Approach The problem asks for the maximum number of toy soldiers that can be eliminated across three alternating turns, given two armies of size n (where n is even).
+Fast I/O & Parsing: I utilized my standard sys.stdin.read().split() setup to instantly pull the input into memory and extracted n = int(input_data[0]).
+The O(1) Game-Theoretic Collapse: Instead of simulating individual soldier eliminations across turns, the optimal strategy across three rounds mathematically guarantees that the maximum casualties always equal \frac{3n}{2}.
+Integer Arithmetic & Direct Output: To avoid any floating-point precision issues, I used Python's integer floor division (//) and printed the result directly in one shot: print(3 * n // 2).
+
+⏱️ Complexity Analysis
+Time Complexity: O(1). The entire solution relies on a single integer multiplication and division, executing in a lightning-fast 30 ms across the test cases.
+Space/Memory Complexity: O(1) auxiliary space. Only a single integer variable n is stored in memory, achieving an optimal 0 KB memory footprint on the judge.
