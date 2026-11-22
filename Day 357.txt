@@ -1,0 +1,14 @@
+🚀 Short-circuiting with the Pigeonhole Principle is one of the cleanest ways to turn a linear scan into a guaranteed O(1) check!
+I just solved (A) Doggo Recoloring from Codeforces Round 505 (rated, Div. 1 + Div. 2, based on VK Cup 2018 Final). Balancing my AI engineering tasks and M.Tech coursework at LPU constantly reinforces that bounding your feature space—like knowing an alphabet only has 26 characters—lets you bypass unnecessary computation entirely. Here is how I solved this recoloring puzzle with a single short-circuiting conditional! 💡
+
+🔗Problem Link: https://lnkd.in/gPXXAtgK
+
+🛠️ The Approach The problem asks if we can make all n puppies the same color, given that we can only recolor a group of at least two puppies that already share a color.
+Fast I/O & Parsing: I pulled the input directly into memory using sys.stdin.read().split() and extracted n = int(input_data[0]) alongside the color string s = input_data[1].
+The Short-Circuit Edge Cases: First, if n == 1, all puppies are already the same color by default. Second, by the Pigeonhole Principle, since there are only 26 lowercase English letters, any string with n > 26 is mathematically guaranteed to contain at least one duplicate color—letting Python short-circuit to "Yes" without even touching the string!
+Hash Set Duplicate Check: For the remaining cases (2 \le n \le 26), we just need to know if any color repeats so we can trigger a chain reaction of recoloring. I checked this in one shot using len(set(s)) < n.
+Direct Output: Combining all three conditions into if n == 1 or n > 26 or len(set(s)) < n: cleanly routes directly to print("Yes") or print("No").
+
+⏱️ Complexity Analysis
+Time Complexity: O(1) for the core logic (bounded by at most 26 characters). Thanks to the n > 26 short-circuit, set(s) only ever executes on strings of length \le 26, running in 15 ms on Test #1 and 31 ms on Test #2.
+Space/Memory Complexity: O(1) auxiliary space for the hash set (at most 26 unique characters), with the judge reporting a tiny 0 KB memory footprint on Test #1 and 12 KB on Test #2.
