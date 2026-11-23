@@ -1,0 +1,15 @@
+🚀 Handling edge-case transitions cleanly is what separates fragile scripts from production-grade logic—whether you are debugging tokenizers in AI or solving digit-construction puzzles!
+I just solved (A) Forgetting Things from Technocup 2020 - Elimination Round 2. Balancing my AI engineering tasks and M.Tech coursework at LPU constantly reminds me that most apparent search problems actually boil down to a tiny set of deterministic case branches. Here is how I solved this consecutive-number puzzle in pure O(1) time! 💡
+
+🔗Problem Link: https://lnkd.in/gaVwfaER
+
+🛠️ The Approach The problem gives us the first digits da and db of two consecutive positive integers a and b (where a + 1 = b), asking us to reconstruct any valid pair or output -1 if it is impossible.
+Fast I/O & Parsing: I pulled the inputs directly into memory using sys.stdin.read().split() and extracted da = int(input_data[0]) and db = int(input_data[1]).
+Case 1 — Identical Leading Digits (da == db): If both numbers start with the same digit, we can simply shift them into the tens place and make them consecutive: print(da * 10, da * 10 + 1).
+Case 2 — Consecutive Leading Digits (db == da + 1): If db is already one greater than da, the digits themselves form a valid consecutive pair, so I printed them directly via print(da, db).
+Case 3 — The Carry-Over Edge Case (da == 9 and db == 1): The only wrap-around transition for consecutive integers happens when rolling over a power of 10 (e.g., 9 to 10). I caught this explicitly and outputted print(9, 10).
+Impossible States: Any other combination of leading digits cannot belong to consecutive numbers, so the else: branch cleanly outputs print(-1).
+
+⏱️ Complexity Analysis
+Time Complexity: O(1). The entire solution relies on at most three constant-time conditional checks and basic integer arithmetic, executing in a fast 31 ms on Test #1.
+Space/Memory Complexity: O(1) auxiliary space. Only two integer variables (da and db) are stored in memory, achieving an optimal 0 KB memory footprint on the judge.
