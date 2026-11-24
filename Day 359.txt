@@ -1,0 +1,14 @@
+🚀 Periodic patterns are the cleanest way to satisfy sliding-window constraints—whether you are designing strided kernels in AI or building constructive arrays!
+I just solved (B) Yet Another Constructive from Codeforces Round 1111 (Div. 2). Balancing my AI engineering tasks and M.Tech coursework at LPU constantly reinforces that when a global constraint applies uniformly across every window of size k, a simple repeating pattern is usually the optimal construction. Here is how I built this array in a single O(N) Python list comprehension! 💡
+
+🔗Problem Link: https://lnkd.in/gD5qDyJB
+
+🛠️ The Approach The problem gives us parameters n, k, and m, asking us to construct a valid array of length n where every contiguous segment of length k satisfies the target sum m (or declare it impossible).
+Fast I/O & Parsing: I pulled all testcase inputs instantly into memory using sys.stdin.read().split() and extracted n, k, and m via index pointers.
+The Impossibility Boundary: Since every element must be a positive integer (at least 1), any window of length k requires a minimum sum of k. If k > m, a valid construction is mathematically impossible, so I trapped this immediately and appended "NO".
+The Periodic Construction: Whenever k <= m, I appended "YES" and computed the exact anchor value needed to balance every window of size k: val = str(m - k + 1). By placing val at every k-th position (i % k == 0) and filling all other positions with "1", every contiguous window of length k automatically contains exactly one val and k - 1 ones—summing to m! I generated the entire sequence in one line: ans = [val if i % k == 0 else "1" for i in range(1, n + 1)].
+Batch Output: Each constructed array is joined with spaces via " ".join(ans), appended to out, and flushed in one shot using sys.stdout.write("\n".join(out) + "\n").
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per testcase. Constructing the sequence requires a single linear pass through range(1, n + 1) with an O(1) modulo check, executing in a fast 31 ms on Test #1.
+Space/Memory Complexity: O(N) auxiliary space per testcase to hold the constructed ans list and output buffer, with the judge reporting a lightweight 20 KB memory footprint on Test #1.
