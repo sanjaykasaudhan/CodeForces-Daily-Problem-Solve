@@ -1,0 +1,14 @@
+🚀 Validating strict character-transition rules is a classic problem—whether you are building rule-based phonotactic filters in NLP or checking valid string sequences!
+I just solved (A) Romaji from Codeforces Round 497 (Div. 2). Balancing my AI engineering tasks and M.Tech coursework at LPU constantly reinforces that finite-state string validation is cleanest when you combine O(1) hash-set lookups with an immediate fail-fast exit. Here is how I solved this string-rule puzzle in pure O(N) time! 💡
+
+🔗Problem Link: https://lnkd.in/gc62ZmSX
+
+🛠️ The Approach The problem asks us to verify whether a given string follows a strict linguistic rule: every consonant (except 'n') must be immediately followed by a vowel.
+Fast I/O & Constant-Time Lookup: I pulled the string directly into memory using sys.stdin.read().split(), extracted s = input_data[0], and stored the valid vowels in a Python hash set (vowels = {'a', 'o', 'u', 'i', 'e'}) for guaranteed O(1) membership checks.
+Filtering Target Consonants: I iterated through the string with for i in range(n): and isolated only the characters that trigger the constraint: if s[i] not in vowels and s[i] != 'n':.
+Short-Circuit Boundary & Lookahead Check: For any target consonant, there are only two ways it can fail—either it sits at the very end of the string (i == n - 1), or the very next character is not a vowel (s[i + 1] not in vowels). Combining both into a single short-circuiting or condition prevents any IndexError out-of-bounds crash!
+Fail-Fast Exit: The moment a single violation is detected, the function immediately prints "NO" and executes return to save compute cycles. If the loop completes cleanly, it prints "YES".
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) worst-case. The logic performs at most one linear pass through the string with O(1) set lookups, executing in a fast 31 ms on Test #1.
+Space/Memory Complexity: O(1) auxiliary space beyond the input string, since the vowels set holds a fixed 5 characters—achieving an optimal 0 KB memory footprint on the judge.
