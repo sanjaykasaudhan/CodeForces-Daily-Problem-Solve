@@ -1,0 +1,14 @@
+🚀 Lazy state tracking is the ultimate shortcut—whether you are deferring tensor transformations in AI pipelines or collapsing O(N^2) prefix flips into a single linear pass!
+I just solved (C1) We Be Flipping (Easy Version) from Spectral::Cup 2026 Round 2 (Codeforces Round 1100, Div. 1 + Div. 2). Balancing my AI engineering tasks and M.Tech coursework at LPU constantly reinforces that you should never mutate an entire array in-place when a single boolean flag can track the cumulative state. Here is how I solved this prefix-flipping problem in pure O(N) time using a reverse greedy sweep and a lazy XOR toggle! 💡
+
+🔗Problem Link: https://lnkd.in/gfaNWSQY
+
+🛠️ The Approach Simulating every prefix sign flip directly would trigger an O(N^2) bottleneck. By working backward from the end of the array, each decision locks in the current element permanently while a single boolean variable tracks the parity of all previous flips.
+Fast I/O & Parsing: I pulled all testcase inputs instantly into memory using sys.stdin.read().split() and built the array a with a clean list comprehension ([int(x) for x in input_data[idx : idx + n]]).
+Reverse Greedy Sweep: I initialized an ops = [] list and a lazy parity flag flipped = False, then iterated backward from the last index down to zero (for i in range(n - 1, -1, -1):).
+Lazy XOR Evaluation: Instead of modifying a[i] during earlier operations, I computed its effective sign in O(1) time using a bitwise XOR: is_pos = (a[i] > 0) ^ flipped. Whenever is_pos evaluates to True, I record the 1-based prefix index (ops.append(str(i + 1))) and toggle the global state via flipped = not flipped.
+Batch Output: For each testcase, I appended both the operation count (str(len(ops))) and the space-separated sequence (" ".join(ops)) to out, flushing everything in one shot with sys.stdout.write("\n".join(out) + "\n").
+
+⏱️ Complexity Analysis
+Time Complexity: O(N) per testcase. By replacing physical prefix inversions with a single flipped boolean toggle, the algorithm completes in one reverse linear pass with O(1) work per element.
+Space/Memory Complexity: O(N) auxiliary space per testcase to store the parsed array a, the recorded operations list ops, and the output buffer.
