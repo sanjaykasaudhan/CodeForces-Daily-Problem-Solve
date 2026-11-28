@@ -1,0 +1,14 @@
+🚀 Tracking a running maximum and its frequency in a single pass is the cleanest way to avoid extra memory overhead—whether you are evaluating top-scoring predictions in AI or finding optimal gear ratios!
+I just solved (A) Bicycle Chain from Codeforces Round 132 (Div. 2). Balancing my AI engineering tasks and M.Tech coursework at LPU constantly reinforces that you don't need to store every candidate value in a list just to count the maximum; a simple two-variable tracker handles it on the fly. Here is how I solved this pairwise ratio problem with zero extra ratio-storage overhead! 💡
+
+🔗Problem Link: https://lnkd.in/ggFunxik
+
+🛠️ The Approach The problem gives us two arrays of gear teeth (a and b) and asks how many pairs (a_i, b_j) produce the maximum possible integer gear ratio \frac{b_j}{a_i}.
+Fast I/O & Slicing: I pulled the entire input into memory using sys.stdin.read().split(), then sliced out both gear arrays cleanly with list comprehensions: a = [int(x) for x in input_data[1 : 1 + n]] and b = [int(x) for x in input_data[2 + n : 2 + n + m]].
+Exact Integer Divisibility: Instead of using floating-point division and checking for .is_integer(), I guarded each pair with an exact modulo check (if bj % ai == 0:) and computed the ratio using integer floor division (ratio = bj // ai).
+Single-Pass Max & Frequency Tracking: I maintained two lightweight scalar trackers: max_ratio = 0 and count = 0. Whenever a strictly larger ratio is found (if ratio > max_ratio:), I update max_ratio and reset count = 1; whenever an equal maximum appears (elif ratio == max_ratio:), I simply increment count += 1.
+Direct Output: Once all pairs are evaluated, the final count is flushed straight to standard output via print(count).
+
+⏱️ Complexity Analysis
+Time Complexity: O(N \times M). Evaluating every (a_i, b_j) pair takes nested linear time over the two small arrays, executing in 62 ms on Test #1.
+Space/Memory Complexity: O(N + M) to store the parsed input arrays and strictly O(1) auxiliary space for the tracking logic, achieving a tiny 8 KB memory footprint on the judge.
